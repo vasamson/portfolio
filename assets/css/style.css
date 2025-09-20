@@ -20,10 +20,10 @@
    * colors
    */
 
-  --raw-seinna: #B1CFB7;
-  --sizzling-sunrise: hsl(51, 95%, 54%);
+  --raw-seinna: #EFD9AA;
+  --sizzling-sunrise: rgb(249, 216, 26);
   --scarlet: hsl(13, 96%, 47%);
-  --black: hsl(0, 0%, 0%);
+  --black: #242424;
   --white: hsl(0, 0%, 100%);
 
   /**
