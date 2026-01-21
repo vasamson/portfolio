@@ -1,912 +1,147 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon portfolio</title>
-
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
-    rel="stylesheet">
+  <title>Mon Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<body id="top" class="light_theme">
-
-  <!-- #HEADER -->
-
-<header class="header" data-header>
-  <div class="container">
-
-    <h1 class="h1 logo">
-      <a href="#">Valentin<span>.</span></a>
-    </h1>
-
-    <div class="navbar-actions">
-
-      <select name="language" id="lang">
-        <option value="en">Anglais</option>
-        <option value="ar">Français</option>
-      </select>
-
-      <button class="theme-btn" aria-label="Changer de thème" title="Changer de thème" data-theme-btn>
-        <span class="icon"></span>
-      </button>
-
-    </div>
-
-    <button class="nav-toggle-btn" aria-label="Ouvrir/fermer le menu" title="Ouvrir/fermer le menu" data-nav-toggle-btn>
-      <span class="one"></span>
-      <span class="two"></span>
-      <span class="three"></span>
-    </button>
-
-    <nav class="navbar" data-navbar>
-      <ul class="navbar-list">
-
-        <li>
-          <a href="#home" class="navbar-link">Accueil.</a>
-        </li>
-
-        <li>
-          <a href="#about" class="navbar-link">À propos.</a>
-        </li>
-
-        <li>
-          <a href="#skills" class="navbar-link">Compétences.</a>
-        </li>
-
-        <li>
-          <a href="#portfolio" class="navbar-link">Portfolio.</a>
-        </li>
-
-        <li>
-          <a href="#contact" class="navbar-link">Contact.</a>
-        </li>
-
-      </ul>
-    </nav>
-
-  </div>
-</header>
-
-
-
-  <main>
-    <article class="container">
-
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="hero" id="home">
-
-        <figure class="hero-banner">
-
-          <picture>
-            <source srcset="" media="(min-width: 768px)">
-            <source srcset="" media="(min-width: 500px)">
-            <img src="" alt="moi"
-              class="w-100">
-          </picture>
-
-        </figure>
-
-        <div class="hero-content">
-
-          <h2 class="h2 hero-title">Enchanté c'est Valentin Samson</h2>
-
-          <a href="#contact" class="btn btn-primary">Me contacter</a>
-
-        </div>
-
-        <ul class="hero-social-list">
-
-          <li>
-            <a href="#" class="hero-social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-
-              <div class="tooltip">Facebook</div>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="hero-social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-
-              <div class="tooltip">Twitter</div>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="hero-social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-
-              <div class="tooltip">Linkedin</div>
-            </a>
-          </li>
-
-        </ul>
-
-        <a href="#stats" class="scroll-down">Scroll</a>
-
-      </section>
-
-
-
-
-
-      <!-- 
-        - #STATS
-      -->
-
-      <section class="stats" id="stats">
-  <ul class="stats-list">
-
-    <li>
-      <a href="#" class="stats-card">
-        <div class="card-icon">
-          <img src="./assets/images/stats-card_icon-1.png" alt="Expérience icon">
-        </div>
-        <h2 class="h2 card-title">
-          3+ <strong>Projets Digitaux Réalisés</strong>
-        </h2>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </a>
-    </li>
-
-    <li>
-      <a href="#" class="stats-card">
-        <div class="card-icon">
-          <img src="./assets/images/stats-card_icon-2.png" alt="Design icon">
-        </div>
-        <h2 class="h2 card-title">
-          2 <strong>Sites Web Professionnels Conçus</strong>
-        </h2>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </a>
-    </li>
-
-    <li>
-      <a href="#" class="stats-card">
-        <div class="card-icon">
-          <img src="./assets/images/stats-card_icon-3.png" alt="Compétences icon">
-        </div>
-        <h2 class="h2 card-title">
-          6+ <strong>Compétences Clés en Web & Design</strong>
-        </h2>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </a>
-    </li>
-
-  </ul>
-</section>
-
-
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
-
-      <section class="about" id="about">
-
-  <figure class="about-banner">
-    <img src="./assets/images/moi.png" alt="Photo de Valentin Samson" class="w-100">
-  </figure>
-
-  <div class="about-content section-content">
-
-    <p class="section-subtitle">À propos de moi</p>
-
-    <h2 class="h3 section-title">À propos de moi</h2>
-
-    <p class="section-text">
-      Bonjour ! Je m’appelle <strong>Valentin Samson</strong>, alternant en BUT Métiers du Multimédia et de l’Internet à l’IUT de Lannion, 
-      actuellement en poste chez <strong>Italvet / In Yellow</strong> à Mâcon.  
-      Passionné par le <strong>web design</strong>, la <strong>création de contenus digitaux</strong> et le 
-      <strong>développement web</strong>, je conçois des sites ergonomiques et immersifs en conciliant technique, créativité et communication.  
-      J’ai notamment travaillé sur la <strong>boutique officielle de la Fédération Française de Cyclisme</strong> et la <strong>refonte du site Italvet</strong>.  
-      Curieux et motivé, j’aime relever de nouveaux défis et transformer des idées en solutions concrètes.
-    </p>
-
-    <div class="btn-group">
-      <button class="btn btn-secondary">Me contacter</button>
-      <a href="./assets/images/CV.pdf" download class="btn btn-primary">
-  Télécharger mon CV
-</a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-
-      <!-- 
-        - #SKILLS
-      -->
-
-      <section class="skills" id="skills">
-
-        <div class="skills-content section-content">
-
-      <p class="section-subtitle">Mes Compétences</p>
-
-      <h2 class="h3 section-title">Quelles sont mes compétences ?</h2>
-
-      <p class="section-text">
-        Je sais pas quoi mettre ici  </p>
-
-      <div class="skills-toggle" data-toggle-box>
-        <button class="toggle-btn active" data-toggle-btn>Compétences</button>
-
-        <button class="toggle-btn" data-toggle-btn>Outils</button>
-      </div>
-
-    </div>
-
-
-        <div class="skills-box" data-skills-box>
-
-          <ul class="skills-list">
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">HTML5</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/html5.png" alt="HTML5 logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">CSS3</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/css3.png" alt="CSS3 logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">JavaScript</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/javascript.png" alt="JavaScript logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">TypeScript</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/typescript.png" alt="TypeScript logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">jQuery</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/jquery.png" alt="jQuery logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Bootstrap</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/bootstrap.png" alt="Bootstrap logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Angular</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/angular.png" alt="Angular logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">React</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/react.png" alt="React logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Vue</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/vue.png" alt="Vue logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Firebase</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/firebase.png" alt="Firebase logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">PugJs</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/pugjs.png" alt="PugJs logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">SASS</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/sass.png" alt="SASS logo">
-                </div>
-              </div>
-            </li>
-
-          </ul>
-
-          <ul class="tools-list">
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Ajax</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/ajax.png" alt="Ajax logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Gulp</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/gulp.png" alt="Gulp logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Webpack</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/webpack.png" alt="Webpack logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Git</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/git.png" alt="Git logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Npm</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/npm.png" alt="Npm logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Command Line</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/command.png" alt="Command Line logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">VS Code</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/vs-code.png" alt="VS Code logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Trello</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/trello.png" alt="Trello logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">ClickUp</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/clickup.png" alt="ClickUp logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Slack</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/slack.png" alt="Slack logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Photoshop</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/photoshop.png" alt="Photoshop logo">
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="skill-card">
-                <div class="tooltip">Adobe XD</div>
-
-                <div class="card-icon">
-                  <img src="./assets/images/adobe-xd.png" alt="Adobe XD logo">
-                </div>
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-
-      </section>
-
-
-
-
-
-      <!-- 
-        - #PROJECTS
-      -->
-
-      <section class="project" id="portfolio">
-
-        <ul class="project-list">
-
-          <li>
-          <div class="project-content section-content">
-
-            <p class="section-subtitle">Mes Réalisations</p>
-
-            <h2 class="h3 section-title">Découvrez mes projets qui vont vous surprendre !</h2>
-
-            <p class="section-text">
-              Je sais pas quoi mettre 
-            </p>
-
-          </div>
-        </li>
-
-          <li>
-            <a href="#" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/project-1.png" class="w-100" alt="A macintosh on a yellow background.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Lorem Ipsum Dolor 01</h3>
-
-                <time class="publish-date" datetime="2022-04">April 2022</time>
-              </div>
-
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/project-2.png" class="w-100" alt="On a Blue background, a Wacom and a mouse.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Lorem Ipsum Dolor 02</h3>
-
-                <time class="publish-date" datetime="2022-04">April 2022</time>
-              </div>
-
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/project-3.png" class="w-100"
-                  alt="A Cassette tape on a mellow apricot background.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Lorem Ipsum Dolor 03</h3>
-
-                <time class="publish-date" datetime="2022-04">April 2022</time>
-              </div>
-
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/project-4.png" class="w-100"
-                  alt="Blue digital watch on a dark liver background.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Lorem Ipsum Dolor 04</h3>
-
-                <time class="publish-date" datetime="2022-04">April 2022</time>
-              </div>
-
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/project-5.png" class="w-100"
-                  alt="On a dark liver background, Airport luggage car carrying a luggage.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Lorem Ipsum Dolor 05</h3>
-
-                <time class="publish-date" datetime="2022-04">April 2022</time>
-              </div>
-
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/project-6.png" class="w-100"
-                  alt="On a yellow background, a digital watch and a glass.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Lorem Ipsum Dolor 06</h3>
-
-                <time class="publish-date" datetime="2022-04">April 2022</time>
-              </div>
-
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="project-card">
-
-              <figure class="card-banner">
-                <img src="./assets/images/project-7.png" class="w-100"
-                  alt="A fujifilm instant camera on a dark electric blue background.">
-              </figure>
-
-              <div class="card-content">
-                <h3 class="h4 card-title">Lorem Ipsum Dolor 07</h3>
-
-                <time class="publish-date" datetime="2022-04">April 2022</time>
-              </div>
-
-            </a>
-          </li>
-
-        
-
-        </ul>
-
-      </section>
-
-
-
-
-
-     <!-- 
-  - #CONTACT
--->
-
-<section class="contact" id="contact">
-
-  <div class="contact-content section-content">
-
-    <p class="section-subtitle">Contact</p>
-
-    <h2 class="h3 section-title">Vous avez une question ? Laissez-moi un message</h2>
-
-    <p class="section-text">
-      Prenez contact et dites-moi comment je peux vous aider. Remplissez le formulaire et je vous répondrai dès que possible.
-    </p>
-
-    <ul class="contact-list">
-
-      <li class="contact-list-item">
-
-        <div class="contact-item-icon">
-          <ion-icon name="location-outline"></ion-icon>
-        </div>
-
-        <div class="wrapper">
-          <h3 class="h4 contact-item-title">Adresse :</h3>
-
-          <address class="contact-info">
-           5 boulervard Jean Mermoz, 22700 Perros-Guirec, France
-          </address>
-        </div>
-
-      </li>
-
-      <li class="contact-list-item">
-
-        <div class="contact-item-icon">
-          <ion-icon name="call-outline"></ion-icon>
-        </div>
-
-        <div class="wrapper">
-          <h3 class="h4 contact-item-title">Téléphone :</h3>
-
-          <a href="tel:0769517140" class="contact-info">07 69 51 71 40</a>
-
-
-        </div>
-
-      </li>
-
-      <li class="contact-list-item">
-
-        <div class="contact-item-icon">
-          <ion-icon name="mail-outline"></ion-icon>
-        </div>
-
-        <div class="wrapper">
-          <h3 class="h4 contact-item-title">Email :</h3>
-
-          <a href="mailto:samson.valentin2005@gmail.com" class="contact-info">samson.valentin2005@gmail.com</a>
-
-          <a href="mailto:valentin@in-yellow.com" class="contact-info">valentin@in-yellow.com</a>
-        </div>
-
-      </li>
-
-      <li>
-        <ul class="contac-social-list">
-
-          <li>
-            <a href="#" class="contact-social-link">
-              <div class="tooltip">Facebook</div>
-
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="contact-social-link">
-              <div class="tooltip">Twitter</div>
-
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="contact-social-link">
-              <div class="tooltip">LinkedIn</div>
-
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="contact-social-link">
-              <div class="tooltip">YouTube</div>
-
-              <ion-icon name="logo-youtube"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-      </li>
-
+<body>
+
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+
+  <nav>
+    <div class="logo">Valentin Samson</div>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
+  </nav>
 
-  </div>
 
-  <form action="" class="contact-form">
+  <section class="hero">
+    <div class="ink-blot">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,42.8C64.8,56.4,53.8,69,40.1,76.8C26.4,84.6,10,87.6,-5.8,86.4C-21.6,85.2,-37,79.8,-50.1,71.5C-63.2,63.2,-74,52,-80.3,38.4C-86.6,24.8,-88.4,8.8,-86.7,-6.5C-85,-21.8,-79.8,-36.4,-71.5,-49.2C-63.2,-62,-51.8,-73,-38.4,-79.5C-25,-86,-12.5,-88,0.7,-89.2C13.9,-90.4,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+      </svg>
+    </div>
 
-    <div class="form-wrapper">
+  
+    <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="top: 40%; left: 85%; animation-delay: 1s;"></div>
+    <div class="particle" style="top: 70%; left: 15%; animation-delay: 2s;"></div>
+    <div class="particle" style="top: 60%; left: 80%; animation-delay: 1.5s;"></div>
+    <div class="particle" style="top: 30%; left: 50%; animation-delay: 0.5s;"></div>
 
-      <label for="name" class="form-label">Nom</label>
+  
+    <svg class="sketch-line" style="position: absolute; top: 15%; left: 5%; width: 150px; height: 150px;">
+      <path d="M10,10 Q50,80 90,40 T150,100" stroke-linecap="round"/>
+    </svg>
+    <svg class="sketch-line" style="position: absolute; bottom: 20%; right: 8%; width: 120px; height: 120px;">
+      <path d="M10,60 Q60,10 110,60" stroke-linecap="round"/>
+    </svg>
 
-      <div class="input-wrapper">
-
-        <input type="text" name="name" id="name" required placeholder="Nom" class="input-field">
-
-        <ion-icon name="person-circle"></ion-icon>
-
+ 
+    <div class="hero-content">
+      <p class="greeting">Bonjour, je suis</p>
+      <h1 class="hero-name">Valentin Samson</h1>
+      <p class="manifesto">
+        Je transforme les <span class="highlight">idées</span> en <span class="highlight">réalités</span>
+      </p>
+      <p class="role">ÉTUDIANT MMI</p>
+      
+      <div class="cta-container">
+        <a href="#projects" class="cta-btn primary">Découvrir mes projets</a>
+        <a href="#contact" class="cta-btn">Me contacter</a>
       </div>
-
     </div>
 
-    <div class="form-wrapper">
-
-      <label for="email" class="form-label">Email</label>
-
-      <div class="input-wrapper">
-
-        <input type="email" name="email" id="email" required placeholder="Email"
-          class="input-field">
-
-        <ion-icon name="mail"></ion-icon>
-
-      </div>
-
+  
+    <div class="scroll-indicator">
+      <p class="scroll-text">Explorez mon univers</p>
+      <div class="scroll-arrow"></div>
     </div>
+  </section>
 
-    <div class="form-wrapper">
+  <script>
 
-      <label for="phone" class="form-label">Téléphone</label>
+    const cursor = document.querySelector('.cursor');
+    const follower = document.querySelector('.cursor-follower');
 
-      <div class="input-wrapper">
+    let mouseX = 0, mouseY = 0;
+    let followerX = 0, followerY = 0;
 
-        <input type="tel" name="phone" id="phone" required placeholder="Numéro de téléphone" class="input-field">
-
-        <ion-icon name="call"></ion-icon>
-
-      </div>
-
-    </div>
-
-    <div class="form-wrapper">
-
-      <label for="message" class="form-label">Message</label>
-
-      <div class="input-wrapper">
-
-        <textarea name="message" id="message" required placeholder="Écrivez votre message..."
-          class="input-field"></textarea>
-
-        <ion-icon name="chatbubbles"></ion-icon>
-
-      </div>
-
-    </div>
-
-    <button type="submit" class="btn btn-primary">Envoyer</button>
-
-  </form>
-
-</section>
-
-</article>
-</main>
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
+    });
 
 
+    function animateFollower() {
+      const dx = mouseX - followerX;
+      const dy = mouseY - followerY;
+      
+      followerX += dx * 0.1;
+      followerY += dy * 0.1;
+      
+      follower.style.left = followerX + 'px';
+      follower.style.top = followerY + 'px';
+      
+      requestAnimationFrame(animateFollower);
+    }
+    animateFollower();
+
+    const interactiveElements = document.querySelectorAll('a, button, .cta-btn');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'scale(1.5)';
+        cursor.style.borderColor = 'var(--corail)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'scale(1)';
+        cursor.style.borderColor = 'var(--indigo)';
+      });
+    });
 
 
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
 
+  
+    document.addEventListener('mousemove', (e) => {
+      const particles = document.querySelectorAll('.particle');
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      
+      particles.forEach((particle, i) => {
+        const speed = (i + 1) * 0.5;
+        const xMove = (x - 0.5) * speed * 20;
+        const yMove = (y - 0.5) * speed * 20;
+        particle.style.transform = `translate(${xMove}px, ${yMove}px)`;
+      });
+    });
 
-<!-- 
-  - #FOOTER
--->
-
-<footer class="ultra-footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <h2>MonSite</h2>
-    </div>
-    <div class="footer-links">
-      <a href="#">Accueil</a>
-      <a href="#">À propos</a>
-      <a href="#">Contact</a>
-    </div>
-    <div class="footer-social">
-      <a href="#"><svg width="24" height="24" viewBox="0 0 24 24"><!-- Instagram --><circle cx="12" cy="12" r="10" fill="#fff"/><rect x="7" y="7" width="10" height="10" rx="2" fill="#333"/></svg></a>
-      <a href="#"><svg width="24" height="24" viewBox="0 0 24 24"><!-- Twitter --><circle cx="12" cy="12" r="10" fill="#fff"/><path d="M8 15s4 0 6-4.5C14 10.5 13.5 11.5 12 11.5" stroke="#333" stroke-width="2"/></svg></a>
-      <a href="#"><svg width="24" height="24" viewBox="0 0 24 24"><!-- LinkedIn --><circle cx="12" cy="12" r="10" fill="#fff"/><rect x="8" y="10" width="2" height="4" fill="#333"/><rect x="12" y="10" width="4" height="1" fill="#333"/></svg></a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 MonSite. Tous droits réservés.</p>
-  </div>
-</footer>
-
-
-
-
-
-  <!-- 
-    - #GO TO TOP
-  -->
-
-  <a href="#top" class="go-top" data-go-top title="Go to Top">
-    <ion-icon name="arrow-up"></ion-icon>
-  </a>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+    if ('ontouchstart' in window) {
+      cursor.style.display = 'none';
+      follower.style.display = 'none';
+    }
+  </script>
 </body>
-
 </html>
