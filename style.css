@@ -427,7 +427,7 @@
 
     .submit-btn {
       padding: 1rem 2rem;
-      background: var(--indigo);
+      background: #cbc8ff;
       border: none;
       border-radius: 50px;
       color: var(--text-light);
