@@ -481,3 +481,87 @@
       .nav-links { gap: 1rem; }
       section { padding: 3rem 5%; }
     }
+
+    /* Compétences Section */
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 5%;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  position: relative;
+  display: inline-block;
+  color: var(--noir);
+}
+
+.section-title span {
+  color: var(--indigo);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+}
+
+.skill-card {
+  background: var(--blanc);
+  border: 2px solid var(--indigo);
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(79, 70, 229, 0.2);
+}
+
+.skill-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--indigo);
+}
+
+.skill-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(79, 70, 229, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  background: var(--indigo);
+  border-radius: 8px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fillSkill 1s forwards;
+}
+
+@keyframes fillSkill {
+  to { transform: scaleX(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .skill-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .skills-grid {
+    gap: 1.5rem;
+  }
+}
+
