@@ -19,7 +19,6 @@
       font-family: 'Inter', sans-serif;
       background: var(--blanc);
       color: var(--noir);
-      cursor: none;
       overflow-x: hidden;
     }
 
@@ -433,7 +432,6 @@
       border-radius: 50px;
       color: var(--text-light);
       font-weight: 600;
-      cursor: none;
       transition: all 0.3s;
     }
 
@@ -460,7 +458,6 @@
       color: var(--indigo);
       text-decoration: none;
       transition: all 0.3s;
-      cursor: none;
     }
 
     .social-link:hover {
