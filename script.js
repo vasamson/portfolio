@@ -20,3 +20,34 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
         });
     });
 });
+// Dark Mode
+const themeBtns = document.querySelectorAll('.theme-btn');
+const body = document.body;
+const savedTheme = localStorage.getItem('theme');
+
+// Fonction pour activer le thème
+const setTheme = (isDark) => {
+    if (isDark) {
+        body.classList.add('dark-mode');
+        themeBtns[0].classList.remove('active'); // Bouton Soleil
+        themeBtns[1].classList.add('active'); // Bouton Lune
+    } else {
+        body.classList.remove('dark-mode');
+        themeBtns[0].classList.add('active');
+        themeBtns[1].classList.remove('active');
+    }
+};
+
+// Initialisation au chargement
+if (savedTheme === 'dark') {
+    setTheme(true);
+}
+
+// Event Listeners
+themeBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        const isDark = index === 1; // 1 = Lune = Dark
+        setTheme(isDark);
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+});
