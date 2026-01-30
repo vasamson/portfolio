@@ -1774,3 +1774,442 @@ body.dark-mode .skill-tools {
     color: #fdba74;
     border-color: #ea580c;
 }
+
+/* ========================================
+   PAGE À PROPOS
+   ======================================== */
+
+.about-page-section {
+    padding: 120px 0 80px;
+    background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+}
+
+.about-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.about-page-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    grid-template-areas:
+        "main sidebar"
+        "widgets sidebar"
+        "tools sidebar";
+}
+
+/* Colonne Principale */
+.about-main-content {
+    grid-area: main;
+}
+
+.about-page-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #4f46e5;
+    margin: 0 0 24px 0;
+}
+
+.about-page-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.about-page-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #475569;
+    margin: 0;
+}
+
+.about-page-text strong {
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+/* Sidebar - Carte Profil */
+.about-sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 120px;
+    align-self: start;
+}
+
+.about-profile-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.about-profile-image {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.about-profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.about-profile-info {
+    padding: 24px;
+    background: #f8fafc;
+}
+
+.about-profile-name {
+    margin-bottom: 16px;
+}
+
+.about-profile-name .firstname {
+    display: block;
+    font-size: 1.2rem;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.about-profile-name .lastname {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #4f46e5;
+    margin: 0;
+    line-height: 1;
+}
+
+.about-profile-status {
+    display: flex;
+    gap: 8px;
+}
+
+/* Bouton CTA */
+.btn-about-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #4f46e5;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.btn-about-cta:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+
+/* Widgets Section */
+.about-widgets {
+    grid-area: widgets;
+    margin-top: 40px;
+}
+
+.widgets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.widget {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.widget:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+}
+
+.widget-content {
+    position: relative;
+    padding: 24px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Widget Localisation */
+.widget-location {
+    grid-column: 1 / -1;
+}
+
+.widget-location .widget-content {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    min-height: 200px;
+}
+
+.widget-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.widget-info {
+    position: relative;
+    z-index: 2;
+}
+
+.widget-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 4px 0;
+}
+
+.widget-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+/* Widget Musique */
+.widget-music .widget-content {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.widget-music-icon {
+    font-size: 2.5rem;
+}
+
+.widget-music-info {
+    flex: 1;
+}
+
+.widget-music-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 4px 0;
+}
+
+.widget-music-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+/* Widget Film */
+.widget-movie .widget-content {
+    background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.widget-movie-icon {
+    font-size: 2.5rem;
+}
+
+.widget-movie-info {
+    flex: 1;
+}
+
+.widget-movie-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 4px 0;
+}
+
+.widget-movie-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+/* Section Outils */
+.about-tools-section {
+    grid-area: tools;
+    margin-top: 60px;
+    padding: 40px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+}
+
+.about-tools-header {
+    margin-bottom: 32px;
+}
+
+.about-tools-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+}
+
+.about-tools-header p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.about-tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tool-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid;
+}
+
+.tool-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.tool-icon {
+    font-size: 1.2rem;
+}
+
+/* Tool Colors */
+.tool-design {
+    background-color: #fae8ff;
+    color: #a855f7;
+    border-color: #e9d5ff;
+}
+
+.tool-design:hover {
+    background-color: #f3e8ff;
+}
+
+.tool-dev {
+    background-color: #dbeafe;
+    color: #2563eb;
+    border-color: #bfdbfe;
+}
+
+.tool-dev:hover {
+    background-color: #dbeafe;
+}
+
+.tool-marketing {
+    background-color: #d1fae5;
+    color: #059669;
+    border-color: #a7f3d0;
+}
+
+.tool-marketing:hover {
+    background-color: #d1fae5;
+}
+
+.tool-tools {
+    background-color: #fed7aa;
+    color: #ea580c;
+    border-color: #fdba74;
+}
+
+.tool-tools:hover {
+    background-color: #fed7aa;
+}
+
+/* ========================================
+   RESPONSIVE - PAGE À PROPOS
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .about-page-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "sidebar"
+            "main"
+            "widgets"
+            "tools";
+    }
+
+    .about-sidebar {
+        position: static;
+        max-width: 400px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .about-profile-image {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-page-section {
+        padding: 100px 0 60px;
+    }
+
+    .about-page-title {
+        font-size: 2rem;
+    }
+
+    .about-page-text p {
+        font-size: 0.95rem;
+    }
+
+    .widgets-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .widget-location {
+        grid-column: 1;
+    }
+
+    .about-tools-section {
+        padding: 30px 24px;
+    }
+
+    .about-tools-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-page-title {
+        font-size: 1.75rem;
+    }
+
+    .about-profile-name .lastname {
+        font-size: 2rem;
+    }
+
+    .about-tools-grid {
+        gap: 8px;
+    }
+
+    .tool-tag {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+}
