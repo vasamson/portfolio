@@ -60,7 +60,7 @@ body {
     height: 48px;
     border-radius: 14px;
     overflow: hidden;
-    background-color: #cbd5e1;
+    background-color: transparent;
     transition: transform 0.2s ease;
 }
 
@@ -461,6 +461,81 @@ body {
     padding: 100px 0;
 }
 
+/* COMPÉTENCES */
+.skills-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.skills-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.skill-category {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.skill-category-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Design Tags - Purple/Pink */
+.skill-design {
+    background-color: #fae8ff;
+    color: #a855f7;
+    border: 1px solid #e9d5ff;
+}
+
+/* Dev Tags - Blue */
+.skill-dev {
+    background-color: #dbeafe;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+/* Marketing Tags - Green */
+.skill-marketing {
+    background-color: #d1fae5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+}
+
+/* Tools Tags - Orange */
+.skill-tools {
+    background-color: #fed7aa;
+    color: #ea580c;
+    border: 1px solid #fdba74;
+}
+
 /* PROJETS */
 .projects-grid {
     display: grid;
@@ -674,21 +749,6 @@ body {
     gap: 20px;
 }
 
-.footer-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: #cbd5e1;
-    flex-shrink: 0;
-}
-
-.footer-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
 .footer-identity {
     display: flex;
     flex-direction: column;
@@ -833,6 +893,25 @@ body {
     font-size: 0.85rem;
     color: #9ca3af;
 }
+
+.footer-logo {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-logo img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.footer-logo img:hover {
+    opacity: 1;
+}
+
 
 /* RESPONSIVE FOOTER */
 @media (max-width: 768px) {
@@ -1543,4 +1622,37 @@ body.dark-mode .badge-role {
     background-color: #1e293b;
     border-color: #334155;
     color: #818cf8;
+}
+
+/* Skills Section Dark */
+body.dark-mode .skills-section {
+    background-color: #0f172a;
+}
+
+body.dark-mode .skill-category-title {
+    color: #e2e8f0;
+}
+
+body.dark-mode .skill-design {
+    background-color: #2e1065;
+    color: #d8b4fe;
+    border-color: #5b21b6;
+}
+
+body.dark-mode .skill-dev {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+    border-color: #3b82f6;
+}
+
+body.dark-mode .skill-marketing {
+    background-color: #064e3b;
+    color: #6ee7b7;
+    border-color: #059669;
+}
+
+body.dark-mode .skill-tools {
+    background-color: #7c2d12;
+    color: #fdba74;
+    border-color: #ea580c;
 }
