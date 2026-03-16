@@ -958,10 +958,26 @@ body::after {
 .project-thumb {
     position: relative;
     width: 100%;
-    padding-top: 65%;
+    padding-top: 60%;
     background-color: #f1f5f9;
     overflow: hidden;
 }
+
+.project-thumb img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-thumb img {
+    transform: scale(1.05);
+}
+
 
 .project-card-badges {
     position: absolute;
