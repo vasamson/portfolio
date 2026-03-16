@@ -179,6 +179,20 @@ if (carousel && cards.length > 0) {
         updateCarousel();
     });
 
+    // Flipping logic
+    cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // If already flipped, unflip
+            if (card.classList.contains('flipped')) {
+                card.classList.remove('flipped');
+            } else {
+                // Unflip others first
+                cards.forEach(c => c.classList.remove('flipped'));
+                card.classList.add('flipped');
+            }
+        });
+    });
+
     // Slow down on hover - even more subtle
     scene.addEventListener('mouseenter', () => rotationSpeed = 0.03);
     scene.addEventListener('mouseleave', () => rotationSpeed = 0.2);
