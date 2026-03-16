@@ -8,289 +8,278 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-light: #f8fafc;
+            --bg-light: #ffffff;
             --bg-dark: #0f172a;
             --text-light: #0f172a;
             --text-dark: #f1f5f9;
-            --card-bg-light: rgba(255, 255, 255, 0.8);
-            --card-bg-dark: rgba(30, 41, 59, 0.7);
-            --border-light: rgba(255, 255, 255, 0.5);
-            --border-dark: rgba(255, 255, 255, 0.05);
             --accent: #4f46e5;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
         }
 
         body {
             font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-light);
             margin: 0;
             overflow-x: hidden;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            background: transparent;
+            color: var(--text-light);
+            line-height: 1.6;
         }
 
         body.dark-mode {
-            background-color: var(--bg-dark);
             color: var(--text-dark);
+            --glass-bg: rgba(15, 23, 42, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
+        /* Hero Section Premium */
         .project-hero {
-            height: 75vh;
+            height: 60vh;
             position: relative;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
+            align-items: flex-end;
+            padding-bottom: 120px;
             overflow: hidden;
         }
 
         .hero-bg {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            inset: 0;
             background-size: cover;
             background-position: center;
-            filter: brightness(0.5) saturate(1.2);
-            transform: scale(1.1);
-            transition: transform 2s ease-out, filter 0.5s ease;
+            filter: saturate(1.2) brightness(0.8);
+            z-index: -1;
+            transition: transform 1s ease;
         }
 
         .project-hero:hover .hero-bg {
             transform: scale(1.05);
-            filter: brightness(0.4) saturate(1.4);
         }
 
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.8) 100%);
-            z-index: 5;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.6) 100%);
+            z-index: 0;
         }
 
         .hero-content {
             position: relative;
             z-index: 10;
-            max-width: 900px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
             padding: 0 40px;
         }
 
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            padding: 10px 24px;
-            border-radius: 100px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-size: 0.75rem;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
-        }
-
         .hero-title {
-            font-size: clamp(2.8rem, 10vw, 5rem);
+            font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 900;
-            line-height: 0.95;
-            letter-spacing: -0.05em;
-            margin-bottom: 20px;
-            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s backwards;
+            color: white;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            margin: 0;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
+        /* Layout */
         .project-main {
             max-width: 1200px;
-            margin: -100px auto 120px;
+            margin: -60px auto 100px;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1.8fr 1fr;
+            gap: 40px;
             position: relative;
             z-index: 20;
-            padding: 0 25px;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 50px;
         }
 
-        .content-card {
-            background: var(--card-bg-light);
-            backdrop-filter: blur(30px);
-            border-radius: 48px;
-            padding: 80px;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.08);
-            animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s backwards;
-        }
-
-        body.dark-mode .content-card {
-            background: var(--card-bg-dark);
-            border-color: var(--border-dark);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.3);
-        }
-
-        .sidebar-card {
-            background: white;
-            border-radius: 48px;
+        .content-card, .sidebar-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
             padding: 50px;
-            height: fit-content;
-            border: 1px solid rgba(0,0,0,0.04);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.04);
-            animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s backwards;
-            position: sticky;
-            top: 120px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
         }
 
+        body.dark-mode .content-card,
         body.dark-mode .sidebar-card {
-            background: #1e293b;
-            border-color: rgba(255,255,255,0.05);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
         }
 
         .section-title {
-            font-size: 2rem;
-            font-weight: 900;
+            font-size: 1.8rem;
+            font-weight: 850;
+            margin-bottom: 25px;
             letter-spacing: -0.02em;
-            margin-bottom: 30px;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
-        .section-title::after {
+        .section-title::before {
             content: "";
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(to right, #e2e8f0, transparent);
-        }
-
-        body.dark-mode .section-title::after {
-            background: linear-gradient(to right, rgba(255,255,255,0.1), transparent);
+            width: 8px;
+            height: 30px;
+            background: var(--accent);
+            border-radius: 4px;
         }
 
         .description-text {
-            font-size: 1.25rem;
-            line-height: 1.85;
+            font-size: 1.15rem;
             color: #475569;
-            margin-bottom: 50px;
-            font-weight: 450;
+            margin-bottom: 40px;
+            white-space: pre-line;
         }
 
         body.dark-mode .description-text {
-            color: #94a3b8;
+            color: #cbd5e1;
         }
 
+        /* Tools Chips */
         .tools-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
+            gap: 10px;
         }
 
         .tool-chip {
-            background: #f1f5f9;
-            color: #475569;
-            padding: 12px 24px;
-            border-radius: 20px;
-            font-weight: 800;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid transparent;
-        }
-
-        body.dark-mode .tool-chip {
-            background: #0f172a;
-            color: #94a3b8;
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--accent);
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            transition: all 0.3s ease;
         }
 
         .tool-chip:hover {
             background: var(--accent);
             color: white;
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
         }
 
+        /* Sidebar Styling */
         .sidebar-item {
-            margin-bottom: 35px;
-            padding-bottom: 25px;
+            margin-bottom: 30px;
             border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-bottom: 20px;
         }
 
         body.dark-mode .sidebar-item {
             border-bottom-color: rgba(255,255,255,0.05);
         }
 
-        .sidebar-item:last-of-type {
+        .sidebar-item:last-child {
             border-bottom: none;
+            margin-bottom: 0;
         }
 
         .sidebar-label {
             font-size: 0.75rem;
             text-transform: uppercase;
-            font-weight: 900;
+            font-weight: 800;
             color: #94a3b8;
-            letter-spacing: 0.15em;
-            margin-bottom: 12px;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
             display: block;
         }
 
         .sidebar-value {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: #1e293b;
         }
 
-        body.dark-mode .sidebar-value {
-            color: #f1f5f9;
-        }
-
+        /* Back Button */
         .back-btn {
             position: fixed;
-            top: 40px;
-            left: 40px;
+            top: 30px;
+            left: 30px;
             z-index: 100;
-            background: rgba(15, 23, 42, 0.3);
-            backdrop-filter: blur(12px);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #0f172a;
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        body.dark-mode .back-btn {
+            background: #1e293b;
+            color: white;
+            border-color: rgba(255,255,255,0.1);
         }
 
         .back-btn:hover {
-            background: white;
-            color: #0f172a;
-            transform: translateX(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: scale(1.1) rotate(-5deg);
+            background: var(--accent);
+            color: white;
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 1024px) {
+        /* Mobile Adjustments */
+        @media (max-width: 968px) {
             .project-main {
                 grid-template-columns: 1fr;
-                margin-top: -60px;
-                gap: 30px;
+                margin-top: -40px;
             }
-            .content-card { padding: 50px; border-radius: 40px; }
-            .sidebar-card { position: static; width: 100%; border-radius: 40px; }
+            .content-card, .sidebar-card {
+                padding: 30px;
+            }
+            .hero-title {
+                font-size: 3.5rem;
+            }
         }
 
-        @media (max-width: 768px) {
-            .back-btn { top: 20px; left: 20px; width: 50px; height: 50px; border-radius: 15px; }
-            .hero-title { font-size: 3.5rem; }
-            .content-card { padding: 40px 30px; }
+        .btn-premium {
+            background: linear-gradient(135deg, var(--accent), #6366f1);
+            color: white;
+            padding: 18px 30px;
+            border-radius: 20px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-premium::before {
+            content: "";
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-premium:hover::before {
+            left: 100%;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(79, 70, 229, 0.4);
+            filter: brightness(1.1);
         }
 
         .theme-toggle {
             position: fixed;
-            top: 40px;
-            right: 40px;
+            top: 30px;
+            right: 30px;
             z-index: 100;
             background: rgba(15, 23, 42, 0.3);
             backdrop-filter: blur(12px);
@@ -314,6 +303,14 @@
 
 </head>
 <body>
+
+    <!-- Same dynamic background as index for consistency -->
+    <div class="liquid-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="site-waves"></div>
 
     <a href="index.html#projects" class="back-btn">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -358,7 +355,7 @@
                 <span class="sidebar-value" id="project-type">Design & Dev</span>
             </div>
             
-            <a href="#contact" class="btn-premium" style="display: block; text-align: center; margin-top: 40px; width: 100%; box-sizing: border-box;">
+            <a href="index.html#contact" class="btn-premium" style="display: block; text-align: center; margin-top: 40px;">
                 Lancer un projet
             </a>
         </aside>
