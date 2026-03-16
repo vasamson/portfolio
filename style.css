@@ -51,6 +51,17 @@ body::after {
     margin: 0 auto;
 }
 
+/* GLOBAL GRADIENT TEXT UTILITY */
+.gradient-text-blue {
+    background: linear-gradient(135deg, #1e0a8c 0%, #1d4ed8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+
+
 /* HEADER */
 /* HEADER */
 .header {
@@ -971,11 +982,6 @@ body::after {
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-thumb img {
-    transform: scale(1.05);
 }
 
 
@@ -1315,194 +1321,188 @@ body.dark-mode .nav-btn {
     }
 }
 
-/* FOOTER CUSTOM */
-.footer-custom {
-    background-color: transparent;
-    /* Light blue styling similar to hero bottom */
-    padding: 64px 0;
-    border-top: 1px solid #dbeafe;
+/* FOOTER PREMIUM */
+.footer-premium {
+    background-color: #f8fafc;
+    padding: 100px 0 50px;
+    border-top: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
 }
 
-.footer-content {
+body.dark-mode .footer-premium {
+    background-color: #0b1121;
+    border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.footer-top {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 48px;
-}
-
-/* LEFT COLUMN */
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-.footer-profile {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.footer-identity {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.footer-name {
-    font-size: 1.8rem;
-    color: #4f46e5;
-    /* Indigo */
-    margin: 0;
-    font-weight: 400;
-    /* Regular weight for first part */
-    line-height: 1;
-}
-
-.footer-name .highlight {
-    font-weight: 800;
-    /* Bold for last name */
-}
-
-.footer-badges {
-    display: flex;
+    gap: 60px;
     flex-wrap: wrap;
-    gap: 8px;
 }
 
-.f-badge {
-    border: 1px solid #a5b4fc;
-    color: #4f46e5;
-    background-color: #eef2ff;
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: 0.8rem;
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-logo-text {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.footer-tagline {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.6;
     font-weight: 500;
 }
 
-/* SOCIAL BUTTONS */
-.footer-socials {
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 80px;
+}
+
+.footer-group {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.footer-group-title {
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.footer-links {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    align-items: flex-start;
 }
 
-.social-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 16px;
-    border-radius: 12px;
-    font-size: 0.95rem;
-    font-weight: 500;
+.footer-links a {
     text-decoration: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.social-btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-.social-btn svg {
-    flex-shrink: 0;
-}
-
-/* Specific Social Styles */
-.btn-email {
-    background-color: #eff6ff;
-    border: 1px solid #bfdbfe;
-    color: #2563eb;
-    min-width: 240px;
-}
-
-.btn-instagram {
-    background-color: #f0f7ff;
-    border: 1px solid #d0e7ff;
-    color: #4f46e5;
-    min-width: 160px;
-}
-
-.btn-linkedin {
-    background-color: #dbeafe;
-    /* Blue 100 */
-    border: 1px solid #bfdbfe;
-    color: #0284c7;
-    /* Sky 600 */
-    min-width: 150px;
-}
-
-.btn-x {
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    color: #111827;
-    min-width: 80px;
-}
-
-/* RIGHT COLUMN */
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 40px;
-    text-align: right;
-    margin-top: 10px;
-}
-
-.footer-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-}
-
-.footer-nav a {
-    text-decoration: none;
-    color: #374151;
-    /* Gray 700 */
+    color: #334155;
     font-weight: 600;
     font-size: 1rem;
-    transition: color 0.2s;
+    transition: all 0.3s ease;
 }
 
-.footer-nav a:hover {
+body.dark-mode .footer-links a {
+    color: #94a3b8;
+}
+
+.footer-links a:hover {
     color: #4f46e5;
+    transform: translateX(5px);
 }
 
-.footer-credits {
+.footer-social-circles {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    gap: 15px;
 }
 
-.footer-credits p {
-    margin: 0;
+.social-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+}
+
+body.dark-mode .social-circle {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.05);
+    color: #f1f5f9;
+}
+
+.social-circle:hover {
+    transform: translateY(-8px) rotate(8deg);
+    background: #4f46e5;
+    color: white;
+    border-color: #4f46e5;
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.3);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    border-top: 1px solid #e2e8f0;
+}
+
+body.dark-mode .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+.footer-copyright {
+    color: #94a3b8;
     font-size: 0.9rem;
-    color: #6b7280;
+    font-weight: 500;
 }
 
-.footer-credits .copyright {
-    font-size: 0.85rem;
-    color: #9ca3af;
-}
-
-.footer-logo {
-    margin-top: 24px;
+.footer-extra {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
-.footer-logo img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
+.logo-mini img {
+    height: 30px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
 }
 
-.footer-logo img:hover {
+.logo-mini:hover img {
     opacity: 1;
 }
+
+@media (max-width: 968px) {
+    .footer-links-grid {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .footer-links-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+
 
 
 /* RESPONSIVE FOOTER */
@@ -1583,10 +1583,10 @@ body.dark-mode .nav-btn {
 
 
 .bento-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: rgba(79, 70, 229, 0.4);
-    box-shadow: 0 40px 80px -15px rgba(79, 70, 229, 0.15);
+    border-color: rgba(79, 70, 229, 0.3);
+    box-shadow: 0 20px 40px -12px rgba(79, 70, 229, 0.1);
 }
+
 
 
 .widget-header {
@@ -1619,9 +1619,16 @@ body.dark-mode .nav-btn {
 }
 
 
-/* 1. Location Widget - Abstract Visual */
+/* 1. Location Widget - Emerald Pastel */
 .widget-location {
     grid-column: span 1;
+    background: #f0fdf4; /* Emerald 50 */
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+body.dark-mode .widget-location {
+    background: rgba(6, 78, 59, 0.15);
+    border-color: rgba(16, 185, 129, 0.2);
 }
 
 .widget-location .location-body {
@@ -1713,9 +1720,15 @@ body.dark-mode .nav-btn {
     letter-spacing: -0.05em;
 }
 
-/* 3. Strava / Cycling - Refined Glass */
+/* 3. Strava / Cycling - Orange Pastel */
 .widget-cycling {
-    border: 1.5px solid rgba(252, 76, 2, 0.2);
+    background: #fff7ed; /* Orange 50 */
+    border: 1.5px solid rgba(251, 146, 60, 0.2);
+}
+
+body.dark-mode .widget-cycling {
+    background: rgba(124, 45, 18, 0.15);
+    border-color: rgba(251, 146, 60, 0.2);
 }
 
 .widget-cycling::before {
@@ -1775,7 +1788,51 @@ body.dark-mode .nav-btn {
     gap: 5px;
 }
 
+.media-metrics {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.media-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 8px;
+}
+
+body.dark-mode .media-item {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.media-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+.media-value {
+    color: #0284c7;
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.widget-media {
+    background: #f0f9ff; /* Sky 50 */
+    border-color: rgba(14, 165, 233, 0.2);
+}
+
+body.dark-mode .widget-media {
+    background: rgba(12, 74, 110, 0.15);
+    border-color: rgba(14, 165, 233, 0.2);
+}
+
 /* 4. Experience Stats - Compact */
+
 .stats-wrap {
     flex: 1;
     display: flex;
@@ -1807,17 +1864,82 @@ body.dark-mode .nav-btn {
     margin-top: 5px;
 }
 
-/* 5. Status Widget - Modern Banner */
+/* 5. Phase Widget Style - Purple Pastel */
+.widget-phase {
+    background: #f5f3ff; /* Violet 50 */
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+body.dark-mode .widget-phase {
+    background: rgba(76, 29, 149, 0.15);
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+.phase-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+}
+
+.phase-main-icon {
+    font-size: 3.5rem;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+}
+
+.phase-text-wrap {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.phase-name {
+    font-size: 1.4rem;
+    font-weight: 850;
+    color: #4f46e5;
+}
+
+body.dark-mode .phase-name {
+    color: #818cf8;
+}
+
+.phase-sub {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* 5. Status Widget - Indigo/Rose Pastel Banner */
+
 .widget-status {
     grid-column: span 2;
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-    border: none;
-    color: white;
+    background: linear-gradient(135deg, #eef2ff 0%, #fdf2f8 100%);
+    border: 1px solid rgba(79, 70, 229, 0.1);
+    color: #1e1b4b;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 30px 50px;
     min-height: 250px;
+}
+
+body.dark-mode .widget-status {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    color: white;
+}
+
+.widget-status .status-h {
+    color: #1e1b4b;
+}
+
+body.dark-mode .widget-status .status-h {
+    color: white;
 }
 
 
@@ -1826,32 +1948,41 @@ body.dark-mode .nav-btn {
 .status-left {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
 }
 
-.status-glow {
-    width: 16px;
-    height: 16px;
-    background: #22c55e;
-    border-radius: 50%;
-    position: relative;
-    box-shadow: 0 0 20px #22c55e;
+.event-icon {
+    font-size: 2.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.status-glow::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: inherit;
-    border-radius: inherit;
-    animation: pulseGlow 2s infinite;
+.status-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-@keyframes pulseGlow {
-    0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(4); opacity: 0; }
+.event-label {
+    font-size: 0.7rem;
+    font-weight: 900;
+    color: #94a3b8;
+    letter-spacing: 0.1em;
 }
+
+.event-info {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
 
 .status-h {
     font-size: 1.8rem;
@@ -3454,7 +3585,7 @@ body.dark-mode .bretagne-map path {
 }
 
 .project-card:hover .project-thumb img {
-    transform: scale(1.1);
+    transform: none;
 }
 
 .project-card-badges {
@@ -3483,13 +3614,13 @@ body.dark-mode .bretagne-map path {
 .project-title {
     font-size: 1.4rem;
     font-weight: 850;
-    background: linear-gradient(135deg, #4f46e5, #0ea5e9);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #0f172a;
+    -webkit-text-fill-color: #0f172a;
+    background: none;
     margin-bottom: 12px;
     line-height: 1.2;
 }
+
 
 
 .project-desc {

@@ -72,19 +72,8 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 3. Reveal Phone Number
-const revealBtn = document.getElementById('reveal-phone');
-const phoneText = document.querySelector('.phone-text');
-const phoneNumber = "07 69 51 71 40"; 
+// 3. Reveal Phone Number - Logic removed as number is now direct.
 
-if (revealBtn && phoneText) {
-    revealBtn.addEventListener('click', () => {
-        phoneText.textContent = phoneNumber;
-        revealBtn.classList.add('revealed');
-        // Optionnel : Copier dans le presse-papier
-        navigator.clipboard.writeText(phoneNumber.replace(/\s/g, ''));
-    });
-}
 
 // 5. Project Filtering
 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -220,7 +209,7 @@ revealElements.forEach(el => revealObserver.observe(el));
 
 // 7. Typewriter Effect
 const taglineElement = document.getElementById('tagline');
-const roles = ["Designer Graphique", "Développeur Web", "Étudiant MMI", "Créateur de Contenu"];
+const roles = ["Social Media Manager", "Créateur de Contenu", "Direction Artistique", "Expert Shopify"];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -257,19 +246,52 @@ function updateClocks() {
     const timeString = new Intl.DateTimeFormat('fr-FR', timeOptions).format(now);
     
     const lannionClock = document.getElementById('clock-hub-lannion');
-    const lyonClock = document.getElementById('clock-hub-lyon');
     
     if (lannionClock) lannionClock.textContent = timeString;
-    if (lyonClock) lyonClock.textContent = timeString;
+}
+
+// 9. Daily Phase Logic (Routine)
+function updatePhase() {
+    const now = new Date();
+    const hours = now.getHours();
+    
+    const phaseIcon = document.getElementById('current-phase-icon');
+    const phaseLabel = document.getElementById('current-phase-label');
+    const phaseSub = document.getElementById('current-phase-time');
+    
+    if (!phaseIcon || !phaseLabel || !phaseSub) return;
+    
+    let activity = { icon: "🏮", label: "Temps libre", sub: "Projets & Détente" };
+    
+    if (hours >= 22 || hours < 7) {
+        activity = { icon: "😴", label: "Dodo", sub: "Récupération" };
+    } else if (hours >= 7 && hours < 8) {
+        activity = { icon: "☕", label: "Préparation", sub: "Petit-déjeuner" };
+    } else if (hours >= 8 && hours < 18) {
+        activity = { icon: "🎓", label: "En cours", sub: "BUT MMI Lannion" };
+    } else if (hours >= 18 && hours < 20) {
+        activity = { icon: "🚲", label: "Au sport", sub: "S'entraîner dur" };
+    } else if (hours >= 20 && hours < 22) {
+        activity = { icon: "🍽️", label: "Dîner", sub: "Repos du guerrier" };
+    }
+    
+    phaseIcon.textContent = activity.icon;
+    phaseLabel.textContent = activity.label;
+    phaseSub.textContent = activity.sub;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     if (taglineElement) type();
     
-    // Initialize clocks
+    // Initialize clocks & phase
     updateClocks();
-    setInterval(updateClocks, 1000);
+    updatePhase();
+    setInterval(() => {
+        updateClocks();
+        updatePhase();
+    }, 1000);
 });
+
 
 
 
