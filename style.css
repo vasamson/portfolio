@@ -1655,7 +1655,7 @@ body::after {
 }
 
 .split-side:hover {
-    width: 60%;
+    width: 55%;
     z-index: 10;
 }
 
@@ -1663,57 +1663,52 @@ body::after {
     position: relative;
     z-index: 20;
     padding: 80px;
-    margin-bottom: 40px;
-    max-width: 600px;
+    width: 100%;
+    max-width: 700px;
     transition: transform 0.4s ease;
 }
 
 .side-work .split-content { 
-    text-align: left; 
-    margin-right: auto;
+    text-align: center;
+    margin: 0 auto;
 }
 .side-cycling .split-content { 
-    text-align: right; 
-    margin-left: auto;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .split-label {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 800;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.4em;
     color: #4f46e5;
     margin-bottom: 24px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 15px;
 }
 
-.side-work .split-label::before {
+.split-label::before, .split-label::after {
     content: "";
-    width: 12px;
-    height: 2px;
+    width: 20px;
+    height: 1px;
     background: currentColor;
+    opacity: 0.5;
 }
 
 .side-cycling .split-label { 
     color: #10b981; 
-    justify-content: flex-end;
-}
-
-.side-cycling .split-label::after {
-    content: "";
-    width: 12px;
-    height: 2px;
-    background: currentColor;
 }
 
 .split-title {
-    font-size: 4.5rem;
-    font-weight: 900;
-    line-height: 0.95;
-    margin-bottom: 24px;
+    font-size: 5.5rem; /* Larger for typo focus */
+    font-weight: 950;
+    line-height: 0.9;
+    margin-bottom: 30px;
     color: #0f172a;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
 }
 
 .split-desc {
@@ -1739,57 +1734,13 @@ body::after {
 .side-cycling .btn-split:hover { background: #10b981; }
 .side-work .btn-split:hover { background: #4f46e5; }
 
-/* The transparent images - STATIC & SHIFTED */
-.split-image {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 5;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    /* Static positioning, no transitions for movement */
-    -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 90%);
-    mask-image: linear-gradient(to bottom, black 30%, transparent 90%);
-}
-
-.side-work .split-image { 
-    right: -10%; /* Shifted away from center */
-    opacity: 0.7;
-}
-
-.side-cycling .split-image { 
-    left: -5%; /* Adjusted for bike width */
-    opacity: 0.7;
-}
-
-.split-image img {
-    height: 80%;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.04)) grayscale(0.2);
-    /* No transitions or parallax */
-}
-
-/* Athlete side specific */
-.side-cycling .split-image img {
-    height: 70%;
-    max-width: 130%;
-}
-
-.split-side:hover .split-image {
-    opacity: 1;
-}
-
-/* Background Accents */
+/* Background Accents - Static & Dynamic */
 .side-work::after {
     content: "";
     position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(79, 70, 229, 0.03) 0%, transparent 70%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.04) 0%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1799,13 +1750,17 @@ body::after {
 .side-cycling::after {
     content: "";
     position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.03) 0%, transparent 70%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
+}
+
+.split-side:hover::after {
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* Diagonal line footer-style separation */
