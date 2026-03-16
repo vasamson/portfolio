@@ -1640,9 +1640,9 @@ body::after {
     width: 50%;
     height: 100%;
     display: flex;
-    align-items: flex-end; /* Text at the bottom */
+    align-items: flex-end;
     justify-content: center;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1); /* Focus transition on width */
     z-index: 1;
 }
 
@@ -1730,46 +1730,58 @@ body::after {
 .split-image {
     position: absolute;
     bottom: 0;
-    width: 90%;
+    width: 100%; /* Wider for bike */
     height: 100%;
     pointer-events: none;
     z-index: 5;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     /* Gradient mask for smooth fade to bottom */
-    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 95%);
-    mask-image: linear-gradient(to bottom, black 40%, transparent 95%);
+    -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 85%);
+    mask-image: linear-gradient(to bottom, black 20%, transparent 85%);
 }
 
-.side-work .split-image { right: -5%; }
-.side-cycling .split-image { left: -5%; }
+.side-work .split-image { right: 0; }
+.side-cycling .split-image { left: 0; }
 
 .split-image img {
-    height: 95%;
+    height: 85%; /* Slightly smaller to fit bike width better */
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.05));
-    opacity: 0.9;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.08));
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+    will-change: transform; /* Hint for parallax smoothness */
 }
 
-.split-side:hover .split-image {
-    transform: scale(1.03);
+/* Athlete side specific: Bike image can be wider */
+.side-cycling .split-image img {
+    height: 75%; /* Bike is wide, so make it shorter to stay in bounds */
+    max-width: 120%; /* Allow it to bleed slightly */
+}
+
+.split-side:hover .split-image img {
     opacity: 1;
 }
 
 /* Diagonal line footer-style separation */
 .diagonal-divider {
     position: absolute;
-    top: 0;
+    top: -5%;
     left: 50%;
     width: 1px;
-    height: 100%;
-    background: rgba(0,0,0,0.05);
-    transform: translateX(-50%) rotate(10deg);
+    height: 110%; /* Taller to cover diagonal rotation */
+    background: linear-gradient(to bottom, transparent, rgba(79, 70, 229, 0.2), rgba(16, 185, 129, 0.2), transparent);
+    transform: translateX(-50%) rotate(25deg); /* Sharper angle */
     z-index: 20;
     pointer-events: none;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode .diagonal-divider {
+    background: linear-gradient(to bottom, transparent, rgba(129, 140, 248, 0.3), rgba(16, 185, 129, 0.3), transparent);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode .split-title { color: white; }
