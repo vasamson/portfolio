@@ -116,41 +116,93 @@ filterBtns.forEach(btn => {
     });
 });
 
-// 6. Skills Carousel & Cards
-const skillCards = document.querySelectorAll('.skill-card');
-const tracks = document.querySelectorAll('.skills-track, .soft-skills-track');
+// 6. 3D Skills Carousel Logic - Continuous Flow
+const carousel = document.getElementById('skillCarousel');
+const cards = document.querySelectorAll('.carousel-card');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const scene = document.querySelector('.carousel-3d-scene');
 
-// Handle Flip Logic
-skillCards.forEach(card => {
-    card.addEventListener('click', (e) => {
-        // Prevent flipping if clicking a link
-        if (e.target.tagName.toLowerCase() === 'a' || e.target.closest('a')) {
-            return;
-        }
-        card.classList.toggle('flipped');
+let currentRotation = 0;
+let rotationSpeed = 0.3; // Just a bit slower
+const cardCount = cards.length;
+const angleStep = 360 / cardCount;
+let radius = window.innerWidth < 480 ? 220 : window.innerWidth < 768 ? 280 : 350;
+
+function setupCarousel() {
+    // Re-calculate radius on setup/resize
+    radius = window.innerWidth < 480 ? 220 : window.innerWidth < 768 ? 280 : 350;
+    
+    cards.forEach((card, i) => {
+        const angle = i * angleStep;
+        card.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
     });
+}
 
-    // Handle "Retour" button specifically
-    const backBtn = card.querySelector('.btn-flip-back');
-    if (backBtn) {
-        backBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            card.classList.remove('flipped');
-        });
-    }
+// Update on resize
+window.addEventListener('resize', () => {
+    setupCarousel();
+    updateCarousel();
 });
 
-// Slow down animation on hover (instead of pausing)
-tracks.forEach(track => {
-    const normalDuration = track.classList.contains('soft-skills-track') ? '35s' : '30s';
-    const slowDuration = track.classList.contains('soft-skills-track') ? '120s' : '100s';
-    track.addEventListener('mouseenter', () => {
-        track.style.animationDuration = slowDuration;
+function animate() {
+    currentRotation -= rotationSpeed;
+    updateCarousel();
+    requestAnimationFrame(animate);
+}
+
+function updateCarousel() {
+    carousel.style.transform = `rotateY(${currentRotation}deg)`;
+    
+    // Highlight effect based on proximity to center (0 degrees relative)
+    cards.forEach((card, i) => {
+        let cardAngle = (i * angleStep + currentRotation) % 360;
+        if (cardAngle < 0) cardAngle += 360;
+        
+        const normalizedAngle = ((cardAngle + 180) % 360) - 180;
+        const dist = Math.abs(normalizedAngle);
+        
+        // Continuous, smooth transition for opacity and blur
+        // dist is 0 at center, up to 180 at the back
+        const opacity = Math.max(0.6, 1 - (dist / 200));
+        const blur = Math.min(1.5, dist / 60);
+        const scale = Math.max(0.85, 1 - (dist / 500));
+        
+        card.style.opacity = opacity;
+        card.style.filter = `blur(${blur}px)`;
+        card.style.transform = `rotateY(${i * angleStep}deg) translateZ(${radius}px) scale(${scale})`;
+        
+        // Dynamic Z-Index to keep front cards on top
+        card.style.zIndex = Math.round(100 - dist);
     });
-    track.addEventListener('mouseleave', () => {
-        track.style.animationDuration = normalDuration;
+}
+
+if (carousel && cards.length > 0) {
+    setupCarousel();
+    requestAnimationFrame(animate);
+
+    // Navigation buttons still work by jumping rotation
+    prevBtn.addEventListener('click', () => {
+        currentRotation += angleStep;
+        updateCarousel();
     });
-});
+
+    nextBtn.addEventListener('click', () => {
+        currentRotation -= angleStep;
+        updateCarousel();
+    });
+
+    // Slow down on hover - very subtle movement
+    scene.addEventListener('mouseenter', () => rotationSpeed = 0.05);
+    scene.addEventListener('mouseleave', () => rotationSpeed = 0.3);
+
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') currentRotation += angleStep;
+        if (e.key === 'ArrowRight') currentRotation -= angleStep;
+        updateCarousel();
+    });
+}
 
 // 4. Entrance Animations (Reveal on Scroll) - UPDATED
 const revealElements = document.querySelectorAll('.section, .project-card, .skill-card');

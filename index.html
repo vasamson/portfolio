@@ -233,103 +233,73 @@
                     </p>
                 </div>
 
-                <div class="skills-grid-container">
-                    <!-- Left: Technical Skills -->
-                    <div class="skills-column">
-                        <h3 class="skills-column-title">Hard Skills</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <span class="skill-icon-minimal">🎨</span>
-                                <div class="skill-info">
-                                    <h4 class="skill-name-minimal">Photoshop</h4>
-                                    <p class="skill-desc-minimal">Retouche photo avancée & Composition</p>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-icon-minimal">💎</span>
-                                <div class="skill-info">
-                                    <h4 class="skill-name-minimal">Figma</h4>
-                                    <p class="skill-desc-minimal">Conception d'interfaces modernes & Prototypage</p>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-icon-minimal">🎥</span>
-                                <div class="skill-info">
-                                    <h4 class="skill-name-minimal">Premiere Pro</h4>
-                                    <p class="skill-desc-minimal">Montage dynamique & Storytelling visuel</p>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-icon-minimal">🌐</span>
-                                <div class="skill-info">
-                                    <h4 class="skill-name-minimal">HTML5 & CSS3</h4>
-                                    <p class="skill-desc-minimal">Structure sémantique & Animations fluides</p>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-icon-minimal">🎬</span>
-                                <div class="skill-info">
-                                    <h4 class="skill-name-minimal">DaVinci Resolve</h4>
-                                    <p class="skill-desc-minimal">Étalonnage cinématographique & Colorimétrie</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Soft Skills -->
-                    <div class="skills-column">
-                        <h3 class="skills-column-title">Soft Skills</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <span class="skill-icon-minimal">🗣️</span>
-                                <div class="skill-info">
-                                    <h4 class="skill-name-minimal">Communication</h4>
-                                    <p class="skill-desc-minimal">Clarté, conviction et transmission efficace</p>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-icon-minimal">🤝</span>
-                                <div class="skill-info">
-                                    <h4 class="skill-name-minimal">Travail d'équipe</h4>
-                                    <p class="skill-desc-minimal">Écoute active et synergie de groupe</p>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-icon-minimal">💡</span>
-                                <div class="skill-info">
-                                    <h4 class="skill-name-minimal">Créativité</h4>
-                                    <p class="skill-desc-minimal">Solutions esthétiques et originales</p>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-icon-minimal">🧠</span>
-                                <div class="skill-info">
-                                    <h4 class="skill-name-minimal">Adaptabilité</h4>
-                                    <p class="skill-desc-minimal">Ajustement rapide aux nouvelles contraintes</p>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-icon-minimal">⏱️</span>
-                                <div class="skill-info">
-                                    <h4 class="skill-name-minimal">Gestion du temps</h4>
-                                    <p class="skill-desc-minimal">Respect des délais et organisation rigoureuse</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-footer">
-                    <a href="CV.pdf" target="_blank" class="btn btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            style="margin-right: 10px; vertical-align: middle;">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                <div class="carousel-3d-scene">
+                    <button class="nav-btn prev" id="prevBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
                         </svg>
-                        Télécharger mon CV
-                    </a>
+                    </button>
+                    <div class="carousel-3d" id="skillCarousel">
+                        <!-- 10 Compétences -->
+                        <div class="carousel-card">
+                            <span class="skill-icon-3d">🎨</span>
+                            <h4 class="skill-name-3d">Photoshop</h4>
+                            <p class="skill-desc-3d">Retouche photo avancée & Composition</p>
+                        </div>
+                        <div class="carousel-card">
+                            <span class="skill-icon-3d">💎</span>
+                            <h4 class="skill-name-3d">Figma</h4>
+                            <p class="skill-desc-3d">Conception d'interfaces modernes</p>
+                        </div>
+                        <div class="carousel-card">
+                            <span class="skill-icon-3d">🎥</span>
+                            <h4 class="skill-name-3d">Premiere Pro</h4>
+                            <p class="skill-desc-3d">Montage dynamique & Storytelling</p>
+                        </div>
+                        <div class="carousel-card">
+                            <span class="skill-icon-3d">🌐</span>
+                            <h4 class="skill-name-3d">HTML5 & CSS3</h4>
+                            <p class="skill-desc-3d">Structure sémantique & Animations</p>
+                        </div>
+                        <div class="carousel-card">
+                            <span class="skill-icon-3d">🎬</span>
+                            <h4 class="skill-name-3d">DaVinci</h4>
+                            <p class="skill-desc-3d">Étalonnage & Colorimétrie</p>
+                        </div>
+                        <div class="carousel-card">
+                            <span class="skill-icon-3d">🗣️</span>
+                            <h4 class="skill-name-3d">Communication</h4>
+                            <p class="skill-desc-3d">Clarté et transmission efficace</p>
+                        </div>
+                        <div class="carousel-card">
+                            <span class="skill-icon-3d">🤝</span>
+                            <h4 class="skill-name-3d">Teamwork</h4>
+                            <p class="skill-desc-3d">Écoute active et synergie</p>
+                        </div>
+                        <div class="carousel-card">
+                            <span class="skill-icon-3d">💡</span>
+                            <h4 class="skill-name-3d">Créativité</h4>
+                            <p class="skill-desc-3d">Solutions esthétiques et originales</p>
+                        </div>
+                        <div class="carousel-card">
+                            <span class="skill-icon-3d">🧠</span>
+                            <h4 class="skill-name-3d">Adaptabilité</h4>
+                            <p class="skill-desc-3d">Ajustement rapide aux contraintes</p>
+                        </div>
+                        <div class="carousel-card">
+                            <span class="skill-icon-3d">⏱️</span>
+                            <h4 class="skill-name-3d">Gestiom Temps</h4>
+                            <p class="skill-desc-3d">Respect des délais et organisation</p>
+                        </div>
+                    </div>
+                    <button class="nav-btn next" id="nextBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
                 </div>
+
+                <!-- CV Button removed as requested -->
             </div>
         </section>
 
@@ -491,61 +461,14 @@
                         </button>
                     </div>
 
-                    <!-- Carte Bretagne -->
-                    <div class="map-card">
-                        <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" class="bretagne-map" style="width:100%;height:auto;">
-                            <defs>
-                                <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                                    <path d="M0,0 L0,6 L8,3 Z" fill="#1e293b"/>
-                                </marker>
-                            </defs>
-                            <!-- Silhouette Bretagne principale -->
-                            <path fill="#dde4f0" stroke="white" stroke-width="1.5" d="M420,60 L445,50 L468,65 L478,88 L468,103 L453,108 L438,123 L428,143 L413,153 L398,158 L388,148 L383,133 L368,128 L353,138 L338,148 L323,143 L308,153 L298,168 L288,183 L278,198 L263,208 L248,213 L233,223 L218,233 L203,243 L188,251 L173,253 L158,248 L146,238 L133,233 L118,238 L106,245 L93,243 L80,235 L70,223 L66,208 L73,193 L86,183 L98,173 L108,161 L116,148 L123,133 L128,118 L126,103 L123,91 L128,79 L140,71 L156,68 L170,71 L183,78 L198,80 L213,75 L226,65 L238,55 L253,51 L268,55 L281,65 L294,71 L310,68 L323,61 L338,55 L353,51 L368,53 L383,58 L398,61 Z"/>
-                            <!-- Presqu'île Crozon -->
-                            <path fill="#dde4f0" stroke="white" stroke-width="1.5" d="M103,213 L88,221 L73,231 L60,241 L53,253 L56,263 L68,268 L83,263 L96,253 L106,241 Z"/>
-                            <!-- Pin Lannion ~(325,88) -->
-                            <circle cx="325" cy="88" r="22" fill="rgba(79,70,229,0.12)">
-                                <animate attributeName="r" values="22;30;22" dur="2s" repeatCount="indefinite"/>
-                                <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite"/>
-                            </circle>
-                            <circle cx="325" cy="88" r="10" fill="white" stroke="#4f46e5" stroke-width="2.5"/>
-                            <circle cx="325" cy="88" r="4" fill="#4f46e5"/>
-                            <!-- Flèche Lannion -->
-                            <path d="M335,96 Q362,108 375,128" fill="none" stroke="#1e293b" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arrow)"/>
-                            <text x="378" y="135" font-family="Outfit,sans-serif" font-size="12" font-weight="700" fill="#1e293b">j'étudie &amp; travaille ici 💼</text>
-                            <text x="378" y="151" font-family="Outfit,sans-serif" font-size="10" fill="#64748b">(à Lannion)</text>
-                            <!-- Label Carhaix ~(210,185) -->
-                            <text x="185" y="185" font-family="Outfit,sans-serif" font-size="12" font-weight="700" fill="#1e293b">j'habite ici 🏠</text>
-                            <text x="185" y="201" font-family="Outfit,sans-serif" font-size="10" fill="#64748b">(à Carhaix)</text>
-                        </svg>
-                    </div>
                 </div>
 
                 <!-- Colonne Droite : Formulaire -->
                 <div class="contact-right">
-                    <!-- Mad Libs Form -->
-                    <div class="mad-libs-container">
-                        <div class="section-header" style="text-align: left; margin-bottom: 30px;">
-                            <span class="section-label">PRENDRE CONTACT</span>
-                            <h2 style="font-size: 2rem;">Contact rapide</h2>
-                        </div>
-                        <div class="mad-libs-form">
-                            Bonjour Valentin, je suis <input type="text" placeholder="Prénom Nom" class="mad-input"> 
-                            de <input type="text" placeholder="Entreprise" class="mad-input">. 
-                            J'aimerais te contacter pour un projet de <input type="text" placeholder="Web Design / Marketing" class="mad-input">. 
-                            Tu peux me joindre par mail ici : <input type="email" placeholder="votre@email.com" class="mad-input">.
-                        </div>
-                        <button type="button" class="btn-submit mad-submit">
-                            Envoyer ma demande rapide →
-                        </button>
-                    </div>
-
-                    <div class="form-divider"><span>OU</span></div>
-
                     <div class="section-header" style="text-align: left; margin-bottom: 30px;">
-                        <span class="section-label">QUESTIONS</span>
-                        <h2 style="font-size: 2rem;">Formulaire complet</h2>
-                        <p style="font-size: 0.9rem; color: #64748b;">Pour toute question ou collaboration, n'hésitez pas à me contacter.</p>
+                        <span class="section-label">PRENDRE CONTACT</span>
+                        <h2 style="font-size: 2.5rem;">Parlons de votre projet</h2>
+                        <p style="font-size: 1rem; color: #64748b;">Pour toute question ou collaboration, n'hésitez pas à me contacter via ce formulaire.</p>
                     </div>
                     <form class="contact-form">
                         <div class="form-row">
@@ -572,8 +495,46 @@
                         </button>
                     </form>
                 </div>
+            </div> <!-- End of contact-grid if needed, but here it's contact-wrapper -->
+
+            <!-- Frise de Voyage Centrée & Épurée -->
+            <div class="travel-frise-container">
+                <div class="travel-frise-card">
+                    <div class="frise-content-centered">
+                        <!-- Texte au dessus -->
+                        <div class="frise-header">
+                            <span class="frise-badge">PROJET INTER-RÉGIONAL</span>
+                            <h3 class="gradient-text-blue">Mobilité Sans Frontières</h3>
+                            <p class="frise-desc">Je déploie mes compétences du <span class="highlight-blue">Grand Ouest</span> jusqu'aux <span class="highlight-blue">Alpes</span> pour un accompagnement sur-mesure.</p>
+                        </div>
+
+                        <!-- Visuel central -->
+                        <div class="frise-visual-horizontal">
+                            <div class="city-card">
+                                <div class="city-icon">🌊</div>
+                                <div class="city-details">
+                                    <span class="city-name">Lannion</span>
+                                    <span class="city-ctx">Base de Recherche</span>
+                                </div>
+                            </div>
+
+                            <div class="static-flight-center">
+                                <img src="images/avion.gif" alt="Plane" class="static-plane-large">
+                            </div>
+
+                            <div class="city-card">
+                                <div class="city-icon">🏔️</div>
+                                <div class="city-details">
+                                    <span class="city-name">Lyon / Mâcon</span>
+                                    <span class="city-ctx">Antenne Italvet</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div> <!-- Closing standard .container -->
+    </section>
     </main>
 
     <footer class="footer-custom">
@@ -652,7 +613,10 @@
         </div>
     </footer>
 
+    <script>
+        // Update year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
     <script src="script.js"></script>
 </body>
-
 </html>
