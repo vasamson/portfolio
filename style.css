@@ -1640,7 +1640,7 @@ body::after {
     width: 50%;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* Text at the bottom */
     justify-content: center;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 1;
@@ -1656,7 +1656,7 @@ body::after {
 
 /* Expansion on hover */
 .split-side:hover {
-    width: 65%;
+    width: 60%;
 }
 
 .split-side:hover ~ .split-side,
@@ -1665,18 +1665,19 @@ body::after {
 }
 
 .split-container:has(.side-work:hover) .side-cycling {
-    width: 35%;
+    width: 40%;
 }
 
 .split-container:has(.side-cycling:hover) .side-work {
-    width: 35%;
+    width: 40%;
 }
 
 .split-content {
     position: relative;
-    z-index: 10;
+    z-index: 15; /* Above images and gradient */
     padding: 60px;
-    max-width: 500px;
+    margin-bottom: 20px; /* Keep it slightly off the edge */
+    max-width: 550px;
     transition: transform 0.5s ease;
 }
 
@@ -1725,32 +1726,37 @@ body::after {
 .side-cycling .btn-split:hover { background: #10b981; }
 .side-work .btn-split:hover { background: #4f46e5; }
 
-/* The transparent images */
+/* The transparent images with fade */
 .split-image {
     position: absolute;
     bottom: 0;
-    width: 80%;
+    width: 90%;
     height: 100%;
     pointer-events: none;
     z-index: 5;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    /* Gradient mask for smooth fade to bottom */
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 95%);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 95%);
 }
 
-.side-work .split-image { right: -15%; }
-.side-cycling .split-image { left: -15%; }
+.side-work .split-image { right: -5%; }
+.side-cycling .split-image { left: -5%; }
 
 .split-image img {
-    height: 90%;
+    height: 95%;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.05));
+    opacity: 0.9;
 }
 
 .split-side:hover .split-image {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    opacity: 1;
 }
 
 /* Diagonal line footer-style separation */
