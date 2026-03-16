@@ -203,23 +203,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// 8. Split Personality Parallax Effect
-const splitSides = document.querySelectorAll('.split-side');
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    splitSides.forEach((side, index) => {
-        const image = side.querySelector('.split-image img');
-        if (!image) return;
-        
-        // Only run if the section is somewhat in view
-        const rect = side.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            // Calculate relative scroll within the section
-            const move = (window.innerHeight - rect.top) * 0.05;
-            // index 0 is left (Creative), index 1 is right (Athlete)
-            // Reverse movement for the right side for a "clashing" effect if desired, 
-            // or just kept it consistent for a "floating" feel.
-            image.style.transform = `translateY(${-move}px) scale(${1 + move * 0.0001})`;
-        }
-    });
-});
+

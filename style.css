@@ -1654,53 +1654,66 @@ body::after {
     background: transparent;
 }
 
-/* Expansion on hover */
 .split-side:hover {
     width: 60%;
-}
-
-.split-side:hover ~ .split-side,
-.split-side:hover {
-    flex-grow: 1;
-}
-
-.split-container:has(.side-work:hover) .side-cycling {
-    width: 40%;
-}
-
-.split-container:has(.side-cycling:hover) .side-work {
-    width: 40%;
+    z-index: 10;
 }
 
 .split-content {
     position: relative;
-    z-index: 15; /* Above images and gradient */
-    padding: 60px;
-    margin-bottom: 20px; /* Keep it slightly off the edge */
-    max-width: 550px;
-    transition: transform 0.5s ease;
+    z-index: 20;
+    padding: 80px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    transition: transform 0.4s ease;
 }
 
-.side-work .split-content { text-align: left; margin-right: auto; }
-.side-cycling .split-content { text-align: right; margin-left: auto; }
+.side-work .split-content { 
+    text-align: left; 
+    margin-right: auto;
+}
+.side-cycling .split-content { 
+    text-align: right; 
+    margin-left: auto;
+}
 
 .split-label {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 800;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     color: #4f46e5;
-    margin-bottom: 20px;
-    display: block;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.side-cycling .split-label { color: #10b981; }
+.side-work .split-label::before {
+    content: "";
+    width: 12px;
+    height: 2px;
+    background: currentColor;
+}
+
+.side-cycling .split-label { 
+    color: #10b981; 
+    justify-content: flex-end;
+}
+
+.side-cycling .split-label::after {
+    content: "";
+    width: 12px;
+    height: 2px;
+    background: currentColor;
+}
 
 .split-title {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 900;
-    line-height: 1;
-    margin-bottom: 20px;
+    line-height: 0.95;
+    margin-bottom: 24px;
     color: #0f172a;
+    letter-spacing: -0.04em;
 }
 
 .split-desc {
@@ -1726,57 +1739,93 @@ body::after {
 .side-cycling .btn-split:hover { background: #10b981; }
 .side-work .btn-split:hover { background: #4f46e5; }
 
-/* The transparent images with fade */
+/* The transparent images - STATIC & SHIFTED */
 .split-image {
     position: absolute;
     bottom: 0;
-    width: 100%; /* Wider for bike */
+    width: 100%;
     height: 100%;
     pointer-events: none;
     z-index: 5;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    /* Gradient mask for smooth fade to bottom */
-    -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 85%);
-    mask-image: linear-gradient(to bottom, black 20%, transparent 85%);
+    /* Static positioning, no transitions for movement */
+    -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 90%);
+    mask-image: linear-gradient(to bottom, black 30%, transparent 90%);
 }
 
-.side-work .split-image { right: 0; }
-.side-cycling .split-image { left: 0; }
+.side-work .split-image { 
+    right: -10%; /* Shifted away from center */
+    opacity: 0.7;
+}
+
+.side-cycling .split-image { 
+    left: -5%; /* Adjusted for bike width */
+    opacity: 0.7;
+}
 
 .split-image img {
-    height: 85%; /* Slightly smaller to fit bike width better */
+    height: 80%;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.08));
-    opacity: 0.8;
-    transition: opacity 0.5s ease;
-    will-change: transform; /* Hint for parallax smoothness */
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.04)) grayscale(0.2);
+    /* No transitions or parallax */
 }
 
-/* Athlete side specific: Bike image can be wider */
+/* Athlete side specific */
 .side-cycling .split-image img {
-    height: 75%; /* Bike is wide, so make it shorter to stay in bounds */
-    max-width: 120%; /* Allow it to bleed slightly */
+    height: 70%;
+    max-width: 130%;
 }
 
-.split-side:hover .split-image img {
+.split-side:hover .split-image {
     opacity: 1;
+}
+
+/* Background Accents */
+.side-work::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.03) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.side-cycling::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.03) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
 }
 
 /* Diagonal line footer-style separation */
 .diagonal-divider {
     position: absolute;
-    top: -5%;
+    top: -10%;
     left: 50%;
-    width: 3px; /* Thickened from 1px */
-    height: 110%; 
-    background: linear-gradient(to bottom, transparent, rgba(79, 70, 229, 0.4), rgba(16, 185, 129, 0.4), transparent);
-    transform: translateX(-50%) rotate(25deg);
-    z-index: 20;
+    width: 4px; /* Slightly thicker */
+    height: 120%;
+    background: linear-gradient(to bottom, 
+        transparent, 
+        rgba(79, 70, 229, 0.4) 20%, 
+        rgba(16, 185, 129, 0.4) 80%, 
+        transparent
+    );
+    transform: translateX(-50%) rotate(22deg);
+    z-index: 25;
     pointer-events: none;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(1px);
 }
 
 body.dark-mode .diagonal-divider {
