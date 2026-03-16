@@ -70,7 +70,7 @@ body::after {
     left: 0;
     right: 0;
     height: 90px;
-    background: rgba(248, 250, 255, 0.75);
+    background: rgba(248, 250, 255, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(226, 232, 240, 0.5);
@@ -82,7 +82,7 @@ body::after {
 
 .header.scrolled {
     height: 70px;
-    background: rgba(248, 250, 255, 0.95);
+    background: rgba(248, 250, 255, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
@@ -2228,10 +2228,71 @@ body.dark-mode .clock-divider {
     gap: 12px;
 }
 
-/* Reuse .social-btn styles but refine if needed */
-/* Assuming .social-btn, .btn-email, etc. are already defined from footer edit. 
-   Just ensures they wrap nicely here if needed. 
-*/
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: white;
+    color: #334155;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.social-btn svg {
+    flex-shrink: 0;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.btn-email {
+    border-color: #e0e7ff;
+    color: #4f46e5;
+}
+
+.btn-email:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+.btn-instagram {
+    border-color: #fce7f3;
+    color: #db2777;
+}
+
+.btn-instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    color: white;
+    border-color: transparent;
+}
+
+.btn-linkedin {
+    border-color: #e0f2fe;
+    color: #0284c7;
+}
+
+.btn-linkedin:hover {
+    background: #0284c7;
+    color: white;
+}
+
+.btn-x {
+    border-color: #f1f5f9;
+    color: #0f172a;
+}
+
+.btn-x:hover {
+    background: #0f172a;
+    color: white;
+}
 
 /* Cal Card */
 .cal-card {
@@ -2618,14 +2679,14 @@ body.dark-mode::after {
 
 /* Header Dark */
 body.dark-mode .header {
-    background: rgba(15, 23, 42, 0.7);
+    background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(51, 65, 85, 0.4);
 }
 
 body.dark-mode .header.scrolled {
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(15, 23, 42, 0.98);
     backdrop-filter: blur(20px);
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
