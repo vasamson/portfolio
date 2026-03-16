@@ -1148,7 +1148,65 @@ body.dark-mode .project-card {
     box-shadow: 0 10px 40px rgba(0,0,0,0.06);
     backface-visibility: hidden;
     user-select: none;
-    transition: opacity 0.5s ease, filter 0.5s ease;
+    transition: opacity 0.5s ease, filter 0.5s ease, border-color 0.3s ease;
+}
+
+.skill-category-tag {
+    position: absolute;
+    top: 15px;
+    font-size: 0.65rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: 6px;
+    opacity: 0.8;
+}
+
+/* HARD SKILLS - Blue/Indigo */
+.card-hard {
+    border-top: 4px solid #4f46e5;
+}
+
+.card-hard .skill-category-tag {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+body.dark-mode .card-hard .skill-category-tag {
+    background: rgba(79, 70, 229, 0.2);
+    color: #a5b4fc;
+}
+
+.card-hard .skill-name-3d {
+    color: #312e81;
+}
+
+body.dark-mode .card-hard .skill-name-3d {
+    color: #818cf8;
+}
+
+/* SOFT SKILLS - Pink/Amber */
+.card-soft {
+    border-top: 4px solid #db2777;
+}
+
+.card-soft .skill-category-tag {
+    background: #fdf2f8;
+    color: #db2777;
+}
+
+body.dark-mode .card-soft .skill-category-tag {
+    background: rgba(219, 39, 119, 0.2);
+    color: #f472b6;
+}
+
+.card-soft .skill-name-3d {
+    color: #831843;
+}
+
+body.dark-mode .card-soft .skill-name-3d {
+    color: #f472b6;
 }
 
 body.dark-mode .carousel-card {
