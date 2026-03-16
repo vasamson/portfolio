@@ -929,6 +929,15 @@ body::after {
     display: none;
 }
 
+.project-link-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+
 .project-card {
     border-radius: 24px;
     background-color: #ffffff;
