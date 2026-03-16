@@ -1756,56 +1756,36 @@ body::after {
     color: #4338ca;
 }
 
-/* Bio Cycling Motion Section */
-.bio-cycling-motion {
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(79, 70, 229, 0.1);
-    border-radius: 20px;
-    padding: 20px;
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    backdrop-filter: blur(10px);
+/* Bike Ornament Animation (Subtle moving bikes) */
+.bike-ornament-container {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: -20px;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0.15;
+    z-index: 0;
 }
 
-.cycling-stats-mini {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-    border-top: 1px dashed rgba(79, 70, 229, 0.2);
+.bike-ornament {
+    position: absolute;
+    font-size: 24px;
+    animation: bikeGlide 25s linear infinite;
+    white-space: nowrap;
 }
 
-.c-stat {
-    font-size: 0.8rem;
-    color: #64748b;
-    font-weight: 500;
+.bike-ornament.b1 { top: 0; animation-duration: 35s; }
+.bike-ornament.b2 { top: 15px; animation-duration: 45s; animation-delay: -10s; }
+
+@keyframes bikeGlide {
+    from { transform: translateX(-100px); }
+    to { transform: translateX(100vw); }
 }
 
-.c-stat span {
-    color: #4f46e5;
-    font-weight: 700;
-}
-
-body.dark-mode .bio-cycling-motion {
-    background: rgba(30, 41, 59, 0.4);
-    border-color: rgba(129, 140, 248, 0.2);
-}
-
-body.dark-mode .c-stat {
-    color: #94a3b8;
-}
-
-body.dark-mode .c-stat span {
-    color: #818cf8;
-}
-
-body.dark-mode .cycling-path-bg {
-    stroke: rgba(129, 140, 248, 0.2);
-}
-
-body.dark-mode .cycling-path-progress {
-    stroke: #818cf8;
+body.dark-mode .bike-ornament-container {
+    opacity: 0.1;
 }
 
 /* Action Button */
@@ -2546,114 +2526,106 @@ body.dark-mode .mad-input:focus {
     margin: 0;
 }
 
-/* Widget Cyclisme Motion Design */
-.widget-cycling-motion .widget-content {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    justify-content: flex-start;
-    gap: 15px;
-    padding: 20px;
+/* CYCLING SHOWCASE SECTION */
+.cycling-showcase-section {
+    padding: 100px 0;
+    background: #ffffff;
 }
 
-.cycling-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.cycling-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 24px;
+    margin-top: 50px;
 }
 
-.cycling-icon-box {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    backdrop-filter: blur(4px);
-}
-
-.widget-label-alt {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0;
-}
-
-.widget-value-alt {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: white;
-    margin: 0;
-}
-
-.cycling-graph-container {
-    flex: 1;
-    width: 100%;
+.cycling-item {
     position: relative;
-    padding: 5px 0;
+    border-radius: 32px;
+    overflow: hidden;
+    background: #f1f5f9;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.cycling-svg {
+.cycling-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.cycling-item img {
     width: 100%;
-    height: 60px;
-    overflow: visible;
+    height: 100%;
+    object-fit: cover;
 }
 
-.cycling-path-progress {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: fillPath 4s ease-in-out infinite alternate;
-}
+.item-large { grid-column: span 8; grid-row: span 2; }
+.item-small { grid-column: span 4; }
 
-@keyframes fillPath {
-    to { stroke-dashoffset: 0; }
-}
-
-.cycling-bike-group {
-    offset-path: path("M0,50 Q20,20 40,40 T80,25 T120,45 T160,15 T200,40");
-    offset-rotate: auto;
-    animation: bikeRun 4s ease-in-out infinite alternate;
-}
-
-@keyframes bikeRun {
-    0% { offset-distance: 0%; }
-    100% { offset-distance: 100%; }
-}
-
-.cycling-bike-emoji {
-    font-size: 16px;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
-
-.cycling-footer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.cycling-stat {
+.cycling-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, transparent 60%);
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.stat-unit {
-    font-size: 0.65rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 600;
-    text-transform: uppercase;
+.cycling-item:hover .cycling-overlay {
+    opacity: 1;
 }
 
-.stat-num {
-    font-size: 1rem;
-    font-weight: 800;
+.cycling-overlay h3 {
     color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
 }
 
-/* Dark mode adjustments */
-body.dark-mode .widget-cycling-motion .widget-content {
-    background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
-    border: 1px solid rgba(16, 185, 129, 0.2);
+.cycling-overlay p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    margin: 5px 0 0 0;
+}
+
+.cycling-text-content {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background: #f8fafc;
+    border-radius: 32px;
+}
+
+.cycling-text-content h3 {
+    font-size: 1.8rem;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+    .cycling-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .item-large, .item-small, .cycling-text-content {
+        grid-column: span 1;
+        height: 300px;
+    }
+}
+
+body.dark-mode .cycling-showcase-section {
+    background: transparent;
+}
+body.dark-mode .cycling-text-content {
+    background: #1e293b;
+}
+body.dark-mode .cycling-text-content h3 {
+    color: white;
 }
 
 /* Widget Film */
