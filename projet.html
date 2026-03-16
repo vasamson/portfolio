@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet | Valentin Samson</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .project-hero {
+            height: 70vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.6);
+            transform: scale(1.1);
+            transition: transform 1.5s ease-out;
+        }
+
+        .project-hero:hover .hero-bg {
+            transform: scale(1);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 99px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 0.8s ease backwards;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .project-main {
+            max-width: 1200px;
+            margin: -80px auto 100px;
+            position: relative;
+            z-index: 20;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 40px;
+            padding: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 40px;
+            padding: 40px;
+            height: fit-content;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .description-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 40px;
+        }
+
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tool-chip {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 10px 20px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .tool-chip:hover {
+            background: #0f172a;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .sidebar-item {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #94a3b8;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .sidebar-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .back-btn:hover {
+            background: white;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 968px) {
+            .project-main {
+                grid-template-columns: 1fr;
+                margin-top: -40px;
+            }
+            .content-card { padding: 40px; }
+            .back-btn { top: 20px; left: 20px; }
+        }
+
+        /* Gradient background for the description section */
+        .gradient-accent {
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 40%;
+            height: 40%;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html#projects" class="back-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+    </a>
+
+    <header class="project-hero">
+        <div class="hero-bg" id="hero-bg"></div>
+        <div class="hero-content">
+            <span class="hero-badge" id="project-category">Catégorie</span>
+            <h1 class="hero-title" id="project-title">Titre du Projet</h1>
+        </div>
+    </header>
+
+    <main class="project-main">
+        <div class="gradient-accent"></div>
+        <article class="content-card">
+            <h2 class="section-title">À propos du projet</h2>
+            <div class="description-text" id="project-full-description">
+                Description détaillée ici...
+            </div>
+
+            <h2 class="section-title">Outils & Technologies</h2>
+            <div class="tools-list" id="project-tools">
+                <!-- Les outils seront chargés ici -->
+            </div>
+        </article>
+
+        <aside class="sidebar-card">
+            <div class="sidebar-item">
+                <span class="sidebar-label">Année</span>
+                <span class="sidebar-value" id="project-year">2024</span>
+            </div>
+            <div class="sidebar-item">
+                <span class="sidebar-label">Client / Context</span>
+                <span class="sidebar-value" id="project-context">Valentin Samson</span>
+            </div>
+            <div class="sidebar-item">
+                <span class="sidebar-label">Type</span>
+                <span class="sidebar-value" id="project-type">Design & Dev</span>
+            </div>
+            
+            <a href="#contact" class="btn-premium" style="display: block; text-align: center; margin-top: 40px; width: 100%; box-sizing: border-box;">
+                Lancer un projet
+            </a>
+        </aside>
+    </main>
+
+    <script src="projects.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+
+            if (projectId && projectsData[projectId]) {
+                const project = projectsData[projectId];
+
+                document.title = `${project.title} | Valentin Samson`;
+                document.getElementById('project-title').textContent = project.title;
+                document.getElementById('project-category').textContent = project.category;
+                document.getElementById('project-full-description').textContent = project.fullDescription;
+                document.getElementById('hero-bg').style.backgroundImage = `url('${project.image}')`;
+                document.getElementById('project-year').textContent = project.year;
+                document.getElementById('project-type').textContent = project.category;
+
+                const toolsContainer = document.getElementById('project-tools');
+                project.tools.forEach(tool => {
+                    const chip = document.createElement('span');
+                    chip.className = 'tool-chip';
+                    chip.textContent = tool;
+                    toolsContainer.appendChild(chip);
+                });
+            } else {
+                // Rediriger vers l'index si le projet n'existe pas
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>

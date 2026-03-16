@@ -250,9 +250,27 @@ function type() {
     setTimeout(type, typeSpeed);
 }
 
+// 8. Bento Live Hub Clocks
+function updateClocks() {
+    const now = new Date();
+    const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Europe/Paris' };
+    const timeString = new Intl.DateTimeFormat('fr-FR', timeOptions).format(now);
+    
+    const lannionClock = document.getElementById('clock-hub-lannion');
+    const lyonClock = document.getElementById('clock-hub-lyon');
+    
+    if (lannionClock) lannionClock.textContent = timeString;
+    if (lyonClock) lyonClock.textContent = timeString;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     if (taglineElement) type();
+    
+    // Initialize clocks
+    updateClocks();
+    setInterval(updateClocks, 1000);
 });
+
 
 
 
