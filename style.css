@@ -1756,6 +1756,58 @@ body::after {
     color: #4338ca;
 }
 
+/* Bio Cycling Motion Section */
+.bio-cycling-motion {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(79, 70, 229, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.cycling-stats-mini {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(79, 70, 229, 0.2);
+}
+
+.c-stat {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.c-stat span {
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+body.dark-mode .bio-cycling-motion {
+    background: rgba(30, 41, 59, 0.4);
+    border-color: rgba(129, 140, 248, 0.2);
+}
+
+body.dark-mode .c-stat {
+    color: #94a3b8;
+}
+
+body.dark-mode .c-stat span {
+    color: #818cf8;
+}
+
+body.dark-mode .cycling-path-bg {
+    stroke: rgba(129, 140, 248, 0.2);
+}
+
+body.dark-mode .cycling-path-progress {
+    stroke: #818cf8;
+}
+
 /* Action Button */
 .btn-about-action {
     display: inline-flex;

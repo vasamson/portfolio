@@ -242,6 +242,25 @@
                                 class="text-highlight">marketeur</span>. Au-delà des écrans, je suis un compétiteur et un
                             <span class="text-highlight">grand passionné de cyclisme</span> !
                         </p>
+                        
+                        <!-- Motion Design Cycling Section -->
+                        <div class="bio-cycling-motion">
+                            <div class="cycling-graph-container">
+                                <svg class="cycling-svg" viewBox="0 0 200 60" preserveAspectRatio="none">
+                                    <path class="cycling-path-bg" d="M0,50 Q20,20 40,40 T80,25 T120,45 T160,15 T200,40" fill="none" stroke="rgba(79, 70, 229, 0.1)" stroke-width="2" />
+                                    <path class="cycling-path-progress" d="M0,50 Q20,20 40,40 T80,25 T120,45 T160,15 T200,40" fill="none" stroke="#4f46e5" stroke-width="2.5" />
+                                    <g class="cycling-bike-group">
+                                        <text class="cycling-bike-emoji" y="6">🚴</text>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="cycling-stats-mini">
+                                <div class="c-stat"><span>1250m</span> D+</div>
+                                <div class="c-stat"><span>92km</span> Trajet</div>
+                                <div class="c-stat"><span>32km/h</span> Moy.</div>
+                            </div>
+                        </div>
+
                         <p>
                             Mon parcours m'a permis de toucher à <span class="text-highlight">différents domaines</span>
                             (UX/UI, stratégie, contenu), mais c'est dans la création d'interfaces, surtout pour les
@@ -269,324 +288,86 @@
                     </p>
                 </div>
 
-                <div class="skills-carousel-container">
-                    <!-- Left: Technical Skills Carousel -->
-                    <div class="skills-carousel-section">
-                        <h3 class="skills-carousel-title">Hard Skills</h3>
-                        <div class="skills-carousel-wrapper">
-                            <div class="skills-track">
-                                <!-- Original Skills -->
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🎨</div>
-                                            <h4 class="skill-name">Photoshop</h4>
-                                            <p class="skill-desc">Retouche & Composition</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Photoshop</h4>
-                                            <p class="skill-flashcard-desc">Retouche photo avancée, composition créative, détourage précis et création de visuels impactants.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
+                <div class="skills-grid-container">
+                    <!-- Left: Technical Skills -->
+                    <div class="skills-column">
+                        <h3 class="skills-column-title">Hard Skills</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-icon-minimal">🎨</span>
+                                <div class="skill-info">
+                                    <h4 class="skill-name-minimal">Photoshop</h4>
+                                    <p class="skill-desc-minimal">Retouche photo avancée & Composition</p>
                                 </div>
-
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">💎</div>
-                                            <h4 class="skill-name">Figma</h4>
-                                            <p class="skill-desc">Maquettage UI</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Figma</h4>
-                                            <p class="skill-flashcard-desc">Conception d'interfaces modernes, prototypage interactif, design systems et collaboration en temps réel.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-icon-minimal">💎</span>
+                                <div class="skill-info">
+                                    <h4 class="skill-name-minimal">Figma</h4>
+                                    <p class="skill-desc-minimal">Conception d'interfaces modernes & Prototypage</p>
                                 </div>
-
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🎥</div>
-                                            <h4 class="skill-name">Premiere Pro</h4>
-                                            <p class="skill-desc">Montage Vidéo</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Premiere Pro</h4>
-                                            <p class="skill-flashcard-desc">Montage dynamique, storytelling visuel, mixage sonore et corrections colorimétriques de base.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-icon-minimal">🎥</span>
+                                <div class="skill-info">
+                                    <h4 class="skill-name-minimal">Premiere Pro</h4>
+                                    <p class="skill-desc-minimal">Montage dynamique & Storytelling visuel</p>
                                 </div>
-
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🌐</div>
-                                            <h4 class="skill-name">HTML5</h4>
-                                            <p class="skill-desc">Structure Web</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">HTML5</h4>
-                                            <p class="skill-flashcard-desc">Structure sémantique robuste, respect des normes W3C, accessibilité et optimisation SEO.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-icon-minimal">🌐</span>
+                                <div class="skill-info">
+                                    <h4 class="skill-name-minimal">HTML5 & CSS3</h4>
+                                    <p class="skill-desc-minimal">Structure sémantique & Animations fluides</p>
                                 </div>
-
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🎨</div>
-                                            <h4 class="skill-name">CSS3</h4>
-                                            <p class="skill-desc">Style & Anim</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">CSS3</h4>
-                                            <p class="skill-flashcard-desc">Design responsive (Flexbox/Grid), animations fluides, variables CSS et intégration fidèle.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🎬</div>
-                                            <h4 class="skill-name">DaVinci</h4>
-                                            <p class="skill-desc">Étalonnage</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">DaVinci</h4>
-                                            <p class="skill-flashcard-desc">Étalonnage cinématographique, correction des couleurs avancée et post-production professionnelle.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Duplicated for seamless loop -->
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🎨</div>
-                                            <h4 class="skill-name">Photoshop</h4>
-                                            <p class="skill-desc">Retouche & Composition</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Photoshop</h4>
-                                            <p class="skill-flashcard-desc">Retouche photo avancée, composition créative, détourage précis et création de visuels impactants.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">💎</div>
-                                            <h4 class="skill-name">Figma</h4>
-                                            <p class="skill-desc">Maquettage UI</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Figma</h4>
-                                            <p class="skill-flashcard-desc">Conception d'interfaces modernes, prototypage interactif, design systems et collaboration en temps réel.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🎥</div>
-                                            <h4 class="skill-name">Premiere Pro</h4>
-                                            <p class="skill-desc">Montage Vidéo</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Premiere Pro</h4>
-                                            <p class="skill-flashcard-desc">Montage dynamique, storytelling visuel, mixage sonore et corrections colorimétriques de base.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-icon-minimal">🎬</span>
+                                <div class="skill-info">
+                                    <h4 class="skill-name-minimal">DaVinci Resolve</h4>
+                                    <p class="skill-desc-minimal">Étalonnage cinématographique & Colorimétrie</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right: Soft Skills Carousel -->
-                    <div class="skills-carousel-section">
-                        <h3 class="skills-carousel-title">Soft Skills</h3>
-                        <div class="soft-skills-carousel-wrapper">
-                            <div class="soft-skills-track">
-                                <!-- Original Skills -->
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🗣️</div>
-                                            <h4 class="skill-name">Communication</h4>
-                                            <p class="skill-desc">Clarté & Conviction</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Communication</h4>
-                                            <p class="skill-flashcard-desc">Transmission efficace des idées et présentation convaincante des concepts.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
+                    <!-- Right: Soft Skills -->
+                    <div class="skills-column">
+                        <h3 class="skills-column-title">Soft Skills</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-icon-minimal">🗣️</span>
+                                <div class="skill-info">
+                                    <h4 class="skill-name-minimal">Communication</h4>
+                                    <p class="skill-desc-minimal">Clarté, conviction et transmission efficace</p>
                                 </div>
-
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🤝</div>
-                                            <h4 class="skill-name">Travail d'équipe</h4>
-                                            <p class="skill-desc">Synergie & Écoute</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Travail d'équipe</h4>
-                                            <p class="skill-flashcard-desc">Écoute active et synergie de groupe pour mener à bien des projets complexes.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-icon-minimal">🤝</span>
+                                <div class="skill-info">
+                                    <h4 class="skill-name-minimal">Travail d'équipe</h4>
+                                    <p class="skill-desc-minimal">Écoute active et synergie de groupe</p>
                                 </div>
-
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">💡</div>
-                                            <h4 class="skill-name">Créativité</h4>
-                                            <p class="skill-desc">Innovation & Style</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Créativité</h4>
-                                            <p class="skill-flashcard-desc">Capacité à proposer des solutions originales et esthétiques pour des projets uniques.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-icon-minimal">💡</span>
+                                <div class="skill-info">
+                                    <h4 class="skill-name-minimal">Créativité</h4>
+                                    <p class="skill-desc-minimal">Solutions esthétiques et originales</p>
                                 </div>
-
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🧠</div>
-                                            <h4 class="skill-name">Adaptabilité</h4>
-                                            <p class="skill-desc">Polyvalence & Réactivité</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Adaptabilité</h4>
-                                            <p class="skill-flashcard-desc">Capacité à s'ajuster rapidement aux nouvelles technologies et contraintes projet.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-icon-minimal">🧠</span>
+                                <div class="skill-info">
+                                    <h4 class="skill-name-minimal">Adaptabilité</h4>
+                                    <p class="skill-desc-minimal">Ajustement rapide aux nouvelles contraintes</p>
                                 </div>
-
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🧐</div>
-                                            <h4 class="skill-name">Esprit critique</h4>
-                                            <p class="skill-desc">Analyse & Rigueur</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Esprit critique</h4>
-                                            <p class="skill-flashcard-desc">Analyse objective pour optimiser les solutions technique et créatives.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">⏱️</div>
-                                            <h4 class="skill-name">Gestion temps</h4>
-                                            <p class="skill-desc">Organisation & Délais</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Gestion temps</h4>
-                                            <p class="skill-flashcard-desc">Respect des deadlines et optimisation du flux de travail.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Duplicated for seamless loop -->
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🗣️</div>
-                                            <h4 class="skill-name">Communication</h4>
-                                            <p class="skill-desc">Clarté & Conviction</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Communication</h4>
-                                            <p class="skill-flashcard-desc">Transmission efficace des idées et présentation convaincante des concepts.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">🤝</div>
-                                            <h4 class="skill-name">Travail d'équipe</h4>
-                                            <p class="skill-desc">Synergie & Écoute</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Travail d'équipe</h4>
-                                            <p class="skill-flashcard-desc">Écoute active et synergie de groupe pour mener à bien des projets complexes.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
-                                    <div class="skill-card-inner">
-                                        <div class="skill-card-front">
-                                            <div class="flip-icon">↺</div>
-                                            <div class="skill-icon">💡</div>
-                                            <h4 class="skill-name">Créativité</h4>
-                                            <p class="skill-desc">Innovation & Style</p>
-                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
-                                        </div>
-                                        <div class="skill-card-back">
-                                            <h4 class="skill-name">Créativité</h4>
-                                            <p class="skill-flashcard-desc">Capacité à proposer des solutions originales et esthétiques pour des projets uniques.</p>
-                                            <button class="btn-flip-back">Retour</button>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-icon-minimal">⏱️</span>
+                                <div class="skill-info">
+                                    <h4 class="skill-name-minimal">Gestion du temps</h4>
+                                    <p class="skill-desc-minimal">Respect des délais et organisation rigoureuse</p>
                                 </div>
                             </div>
                         </div>
