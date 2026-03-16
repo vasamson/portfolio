@@ -113,7 +113,7 @@ const nextBtn = document.getElementById('nextBtn');
 const scene = document.querySelector('.carousel-3d-scene');
 
 let currentRotation = 0;
-let rotationSpeed = 0.3; // Just a bit slower
+let rotationSpeed = 0.2; // Slower default speed
 const cardCount = cards.length;
 const angleStep = 360 / cardCount;
 let radius = window.innerWidth < 480 ? 220 : window.innerWidth < 768 ? 280 : 350;
@@ -154,11 +154,9 @@ function updateCarousel() {
         // Continuous, smooth transition for opacity and blur
         // dist is 0 at center, up to 180 at the back
         const opacity = Math.max(0.6, 1 - (dist / 200));
-        const blur = Math.min(1.5, dist / 60);
         const scale = Math.max(0.85, 1 - (dist / 500));
-        
         card.style.opacity = opacity;
-        card.style.filter = `blur(${blur}px)`;
+        card.style.filter = "none";
         card.style.transform = `rotateY(${i * angleStep}deg) translateZ(${radius}px) scale(${scale})`;
         
         // Dynamic Z-Index to keep front cards on top
@@ -181,9 +179,9 @@ if (carousel && cards.length > 0) {
         updateCarousel();
     });
 
-    // Slow down on hover - very subtle movement
-    scene.addEventListener('mouseenter', () => rotationSpeed = 0.05);
-    scene.addEventListener('mouseleave', () => rotationSpeed = 0.3);
+    // Slow down on hover - even more subtle
+    scene.addEventListener('mouseenter', () => rotationSpeed = 0.03);
+    scene.addEventListener('mouseleave', () => rotationSpeed = 0.2);
 
     // Keyboard support
     document.addEventListener('keydown', (e) => {

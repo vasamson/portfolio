@@ -48,7 +48,7 @@ body.dark-mode .site-waves {
     z-index: -3;
     overflow: hidden;
     background: #ffffff;
-    filter: blur(100px);
+    filter: blur(40px);
 }
 
 body.dark-mode .liquid-background {
@@ -146,8 +146,8 @@ body::after {
 .header.scrolled {
     height: 70px;
     background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(40px) saturate(200%);
-    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    backdrop-filter: blur(12px) saturate(200%);
+    -webkit-backdrop-filter: blur(12px) saturate(200%);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
@@ -1015,8 +1015,8 @@ body::after {
 .project-card {
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(40px) saturate(180%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 10px 40px rgba(15, 23, 42, 0.04);
     overflow: hidden;
@@ -1695,8 +1695,8 @@ body.dark-mode .footer-bottom {
 /* Base Card Style - Premium Liquid Glass */
 .bento-card {
     background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(40px) saturate(200%);
-    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    backdrop-filter: blur(12px) saturate(200%);
+    -webkit-backdrop-filter: blur(12px) saturate(200%);
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 40px;
     padding: 35px;
@@ -2489,8 +2489,8 @@ body.dark-mode .clock-divider {
 /* Contact Right (Form) */
 .contact-right {
     background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(40px) saturate(180%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 40px;
     padding: 48px;
