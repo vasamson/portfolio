@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>À propos – Valentin Samson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Découvrez qui est Valentin Samson, passionné par le web design et le marketing digital." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="site-waves"></div>
+    <header class="header">
+        <div class="container header-inner">
+            <!-- Left: Avatar + Nav -->
+            <div class="header-left">
+                <div class="brand-avatar-link">
+                    <a href="index.html">
+                        <img src="images/logo_header.png" alt="Valentin Samson" class="header-avatar-img" />
+                    </a>
+                </div>
+                <nav class="nav-new">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="apropos.html" class="nav-link active">À propos</a>
+                    <a href="index.html#skills" class="nav-link">Compétences</a>
+                    <a href="index.html#projects" class="nav-link">Mes projets</a>
+                </nav>
+            </div>
+
+            <!-- Right: Actions -->
+            <div class="header-right">
+                <!-- CV Action -->
+                <a href="CV.pdf" target="_blank" class="btn-new-call">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Voir mon CV
+                </a>
+
+                <!-- Social Icons -->
+                <div class="header-socials">
+                    <a href="mailto:samson.valentin2005@gmail.com" class="icon-btn-header" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="icon-btn-header" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="icon-btn-header" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <!-- Theme Toggle -->
+                <div class="theme-toggle-wrapper">
+                    <button class="theme-btn active" aria-label="Mode clair">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                    <button class="theme-btn" aria-label="Mode sombre">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Progress Bar -->
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="scrollProgress"></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ABOUT PAGE -->
+        <section class="about-page-section">
+            <div class="container about-page-container">
+                <!-- Grid Layout -->
+                <div class="about-page-grid">
+                    <!-- Colonne Principale (Texte) -->
+                    <div class="about-main-content">
+                        <span class="section-label">MON HISTOIRE</span>
+                        <h1 class="about-page-title">Qui suis-je ?</h1>
+                        <div class="about-page-text">
+                            <p>
+                                Passionné par le <span class="text-highlight">web design</span> et le <span class="text-highlight">marketing digital</span>,
+                                j'explore sans cesse de nouvelles façons d'allier créativité et performance. Mon
+                                parcours
+                                a commencé avec la création de sites web, où j'ai découvert ma passion pour le design
+                                d'interfaces.
+                            </p>
+                            <p>
+                                Aujourd'hui, je propose mes services en tant que <span class="text-highlight">web designer
+                                    freelance</span>,
+                                collaborant sur des projets variés à distance. Également spécialisé dans le
+                                <span class="text-highlight">marketing digital</span>, je peux créer des stratégies complètes pour
+                                développer
+                                votre présence en ligne.
+                            </p>
+                            <p>
+                                Curieux et polyvalent, <span class="text-highlight">j'aime toucher à tout</span> : design, développement,
+                                stratégie digitale, création de contenu… Toujours prêt à relever de nouveaux défis !
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Colonne Latérale (Carte Profil) -->
+                    <div class="about-sidebar">
+                        <div class="about-profile-card">
+                            <div class="about-profile-image">
+                                <img src="images/imafe.JPG" alt="Valentin Samson" />
+                            </div>
+                            <div class="about-profile-info">
+                                <div class="about-profile-name">
+                                    <span class="firstname">Valentin</span>
+                                    <h2 class="lastname">Samson</h2>
+                                </div>
+                                <div class="about-profile-status">
+                                    <span class="badge badge-available">
+                                        <span class="dot-wrapper">
+                                            <span class="dot-ping"></span>
+                                            <span class="dot"></span>
+                                        </span>
+                                        En alternance
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bouton Contact -->
+                        <a href="index.html#contact" class="btn-about-cta">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M7 7h10v10"></path>
+                                <path d="M7 17 17 7"></path>
+                            </svg>
+                            Me contacter
+                        </a>
+                    </div>
+
+                    <!-- Widgets Section -->
+                    <div class="about-widgets">
+                        <div class="widgets-grid">
+                            <!-- Widget Localisation -->
+                            <div class="widget widget-location">
+                                <div class="widget-content">
+                                    <div class="widget-overlay"></div>
+                                    <div class="widget-info">
+                                        <p class="widget-label">J'habite à</p>
+                                        <p class="widget-value">France</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Widget Musique -->
+                            <div class="widget widget-music">
+                                <div class="widget-content">
+                                    <div class="widget-music-icon">🎵</div>
+                                    <div class="widget-music-info">
+                                        <p class="widget-music-label">Ce que j'écoute</p>
+                                        <p class="widget-music-title">Playlist Design</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Widget Film -->
+                            <div class="widget widget-movie">
+                                <div class="widget-content">
+                                    <div class="widget-movie-icon">🎬</div>
+                                    <div class="widget-movie-info">
+                                        <p class="widget-movie-label">Dernier film vu</p>
+                                        <p class="widget-movie-title">Inception</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section Outils -->
+                    <div class="about-tools-section">
+                        <div class="about-tools-header">
+                            <span class="section-label">TOOLKIT</span>
+                            <h2>Avec quoi je travaille ?</h2>
+                            <p>Les outils et technologies que j'utilise au quotidien pour créer des expériences
+                                digitales de qualité.</p>
+                        </div>
+                        <div class="about-tools-grid">
+                            <a href="https://www.figma.com/" target="_blank" class="tool-tag tool-design">
+                                <span class="tool-icon">🎨</span>
+                                Figma
+                            </a>
+                            <a href="https://www.adobe.com/products/photoshop.html" target="_blank"
+                                class="tool-tag tool-design">
+                                <span class="tool-icon">🖼️</span>
+                                Photoshop
+                            </a>
+                            <a href="https://www.adobe.com/products/illustrator.html" target="_blank"
+                                class="tool-tag tool-design">
+                                <span class="tool-icon">✏️</span>
+                                Illustrator
+                            </a>
+                            <a href="https://code.visualstudio.com/" target="_blank" class="tool-tag tool-dev">
+                                <span class="tool-icon">💻</span>
+                                VS Code
+                            </a>
+                            <a href="https://wordpress.org/" target="_blank" class="tool-tag tool-dev">
+                                <span class="tool-icon">📝</span>
+                                WordPress
+                            </a>
+                            <a href="https://www.notion.so/" target="_blank" class="tool-tag tool-tools">
+                                <span class="tool-icon">📋</span>
+                                Notion
+                            </a>
+                            <a href="https://analytics.google.com/" target="_blank" class="tool-tag tool-marketing">
+                                <span class="tool-icon">📊</span>
+                                Analytics
+                            </a>
+                            <a href="https://ads.google.com/" target="_blank" class="tool-tag tool-marketing">
+                                <span class="tool-icon">🎯</span>
+                                Google Ads
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-custom">
+        <div class="container footer-content">
+            <!-- Colonne Gauche -->
+            <div class="footer-left">
+                <div class="footer-profile">
+                    <div class="footer-identity">
+                        <h2 class="footer-name">Valentin <span class="highlight">Samson</span></h2>
+                        <div class="footer-badges">
+                            <span class="f-badge">Web Design</span>
+                            <span class="f-badge">Marketing Digital</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-socials">
+                    <a href="mailto:contact@valentinsamson.fr" class="social-btn btn-email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        samson.valentin2005@gmail.com
+                    </a>
+
+                    <a href="https://instagram.com" target="_blank" class="social-btn btn-instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        Instagram
+                    </a>
+
+                    <a href="https://linkedin.com" target="_blank" class="social-btn btn-linkedin">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        LinkedIn
+                    </a>
+
+                    <a href="https://twitter.com" target="_blank" class="social-btn btn-x">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                        X
+                    </a>
+                </div>
+            </div>
+
+            <!-- Colonne Droite -->
+            <div class="footer-right">
+                <nav class="footer-nav">
+                    <a href="index.html">Accueil</a>
+                    <a href="apropos.html">À propos</a>
+                    <a href="index.html#projects">Mes créations</a>
+                </nav>
+
+                <div class="footer-credits">
+                    <p>Site web conçu et développé par Valentin Samson.</p>
+                    <p class="copyright">© <span id="year">2026</span> Valentin Samson. Tous droits réservés.</p>
+
+                    <!-- Logo déplacé en bas à droite -->
+                    <div class="footer-logo">
+                        <img src="images/logo-fond.vide.png" alt="Valentin Samson" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

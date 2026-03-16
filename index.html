@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Portfolio – Valentin Samson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Portfolio de Valentin Samson, passionné par le web design et le marketing digital." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+    <div class="site-waves"></div>
+    <!-- HEADER NEW -->
+    <header class="header">
+        <div class="container header-inner">
+            <!-- Left: Avatar + Nav -->
+            <div class="header-left">
+                <div class="brand-avatar-link">
+                    <img src="images/logo_header.png" alt="Valentin Samson" class="header-avatar-img" />
+                </div>
+                <nav class="nav-new">
+                    <a href="#" class="nav-link active">Accueil</a>
+                    <a href="apropos.html" class="nav-link">À propos</a>
+                    <a href="#skills" class="nav-link">Compétences</a>
+                    <a href="#projects" class="nav-link">Mes projets</a>
+                </nav>
+            </div>
+
+            <!-- Right: Actions -->
+            <div class="header-right">
+                <!-- CV Action -->
+                <a href="CV.pdf" target="_blank" class="btn-new-call">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Voir mon CV
+                </a>
+
+                <!-- Social Icons -->
+                <div class="header-socials">
+                    <a href="mailto:samson.valentin2005@gmail.com" class="icon-btn-header" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="icon-btn-header" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="icon-btn-header" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="icon-btn-header" aria-label="X">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <!-- Theme Toggle -->
+                <div class="theme-toggle-wrapper">
+                    <button class="theme-btn active" aria-label="Mode clair">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                    <button class="theme-btn" aria-label="Mode sombre">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Progress Bar -->
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="scrollProgress"></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero section" id="home">
+            <div class="hero-container container">
+                <div class="hero-content">
+                    <div class="hero-badges">
+                        <span class="badge badge-available">
+                            <span class="dot-wrapper">
+                                <span class="dot-ping"></span>
+                                <span class="dot"></span>
+                            </span>
+                            En alternance
+                        </span>
+                        <span class="badge badge-role">Web design &amp; marketing digital</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="hero-name">Valentin Samson</span>
+                    </h1>
+                    <div class="hero-tagline">
+                        <span class="tagline-text" id="tagline"></span>
+                        <span class="tagline-cursor">|</span>
+                    </div>
+                    <p class="hero-description">Étudiant en BUT MMI, passionné par le web design, le marketing digital et la création de contenus interactifs.</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Découvrir mes réalisations</span>
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-ornaments">
+                        <!-- Photoshop -->
+                        <div class="ornament ornament-1">
+                            <svg viewBox="0 0 240 234" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path fill="#001e36" d="M0 0h240v234H0z"/><path fill="#31a8ff" d="M54 164V69h37.5c8.5 0 15 .7 19.5 2.2 6.7 2.2 12.2 6.5 16.5 12.8 4.3 6.3 6.4 14 6.4 23.1 0 7.3-1.4 13.6-4.3 18.9s-6.5 9.5-10.9 12.5c-4.4 3-8.9 5-13.4 6-4.6.9-11 1.3-19.4 1.3H75v18.2H54zm21-35.5h17c5.7 0 9.8-.5 12.3-1.5 3.2-1.3 5.7-3.4 7.4-6.3 1.8-2.9 2.6-6.4 2.6-10.5 0-3.9-.8-7.2-2.4-9.9-1.6-2.7-3.8-4.6-6.5-5.6-2-.7-5.7-1.1-11.2-1.1H75v34.9z"/></svg>
+                        </div>
+                        <!-- Figma -->
+                        <div class="ornament ornament-2">
+                            <svg viewBox="0 0 38 57" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/><path fill="#0acf83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 0 1-19 0z"/><path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 0 0 0-19H19z"/><path fill="#f24e1e" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/><path fill="#a259ff" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/></svg>
+                        </div>
+                        <!-- Premiere Pro -->
+                        <div class="ornament ornament-3">
+                            <svg viewBox="0 0 240 234" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path fill="#00005b" d="M0 0h240v234H0z"/><path fill="#9999ff" d="M50 164V69h37.5c8.5 0 15 .7 19.5 2.2 6.7 2.2 12.2 6.5 16.5 12.8 4.3 6.3 6.4 14 6.4 23.1 0 7.3-1.4 13.6-4.3 18.9-2.9 5.3-6.5 9.5-10.9 12.5-4.4 3-8.9 5-13.4 6C96.3 145.4 90 145.8 81.5 145.8H71v18.2H50zm21-35.5h17c5.7 0 9.8-.5 12.3-1.5 3.2-1.3 5.7-3.4 7.4-6.3 1.8-2.9 2.6-6.4 2.6-10.5 0-3.9-.8-7.2-2.4-9.9-1.6-2.7-3.8-4.6-6.5-5.6-2-.7-5.7-1.1-11.2-1.1H71v34.9zm61.5 35.5v-65h21v11.3c2.5-4.2 5.5-7.3 9-9.4 3.5-2.1 7.3-3.1 11.3-3.1a24 24 0 0 1 8 1.3l-2.5 18.5a18 18 0 0 0-6.5-1.2c-4.5 0-8.3 1.6-11.4 4.9-3.1 3.2-4.6 9-4.6 17.2V164h-24.3z"/></svg>
+                        </div>
+                        <!-- HTML5 -->
+                        <div class="ornament ornament-4">
+                            <svg viewBox="0 0 512 512" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path fill="#e34f26" d="M71 460L30 0h452l-41 460-185 52L71 460z"/><path fill="#ef652a" d="M256 472l149-41 35-396H256V472z"/><path fill="#fff" d="M256 284h-78l-5-58h83v-56H115l13 148h128v-34zm0 104l-1.3.4-66.2-17.9-4.2-47.4H128l8.3 93.2 119.4 33.1.3-.1V388z"/><path fill="#ebebeb" d="M256 284v34h72.9l-6.9 77.4L256 412.4v42.3l119.5-33.1 8.7-97.6H256zm0-114v56h141.5l1.5-14.5 3.4-41.5H256z"/></svg>
+                        </div>
+                        <!-- CSS3 -->
+                        <div class="ornament ornament-5">
+                            <svg viewBox="0 0 512 512" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path fill="#1572b6" d="M71 460L30 0h452l-41 460-185 52L71 460z"/><path fill="#33a9dc" d="M256 472l149-41 35-396H256V472z"/><path fill="#fff" d="M256 284H184l-5-58h77v-56H120l13 148h123v-34zm0 104l-1.3.4-66.2-17.9-4.2-47.4H128l8.3 93.2 119.4 33.1.3-.1V388z"/><path fill="#ebebeb" d="M256 284v34h70.9l-6.9 77.4L256 412.4v42.3l119.5-33.1 8.7-97.6H256zm0-114v56h138.5l1.5-14.5 3.4-41.5H256z"/></svg>
+                        </div>
+                        <!-- DaVinci Resolve -->
+                        <div class="ornament ornament-6">
+                            <svg viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="48" fill="#222"/><circle cx="50" cy="50" r="24" fill="none" stroke="#f03e2f" stroke-width="8"/><circle cx="50" cy="50" r="8" fill="#f03e2f"/></svg>
+                        </div>
+                        <!-- Illustrator -->
+                        <div class="ornament ornament-7">
+                            <svg viewBox="0 0 240 234" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path fill="#300" d="M0 0h240v234H0z"/><path fill="#ff9a00" d="M106.4 164l-9.1-27.1H61.8L53 164H30l35.9-95h24.7L126 164h-19.6zm-26.1-74.1L66.1 127H94l-13.6-37.1h-.1zm56.1 74.1V99h19v65h-19zm9.8-78c-3.1 0-5.7-1-7.7-3-2-2-3-4.5-3-7.4 0-2.9 1-5.3 3-7.3 2-2 4.6-3 7.7-3 3.1 0 5.7 1 7.7 3 2 2 3 4.4 3 7.3 0 2.9-1 5.4-3 7.4-2 2-4.6 3-7.7 3z"/></svg>
+                        </div>
+                        <!-- Blender -->
+                        <div class="ornament ornament-8">
+                            <svg viewBox="0 0 24 24" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><path fill="#ea7600" d="M12.51 13.214c.046-.8.438-1.538 1.077-2.04a3.198 3.198 0 0 1 2.463-.645 3.14 3.14 0 0 1 2.163 1.284 3.015 3.015 0 0 1 .48 2.4 3.079 3.079 0 0 1-1.427 2.007 3.21 3.21 0 0 1-2.463.406 3.113 3.113 0 0 1-1.996-1.51 2.977 2.977 0 0 1-.297-1.902zM11.35 5.07L6.778 8.038H4.981L.474 10.845l-.002.003v.002l4.388 2.872v.002l4.988-3.026 1.862-1.13 4.964 3.266-.17.109-4.813 2.918h-1.787l-4.506 2.808v.003l4.388 2.871v.002l4.97-3.017h1.786l4.975 3.031v-.002l4.37-2.871v-.002l-4.504-2.808h-1.786l-4.978-3.27 1.773-1.077h1.787l4.51-2.808v-.003l-4.37-2.832-.002-.002-1.15.697-1.46.883z"/></svg>
+                        </div>
+                    </div>
+                    <img src="images/moi.JPG" alt="Valentin Samson" class="hero-image">
+                </div>
+            </div>
+
+            <a href="#about" class="scroll-indicator" aria-label="Défiler vers la section À propos">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <p class="scroll-text">Scroll</p>
+            </a>
+        </section>
+
+        <!-- A PROPOS CUSTOM -->
+        <section id="about" class="section about-custom-section">
+            <div class="container about-custom-wrapper">
+                <!-- Colonne Image -->
+                <div class="about-image-col">
+                    <div class="about-image-container">
+                        <img src="images/moi.JPG" alt="Valentin Samson" />
+                        <!-- Badge crédit photo optionnel -->
+                        <div class="photo-credit">
+                            <span>📸 Valentin Samson</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne Contenu -->
+                <div class="about-content-col">
+                    <div class="about-identity">
+                        <span class="section-label">À PROPOS</span>
+                        <span class="about-firstname">Valentin</span>
+                        <h2 class="about-lastname">Samson</h2>
+                    </div>
+
+                    <div class="about-badges">
+                        <span class="badge badge-available">
+                            <span class="dot-wrapper">
+                                <span class="dot-ping"></span>
+                                <span class="dot"></span>
+                            </span>
+                            En alternance
+                        </span>
+                        <span class="badge badge-location">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            France
+                        </span>
+                        <span class="badge badge-skill">Web Design</span>
+                        <span class="badge badge-skill">Marketing Digital</span>
+                    </div>
+
+                    <div class="about-bio">
+                        <p>
+                            Après plusieurs années à explorer le numérique, je conçois aujourd'hui des expériences web
+                            en freelance comme <span class="text-highlight">web designer</span> et <span
+                                class="text-highlight">marketeur</span>.
+                        </p>
+                        <p>
+                            Mon parcours m'a permis de toucher à <span class="text-highlight">différents domaines</span>
+                            (UX/UI, stratégie, contenu), mais c'est dans la création d'interfaces, surtout pour les
+                            sites vitrines et e-commerce, que je suis le plus à l'aise. En proposant mes services à
+                            distance, j'apporte une approche <span class="text-highlight">polyvalente</span> et adaptée
+                            à chaque projet.
+                        </p>
+                    </div>
+
+                    <a href="apropos.html" class="btn-about-action">
+                        En savoir plus
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPÉTENCES -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">MES EXPERTISES</span>
+                    <h2>Compétences</h2>
+                    <p class="section-subtitle">
+                        Les outils et technologies que je maîtrise pour vos projets.
+                    </p>
+                </div>
+
+                <div class="skills-carousel-container">
+                    <!-- Left: Technical Skills Carousel -->
+                    <div class="skills-carousel-section">
+                        <h3 class="skills-carousel-title">Hard Skills</h3>
+                        <div class="skills-carousel-wrapper">
+                            <div class="skills-track">
+                                <!-- Original Skills -->
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🎨</div>
+                                            <h4 class="skill-name">Photoshop</h4>
+                                            <p class="skill-desc">Retouche & Composition</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Photoshop</h4>
+                                            <p class="skill-flashcard-desc">Retouche photo avancée, composition créative, détourage précis et création de visuels impactants.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">💎</div>
+                                            <h4 class="skill-name">Figma</h4>
+                                            <p class="skill-desc">Maquettage UI</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Figma</h4>
+                                            <p class="skill-flashcard-desc">Conception d'interfaces modernes, prototypage interactif, design systems et collaboration en temps réel.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🎥</div>
+                                            <h4 class="skill-name">Premiere Pro</h4>
+                                            <p class="skill-desc">Montage Vidéo</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Premiere Pro</h4>
+                                            <p class="skill-flashcard-desc">Montage dynamique, storytelling visuel, mixage sonore et corrections colorimétriques de base.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🌐</div>
+                                            <h4 class="skill-name">HTML5</h4>
+                                            <p class="skill-desc">Structure Web</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">HTML5</h4>
+                                            <p class="skill-flashcard-desc">Structure sémantique robuste, respect des normes W3C, accessibilité et optimisation SEO.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🎨</div>
+                                            <h4 class="skill-name">CSS3</h4>
+                                            <p class="skill-desc">Style & Anim</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">CSS3</h4>
+                                            <p class="skill-flashcard-desc">Design responsive (Flexbox/Grid), animations fluides, variables CSS et intégration fidèle.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🎬</div>
+                                            <h4 class="skill-name">DaVinci</h4>
+                                            <p class="skill-desc">Étalonnage</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">DaVinci</h4>
+                                            <p class="skill-flashcard-desc">Étalonnage cinématographique, correction des couleurs avancée et post-production professionnelle.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Duplicated for seamless loop -->
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🎨</div>
+                                            <h4 class="skill-name">Photoshop</h4>
+                                            <p class="skill-desc">Retouche & Composition</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Photoshop</h4>
+                                            <p class="skill-flashcard-desc">Retouche photo avancée, composition créative, détourage précis et création de visuels impactants.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">💎</div>
+                                            <h4 class="skill-name">Figma</h4>
+                                            <p class="skill-desc">Maquettage UI</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Figma</h4>
+                                            <p class="skill-flashcard-desc">Conception d'interfaces modernes, prototypage interactif, design systems et collaboration en temps réel.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🎥</div>
+                                            <h4 class="skill-name">Premiere Pro</h4>
+                                            <p class="skill-desc">Montage Vidéo</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Premiere Pro</h4>
+                                            <p class="skill-flashcard-desc">Montage dynamique, storytelling visuel, mixage sonore et corrections colorimétriques de base.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Soft Skills Carousel -->
+                    <div class="skills-carousel-section">
+                        <h3 class="skills-carousel-title">Soft Skills</h3>
+                        <div class="soft-skills-carousel-wrapper">
+                            <div class="soft-skills-track">
+                                <!-- Original Skills -->
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🗣️</div>
+                                            <h4 class="skill-name">Communication</h4>
+                                            <p class="skill-desc">Clarté & Conviction</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Communication</h4>
+                                            <p class="skill-flashcard-desc">Transmission efficace des idées et présentation convaincante des concepts.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🤝</div>
+                                            <h4 class="skill-name">Travail d'équipe</h4>
+                                            <p class="skill-desc">Synergie & Écoute</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Travail d'équipe</h4>
+                                            <p class="skill-flashcard-desc">Écoute active et synergie de groupe pour mener à bien des projets complexes.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">💡</div>
+                                            <h4 class="skill-name">Créativité</h4>
+                                            <p class="skill-desc">Innovation & Style</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Créativité</h4>
+                                            <p class="skill-flashcard-desc">Capacité à proposer des solutions originales et esthétiques pour des projets uniques.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🧠</div>
+                                            <h4 class="skill-name">Adaptabilité</h4>
+                                            <p class="skill-desc">Polyvalence & Réactivité</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Adaptabilité</h4>
+                                            <p class="skill-flashcard-desc">Capacité à s'ajuster rapidement aux nouvelles technologies et contraintes projet.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🧐</div>
+                                            <h4 class="skill-name">Esprit critique</h4>
+                                            <p class="skill-desc">Analyse & Rigueur</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Esprit critique</h4>
+                                            <p class="skill-flashcard-desc">Analyse objective pour optimiser les solutions technique et créatives.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">⏱️</div>
+                                            <h4 class="skill-name">Gestion temps</h4>
+                                            <p class="skill-desc">Organisation & Délais</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Gestion temps</h4>
+                                            <p class="skill-flashcard-desc">Respect des deadlines et optimisation du flux de travail.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Duplicated for seamless loop -->
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🗣️</div>
+                                            <h4 class="skill-name">Communication</h4>
+                                            <p class="skill-desc">Clarté & Conviction</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Communication</h4>
+                                            <p class="skill-flashcard-desc">Transmission efficace des idées et présentation convaincante des concepts.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">🤝</div>
+                                            <h4 class="skill-name">Travail d'équipe</h4>
+                                            <p class="skill-desc">Synergie & Écoute</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Travail d'équipe</h4>
+                                            <p class="skill-flashcard-desc">Écoute active et synergie de groupe pour mener à bien des projets complexes.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" onclick="this.classList.toggle('flipped')" aria-hidden="true">
+                                    <div class="skill-card-inner">
+                                        <div class="skill-card-front">
+                                            <div class="flip-icon">↺</div>
+                                            <div class="skill-icon">💡</div>
+                                            <h4 class="skill-name">Créativité</h4>
+                                            <p class="skill-desc">Innovation & Style</p>
+                                            <a href="#projects" class="skill-link" onclick="event.stopPropagation()">Voir mes réalisations</a>
+                                        </div>
+                                        <div class="skill-card-back">
+                                            <h4 class="skill-name">Créativité</h4>
+                                            <p class="skill-flashcard-desc">Capacité à proposer des solutions originales et esthétiques pour des projets uniques.</p>
+                                            <button class="btn-flip-back">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-footer">
+                    <a href="CV.pdf" target="_blank" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            style="margin-right: 10px; vertical-align: middle;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Télécharger mon CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETS -->
+        <section id="projects" class="section section-muted">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">MON TRAVAIL</span>
+                    <h2>Projets</h2>
+                    <p class="section-subtitle">
+                        Une sélection de projets sur lesquels j’ai travaillé.
+                    </p>
+                </div>
+
+                <!-- Project Filters -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">Tous</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="dev">Développement</button>
+                    <button class="filter-btn" data-filter="marketing">Marketing</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Projet 1 -->
+                    <article class="project-card" data-category="design">
+                        <div class="project-thumb">
+                            <img src="projects/italvet.jpg" alt="Refonte Italvet" />
+                            <div class="project-card-badges">
+                                <span class="card-badge">DESIGN</span>
+                                <span class="card-badge">2023</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Refonte UX / UI de site Italvet</h3>
+                            <p class="project-desc">
+                                Refonte complète de l’interface et de l’expérience utilisateur
+                                pour moderniser le site et mettre en avant les produits.
+                            </p>
+                            <div class="project-tools-tags">
+                                <span class="tool-tag">Figma</span>
+                                <span class="tool-tag">UI Design</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 2 -->
+                    <article class="project-card" data-category="dev">
+                        <div class="project-thumb">
+                            <img src="projects/interface-moderne.jpg" alt="Interface moderne" />
+                            <div class="project-card-badges">
+                                <span class="card-badge">DEV</span>
+                                <span class="card-badge">2024</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Interface moderne avec animations</h3>
+                            <p class="project-desc">
+                                Développement d’une interface moderne avec animations fluides
+                                et transitions personnalisées.
+                            </p>
+                            <div class="project-tools-tags">
+                                <span class="tool-tag">JS</span>
+                                <span class="tool-tag">GSAP</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 3 -->
+                    <article class="project-card" data-category="dev">
+                        <div class="project-thumb">
+                            <img src="projects/react-app.jpg" alt="Application React" />
+                            <div class="project-card-badges">
+                                <span class="card-badge">REACT</span>
+                                <span class="card-badge">2024</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Application web interactive React</h3>
+                            <p class="project-desc">
+                                Application web interactive utilisant React et intégration
+                                d’API pour la gestion des données.
+                            </p>
+                            <div class="project-tools-tags">
+                                <span class="tool-tag">React</span>
+                                <span class="tool-tag">API</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section">
+            <div class="container contact-wrapper">
+                <!-- Colonne Gauche : Infos & Social -->
+                <div class="contact-left">
+                    <div class="contact-profile">
+                        <div class="contact-identity">
+                            <h3 class="contact-name">Valentin <span class="highlight">Samson</span></h3>
+                            <span class="status-badge">
+                                <span class="status-dot"></span> En alternance
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials-grid">
+                        <a href="mailto:contact@valentinsamson.fr" class="social-btn btn-email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            samson.valentin2005@gmail.com
+                        </a>
+
+                        <a href="https://instagram.com" target="_blank" class="social-btn btn-instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            Instagram
+                        </a>
+
+                        <a href="https://linkedin.com" target="_blank" class="social-btn btn-linkedin">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            LinkedIn
+                        </a>
+
+                        <a href="https://twitter.com" target="_blank" class="social-btn btn-x">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                            X
+                        </a>
+                    </div>
+
+                    <div class="cal-card">
+                        <h4 class="cal-title">Besoin de discuter ?</h4>
+                        <p class="cal-desc">N'hésitez pas à me contacter par téléphone !</p>
+                        <button id="reveal-phone" class="btn-cal">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <span class="phone-text">Cliquer pour révéler</span>
+                        </button>
+                    </div>
+
+                    <!-- Carte Bretagne -->
+                    <div class="map-card">
+                        <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" class="bretagne-map" style="width:100%;height:auto;">
+                            <defs>
+                                <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                                    <path d="M0,0 L0,6 L8,3 Z" fill="#1e293b"/>
+                                </marker>
+                            </defs>
+                            <!-- Silhouette Bretagne principale -->
+                            <path fill="#dde4f0" stroke="white" stroke-width="1.5" d="M420,60 L445,50 L468,65 L478,88 L468,103 L453,108 L438,123 L428,143 L413,153 L398,158 L388,148 L383,133 L368,128 L353,138 L338,148 L323,143 L308,153 L298,168 L288,183 L278,198 L263,208 L248,213 L233,223 L218,233 L203,243 L188,251 L173,253 L158,248 L146,238 L133,233 L118,238 L106,245 L93,243 L80,235 L70,223 L66,208 L73,193 L86,183 L98,173 L108,161 L116,148 L123,133 L128,118 L126,103 L123,91 L128,79 L140,71 L156,68 L170,71 L183,78 L198,80 L213,75 L226,65 L238,55 L253,51 L268,55 L281,65 L294,71 L310,68 L323,61 L338,55 L353,51 L368,53 L383,58 L398,61 Z"/>
+                            <!-- Presqu'île Crozon -->
+                            <path fill="#dde4f0" stroke="white" stroke-width="1.5" d="M103,213 L88,221 L73,231 L60,241 L53,253 L56,263 L68,268 L83,263 L96,253 L106,241 Z"/>
+                            <!-- Pin Lannion ~(325,88) -->
+                            <circle cx="325" cy="88" r="22" fill="rgba(79,70,229,0.12)">
+                                <animate attributeName="r" values="22;30;22" dur="2s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="325" cy="88" r="10" fill="white" stroke="#4f46e5" stroke-width="2.5"/>
+                            <circle cx="325" cy="88" r="4" fill="#4f46e5"/>
+                            <!-- Flèche Lannion -->
+                            <path d="M335,96 Q362,108 375,128" fill="none" stroke="#1e293b" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arrow)"/>
+                            <text x="378" y="135" font-family="Outfit,sans-serif" font-size="12" font-weight="700" fill="#1e293b">j'étudie &amp; travaille ici 💼</text>
+                            <text x="378" y="151" font-family="Outfit,sans-serif" font-size="10" fill="#64748b">(à Lannion)</text>
+                            <!-- Label Carhaix ~(210,185) -->
+                            <text x="185" y="185" font-family="Outfit,sans-serif" font-size="12" font-weight="700" fill="#1e293b">j'habite ici 🏠</text>
+                            <text x="185" y="201" font-family="Outfit,sans-serif" font-size="10" fill="#64748b">(à Carhaix)</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Colonne Droite : Formulaire -->
+                <div class="contact-right">
+                    <!-- Mad Libs Form -->
+                    <div class="mad-libs-container">
+                        <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                            <span class="section-label">PRENDRE CONTACT</span>
+                            <h2 style="font-size: 2rem;">Contact rapide</h2>
+                        </div>
+                        <div class="mad-libs-form">
+                            Bonjour Valentin, je suis <input type="text" placeholder="Prénom Nom" class="mad-input"> 
+                            de <input type="text" placeholder="Entreprise" class="mad-input">. 
+                            J'aimerais te contacter pour un projet de <input type="text" placeholder="Web Design / Marketing" class="mad-input">. 
+                            Tu peux me joindre par mail ici : <input type="email" placeholder="votre@email.com" class="mad-input">.
+                        </div>
+                        <button type="button" class="btn-submit mad-submit">
+                            Envoyer ma demande rapide →
+                        </button>
+                    </div>
+
+                    <div class="form-divider"><span>OU</span></div>
+
+                    <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                        <span class="section-label">QUESTIONS</span>
+                        <h2 style="font-size: 2rem;">Formulaire complet</h2>
+                        <p style="font-size: 0.9rem; color: #64748b;">Pour toute question ou collaboration, n'hésitez pas à me contacter.</p>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <input type="text" id="firstname" placeholder="Prénom" required />
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="lastname" placeholder="Nom" required />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" placeholder="Email" required />
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" placeholder="Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-custom">
+        <div class="container footer-content">
+            <!-- Colonne Gauche -->
+            <div class="footer-left">
+                <div class="footer-profile">
+                    <div class="footer-identity">
+                        <h2 class="footer-name">Valentin <span class="highlight">Samson</span></h2>
+                        <div class="footer-badges">
+                            <span class="f-badge">Web Design</span>
+                            <span class="f-badge">Marketing Digital</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-socials">
+                    <a href="mailto:contact@valentinsamson.fr" class="social-btn btn-email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        samson.valentin2005@gmail.com
+                    </a>
+
+                    <a href="https://instagram.com" target="_blank" class="social-btn btn-instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        Instagram
+                    </a>
+
+                    <a href="https://linkedin.com" target="_blank" class="social-btn btn-linkedin">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        LinkedIn
+                    </a>
+
+                    <a href="https://twitter.com" target="_blank" class="social-btn btn-x">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                        X
+                    </a>
+                </div>
+            </div>
+
+            <!-- Colonne Droite -->
+            <div class="footer-right">
+                <nav class="footer-nav">
+                    <a href="#">Accueil</a>
+                    <a href="#about">À propos</a>
+                    <a href="#projects">Mes créations</a>
+                </nav>
+
+                <div class="footer-credits">
+                    <p>Site web conçu et développé par Valentin Samson.</p>
+                    <p class="copyright">© <span id="year">2026</span> Valentin Samson. Tous droits réservés.</p>
+
+                    <!-- Logo déplacé en bas à droite -->
+                    <div class="footer-logo">
+                        <img src="images/logo-fond.vide.png" alt="Valentin Samson" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
