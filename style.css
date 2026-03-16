@@ -16,21 +16,84 @@ body {
 body {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     color: #1e293b;
-    background: linear-gradient(to bottom, rgba(79, 70, 229, 0.08), #ffffff) fixed;
+    background: #f8fafc;
     -webkit-font-smoothing: antialiased;
     position: relative;
     overflow-x: hidden;
 }
 
-/* HIGH FIDELITY ORGANIC BACKGROUNDS (Ethan Style) */
+/* HIGH FIDELITY ARTISTIC BACKGROUND (Soft Waves Pattern) */
 .site-waves {
     position: fixed;
     inset: 0;
-    z-index: -1;
-    background: url('img/organic-pattern.svg') center bottom / 2200px repeat;
-    opacity: 0.15; /* Updated opacity since SVG is opaque */
-    mix-blend-mode: multiply;
+    z-index: -2;
+    background: url('img/soft-waves-bg.png') center center / cover no-repeat fixed;
+    opacity: 0.4;
     pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+body.dark-mode .site-waves {
+    filter: invert(0.9) hue-rotate(180deg) brightness(0.8);
+    opacity: 0.15;
+}
+
+/* LIQUID GLASS BACKGROUND BLOBS */
+.liquid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    overflow: hidden;
+    background: #ffffff;
+    filter: blur(100px);
+}
+
+body.dark-mode .liquid-background {
+    background: #0f172a;
+}
+
+.blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: move-blob 25s infinite alternate;
+}
+
+.blob-1 {
+    background: #818cf8;
+    top: -10%;
+    left: -10%;
+    animation-duration: 25s;
+}
+
+.blob-2 {
+    background: #38bdf8;
+    bottom: -10%;
+    right: -10%;
+    animation-duration: 30s;
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    background: #f472b6;
+    top: 40%;
+    left: 30%;
+    width: 600px;
+    height: 600px;
+    animation-duration: 35s;
+    animation-delay: -10s;
+}
+
+@keyframes move-blob {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30%, 20%) scale(1.2); }
+    66% { transform: translate(-20%, 40%) scale(0.8); }
+    100% { transform: translate(0, 0) scale(1); }
 }
 
 body::after {
@@ -38,10 +101,10 @@ body::after {
     position: fixed;
     inset: 0;
     z-index: -2;
-    background-image: radial-gradient(rgba(79, 70, 229, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(79, 70, 229, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
 /* LAYOUT GÉNÉRAL */
@@ -82,11 +145,11 @@ body::after {
 
 .header.scrolled {
     height: 70px;
-    background: rgba(248, 250, 255, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-    border-bottom-color: rgba(226, 232, 240, 0.8);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .header-inner {
@@ -950,20 +1013,29 @@ body::after {
 
 
 .project-card {
-    border-radius: 24px;
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.04);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+body.dark-mode .project-card {
+    background: rgba(30, 41, 59, 0.3);
+    border-color: rgba(255, 255, 255, 0.05);
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
-    border-color: #c7d2fe;
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.45);
+    border-color: rgba(79, 70, 229, 0.3);
 }
 
 .project-thumb {
@@ -1562,23 +1634,36 @@ body.dark-mode .footer-bottom {
 }
 
 
-/* Base Card Style - Premium Glass */
+/* Base Card Style - Premium Liquid Glass */
 .bento-card {
     background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(30px) saturate(180%);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 40px;
     padding: 35px;
-    transition: all 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
     min-height: 280px;
     box-shadow: 
-        0 4px 6px -1px rgba(0, 0, 0, 0.05),
-        0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        0 4px 24px -1px rgba(0, 0, 0, 0.04),
+        0 12px 40px -4px rgba(0, 0, 0, 0.04);
+}
+
+body.dark-mode .bento-card {
+    background: rgba(30, 41, 59, 0.4);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.bento-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(255,255,255,0.05) 100%);
+    pointer-events: none;
 }
 
 
@@ -2237,9 +2322,10 @@ body.dark-mode .clock-divider {
     text-decoration: none;
     font-weight: 700;
     font-size: 0.95rem;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background: white;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
     color: #334155;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
@@ -2344,10 +2430,13 @@ body.dark-mode .clock-divider {
 
 /* Contact Right (Form) */
 .contact-right {
-    background-color: #f8fafc;
-    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 40px;
     padding: 48px;
-    /* Optional: shadow to make it pop like the image? The image has a very subtle shadow or just flat on white/light gray background. */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.04);
 }
 
 .form-header h2 {
