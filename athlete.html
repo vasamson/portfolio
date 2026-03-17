@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Athlete – Valentin Samson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Découvrez le parcours d'athlète de Valentin Samson, cycliste de haut niveau." />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- LIQUID GLASS BACKGROUND -->
+    <div class="liquid-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2" style="background: rgba(252, 76, 2, 0.15);"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="site-waves"></div>
+
+    <header class="header">
+        <div class="container header-inner">
+            <!-- Left: Avatar + Nav -->
+            <div class="header-left">
+                <div class="brand-avatar-link">
+                    <img src="images/logo_header.png" alt="Valentin Samson" class="header-avatar-img" />
+                </div>
+                <nav class="nav-new">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="apropos.html" class="nav-link">À propos</a>
+                    <a href="#" class="nav-link active">Athlète</a>
+                    <a href="index.html#projects" class="nav-link">Mes projets</a>
+                </nav>
+            </div>
+
+            <!-- Right: Actions -->
+            <div class="header-right">
+                <a href="CV.pdf" target="_blank" class="btn-new-call">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Voir mon CV
+                </a>
+                <div class="header-socials">
+                    <a href="mailto:samson.valentin2005@gmail.com" class="icon-btn-header" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+                <div class="header-divider"></div>
+                <!-- Theme Toggle -->
+                <div class="theme-toggle-wrapper">
+                    <button class="theme-btn active" aria-label="Mode clair">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                        </svg>
+                    </button>
+                    <button class="theme-btn" aria-label="Mode sombre">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="scrollProgress"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <span class="section-label" style="color: #fc4c02;">MA DISCIPLINE</span>
+                <h1 class="about-bento-title">Détermination & Performance.</h1>
+            </div>
+        </section>
+
+        <section class="athlete-content">
+            <div class="container">
+                <div class="about-bento-grid">
+                    <!-- CARD CYCLING INTRO -->
+                    <div class="bento-card" style="grid-column: span 2; grid-row: span 2; background: #fff7ed; border-color: rgba(251, 146, 60, 0.2);">
+                        <div class="widget-header">
+                            <span class="widget-icon" style="color: #fc4c02;">🚲</span>
+                            <span class="widget-title">Passion Cyclisme</span>
+                        </div>
+                        <div class="about-page-text">
+                            <p>Le cyclisme n'est pas qu'un sport pour moi, c'est une véritable <span class="text-highlight" style="color: #fc4c02; background: rgba(252, 76, 2, 0.1);">leçon de vie</span>. La rigueur, l'endurance et la gestion de l'effort sont des valeurs que je transpose chaque jour dans mon travail de créatif.</p>
+                            <p>Compétiteur dans l'âme, j'aime repousser mes limites, que ce soit lors d'une ascension difficile ou face à un défi technique complexe. Cette discipline m'apporte la force mentale nécessaire pour mener à bien des projets ambitieux.</p>
+                        </div>
+                    </div>
+
+                    <!-- CARD STRAVA METRICS -->
+                    <div class="bento-card" style="grid-column: span 1; grid-row: span 2; background: #ffffff; border-color: #fc4c02;">
+                        <div class="widget-header">
+                            <span class="widget-icon" style="background: #fc4c02; color: white;">📊</span>
+                            <span class="widget-title">Stats Saison</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 20px; justify-content: center; height: 100%;">
+                            <div style="text-align: center;">
+                                <span style="font-size: 2.5rem; font-weight: 900; color: #fc4c02; display: block;">12 500</span>
+                                <span style="font-size: 0.8rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Kilomètres / an</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <span style="font-size: 2.5rem; font-weight: 900; color: #fc4c02; display: block;">145k</span>
+                                <span style="font-size: 0.8rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Dénivelé + (m)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD CYCLING QUOTE -->
+                    <div class="bento-card" style="grid-column: span 3; background: linear-gradient(135deg, #fc4c02 0%, #ff8c00 100%); color: white; border: none; text-align: center; padding: 60px;">
+                        <span style="font-size: 3rem; opacity: 0.3; display: block; margin-bottom: 20px;">"</span>
+                        <p style="font-size: 1.8rem; font-weight: 800; line-height: 1.2;">C'est en se dépassant que l'on découvre qui l'on est vraiment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-premium">
+        <div class="container footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2 class="footer-logo-text gradient-text-blue">Valentin Samson</h2>
+                    <p class="footer-tagline">Athlete & Creative. <br>Performance & Design.</p>
+                </div>
+                <div class="footer-links-grid">
+                    <div class="footer-group">
+                        <span class="footer-group-title">Navigation</span>
+                        <nav class="footer-links">
+                            <a href="index.html">Accueil</a>
+                            <a href="apropos.html">À propos</a>
+                            <a href="athlete.html">Athlète</a>
+                        </nav>
+                    </div>
+                    <div class="footer-group">
+                        <span class="footer-group-title">Contact</span>
+                        <div class="footer-links">
+                            <a href="mailto:samson.valentin2005@gmail.com">samson.valentin2005@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>© <span id="year">2026</span> Valentin Samson.</p>
+                </div>
+                <div class="footer-extra">
+                    <a href="index.html" class="logo-mini">
+                        <img src="images/logo-fond.vide.png" alt="Logo VS">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
