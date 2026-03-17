@@ -1803,7 +1803,70 @@ body.dark-mode .footer-bottom {
 .contact-left {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 32px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79, 70, 229, 0.2);
+    box-shadow: 0 15px 40px rgba(79, 70, 229, 0.05);
+}
+
+/* Profile Card Specifics */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 3px solid white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+}
+
+.card-mini-title {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #94a3b8;
+    margin: 0 0 15px 0;
 }
 
 /* MAP CARD */
@@ -3383,6 +3446,33 @@ body.dark-mode .form-header h2 {
 }
 
 body.dark-mode .form-header p {
+    color: #94a3b8;
+}
+
+/* Contact Cards Dark Mode */
+body.dark-mode .contact-card {
+    background: rgba(30, 41, 59, 0.4);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .profile-avatar {
+    border-color: #1e293b;
+}
+
+body.dark-mode .contact-intro {
+    color: #94a3b8;
+}
+
+body.dark-mode .card-mini-title {
+    color: #64748b;
+}
+
+body.dark-mode .cal-title {
+    color: #60a5fa;
+}
+
+body.dark-mode .cal-desc {
     color: #94a3b8;
 }
 

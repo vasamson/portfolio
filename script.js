@@ -56,6 +56,7 @@ themeBtns.forEach((btn, index) => {
 
 // 2. Scroll Progress & Header Change
 const scrollProgressBar = document.getElementById('scrollProgress');
+const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;

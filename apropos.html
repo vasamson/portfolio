@@ -8,6 +8,7 @@
     <meta name="description"
         content="Découvrez le parcours de Valentin Samson, étudiant en MMI et passionné par le design." />
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,45 +22,98 @@
 
     <header class="header">
         <div class="container header-inner">
+            <!-- Left: Avatar + Nav -->
             <div class="header-left">
                 <div class="brand-avatar-link">
-                    <a href="index.html">
-                        <img src="images/logo_header.png" alt="Valentin Samson" class="header-avatar-img" />
-                    </a>
+                    <img src="images/logo_header.png" alt="Valentin Samson" class="header-avatar-img" />
                 </div>
                 <nav class="nav-new">
                     <a href="index.html" class="nav-link">Accueil</a>
-                    <a href="apropos.html" class="nav-link active">À propos</a>
+                    <a href="#" class="nav-link active">À propos</a>
                     <a href="index.html#skills" class="nav-link">Compétences</a>
                     <a href="index.html#projects" class="nav-link">Mes projets</a>
                 </nav>
             </div>
 
+            <!-- Right: Actions -->
             <div class="header-right">
+                <!-- CV Action -->
                 <a href="CV.pdf" target="_blank" class="btn-new-call">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                         <polyline points="14 2 14 8 20 8"></polyline>
                         <line x1="16" y1="13" x2="8" y2="13"></line>
                         <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
                     </svg>
-                    Mon CV
+                    Voir mon CV
                 </a>
+
+                <!-- Social Icons -->
+                <div class="header-socials">
+                    <a href="mailto:samson.valentin2005@gmail.com" class="icon-btn-header" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="icon-btn-header" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="icon-btn-header" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="icon-btn-header" aria-label="X">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <!-- Theme Toggle -->
                 <div class="theme-toggle-wrapper">
                     <button class="theme-btn active" aria-label="Mode clair">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
                             <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                         </svg>
                     </button>
                     <button class="theme-btn" aria-label="Mode sombre">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </button>
                 </div>
             </div>
+        </div>
+        <!-- Scroll Progress Bar -->
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="scrollProgress"></div>
         </div>
     </header>
 
@@ -98,16 +152,6 @@
                         </span>
                     </div>
 
-                    <!-- CARD VISION -->
-                    <div class="bento-card about-card-vision">
-                        <div class="widget-header" style="justify-content: center;">
-                            <span class="widget-icon">🎯</span>
-                            <span class="widget-title">Ma Vision</span>
-                        </div>
-                        <p style="font-size: 1.4rem; font-weight: 700; color: #4f46e5; max-width: 800px; margin: 0 auto; line-height: 1.4;">
-                            "Le bon design est celui qui résout des problèmes concrets. J'aime transformer des idées complexes en expériences utilisateur simples, fluides et mémorables."
-                        </p>
-                    </div>
 
                     <!-- TIMELINE BENTO -->
                     <div class="timeline-bento">
