@@ -4378,3 +4378,287 @@ body.dark-mode .bretagne-map path {
 .section-muted {
     background-color: transparent;
 }
+
+/* ========================================
+   RESPONSIVE MASTER FIXES
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        padding: 0 15px; /* Added side padding to ensure nothing sticks to edges */
+    }
+    
+    .section {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    /* Hero Fixes */
+    .hero {
+        padding-top: 100px;
+        min-height: auto;
+        padding-bottom: 60px;
+    }
+
+    .hero-container {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        min-height: 320px;
+    }
+
+    .hero-image {
+        border-radius: 40px !important;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding: 0;
+    }
+
+    .hero-name {
+        font-size: 2.5rem;
+    }
+
+    .hero-tagline {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    /* Grids spacing */
+    .projects-grid, 
+    .bento-grid, 
+    .about-bento-grid,
+    .contact-socials-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* Split Personality Fixes */
+    .split-side {
+        min-height: 400px !important;
+        padding: 60px 25px !important;
+    }
+
+    .split-title {
+        font-size: 2.2rem !important;
+    }
+
+    /* About Fixes */
+    .about-bento-grid {
+        margin-bottom: 50px;
+    }
+
+    .timeline-bento {
+        flex-direction: column;
+    }
+
+    .timeline-bento-card {
+        min-width: 100%;
+    }
+
+    /* Contact Fixes */
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 30px !important;
+    }
+
+    .contact-left, .contact-right {
+        width: 100%;
+    }
+
+    .contact-card {
+        padding: 20px !important;
+        margin-bottom: 15px;
+    }
+
+    /* Footer Fixes */
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-links-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .footer-social-circles {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .hero-name {
+        font-size: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .hero-visual {
+        min-height: 280px;
+    }
+
+    /* Scale down ornaments */
+    .ornament {
+        display: none; /* Hide ornaments on very small screens to avoid clutter */
+    }
+
+    .project-body {
+        padding: 24px 20px !important;
+    }
+
+    .project-title {
+        font-size: 1.25rem;
+    }
+
+    .btn-premium {
+        padding: 14px 24px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ========================================
+   GLOBAL BREATHING ROOM & POLISH
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Better spacing for text blocks */
+    .about-page-text p, 
+    .hero-description, 
+    .project-desc {
+        line-height: 1.8 !important;
+        margin-bottom: 25px !important; /* Increased for more breath */
+    }
+
+    /* Bento Cards Padding */
+    .bento-card {
+        padding: 28px 24px !important;
+    }
+
+    .widget-header {
+        margin-bottom: 24px !important;
+    }
+
+    /* Carousel Nav Buttons */
+    .nav-btn {
+        display: none !important; 
+    }
+
+    /* Carousel Height */
+    .carousel-3d-scene {
+        margin: 50px 0 !important;
+    }
+
+    /* About Bento Specifics */
+    .about-bento-title {
+        margin-bottom: 40px !important;
+        line-height: 1.2 !important;
+        font-size: 2.5rem !important;
+    }
+
+    .about-hero {
+        padding: 100px 0 40px !important;
+    }
+
+    /* Section Labels */
+    .section-label {
+        margin-bottom: 20px !important;
+    }
+
+    /* Global gaps between sections */
+    main > section {
+        margin-bottom: 30px;
+    }
+
+    /* Image Profile About */
+    .about-card-profile img {
+        width: 130px !important;
+        height: 130px !important;
+    }
+
+    /* Contact Form Spacing */
+    .contact-form {
+        gap: 25px !important;
+    }
+
+    .btn-submit {
+        margin-top: 15px !important;
+        padding: 18px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    /* Very small devices */
+    .hero-name {
+        font-size: 1.8rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        font-size: 0.8rem;
+        padding: 12px 20px;
+    }
+}
