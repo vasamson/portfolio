@@ -65,14 +65,14 @@ body.dark-mode .liquid-background {
 }
 
 .blob-1 {
-    background: #818cf8;
+    background: #818cf8; /* Indigo/Blue */
     top: -10%;
     left: -10%;
     animation-duration: 25s;
 }
 
 .blob-2 {
-    background: #38bdf8;
+    background: #38bdf8; /* Sky Blue */
     bottom: -10%;
     right: -10%;
     animation-duration: 30s;
@@ -80,7 +80,7 @@ body.dark-mode .liquid-background {
 }
 
 .blob-3 {
-    background: #f472b6;
+    background: #4f46e5; /* Primary Indigo */
     top: 40%;
     left: 30%;
     width: 600px;
@@ -3120,7 +3120,7 @@ body.dark-mode .about-card-vision {
     transition: all 0.3s ease;
 }
 
-.side-cycling .btn-split:hover { background: #10b981; }
+.side-cycling .btn-split:hover { background: #4f46e5; }
 .side-work .btn-split:hover { background: #4f46e5; }
 
 /* Background Accents removed as requested */
