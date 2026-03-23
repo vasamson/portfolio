@@ -112,57 +112,30 @@
                 </div>
             </div>
         </section>
-
-        <section class="project-details-section" style="padding: 60px 0 120px;">
+        <section class="project-details-section" style="padding: 100px 0 60px;">
             <div class="container">
-                <div class="bento-grid">
-                    <!-- About the Project -->
-                    <div class="bento-card bento-card-large">
-                        <div class="widget-header">
-                            <span class="widget-icon">📝</span>
-                            <h2 class="widget-title"
-                                style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.7rem; font-weight: 800; color: #64748b; margin: 0;">
-                                Le Projet</h2>
-                        </div>
-                        <div class="about-page-text" id="project-full-description"
-                            style="color: #334155; line-height: 1.7; font-size: 1.05rem;">
-                            <!-- Full description loaded here -->
-                        </div>
-                    </div>
+                <div id="project-intro-container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+                    <p class="about-page-text" id="project-full-description"
+                        style="color: #475569; line-height: 1.8; font-size: 1.35rem; font-weight: 500; margin: 0;">
+                        <!-- Full description loaded here -->
+                    </p>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Project Info Sidebar -->
-                    <div class="bento-card bento-card-small" style="justify-content: flex-start;">
-                        <div class="widget-header">
-                            <span class="widget-icon">ℹ️</span>
-                            <h2 class="widget-title"
-                                style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.7rem; font-weight: 800; color: #64748b; margin: 0;">
-                                Informations</h2>
-                        </div>
+        <!-- Brief & Gallery Section (Dynamic) -->
+        <section class="project-brief-section" id="dynamic-brief-section" style="display: none;">
+            <div class="container" id="brief-container">
+                <!-- Cards will be injected here -->
+            </div>
+        </section>
 
-                        <div class="sidebar-info-item">
-                            <span class="sidebar-info-label">Année</span>
-                            <p class="sidebar-info-value" id="project-year">2024</p>
-                        </div>
-
-                        <div class="sidebar-info-item">
-                            <span class="sidebar-info-label">Type</span>
-                            <p class="sidebar-info-value" id="project-type">Design & Dev</p>
-                        </div>
-
-                        <div class="sidebar-info-item" style="border: none;">
-                            <span class="sidebar-info-label">Outils</span>
-                            <div class="tools-list" id="project-tools" style="margin-top: 10px;">
-                                <!-- Tools chips loaded here -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CTA -->
-                    <div class="bento-card bento-card-full"
-                        style="min-height: 200px; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(56, 189, 248, 0.05) 100%);">
-                        <h3 style="font-size: 1.5rem; font-weight: 850; margin-bottom: 20px;">Ce projet vous inspire ?</h3>
-                        <a href="index.html#contact" class="btn btn-primary">Lancer un projet ensemble</a>
-                    </div>
+        <section class="final-cta-section" style="padding: 40px 0 120px;">
+            <div class="container">
+                <div class="bento-card bento-card-full"
+                    style="min-height: 200px; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(56, 189, 248, 0.05) 100%);">
+                    <h3 style="font-size: 1.5rem; font-weight: 850; margin-bottom: 20px;">Ce projet vous inspire ?</h3>
+                    <a href="index.html#contact" class="btn btn-primary">Lancer un projet ensemble</a>
                 </div>
             </div>
         </section>
@@ -250,17 +223,32 @@
                 document.getElementById('project-title').textContent = project.title;
                 document.getElementById('project-tagline').textContent = project.description;
                 document.getElementById('project-category-label').textContent = project.category;
-                document.getElementById('project-full-description').textContent = project.fullDescription;
+                document.getElementById('project-full-description').innerHTML = project.fullDescription;
                 
+                // Hero visibility
+                const heroImageWrapper = document.querySelector('.hero-image-wrapper');
+                const projectMainImg = document.getElementById('project-main-image');
+                if (project.hideHeroImage) {
+                    if (heroImageWrapper) heroImageWrapper.style.display = 'none';
+                    document.querySelector('.project-hero-premium').style.padding = '220px 0 60px';
+                } else {
+                    if (projectMainImg) projectMainImg.src = project.image;
+                }
+
                 // Background effects
-                document.getElementById('hero-blur-bg').style.backgroundImage = `url('${project.image}')`;
-                document.getElementById('project-main-image').src = project.image;
+                const heroBlurBg = document.getElementById('hero-blur-bg');
+                if (heroBlurBg) {
+                    heroBlurBg.style.backgroundImage = `url('${project.image}')`;
+                }
                 
-                document.getElementById('project-year').textContent = project.year;
-                document.getElementById('project-type').textContent = project.category;
+                const yearEl = document.getElementById('project-year');
+                if (yearEl) yearEl.textContent = project.year;
+
+                const typeEl = document.getElementById('project-type');
+                if (typeEl) typeEl.textContent = project.category;
 
                 const toolsContainer = document.getElementById('project-tools');
-                if (toolsContainer) {
+                if (toolsContainer && project.tools) {
                     project.tools.forEach(tool => {
                         const chip = document.createElement('span');
                         chip.className = 'tool-chip';
@@ -268,6 +256,82 @@
                         toolsContainer.appendChild(chip);
                     });
                 }
+
+                // Generic Sections Logic
+                if (project.sections) {
+                    const briefSection = document.getElementById('dynamic-brief-section');
+                    const briefContainer = document.getElementById('brief-container');
+                    briefSection.style.display = 'block';
+
+                    project.sections.forEach((section, index) => {
+                        const row = document.createElement('div');
+                        row.className = 'brief-grid';
+                        if (index > 0) row.style.marginTop = '60px';
+
+                        const isTextLeft = section.type === 'text-left';
+                        const revealClassText = isTextLeft ? 'reveal-left' : 'reveal-right';
+                        const revealClassImg = isTextLeft ? 'reveal-right' : 'reveal-left';
+
+                        const textCol = `
+                            <div class="brief-card ${revealClassText}" style="border: none; box-shadow: none; background: transparent; padding: 0;">
+                                <h3 class="section-title-alt">
+                                    <span>${section.title}</span>
+                                </h3>
+                                <div class="brief-text">
+                                    ${section.content.replace(/\n/g, '<br>')}
+                                </div>
+                            </div>
+                        `;
+
+                        const imgCol = `
+                            <div class="reveal ${revealClassImg}">
+                                <div class="tilted-photo-card ${section.isPoster ? 'small-poster' : ''}">
+                                    <img src="${section.image}" alt="${section.title}">
+                                </div>
+                            </div>
+                        `;
+
+                        row.innerHTML = isTextLeft ? (textCol + imgCol) : (imgCol + textCol);
+                        briefContainer.appendChild(row);
+                    });
+
+                    // Add links (Instagram Button)
+                    if (project.links) {
+                        const linkRow = document.createElement('div');
+                        linkRow.className = 'reveal';
+                        linkRow.style.textAlign = 'center';
+                        linkRow.style.marginTop = '60px';
+                        linkRow.style.marginBottom = '60px';
+                        
+                        project.links.forEach(link => {
+                            if (link.type === 'instagram') {
+                                linkRow.innerHTML = `
+                                    <a href="${link.url}" target="_blank" class="btn-instagram">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                        </svg>
+                                        ${link.label}
+                                    </a>
+                                `;
+                            }
+                        });
+                        briefContainer.appendChild(linkRow);
+                    }
+
+                    // Init Observer
+                    const observerOptions = { threshold: 0.1 };
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('active');
+                            }
+                        });
+                    }, observerOptions);
+                    document.querySelectorAll('.reveal-left, .reveal-right, .reveal').forEach(el => observer.observe(el));
+                }
+
             } else {
                 window.location.href = 'index.html';
             }
