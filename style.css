@@ -4646,3 +4646,262 @@ body.dark-mode .bretagne-map path {
         padding: 12px 20px;
     }
 }
+
+/* ============================================================ 
+   PROJECT DETAIL PAGES & PREMIUM BENTO UTILITIES
+   ============================================================ */
+
+/* Project Hero Premium */
+.project-hero-premium {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 180px 0 120px;
+    text-align: center;
+}
+
+.project-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    filter: blur(80px) brightness(0.7);
+    transform: scale(1.2);
+    opacity: 0.6;
+}
+
+body.dark-mode .project-hero-bg {
+    filter: blur(80px) brightness(0.4);
+    opacity: 0.4;
+}
+
+.project-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, #f8fafc 98%);
+    z-index: -1;
+}
+
+body.dark-mode .project-hero-overlay {
+    background: linear-gradient(180deg, transparent 0%, #0f172a 98%);
+}
+
+.hero-image-wrapper {
+    margin-top: 60px;
+    perspective: 2000px;
+    z-index: 10;
+    position: relative;
+}
+
+.project-featured-img {
+    max-width: 1000px;
+    width: 95%;
+    height: auto;
+    border-radius: 32px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.25);
+    transform: rotateX(8deg) translateY(0);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-featured-img:hover {
+    transform: rotateX(0deg) translateY(-10px) scale(1.01);
+    box-shadow: 0 60px 120px rgba(0,0,0,0.3);
+}
+
+/* Sidebar Info Elements */
+.sidebar-info-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .sidebar-info-item {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.sidebar-info-label {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.sidebar-info-value {
+    font-weight: 800;
+    color: #1e293b;
+    font-size: 1.25rem;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+body.dark-mode .sidebar-info-value {
+    color: #f1f5f9;
+}
+
+/* Tool Chips / Badges */
+.tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tool-chip {
+    padding: 6px 14px;
+    background: rgba(79, 70, 229, 0.06);
+    color: #4f46e5;
+    border: 1px solid rgba(79, 70, 229, 0.15);
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .tool-chip {
+    background: rgba(79, 70, 229, 0.15);
+    color: #a5b4fc;
+    border-color: rgba(79, 70, 229, 0.2);
+}
+
+.tool-chip:hover {
+    background: #4f46e5;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(79, 70, 229, 0.2);
+}
+
+/* Bento Enhancements for Detail Pages */
+.about-bento-grid, .bento-grid {
+    display: grid;
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+/* Specific Bento Cards for Detail Pages */
+.bento-card-large { grid-column: span 2; }
+.bento-card-small { grid-column: span 1; }
+.bento-card-full { grid-column: span 3; }
+
+@media (max-width: 991px) {
+    .bento-card-large, .bento-card-small, .bento-card-full {
+        grid-column: span 3;
+    }
+}
+
+/* Custom Profile Badge for About/Athlete */
+.alternate-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(79, 70, 229, 0.08);
+    color: #4f46e5;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 15px;
+}
+
+.live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.live-dot::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: inherit;
+    opacity: 0.4;
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Timeline/Education Bento Styling */
+.timeline-bento {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.timeline-bento-card {
+    min-height: auto;
+    padding: 24px;
+    border-radius: 30px;
+}
+
+/* Clothesline / Jeresy Animations for Athlete page */
+@keyframes jerseyFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(12px) rotate(1deg); }
+}
+
+.jersey-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    animation: jerseyFloat 5s ease-in-out infinite;
+}
+
+/* Text Highlights */
+.text-highlight {
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+body.dark-mode .text-highlight {
+    color: #818cf8;
+}
+
+/* Final CTA Section on Long Pages */
+.page-final-cta {
+    text-align: center;
+    padding: 40px 0 100px;
+}
+
+.btn-premium {
+    padding: 18px 45px;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 100px;
+    background: #0f172a;
+    color: white;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    display: inline-block;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.btn-premium:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #4f46e5;
+    box-shadow: 0 25px 50px rgba(79, 70, 229, 0.3);
+}
+
+body.dark-mode .btn-premium {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+body.dark-mode .btn-premium:hover {
+    background: #4f46e5;
+    color: white;
+}
