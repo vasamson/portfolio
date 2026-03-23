@@ -8,17 +8,17 @@
 body {
     font-family: 'Outfit', -apple-system, sans-serif;
     color: #1e293b;
-    background: #eef2f8; /* Soft blueish background inspired by the image */
+    background: #eef2f8;
     min-height: 100vh;
-    padding: 3rem;
+    padding: 1.5rem; /* Reduced from 3rem */
     position: relative;
     overflow-x: hidden;
-    line-height: 1.6;
+    line-height: 1.4; /* Reduced from 1.6 */
 }
 
 /* BACKGROUND DECORATIONS (The magical/dreamy vibes) */
 .background-decorations {
-    position: fixed;
+    position: absolute; /* Changed from fixed */
     top: 0;
     left: 0;
     width: 100%;
@@ -54,25 +54,21 @@ body {
     position: absolute;
     width: 24px;
     height: 24px;
-    animation: twinkle 3s infinite alternate;
 }
 
 .star-1 { top: 15%; right: 25%; width: 40px; height: 40px; }
-.star-2 { bottom: 20%; left: 10%; width: 30px; height: 30px; animation-delay: 1s; }
-.star-3 { top: 40%; right: 5%; width: 35px; height: 35px; animation-delay: 0.5s; }
+.star-2 { bottom: 20%; left: 10%; width: 30px; height: 30px; }
+.star-3 { top: 40%; right: 5%; width: 35px; height: 35px; }
 
-@keyframes twinkle {
-    0% { transform: scale(0.8); opacity: 0.6; }
-    100% { transform: scale(1.1); opacity: 1; }
-}
+/* Animations removed */
 
 /* ================== MAIN CV LAYOUT ================== */
 .cv-container {
-    max-width: 1100px;
+    max-width: 950px; /* Slimmed down */
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 30px;
+    grid-template-columns: 280px 1fr; /* Narrowed left col */
+    gap: 20px; /* Reduced from 30px */
     background: transparent;
 }
 
@@ -80,15 +76,15 @@ body {
 .left-col {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px; /* Reduced from 30px */
 }
 
 /* Photo Wrapper */
 .photo-wrapper {
     position: relative;
-    width: 280px;
-    height: 280px;
-    margin: 0 auto 10px;
+    width: 220px; /* Reduced from 280px */
+    height: 220px; /* Reduced from 280px */
+    margin: 0 auto 5px;
 }
 
 .photo-border {
@@ -136,9 +132,9 @@ body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 30px;
+    border-radius: 24px; /* Slightly reduced */
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    padding: 25px;
+    padding: 18px; /* Reduced from 25px */
     position: relative;
 }
 
@@ -148,17 +144,17 @@ body {
     color: white;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 20px;
+    gap: 6px;
+    padding: 6px 16px; /* Reduced padding */
     border-radius: 99px;
-    font-size: 1.1rem;
+    font-size: 0.95rem; /* Reduced from 1.1 */
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     position: relative;
-    top: -45px;
-    left: -10px;
-    margin-bottom: -35px;
+    top: -32px; /* Adjusted position */
+    left: -5px;
+    margin-bottom: -28px; /* Adjusted margin */
     box-shadow: 0 8px 15px rgba(30, 10, 140, 0.2);
 }
 
@@ -227,7 +223,7 @@ body {
 .contact-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px; /* Reduced from 12px */
 }
 .contact-item {
     display: flex;
@@ -275,8 +271,8 @@ body {
 .right-col {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding-top: 20px;
+    gap: 20px; /* Reduced from 30px */
+    padding-top: 10px;
 }
 
 /* Header Name */
@@ -289,7 +285,7 @@ body {
     display: inline-block;
 }
 .first-name {
-    font-size: 5rem;
+    font-size: 3.8rem; /* Reduced from 5rem */
     font-weight: 900;
     color: #1e0a8c;
     line-height: 0.8;
@@ -297,12 +293,12 @@ body {
     position: relative;
 }
 .last-name {
-    font-size: 4.5rem;
+    font-size: 3.5rem; /* Reduced from 4.5rem */
     font-weight: 900;
     color: #1e0a8c;
     line-height: 0.9;
     text-transform: uppercase;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 .name-sparkle {
     position: absolute;
@@ -315,10 +311,10 @@ body {
 .title-bar {
     display: inline-block;
     border-top: 2px solid #1e0a8c;
-    padding-top: 8px;
-    margin-top: 15px;
-    margin-left: 20px;
-    font-size: 1.4rem;
+    padding-top: 5px;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 1.2rem; /* Reduced from 1.4 */
     font-weight: 500;
     color: #334155;
     display: flex;
@@ -369,7 +365,7 @@ body {
 .split-col-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 20px; /* Reduced from 30px */
 }
 .split-half {
     display: flex;
@@ -381,10 +377,10 @@ body {
 
 /* Timelines for Experience/Activate */
 .timeline-list {
-    margin-top: 15px;
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px; /* Reduced from 20px */
 }
 .timeline-item {
     border-left: 2px solid #cbd5e1;
@@ -425,9 +421,9 @@ body {
 .softwares-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 12px; /* Reduced from 20px */
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 .software-card {
     display: flex;
@@ -436,16 +432,16 @@ body {
     gap: 8px;
 }
 .soft-icon {
-    width: 60px;
-    height: 60px;
+    width: 48px; /* Reduced from 60px */
+    height: 48px; /* Reduced from 60px */
     background: white;
     border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 16px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 .soft-name {
@@ -458,7 +454,8 @@ body {
 .soft-ps { color: #31a8ff; background: #001e36; border: none; }
 .soft-pr { color: #9999ff; background: #00005b; border: none; }
 .soft-ai { color: #ff9a00; background: #330000; border: none; }
-.soft-lr { color: #31a8ff; background: #001e36; border: none; }
+.soft-blender { color: #ffffff; background: #ea7600; border: none; }
+.soft-dji { color: #ffffff; background: #000000; border: none; }
 
 /* Global Floating Download CTA */
 .floating-download {
@@ -533,6 +530,39 @@ body {
 @media (max-width: 500px) {
     body {
         padding: 15px;
+    }
+    .first-name { font-size: 3rem; }
+    .last-name { font-size: 2.8rem; }
+}
+
+/* PRINT OPTIMIZATION FOR A4 */
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    body {
+        padding: 10mm;
+        background: white;
+        zoom: 0.95; /* Small adjustment to ensure fit */
+    }
+    .background-decorations, .floating-download {
+        display: none !important;
+    }
+    .cv-container {
+        max-width: 100%;
+        gap: 15px;
+    }
+    .cv-section {
+        background: white;
+        border: 1px solid #e2e8f0;
+        box-shadow: none;
+        break-inside: avoid;
+        padding: 15px;
+    }
+    .photo-wrapper {
+        width: 180px;
+        height: 180px;
     }
     .first-name { font-size: 3rem; }
     .last-name { font-size: 2.8rem; }
