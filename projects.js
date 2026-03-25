@@ -33,7 +33,7 @@ const projectsData = {
         "tools": ["Production Visuelle", "Stratégie Social Media", "Community Management Live", "Alé Custom"],
         "year": "2025",
         "image": "Projets/Championnat Europe cyclisme/photo.JPG", // Used for the index card
-        "hideHeroImage": true, 
+        "hideHeroImage": true,
         "fullDescription": "Intervenir sur un événement d'envergure internationale comme les <span class='text-highlight'>Championnats d'Europe</span> ne se limite pas à la simple publication de résultats. C'est un défi de <span class='text-highlight'>réactivité</span>, de créativité et de narration en temps réel. En Ardèche, j'ai piloté une mission transverse visant à transformer chaque instant de course en un <span class='text-highlight'>contenu digital impactant</span>.",
         "gallery": [
             "Projets/Championnat Europe cyclisme/photo.JPG",
@@ -92,13 +92,64 @@ const projectsData = {
         "fullDescription": "Développement d'un site vitrine moderne permettant de suivre les étapes, de consulter les classements et de découvrir l'histoire du circuit."
     },
     "ale-custom": {
-        "title": "Instagram Alé Custom France",
-        "category": "Social Media",
-        "description": "Gestion et création de contenus pour l'antenne française de la marque de vêtements Alé.",
-        "tools": ["Méta Business suite"],
-        "year": "2024",
-        "image": "projects/ale.jpg",
-        "fullDescription": "Stratégie de contenu quotidienne, création de visuels et gestion de la publicité via Meta pour accroître la notoriété de la marque en France."
+        "title": "Alé Custom France",
+        "category": "Social Media & Direction Artistique",
+        "description": "Création et gestion complète de la vitrine digitale française de la marque Alé.",
+        "tools": ["Direction Artistique", "Méta Business Suite", "Instagram", "Community Management"],
+        "year": "2025",
+        "image": "Projets/Ale-custom-France/pantonier.jpg",
+        "hideHeroImage": true,
+        "fullDescription": "Création et gestion de la vitrine digitale d'<span class='text-highlight'>Alé Custom France</span>. Une mission créative globale visant à ancrer l'image <span class='text-highlight'>premium</span> de la marque sur le marché français, à travers une direction artistique soignée et un pilotage complet du compte Instagram.",
+        "gallery": [
+            "Projets/Ale-custom-France/pantonier.jpg",
+            "Projets/Ale-custom-France/2.png",
+            "Projets/Ale-custom-France/IMG_8666.JPG",
+            "Projets/Ale-custom-France/ALE_CUSTOM_TEAM25_1491.jpg",
+            "Projets/Ale-custom-France/pantonier.jpg"
+        ],
+        "sections": [
+            {
+                "title": "Présentation du projet",
+                "content": "Alé Custom France est un compte Instagram lancé en <span class='text-highlight'>octobre 2025</span> pour développer la visibilité de Alé Cycling en France. Pensé comme une <span class='text-highlight'>vitrine digitale</span>, il met en avant l’univers visuel de la marque à travers une communication moderne, esthétique et cohérente.",
+                "type": "text-right",
+                "image": "Projets/Ale-custom-France/1.png",
+                "isPoster": true
+            },
+            {
+                "title": "Objectifs",
+                "content": "L’objectif est de valoriser les équipes françaises, notamment celles liées à la <span class='text-highlight'>Fédération Française de Cyclisme</span>, tout en mettant en lumière les créations custom. Le projet vise aussi à renforcer l’image premium d’Alé et à développer sa présence sur le <span class='text-highlight'>marché français</span>.",
+                "type": "text-left",
+                "image": "Projets/Ale-custom-France/2.png",
+                "isPoster": true
+            },
+            {
+                "title": "Missions réalisées",
+                "content": "J’ai créé et géré entièrement le compte, de la <span class='text-highlight'>direction artistique</span> à la publication des contenus. Je mets en avant les maillots, les collaborations et les actualités cyclistes, tout en valorisant le travail graphique et les <span class='text-highlight'>projets réalisés en France</span>.",
+                "type": "text-right",
+                "image": "Projets/Ale-custom-France/IMG_8666.JPG"
+            },
+            {
+                "title": "Approche & direction artistique",
+                "content": "La direction artistique repose sur des <span class='text-highlight'>visuels forts</span>, mettant en avant les détails, les textures et l’élégance des produits. Chaque publication est pensée pour créer un feed <span class='text-highlight'>cohérent et immersif</span>, aligné avec l’image haut de gamme d’Alé.",
+                "type": "text-left",
+                "image": "Projets/Ale-custom-France/ALE_CUSTOM_TEAM25_1491.jpg",
+                "isPoster": true
+            },
+            {
+                "title": "Résultats & valeur ajoutée",
+                "content": "Ce projet structure la présence d’Alé en France et valorise son <span class='text-highlight'>offre custom</span> auprès des clubs. Il renforce l’image de marque, crée une vitrine des réalisations françaises et positionne Alé comme un <span class='text-highlight'>acteur clé</span> du textile cycliste.",
+                "type": "text-right",
+                "image": "Projets/Ale-custom-France/pantonier.jpg",
+                "isPoster": true
+            }
+        ],
+        "links": [
+            {
+                "label": "Voir l'Instagram officiel",
+                "url": "https://www.instagram.com/alecustomfrance/",
+                "type": "instagram"
+            }
+        ]
     },
     "france-cross": {
         "title": "Community manager France de Cross 2026",

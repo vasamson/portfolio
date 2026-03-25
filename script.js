@@ -117,12 +117,19 @@ let currentRotation = 0;
 let rotationSpeed = 0.2; // Slower default speed
 const cardCount = cards.length;
 const angleStep = 360 / cardCount;
-let radius = window.innerWidth < 480 ? 220 : window.innerWidth < 768 ? 280 : 350;
+let radius = window.innerWidth < 480 ? 160 : window.innerWidth < 768 ? 220 : 350;
 
 function setupCarousel() {
     // Re-calculate radius on setup/resize
-    radius = window.innerWidth < 480 ? 220 : window.innerWidth < 768 ? 280 : 350;
+    radius = window.innerWidth < 480 ? 160 : window.innerWidth < 768 ? 220 : 350;
     
+    if (window.innerWidth <= 768) {
+        cards.forEach((card) => {
+            card.style.transform = 'none';
+        });
+        return;
+    }
+
     cards.forEach((card, i) => {
         const angle = i * angleStep;
         card.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
@@ -141,7 +148,36 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
+let mobileScrollDirection = 1;
+let isDragging = false;
+let startX = 0;
+let lastRotation = 0;
+
 function updateCarousel() {
+    if (window.innerWidth <= 768) {
+        // En mobile, on désactive complètement le calcul 3D
+        carousel.style.transform = 'none';
+        cards.forEach(card => {
+            card.style.transform = 'none';
+            card.style.opacity = '1';
+            card.style.visibility = 'visible';
+            card.style.filter = 'none';
+        });
+        
+        // Défilement 2D doux et continu (ping-pong)
+        if (!isDragging) {
+            carousel.scrollLeft += mobileScrollDirection * 1;
+            
+            // Inversion de la direction si on touche un bord
+            if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 2) {
+                mobileScrollDirection = -1;
+            } else if (carousel.scrollLeft <= 0) {
+                mobileScrollDirection = 1;
+            }
+        }
+        return;
+    }
+
     carousel.style.transform = `rotateY(${currentRotation}deg)`;
     
     // Highlight effect based on proximity to center (0 degrees relative)
@@ -152,16 +188,16 @@ function updateCarousel() {
         const normalizedAngle = ((cardAngle + 180) % 360) - 180;
         const dist = Math.abs(normalizedAngle);
         
-        // Continuous, smooth transition for opacity and blur
-        // dist is 0 at center, up to 180 at the back
-        const opacity = Math.max(0.6, 1 - (dist / 200));
-        const scale = Math.max(0.85, 1 - (dist / 500));
+        // Let native preserve-3d handle depth sorting!
+        // We make cards in the back disappear to avoid seeing their reverse sides backing up the scene
+        // dist > 90 means it's on the back hemisphere
+        const opacity = dist > 90 ? 0 : 1; 
         card.style.opacity = opacity;
         card.style.filter = "none";
-        card.style.transform = `rotateY(${i * angleStep}deg) translateZ(${radius}px) scale(${scale})`;
         
-        // Dynamic Z-Index to keep front cards on top
-        card.style.zIndex = Math.round(100 - dist);
+        const scale = Math.max(0.85, 1 - (dist / 500));
+        card.style.transform = `rotateY(${i * angleStep}deg) translateZ(${radius}px) scale(${scale})`;
+
     });
 }
 
@@ -203,6 +239,33 @@ if (carousel && cards.length > 0) {
         if (e.key === 'ArrowLeft') currentRotation += angleStep;
         if (e.key === 'ArrowRight') currentRotation -= angleStep;
         updateCarousel();
+    });
+
+    // Touch / Swipe support
+
+    scene.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        rotationSpeed = 0; // stop auto rotation
+    }, {passive: true});
+
+    scene.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        
+        let deltaX = e.touches[0].clientX - startX;
+        
+        // Si on est sur Desktop, on fait tourner la 3D
+        if (window.innerWidth > 768) {
+            currentRotation += deltaX * 0.1; // adjust sensitivity
+            updateCarousel();
+        }
+        
+        startX = e.touches[0].clientX;
+    }, {passive: true});
+
+    scene.addEventListener('touchend', () => {
+        isDragging = false;
+        rotationSpeed = 0.2; // resume auto rotation
     });
 }
 

@@ -12,7 +12,6 @@ body {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
-
 body {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     color: #1e293b;
@@ -1106,18 +1105,52 @@ body.dark-mode .project-card {
 
 @media (max-width: 768px) {
     .carousel-3d-scene {
-        --card-width: 170px;
-        --card-height: 240px;
-        height: 350px;
+        --card-width: 220px;
+        --card-height: 300px;
+        perspective: none !important;
+        height: auto;
+        display: block;
+        width: 100vw;
+        margin-left: -16px;
+        padding: 0;
+    }
+    
+    .site-waves {
+        background-attachment: scroll !important; /* Fix iOS fixed rendering bug exclusively on mobile */
+    }
+    
+    .carousel-3d::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+
+    .carousel-3d {
+        transform-style: flat !important;
+        -webkit-transform-style: flat !important;
+        display: flex !important;
+        gap: 20px;
+        padding: 20px 16px;
+        width: 100vw !important;
+        height: auto;
+        align-items: stretch;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .carousel-card {
+        position: relative !important;
+        flex-shrink: 0;
+        z-index: 1 !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border-radius: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .carousel-3d-scene {
-        --card-width: 140px;
-        --card-height: 200px;
-        height: 300px;
-        perspective: 1000px;
+        --card-width: 200px;
+        --card-height: 280px;
     }
 }
 
@@ -1126,6 +1159,7 @@ body.dark-mode .project-card {
     height: var(--card-height);
     position: relative;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     transition: transform 0.1s linear;
 }
 
@@ -1151,6 +1185,7 @@ body.dark-mode .project-card {
     text-align: center;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
 }
 
 .carousel-card.flipped .card-inner {
@@ -1452,6 +1487,8 @@ body.dark-mode .skill-desc-3d {
         width: 40px;
         height: 40px;
         font-size: 0.8rem;
+        opacity: 1 !important;
+        display: flex !important;
     }
 }
 
@@ -4542,9 +4579,17 @@ body.dark-mode .bretagne-map path {
         min-height: 280px;
     }
 
-    /* Scale down ornaments */
+    /* Keep ornaments visible and smaller without breaking animations */
     .ornament {
-        display: none; /* Hide ornaments on very small screens to avoid clutter */
+        display: flex !important;
+        opacity: 1 !important;
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    .ornament svg {
+        width: 20px !important;
+        height: 20px !important;
     }
 
     .project-body {
@@ -4583,9 +4628,9 @@ body.dark-mode .bretagne-map path {
         margin-bottom: 24px !important;
     }
 
-    /* Carousel Nav Buttons */
+    /* Hide carousel buttons because we use native scroll */
     .nav-btn {
-        display: none !important; 
+        display: none !important;
     }
 
     /* Carousel Height */
