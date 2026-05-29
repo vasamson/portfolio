@@ -11,7 +11,7 @@ body {
     padding: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+/* Police chargée via <link> dans le <head> (avec preconnect) — pas de @import ici pour éviter le double téléchargement et le blocage du rendu. */
 body {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     color: #1e293b;
@@ -5124,4 +5124,36 @@ body.dark-mode .section-title-alt {
 body.dark-mode .tilted-photo-card {
     background: #1e293b;
     border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ===========================================================
+   ACCESSIBILITÉ — Réduction des animations
+   Respecte le réglage système "Réduire les animations".
+   Les transitions courtes (hover, etc.) restent fonctionnelles,
+   mais on coupe les animations infinies et les longs mouvements.
+   =========================================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Stoppe les éléments décoratifs en mouvement continu */
+    .blob,
+    .site-waves,
+    .dot-ping,
+    .scroll-mouse,
+    .scroll-wheel,
+    .tagline-cursor {
+        animation: none !important;
+    }
+
+    /* Le carrousel 3D ne tourne plus tout seul (géré aussi en JS) */
+    .carousel-3d {
+        transition: none !important;
+    }
 }

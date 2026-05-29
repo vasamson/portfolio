@@ -7,14 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
         content="Portfolio de Valentin Samson, Social Media Manager, Créateur de Contenu et Expert Shopify." />
+    <meta name="google-site-verification" content="DO14p9EzOXuatorwHbl79O6Brv1v3pVAnUjpjj6FaAg" />
+    <meta name="theme-color" content="#f8fafc" />
+    <meta name="author" content="Valentin Samson" />
+    <link rel="canonical" href="https://valentinsamson.fr/" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+
+    <!-- Open Graph / réseaux sociaux -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="https://valentinsamson.fr/" />
+    <meta property="og:title" content="Valentin Samson — Social Media Manager & Créateur de Contenu" />
+    <meta property="og:description"
+        content="Portfolio de Valentin Samson : stratégie Social Media, création de contenu sportif et expertise Shopify." />
+    <meta property="og:image" content="https://valentinsamson.fr/images/moi.JPG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Valentin Samson — Social Media Manager & Créateur de Contenu" />
+    <meta name="twitter:description"
+        content="Portfolio de Valentin Samson : stratégie Social Media, création de contenu sportif et expertise Shopify." />
+    <meta name="twitter:image" content="https://valentinsamson.fr/images/moi.JPG" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <meta name="google-site-verification" content="DO14p9EzOXuatorwHbl79O6Brv1v3pVAnUjpjj6FaAg" />
 </head>
 
 
 <body>
+    <script>
+        /* Applique le thème sombre avant le rendu pour éviter le flash (FOUC) */
+        (function () { try { if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode'); } catch (e) { } })();
+    </script>
     <div class="site-waves"></div>
     <!-- HEADER NEW -->
     <header class="header">
@@ -22,7 +47,7 @@
             <!-- Left: Avatar + Nav -->
             <div class="header-left">
                 <a href="index.html" class="brand-avatar-link">
-                    <img src="images/logo_header.png" alt="Valentin Samson" class="header-avatar-img" />
+                    <img src="images/logo_header.png" alt="Valentin Samson" class="header-avatar-img" width="48" height="48" decoding="async" />
                 </a>
                 <nav class="nav-new">
                     <a href="index.html" class="nav-link active">Accueil</a>
@@ -36,7 +61,7 @@
             <!-- Right: Actions -->
             <div class="header-right">
                 <!-- CV Action -->
-                <a href="CV.pdf" target="_blank" class="btn-new-call">
+                <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-new-call">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -58,7 +83,7 @@
                             <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                     </a>
-                    <a href="https://instagram.com" target="_blank" class="icon-btn-header" aria-label="Instagram">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="icon-btn-header" aria-label="Instagram">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -66,7 +91,7 @@
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                         </svg>
                     </a>
-                    <a href="https://linkedin.com" target="_blank" class="icon-btn-header" aria-label="LinkedIn">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="icon-btn-header" aria-label="LinkedIn">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
                             </path>
@@ -220,7 +245,8 @@
                             </svg>
                         </div>
                     </div>
-                    <img src="images/moi.JPG" alt="Valentin Samson" class="hero-image">
+                    <img src="images/moi.JPG" alt="Portrait de Valentin Samson" class="hero-image"
+                        fetchpriority="high" decoding="async" width="500" height="600">
                 </div>
             </div>
 
@@ -659,7 +685,7 @@
                     <article class="project-card" data-category="social">
                         <a href="projet.html?id=championnat-cyclisme" class="project-link-wrapper">
                             <div class="project-thumb">
-                                <img src="Projets/Championnat Europe cyclisme/photo.JPG" alt="Championnat d'Europe" />
+                                <img src="Projets/Championnat Europe cyclisme/photo.JPG" alt="Championnat d'Europe" loading="lazy" decoding="async" />
                                 <div class="project-card-badges">
                                     <span class="card-badge">SOCIAL</span>
                                     <span class="card-badge">2025</span>
@@ -681,7 +707,7 @@
                     <article class="project-card" data-category="social">
                         <a href="projet.html?id=ale-custom" class="project-link-wrapper">
                             <div class="project-thumb">
-                                <img src="Projets/Ale-custom-France/pantonier.jpg" alt="Alé Custom" />
+                                <img src="Projets/Ale-custom-France/pantonier.jpg" alt="Alé Custom" loading="lazy" decoding="async" />
                                 <div class="project-card-badges">
                                     <span class="card-badge">CONTENT</span>
                                     <span class="card-badge">2025</span>
@@ -703,7 +729,7 @@
                     <article class="project-card" data-category="social">
                         <a href="projet.html?id=france-cross" class="project-link-wrapper">
                             <div class="project-thumb">
-                                <img src="projects/cross.jpg" alt="France de Cross 2026" />
+                                <img src="projects/cross.jpg" alt="France de Cross 2026" loading="lazy" decoding="async" />
                                 <div class="project-card-badges">
                                     <span class="card-badge">SPORT</span>
                                     <span class="card-badge">2026</span>
@@ -725,7 +751,7 @@
                     <article class="project-card" data-category="e-commerce">
                         <a href="projet.html?id=italvet" class="project-link-wrapper">
                             <div class="project-thumb">
-                                <img src="projects/italvet.jpg" alt="ITALVET" />
+                                <img src="projects/italvet.jpg" alt="ITALVET" loading="lazy" decoding="async" />
                                 <div class="project-card-badges">
                                     <span class="card-badge">BRANDING</span>
                                     <span class="card-badge">2024</span>
@@ -747,7 +773,7 @@
                     <article class="project-card" data-category="e-commerce">
                         <a href="projet.html?id=ffc" class="project-link-wrapper">
                             <div class="project-thumb">
-                                <img src="projects/ffc.jpg" alt="Boutique FFC" />
+                                <img src="projects/ffc.jpg" alt="Boutique FFC" loading="lazy" decoding="async" />
                                 <div class="project-card-badges">
                                     <span class="card-badge">SPORT</span>
                                     <span class="card-badge">2024</span>
@@ -769,7 +795,7 @@
                     <article class="project-card" data-category="dev">
                         <a href="projet.html?id=circuit-saone-et-loire" class="project-link-wrapper">
                             <div class="project-thumb">
-                                <img src="projects/circuit.jpg" alt="Circuit Saône-et-Loire" />
+                                <img src="projects/circuit.jpg" alt="Circuit Saône-et-Loire" loading="lazy" decoding="async" />
                                 <div class="project-card-badges">
                                     <span class="card-badge">WEB</span>
                                     <span class="card-badge">2024</span>
@@ -791,7 +817,7 @@
                     <article class="project-card" data-category="dev">
                         <a href="projet.html?id=portfolio" class="project-link-wrapper">
                             <div class="project-thumb">
-                                <img src="projects/portfolio.jpg" alt="Portfolio" />
+                                <img src="projects/portfolio.jpg" alt="Portfolio" loading="lazy" decoding="async" />
                                 <div class="project-card-badges">
                                     <span class="card-badge">PROJET</span>
                                     <span class="card-badge">2024</span>
@@ -813,7 +839,7 @@
                     <article class="project-card" data-category="marketing">
                         <a href="projet.html?id=marketing-newsletter" class="project-link-wrapper">
                             <div class="project-thumb">
-                                <img src="projects/newsletter.jpg" alt="Newsletter Marketing" />
+                                <img src="projects/newsletter.jpg" alt="Newsletter Marketing" loading="lazy" decoding="async" />
                                 <div class="project-card-badges">
                                     <span class="card-badge">MARKETING</span>
                                     <span class="card-badge">2024</span>
@@ -835,7 +861,7 @@
                     <article class="project-card" data-category="e-commerce">
                         <a href="projet.html?id=ardechoise" class="project-link-wrapper">
                             <div class="project-thumb">
-                                <img src="projects/ardechoise.jpg" alt="Capsule Ardéchoise" />
+                                <img src="projects/ardechoise.jpg" alt="Capsule Ardéchoise" loading="lazy" decoding="async" />
                                 <div class="project-card-badges">
                                     <span class="card-badge">DESIGN</span>
                                     <span class="card-badge">2026</span>
@@ -865,7 +891,7 @@
                     <div class="contact-card profile-card">
                         <div class="profile-header">
                             <div class="profile-avatar">
-                                <img src="images/moi.JPG" alt="Valentin Samson">
+                                <img src="images/moi.JPG" alt="Valentin Samson" loading="lazy" decoding="async">
                             </div>
                             <div class="profile-info">
                                 <h3 class="contact-name gradient-text-blue">Valentin Samson</h3>
@@ -893,7 +919,7 @@
                                 Email
                             </a>
 
-                            <a href="https://instagram.com" target="_blank" class="social-btn btn-instagram">
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn btn-instagram">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
                                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -903,7 +929,7 @@
                                 Instagram
                             </a>
 
-                            <a href="https://linkedin.com" target="_blank" class="social-btn btn-linkedin">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn btn-linkedin">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                     <path
                                         d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
@@ -1132,7 +1158,7 @@
                     <div class="footer-group">
                         <span class="footer-group-title">Réseaux</span>
                         <div class="footer-social-circles">
-                            <a href="https://linkedin.com" target="_blank" class="social-circle" title="LinkedIn">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle" title="LinkedIn">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                     <path
                                         d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
@@ -1141,7 +1167,7 @@
                                     <circle cx="4" cy="4" r="2"></circle>
                                 </svg>
                             </a>
-                            <a href="https://instagram.com" target="_blank" class="social-circle" title="Instagram">
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle" title="Instagram">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
                                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -1161,7 +1187,7 @@
                 <div class="footer-extra">
                     <span>Fait avec passion 🎨</span>
                     <a href="index.html" class="logo-mini">
-                        <img src="images/logo-fond.vide.png" alt="Logo VS">
+                        <img src="images/logo-fond.vide.png" alt="Logo VS" loading="lazy" decoding="async" width="40" height="40">
                     </a>
                 </div>
             </div>

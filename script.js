@@ -20,6 +20,9 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
         });
     });
 });
+// Préférence "réduire les animations" du système (utilisée plus bas)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // Dark Mode
 const themeBtns = document.querySelectorAll('.theme-btn');
 const body = document.body;
@@ -36,12 +39,13 @@ const setTheme = (isDark) => {
         themeBtns[0].classList.add('active');
         themeBtns[1].classList.remove('active');
     }
+    // État accessible pour les lecteurs d'écran
+    if (themeBtns[0]) themeBtns[0].setAttribute('aria-pressed', String(!isDark));
+    if (themeBtns[1]) themeBtns[1].setAttribute('aria-pressed', String(isDark));
 };
 
-// Initialisation au chargement
-if (savedTheme === 'dark') {
-    setTheme(true);
-}
+// Initialisation au chargement (synchronise aussi l'état aria-pressed)
+setTheme(savedTheme === 'dark');
 
 // Event Listeners
 themeBtns.forEach((btn, index) => {
@@ -58,9 +62,11 @@ themeBtns.forEach((btn, index) => {
 const scrollProgressBar = document.getElementById('scrollProgress');
 const header = document.querySelector('.header');
 
-window.addEventListener('scroll', () => {
+// Throttle via requestAnimationFrame : le handler ne s'exécute qu'une fois par frame
+let scrollTicking = false;
+const onScroll = () => {
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (window.pageYOffset / totalHeight) * 100;
+    const progress = totalHeight > 0 ? (window.pageYOffset / totalHeight) * 100 : 0;
     if (scrollProgressBar) {
         scrollProgressBar.style.width = progress + '%';
     }
@@ -71,7 +77,15 @@ window.addEventListener('scroll', () => {
     } else {
         header.classList.remove('scrolled');
     }
-});
+    scrollTicking = false;
+};
+
+window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+        window.requestAnimationFrame(onScroll);
+        scrollTicking = true;
+    }
+}, { passive: true });
 
 // 3. Reveal Phone Number - Logic removed as number is now direct.
 
@@ -203,7 +217,13 @@ function updateCarousel() {
 
 if (carousel && cards.length > 0) {
     setupCarousel();
-    requestAnimationFrame(animate);
+    if (prefersReducedMotion) {
+        // Pas de rotation automatique : on affiche le carrousel statique, navigable aux boutons.
+        rotationSpeed = 0;
+        updateCarousel();
+    } else {
+        requestAnimationFrame(animate);
+    }
 
     // Navigation buttons still work by jumping rotation
     prevBtn.addEventListener('click', () => {
@@ -236,8 +256,16 @@ if (carousel && cards.length > 0) {
 
     // Keyboard support
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') currentRotation += angleStep;
-        if (e.key === 'ArrowRight') currentRotation -= angleStep;
+        // Ne pas capturer les flèches quand l'utilisateur tape dans un champ
+        const tag = (e.target.tagName || '').toLowerCase();
+        if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+        if (e.key === 'ArrowLeft') {
+            currentRotation += angleStep;
+        } else if (e.key === 'ArrowRight') {
+            currentRotation -= angleStep;
+        } else {
+            return;
+        }
         updateCarousel();
     });
 
@@ -357,7 +385,14 @@ function updatePhase() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (taglineElement) type();
+    if (taglineElement) {
+        if (prefersReducedMotion) {
+            // Affiche simplement le premier rôle sans animation de frappe
+            taglineElement.textContent = roles[0];
+        } else {
+            type();
+        }
+    }
     
     // Initialize clocks & phase
     updateClocks();
