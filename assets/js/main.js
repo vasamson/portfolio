@@ -164,6 +164,110 @@
         syncSound();
     }
 
+    /* ---------- Mon Tour de France : tracé piloté par le scroll ---------- */
+    const tour = document.getElementById("tour");
+
+    if (tour) {
+        const segs = [...tour.querySelectorAll(".tour__seg")];
+        const pins = [...tour.querySelectorAll(".tour__pin")];
+        const stages = [...tour.querySelectorAll(".stage")];
+        const bike = tour.querySelector(".tour__bike");
+        const kmEl = tour.querySelector(".tour__km");
+        const lengths = segs.map((s) => s.getTotalLength());
+        const total = lengths.reduce((a, b) => a + b, 0);
+        const stageKm = stages.map((s) => Number(s.dataset.km));
+        const fmt = new Intl.NumberFormat("fr-FR");
+        let hovered = -1;
+
+        segs.forEach((s, i) => {
+            s.style.strokeDasharray = `${lengths[i]} ${lengths[i]}`;
+            s.style.strokeDashoffset = lengths[i];
+        });
+
+        /* p : avancement de 0 à 1 le long du parcours complet */
+        const setProgress = (p) => {
+            let left = Math.max(0, Math.min(1, p)) * total;
+            let seg = 0;
+            let local = 0;
+            segs.forEach((s, i) => {
+                const drawn = Math.max(0, Math.min(lengths[i], left));
+                s.style.strokeDashoffset = lengths[i] - drawn;
+                if (left > 0 && drawn > 0) { seg = i; local = drawn; }
+                left -= lengths[i];
+            });
+
+            /* Étape atteinte = fin du dernier segment entièrement tracé */
+            const pos = segs.length ? segs[seg].getPointAtLength(local) : null;
+            if (pos) bike.setAttribute("transform", `translate(${pos.x} ${pos.y})`);
+            const frac = lengths[seg] ? local / lengths[seg] : 0;
+            const reached = p <= 0 ? 0 : (frac >= 0.999 ? seg + 1 : seg);
+            const kmNow = stageKm[seg] + (stageKm[seg + 1] - stageKm[seg]) * frac;
+            kmEl.textContent = fmt.format(Math.round(p <= 0 ? 0 : kmNow / 10) * 10);
+
+            const active = hovered >= 0 ? hovered : reached;
+            pins.forEach((pin, i) => {
+                pin.classList.toggle("is-reached", i <= reached);
+                pin.classList.toggle("is-active", i === active);
+            });
+            stages.forEach((st, i) => {
+                st.classList.toggle("is-reached", i <= reached);
+                st.classList.toggle("is-active", i === active);
+            });
+        };
+
+        let current = 0;
+        const render = () => setProgress(current);
+
+        /* Survol d'une étape (liste ou carte) : on la met en évidence */
+        const hover = (i) => { hovered = i; pins.forEach((pin, j) => pin.classList.toggle("is-hover", j === i)); render(); };
+        [...pins, ...stages].forEach((el) => {
+            el.addEventListener("mouseenter", () => hover(Number(el.dataset.stage)));
+            el.addEventListener("mouseleave", () => hover(-1));
+        });
+
+        const sticky = window.matchMedia("(min-width: 900px)");
+
+        if (reducedMotion) {
+            current = 1;
+            render();
+        } else {
+            /* Desktop : le scroll fait avancer le vélo. Mobile : animation à l'apparition. */
+            const onScroll = () => {
+                if (!sticky.matches) return;
+                const r = tour.getBoundingClientRect();
+                const run = tour.offsetHeight - window.innerHeight;
+                current = run > 0 ? Math.max(0, Math.min(1, -r.top / run)) : 1;
+                render();
+            };
+            window.addEventListener("scroll", onScroll, { passive: true });
+            window.addEventListener("resize", onScroll);
+            onScroll();
+
+            let played = false;
+            const play = () => {
+                if (played || sticky.matches) return;
+                played = true;
+                const start = performance.now();
+                const step = (now) => {
+                    const t = Math.min(1, (now - start) / 4500);
+                    current = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+                    render();
+                    if (t < 1) requestAnimationFrame(step);
+                };
+                requestAnimationFrame(step);
+            };
+            if ("IntersectionObserver" in window) {
+                new IntersectionObserver(([entry]) => { if (entry.isIntersecting) play(); }, { threshold: 0.3 })
+                    .observe(tour.querySelector(".tour__map"));
+            } else {
+                current = 1;
+                render();
+            }
+            sticky.addEventListener("change", () => { if (!sticky.matches && !played) { current = 1; render(); } else onScroll(); });
+        }
+        render();
+    }
+
     /* ---------- Carrousel ---------- */
     document.querySelectorAll(".slider").forEach((slider) => {
         const track = slider.querySelector(".slider__track");

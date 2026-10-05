@@ -396,6 +396,63 @@ a.status:hover { opacity: .8; }
 .filter:hover { background: var(--blue-50); }
 .filter[aria-pressed="true"] { background: var(--blue-700); border-color: var(--blue-700); color: var(--on-primary); }
 
+/* ---------- Mon Tour de France ---------- */
+.tour { position: relative; height: 320vh; }
+.tour__sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; padding-top: var(--header-h); }
+.tour__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: center; }
+.tour__map svg { width: 100%; height: auto; max-height: calc(100vh - var(--header-h) - 48px); overflow: visible; }
+.tour__land { fill: var(--blue-50); stroke: var(--blue-300); stroke-width: 2; stroke-linejoin: round; }
+.tour__gridline { stroke: var(--grid-line); stroke-width: 1.5; }
+.tour__route-bg path { fill: none; stroke: var(--blue-300); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1 11; }
+.tour__route path { fill: none; stroke: var(--blue-600); stroke-width: 6; stroke-linecap: round; }
+.tour__pin { cursor: pointer; }
+.tour__dot { fill: var(--white); stroke: var(--blue-300); stroke-width: 3; transition: fill .3s, stroke .3s; }
+.tour__num { font-family: var(--font-title); font-size: 15px; font-weight: 800; fill: var(--blue-400); transition: fill .3s; pointer-events: none; }
+.tour__halo { fill: var(--blue-500); opacity: 0; transform-box: fill-box; transform-origin: center; }
+.tour__label { font-family: var(--font-title); font-size: 24px; font-weight: 800; fill: var(--blue-900); paint-order: stroke; stroke: var(--white); stroke-width: 6px; stroke-linejoin: round; opacity: 0; transition: opacity .3s; pointer-events: none; }
+.tour__pin.is-reached .tour__dot { fill: var(--blue-700); stroke: var(--blue-700); }
+.tour__pin.is-reached .tour__num { fill: var(--on-primary); }
+.tour__pin.is-active .tour__halo { animation: tour-pulse 1.6s ease-out infinite; }
+.tour__pin.is-active .tour__label, .tour__pin:hover .tour__label, .tour__pin.is-hover .tour__label { opacity: 1; }
+@keyframes tour-pulse { 0% { transform: scale(.6); opacity: .45; } 100% { transform: scale(1.6); opacity: 0; } }
+.tour__tag { font-family: var(--font-hand); font-size: 30px; fill: var(--blue-600); }
+.tour__finish { color: var(--blue-900); }
+.tour__bike { color: #fff; transition: opacity .3s; pointer-events: none; }
+.tour__bike circle { fill: var(--blue-700); stroke: var(--white); stroke-width: 3; filter: drop-shadow(0 4px 8px rgba(26, 25, 77, .35)); }
+
+.tour__side { display: flex; flex-direction: column; gap: 20px; }
+.tour__counter p:first-child { font-family: var(--font-title); font-weight: 900; line-height: 1; color: var(--blue-600); }
+.tour__km { font-size: clamp(3rem, 6vw, 4.5rem); font-variant-numeric: tabular-nums; }
+.tour__unit { font-family: var(--font-hand); font-weight: 400; font-size: clamp(2rem, 3.6vw, 2.75rem); }
+.tour__sub { margin-top: 6px; color: var(--blue-700); font-family: var(--font-title); font-weight: 500; }
+.tour__list { display: flex; flex-direction: column; border-left: 2px dotted var(--blue-300); margin-left: 15px; }
+.stage { position: relative; display: flex; gap: 14px; padding: 6px 0 6px 0; margin-left: -17px; cursor: pointer; }
+.stage__num { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--white); border: 2px solid var(--blue-300); color: var(--blue-400); font-family: var(--font-title); font-weight: 800; font-size: .875rem; transition: background-color .3s, border-color .3s, color .3s; }
+.stage.is-reached .stage__num { background: var(--blue-700); border-color: var(--blue-700); color: var(--on-primary); }
+.stage__body { flex: 1; min-width: 0; padding: 4px 12px 4px 0; }
+.stage__top { display: flex; justify-content: space-between; gap: 12px; font-family: var(--font-title); color: var(--blue-900); }
+.stage__top strong { font-weight: 800; }
+.stage__top span { color: var(--blue-500); font-size: .875rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.stage__title { font-size: .9375rem; color: var(--blue-700); }
+.stage__more { display: grid; grid-template-rows: 0fr; font-size: .9375rem; line-height: 1.5; transition: grid-template-rows .4s var(--ease); }
+.stage__more > * { overflow: hidden; }
+.stage__meta { font-family: var(--font-title); font-weight: 600; color: var(--blue-600); }
+.stage.is-active .stage__more { grid-template-rows: 1fr; }
+.stage.is-active .stage__more > * { padding-top: 4px; }
+.stage.is-active .stage__body { background: var(--blue-50); border-radius: var(--radius); padding-left: 12px; margin-left: -4px; }
+
+@media (max-width: 899px) {
+    .tour { height: auto; }
+    .tour__sticky { position: static; height: auto; padding-top: 0; display: block; }
+    .tour__grid { grid-template-columns: 1fr; }
+    .tour__side { order: -1; }
+    .tour__map svg { max-height: none; }
+}
+@media (max-height: 980px) and (min-width: 900px) {
+    .stage__title { display: none; }
+    .stage.is-active .stage__title { display: block; }
+}
+
 /* ---------- FAQ ---------- */
 .faq { display: flex; gap: 32px; }
 .faq > .sec-head { flex: 0 0 min(40%, 480px); }
