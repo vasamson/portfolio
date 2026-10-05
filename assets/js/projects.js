@@ -4,6 +4,7 @@
    - category : social | ecommerce | web | design | photo | marketing
    - event    : true pour les projets événementiels (filtre « Événementiel »)
    - cover    : visuel de la carte (sans visuel : couverture générée via "hue")
+   - cardCover: visuel alternatif pour la carte uniquement (ex. affiche verticale)
    - role     : liste « Ce que j'ai fait » (HTML autorisé)
    - stats    : chiffres clés
    - chapters : sections. Soit "image", soit "images" (galerie),
@@ -16,6 +17,222 @@ const IMG = "assets/img/projets/";
 const VID = "assets/video/";
 
 const PROJECTS = [
+    {
+        id: "faun-tour-femmes",
+        title: "J'ai créé les supports du Faun Tour Femmes 2026",
+        cardTitle: "Faun Tour Femmes 2026",
+        category: "design",
+        event: true,
+        categoryLabel: "Identité visuelle & print",
+        year: "2026",
+        summary: "Affiche, maillots distinctifs, catalogue d'hospitalités, mémento des signaleurs et visuels presse pour une course féminine internationale.",
+        tagline: "Pour le Faun Tour Femmes (10 au 13 septembre 2026), j'ai conçu la majorité des supports de communication de l'épreuve.",
+        intro: "Le Faun Tour Femmes est une course féminine internationale de quatre jours en Drôme-Ardèche. J'ai créé son <span class='text-highlight'>affiche</span>, ses <span class='text-highlight'>maillots distinctifs</span> et leurs cadres, le <span class='text-highlight'>catalogue d'hospitalités</span> pour les partenaires, le mémento des signaleurs, le guide technique et les visuels presse.",
+        tools: ["Illustrator", "Photoshop", "InDesign", "Rendus 3D"],
+        cover: IMG + "faun-tour-femmes/affiche.webp",
+        cardCover: IMG + "faun-tour-femmes/maillots-cadres.webp",
+        cardCoverAlt: "Les trois maillots distinctifs du Faun Tour Femmes 2026",
+        coverAlt: "Affiche du Faun Tour Femmes 2026",
+        coverPos: "50% 40%",
+        showCover: false,
+        role: [
+            "J'ai illustré et mis en page l'<strong>affiche</strong>, en A3 et en grand format MUPI.",
+            "J'ai dessiné les <strong>trois maillots distinctifs</strong> et leurs cadres de podium.",
+            "J'ai conçu le <strong>catalogue d'hospitalités</strong> et la présentation des équipes engagées.",
+            "J'ai mis en page le <strong>mémento des signaleurs</strong> et le <strong>guide technique</strong>.",
+            "J'ai créé les <strong>visuels presse</strong> et les bandeaux partenaires."
+        ],
+        stats: [
+            { value: "4", label: "jours de course" },
+            { value: "476,5 km", label: "de parcours, 7 745 m D+" },
+            { value: "~100", label: "coureuses de 15 nationalités" },
+            { value: "420 min", label: "de direct télé" }
+        ],
+        chapters: [
+            {
+                title: "J'ai créé l'affiche",
+                html: "J'ai voulu une illustration <span class='text-highlight'>lumineuse</span> des paysages de la Drôme et de l'Ardèche, avec le parcours des étapes intégré. Je l'ai déclinée en A3 et en grand format pour l'affichage urbain.",
+                images: [
+                    { src: IMG + "faun-tour-femmes/affiche.webp", alt: "Affiche A3 du Faun Tour Femmes" },
+                    { src: IMG + "faun-tour-femmes/affiche-mupi.webp", alt: "Affiche grand format MUPI" }
+                ],
+                poster: true
+            },
+            {
+                title: "J'ai dessiné les maillots distinctifs",
+                html: "Trois maillots aux couleurs de leurs partenaires (leader, grimpeuse, jeune), puis des <span class='text-highlight'>cadres de présentation</span> pour les podiums et les réseaux.",
+                images: [
+                    { src: IMG + "faun-tour-femmes/maillot-leader.webp", alt: "Maillot jaune de leader" },
+                    { src: IMG + "faun-tour-femmes/maillot-grimpeur.webp", alt: "Maillot à pois de la meilleure grimpeuse" },
+                    { src: IMG + "faun-tour-femmes/maillot-jeune.webp", alt: "Maillot blanc de la meilleure jeune" },
+                    { src: IMG + "faun-tour-femmes/maillots-cadres.webp", alt: "Cadres de présentation des maillots" }
+                ]
+            },
+            {
+                title: "J'ai conçu les documents de l'organisation",
+                html: "Catalogue d'hospitalités pour les partenaires, présentation des équipes engagées et guide technique : des documents lisibles, dans la charte de l'épreuve.",
+                images: [
+                    { src: IMG + "faun-tour-femmes/hospitalites.webp", alt: "Catalogue des hospitalités" },
+                    { src: IMG + "faun-tour-femmes/equipes.webp", alt: "Équipes engagées" },
+                    { src: IMG + "faun-tour-femmes/guide.webp", alt: "Guide technique" }
+                ],
+                poster: true
+            },
+            {
+                title: "J'ai mis en page le mémento des signaleurs",
+                html: "Les signaleurs bénévoles assurent la sécurité de la course : j'ai résumé leurs consignes en un <span class='text-highlight'>dépliant clair</span>, avec les bons réflexes illustrés.",
+                image: IMG + "faun-tour-femmes/memento.webp",
+                alt: "Mémento du signaleur"
+            },
+            {
+                title: "J'ai produit les visuels presse et partenaires",
+                html: "Visuel de chiffres clés pour la presse régionale, frise du calendrier des courses et bandeaux partenaires.",
+                images: [
+                    { src: IMG + "faun-tour-femmes/chiffres.webp", alt: "Visuel presse des chiffres clés" },
+                    { src: IMG + "faun-tour-femmes/frise.webp", alt: "Frise des courses 2026" },
+                    { src: IMG + "faun-tour-femmes/partenaires.webp", alt: "Bandeau des partenaires" },
+                    { src: IMG + "faun-tour-femmes/arche.webp", alt: "Arche d'arrivée habillée" }
+                ]
+            }
+        ],
+        outcome: "Ce projet m'a appris à concevoir pour des publics très différents dans une même charte : le grand public avec l'affiche, les partenaires avec le catalogue, les bénévoles avec le mémento."
+    },
+    {
+        id: "championnat-cyclisme",
+        title: "J'ai couvert les Championnats d'Europe de cyclisme 2025",
+        cardTitle: "Championnats d'Europe de cyclisme 2025",
+        category: "social",
+        event: true,
+        categoryLabel: "Social media & production",
+        year: "2025",
+        summary: "Quatre jours de couverture live et de production photo au cœur de l'élite européenne, en Drôme-Ardèche.",
+        tagline: "En octobre 2025, j'ai couvert les Championnats d'Europe UEC sur route en Drôme-Ardèche : photos, contenus en direct et coulisses des partenaires.",
+        intro: "Intervenir sur un événement international comme les <span class='text-highlight'>Championnats d'Europe UEC</span>, c'est un défi de <span class='text-highlight'>réactivité</span>. Pendant quatre jours, j'ai photographié les contre-la-montre, le relais mixte, les courses en ligne et les podiums, puis j'ai produit des contenus pour les réseaux en quelques minutes. J'ai aussi raconté les coulisses des équipementiers de l'Équipe de France.",
+        tools: ["Photographie", "Stratégie social media", "Community management live", "Photoshop"],
+        cover: IMG + "championnat-europe/podium-elite.webp",
+        coverAlt: "Podium des Championnats d'Europe UEC 2025",
+        showCover: false,
+        role: [
+            "J'ai photographié <strong>quatre jours de compétition</strong> : contre-la-montre, relais mixte, courses en ligne et podiums.",
+            "J'ai trié, retouché et publié les images <strong>dans la foulée des arrivées</strong>.",
+            "J'ai produit des contenus dédiés aux <strong>partenaires textiles</strong> de l'Équipe de France (Alé).",
+            "J'ai documenté la <strong>visite de l'atelier Eldera</strong>, où sont fabriquées les tenues."
+        ],
+        stats: [
+            { value: "800", label: "athlètes au départ" },
+            { value: "45", label: "nations représentées" },
+            { value: "4", label: "jours de compétition couverts" },
+            { value: "1 000+", label: "photos produites" }
+        ],
+        chapters: [
+            {
+                title: "J'ai planté le décor",
+                html: "La Drôme et l'Ardèche ont accueilli l'élite européenne en <span class='text-highlight'>octobre 2025</span>. J'ai cherché des points de vue qui montrent à la fois la course et le territoire : relief, vignes et vallées.",
+                image: IMG + "championnat-europe/panorama.webp",
+                alt: "Panorama sur la vallée depuis le parcours"
+            },
+            {
+                title: "J'ai capté l'émotion des podiums",
+                html: "Chaque podium devait être en ligne en quelques minutes : j'ai retouché les photos à la volée, rédigé les légendes et identifié les <span class='text-highlight'>partenaires officiels</span>.",
+                images: [
+                    { src: IMG + "championnat-europe/podium-elite.webp", alt: "Podium d'une course en ligne" },
+                    { src: IMG + "championnat-europe/podium-relais.webp", alt: "Podium du relais mixte" },
+                    { src: IMG + "championnat-europe/equipe-france.webp", alt: "L'Équipe de France sur le podium" }
+                ]
+            },
+            {
+                title: "J'ai suivi la course au plus près",
+                html: "Des aires de départ aux pentes les plus raides, j'ai produit des <span class='text-highlight'>photos HD</span> et des vidéos courtes pour plonger les fans au cœur du peloton.",
+                images: [
+                    { src: IMG + "championnat-europe/clm-equipe.webp", alt: "Départ du contre-la-montre par équipes" },
+                    { src: IMG + "championnat-europe/depart-clm.webp", alt: "Coureurs de l'Équipe de France au départ" },
+                    { src: IMG + "championnat-europe/montee.webp", alt: "Coureurs dans une montée" }
+                ]
+            },
+            {
+                title: "J'ai mis en avant le maillot de champion d'Europe",
+                html: "Pour <span class='text-highlight'>Alé</span>, équipementier du maillot de champion d'Europe, j'ai suivi la remise et la signature du maillot par le vainqueur.",
+                images: [
+                    { src: IMG + "championnat-europe/signature.webp", alt: "Le champion d'Europe signe son maillot" },
+                    { src: IMG + "championnat-europe/maillot-champion.webp", alt: "Maillot de champion d'Europe signé" }
+                ]
+            },
+            {
+                title: "J'ai raconté les coulisses",
+                html: "J'ai accompagné la visite de l'atelier <span class='text-highlight'>Eldera</span>, qui fabrique les tenues : machines à broder, stocks et échanges avec les équipes.",
+                images: [
+                    { src: IMG + "championnat-europe/eldera.webp", alt: "Machines à broder dans l'atelier Eldera" },
+                    { src: IMG + "championnat-europe/atelier-stock.webp", alt: "Stock de tenues à l'atelier" }
+                ]
+            }
+        ],
+        links: [
+            { label: "Voir l'Instagram officiel", url: "https://www.instagram.com/2025uec_road/" }
+        ],
+        outcome: "J'ai appris à travailler vite et proprement sur un événement international : anticiper les placements, trier en quelques minutes et penser chaque photo pour un usage précis (résultat, partenaire, émotion)."
+    },
+    {
+        id: "boucles-drome-ardeche",
+        title: "J'ai proposé la stratégie de contenu des Boucles Drôme Ardèche 2026",
+        cardTitle: "Boucles Drôme Ardèche 2026",
+        category: "social",
+        event: true,
+        categoryLabel: "Stratégie de contenu & print",
+        year: "2026",
+        summary: "Calendrier éditorial pour une course UCI ProSeries, supports de podium et images en caméra embarquée.",
+        tagline: "J'ai présenté une stratégie de community management aux Boucles Drôme Ardèche (UCI ProSeries), puis j'ai réalisé des supports pour l'édition 2026.",
+        intro: "En novembre 2025, j'ai présenté aux organisateurs une <span class='text-highlight'>proposition de contenu</span> complète : un calendrier éditorial jour par jour de décembre à la course (partenaires, équipes engagées, parcours, offres VIP, montées mythiques, comptes à rebours). J'ai ensuite réalisé des <span class='text-highlight'>supports de course</span> (backdrop de podium, casquettes, marches) et filmé en caméra embarquée.",
+        tools: ["Calendrier éditorial", "Illustrator", "InDesign", "PowerPoint", "Caméra embarquée"],
+        cover: IMG + "boucles-drome-ardeche/backdrop.webp",
+        coverAlt: "Backdrop de podium des Boucles Drôme Ardèche 2026",
+        showCover: false,
+        role: [
+            "J'ai rédigé et présenté une <strong>proposition de community management</strong> aux organisateurs.",
+            "J'ai construit un <strong>calendrier éditorial</strong> jour par jour jusqu'à la course.",
+            "J'ai créé les <strong>supports de podium</strong> : backdrop, marches, casquettes.",
+            "J'ai tourné des images en <strong>caméra embarquée</strong> le jour de course."
+        ],
+        chapters: [
+            {
+                title: "J'ai présenté une stratégie",
+                html: "J'ai structuré ma proposition autour d'objectifs clairs, puis d'un <span class='text-highlight'>calendrier mois par mois</span> : un thème par jour, des rendez-vous partenaires réguliers et une montée en puissance jusqu'à la course (28 février – 1ᵉʳ mars 2026).",
+                images: [
+                    { src: IMG + "boucles-drome-ardeche/proposition.webp", alt: "Couverture de la proposition de contenu" },
+                    { src: IMG + "boucles-drome-ardeche/calendrier.webp", alt: "Calendrier éditorial de décembre 2025" }
+                ]
+            },
+            {
+                title: "J'ai habillé le podium",
+                html: "Backdrop aux couleurs des partenaires, habillage latéral, marches du podium, casquettes : j'ai produit les fichiers d'impression grand format.",
+                images: [
+                    { src: IMG + "boucles-drome-ardeche/backdrop.webp", alt: "Backdrop de podium" },
+                    { src: IMG + "boucles-drome-ardeche/cote.webp", alt: "Habillage latéral du podium" },
+                    { src: IMG + "boucles-drome-ardeche/marche.webp", alt: "Habillage des marches" },
+                    { src: IMG + "boucles-drome-ardeche/casquette.webp", alt: "Visuel de casquette" }
+                ]
+            },
+            {
+                title: "J'ai filmé en caméra embarquée",
+                html: "Le jour de course, j'ai tourné des images au plus près des coureurs pour les réseaux.",
+                video: VID + "bda-embarque.mp4",
+                poster: VID + "bda-embarque.webp",
+                vertical: true,
+                alt: "Images en caméra embarquée le jour de course"
+            },
+            {
+                title: "Le résultat sur le terrain",
+                html: "Podiums, soirée de présentation et remerciements aux partenaires : les supports ont accompagné toute l'édition.",
+                images: [
+                    { src: IMG + "boucles-drome-ardeche/podium.webp", alt: "Podium devant le backdrop" },
+                    { src: IMG + "boucles-drome-ardeche/course-1.webp", alt: "Vainqueur levant les bras" },
+                    { src: IMG + "boucles-drome-ardeche/course-2.webp", alt: "Coureurs dans une montée" },
+                    { src: IMG + "boucles-drome-ardeche/presentation.webp", alt: "Soirée de présentation de l'édition" },
+                    { src: IMG + "boucles-drome-ardeche/merci.webp", alt: "Slide de remerciements aux partenaires" }
+                ]
+            }
+        ],
+        outcome: "Présenter une stratégie à un organisateur m'a appris à défendre mes idées avec un document clair et un calendrier concret, plutôt qu'avec des intentions."
+    },
     {
         id: "ardechoise",
         title: "J'ai piloté les réseaux sociaux de L'Ardéchoise 2026",
@@ -124,155 +341,6 @@ const PROJECTS = [
         ],
         outcome: "J'ai appris à tenir une ligne éditoriale sur huit mois, à travailler avec un organisateur, des partenaires et des bénévoles, et surtout à piloter mes choix avec les chiffres : les stories et les Reels ont porté l'essentiel de la portée, c'est là que j'investirai en priorité l'an prochain.",
         credits: "Chiffres : mon bilan de mission CM du 15 juin 2026 (Instagram et Facebook, octobre 2025 – juin 2026)."
-    },
-    {
-        id: "championnat-cyclisme",
-        title: "J'ai couvert les Championnats d'Europe de cyclisme 2025",
-        cardTitle: "Championnats d'Europe de cyclisme 2025",
-        category: "social",
-        event: true,
-        categoryLabel: "Social media & production",
-        year: "2025",
-        summary: "Quatre jours de couverture live et de production photo au cœur de l'élite européenne, en Drôme-Ardèche.",
-        tagline: "En octobre 2025, j'ai couvert les Championnats d'Europe UEC sur route en Drôme-Ardèche : photos, contenus en direct et coulisses des partenaires.",
-        intro: "Intervenir sur un événement international comme les <span class='text-highlight'>Championnats d'Europe UEC</span>, c'est un défi de <span class='text-highlight'>réactivité</span>. Pendant quatre jours, j'ai photographié les contre-la-montre, le relais mixte, les courses en ligne et les podiums, puis j'ai produit des contenus pour les réseaux en quelques minutes. J'ai aussi raconté les coulisses des équipementiers de l'Équipe de France.",
-        tools: ["Photographie", "Stratégie social media", "Community management live", "Photoshop"],
-        cover: IMG + "championnat-europe/podium-elite.webp",
-        coverAlt: "Podium des Championnats d'Europe UEC 2025",
-        showCover: false,
-        role: [
-            "J'ai photographié <strong>quatre jours de compétition</strong> : contre-la-montre, relais mixte, courses en ligne et podiums.",
-            "J'ai trié, retouché et publié les images <strong>dans la foulée des arrivées</strong>.",
-            "J'ai produit des contenus dédiés aux <strong>partenaires textiles</strong> de l'Équipe de France (Alé).",
-            "J'ai documenté la <strong>visite de l'atelier Eldera</strong>, où sont fabriquées les tenues."
-        ],
-        stats: [
-            { value: "800", label: "athlètes au départ" },
-            { value: "45", label: "nations représentées" },
-            { value: "4", label: "jours de compétition couverts" },
-            { value: "1 000+", label: "photos produites" }
-        ],
-        chapters: [
-            {
-                title: "J'ai planté le décor",
-                html: "La Drôme et l'Ardèche ont accueilli l'élite européenne en <span class='text-highlight'>octobre 2025</span>. J'ai cherché des points de vue qui montrent à la fois la course et le territoire : relief, vignes et vallées.",
-                image: IMG + "championnat-europe/panorama.webp",
-                alt: "Panorama sur la vallée depuis le parcours"
-            },
-            {
-                title: "J'ai capté l'émotion des podiums",
-                html: "Chaque podium devait être en ligne en quelques minutes : j'ai retouché les photos à la volée, rédigé les légendes et identifié les <span class='text-highlight'>partenaires officiels</span>.",
-                images: [
-                    { src: IMG + "championnat-europe/podium-elite.webp", alt: "Podium d'une course en ligne" },
-                    { src: IMG + "championnat-europe/podium-relais.webp", alt: "Podium du relais mixte" },
-                    { src: IMG + "championnat-europe/equipe-france.webp", alt: "L'Équipe de France sur le podium" }
-                ]
-            },
-            {
-                title: "J'ai suivi la course au plus près",
-                html: "Des aires de départ aux pentes les plus raides, j'ai produit des <span class='text-highlight'>photos HD</span> et des vidéos courtes pour plonger les fans au cœur du peloton.",
-                images: [
-                    { src: IMG + "championnat-europe/clm-equipe.webp", alt: "Départ du contre-la-montre par équipes" },
-                    { src: IMG + "championnat-europe/depart-clm.webp", alt: "Coureurs de l'Équipe de France au départ" },
-                    { src: IMG + "championnat-europe/montee.webp", alt: "Coureurs dans une montée" }
-                ]
-            },
-            {
-                title: "J'ai mis en avant le maillot de champion d'Europe",
-                html: "Pour <span class='text-highlight'>Alé</span>, équipementier du maillot de champion d'Europe, j'ai suivi la remise et la signature du maillot par le vainqueur.",
-                images: [
-                    { src: IMG + "championnat-europe/signature.webp", alt: "Le champion d'Europe signe son maillot" },
-                    { src: IMG + "championnat-europe/maillot-champion.webp", alt: "Maillot de champion d'Europe signé" }
-                ]
-            },
-            {
-                title: "J'ai raconté les coulisses",
-                html: "J'ai accompagné la visite de l'atelier <span class='text-highlight'>Eldera</span>, qui fabrique les tenues : machines à broder, stocks et échanges avec les équipes.",
-                images: [
-                    { src: IMG + "championnat-europe/eldera.webp", alt: "Machines à broder dans l'atelier Eldera" },
-                    { src: IMG + "championnat-europe/atelier-stock.webp", alt: "Stock de tenues à l'atelier" }
-                ]
-            }
-        ],
-        links: [
-            { label: "Voir l'Instagram officiel", url: "https://www.instagram.com/2025uec_road/" }
-        ],
-        outcome: "J'ai appris à travailler vite et proprement sur un événement international : anticiper les placements, trier en quelques minutes et penser chaque photo pour un usage précis (résultat, partenaire, émotion)."
-    },
-    {
-        id: "france-cross",
-        title: "J'ai piloté la communication des Championnats de France de cross 2026",
-        cardTitle: "Championnats de France de cross 2026",
-        category: "social",
-        event: true,
-        categoryLabel: "Social media & création",
-        year: "2026",
-        summary: "Posts vainqueurs codés sur mesure, programmes, présentation de l'équipe, photo et drone pour les Championnats de France de cross-country à Carhaix.",
-        tagline: "Pour l'ALCP Carhaix, organisateur des Championnats de France de cross-country 2026, j'ai piloté la communication digitale avant, pendant et après l'événement.",
-        intro: "Sur un championnat de France, onze courses s'enchaînent sur deux jours. Pour publier un <span class='text-highlight'>post vainqueur</span> quelques minutes après chaque arrivée, j'ai conçu mes visuels comme des <span class='text-highlight'>gabarits HTML</span> : je changeais la photo, le nom, le chrono et la catégorie, et le visuel était prêt. J'ai aussi réalisé les programmes, la présentation de l'équipe, et photographié la course au sol et au drone.",
-        tools: ["HTML", "CSS", "Photoshop", "Photographie", "Drone"],
-        cover: IMG + "france-cross/vainqueur-9.webp",
-        coverAlt: "Post vainqueur des Championnats de France de cross 2026",
-        coverPos: "50% 78%",
-        showCover: false,
-        role: [
-            "J'ai codé un <strong>gabarit HTML de post vainqueur</strong> pour publier chaque résultat en quelques minutes.",
-            "J'ai créé les <strong>programmes</strong> du samedi et du dimanche, les visuels jour J et les remerciements.",
-            "J'ai présenté l'<strong>équipe communication</strong> avec des formats décalés (« Wanted »).",
-            "J'ai <strong>photographié</strong> les courses et réalisé des <strong>prises de vue au drone</strong> du site."
-        ],
-        stats: [
-            { value: "11", label: "posts vainqueurs publiés" },
-            { value: "2", label: "jours de compétition" },
-            { value: "4 000+", label: "photos prises sur le week-end" }
-        ],
-        chapters: [
-            {
-                title: "J'ai publié chaque vainqueur en quelques minutes",
-                html: "Onze courses, onze vainqueurs : chaque post reprend la même identité (bleu-blanc-rouge, étoiles, chrono) avec la photo prise sur la ligne d'arrivée. Le gabarit codé m'a fait gagner un temps précieux et garanti une <span class='text-highlight'>cohérence parfaite</span>.",
-                images: [
-                    { src: IMG + "france-cross/vainqueur-1.webp", alt: "Post vainqueur : Clément Lhotellerie" },
-                    { src: IMG + "france-cross/vainqueur-2.webp", alt: "Post vainqueur : Chloé El Gohri Guigon" },
-                    { src: IMG + "france-cross/vainqueur-4.webp", alt: "Post vainqueur : Gaspard Petit" },
-                    { src: IMG + "france-cross/vainqueur-6.webp", alt: "Post vainqueur : Laly Forentru" },
-                    { src: IMG + "france-cross/vainqueur-9.webp", alt: "Post vainqueur : Margot Dajoux" },
-                    { src: IMG + "france-cross/vainqueur-11.webp", alt: "Post vainqueur : Félix Bour" }
-                ]
-            },
-            {
-                title: "J'ai préparé le week-end",
-                html: "Programmes horaires par journée, visuel jour J, présentation de l'équipe et du protocole : j'ai donné aux spectateurs et aux athlètes toutes les informations utiles, dans la même charte.",
-                images: [
-                    { src: IMG + "france-cross/programme-samedi.webp", alt: "Programme du samedi 7 mars" },
-                    { src: IMG + "france-cross/programme-dimanche.webp", alt: "Programme du dimanche 8 mars" },
-                    { src: IMG + "france-cross/jour-j.webp", alt: "Visuel Jour J" },
-                    { src: IMG + "france-cross/protocole.webp", alt: "Présentation d'un membre du protocole" },
-                    { src: IMG + "france-cross/wanted.webp", alt: "Visuel Wanted de l'équipe communication" },
-                    { src: IMG + "france-cross/merci.webp", alt: "Post de remerciements" }
-                ]
-            },
-            {
-                title: "J'ai filmé au drone",
-                html: "Le drone m'a permis de montrer l'<span class='text-highlight'>ampleur du site</span> de Carhaix et le serpent de coureurs sur le parcours.",
-                video: VID + "cross-drone.mp4",
-                poster: VID + "cross-drone.webp",
-                vertical: true,
-                alt: "Vue drone du parcours de cross"
-            },
-            {
-                title: "J'ai photographié la course",
-                html: "Départs, arrivées, podiums et coulisses : j'ai couvert les deux journées pour alimenter les réseaux en direct.",
-                images: [
-                    { src: IMG + "france-cross/vue-site.webp", alt: "Vue aérienne du parcours" },
-                    { src: IMG + "france-cross/drone.webp", alt: "Peloton vu du ciel" },
-                    { src: IMG + "france-cross/depart.webp", alt: "Coureurs en pleine course" },
-                    { src: IMG + "france-cross/arrivee.webp", alt: "Arrivée d'une course de cross court" },
-                    { src: IMG + "france-cross/podium.webp", alt: "Athlètes sur le podium" },
-                    { src: IMG + "france-cross/securite.webp", alt: "Équipe de la protection civile" }
-                ]
-            }
-        ],
-        outcome: "Coder mes visuels plutôt que les refaire à la main a changé ma façon de travailler : sur un événement en direct, l'outil compte autant que le design. Je réutilise depuis cette méthode sur d'autres projets."
     },
     {
         id: "circuit-saone-et-loire",
@@ -398,146 +466,6 @@ const PROJECTS = [
         ],
         outcome: "C'est le projet où j'ai le plus touché à tout : développement, identité, print, réseaux et relation partenaires. Il m'a appris à gérer des délais d'impression serrés et à penser chaque support comme une pièce d'un même système visuel.",
         credits: "Chiffres : bilan officiel 2026 de l'organisation (JAUNE Événements). Photos de terrain : équipe photo de l'organisation."
-    },
-    {
-        id: "boucles-drome-ardeche",
-        title: "J'ai proposé la stratégie de contenu des Boucles Drôme Ardèche 2026",
-        cardTitle: "Boucles Drôme Ardèche 2026",
-        category: "social",
-        event: true,
-        categoryLabel: "Stratégie de contenu & print",
-        year: "2026",
-        summary: "Calendrier éditorial pour une course UCI ProSeries, supports de podium et images en caméra embarquée.",
-        tagline: "J'ai présenté une stratégie de community management aux Boucles Drôme Ardèche (UCI ProSeries), puis j'ai réalisé des supports pour l'édition 2026.",
-        intro: "En novembre 2025, j'ai présenté aux organisateurs une <span class='text-highlight'>proposition de contenu</span> complète : un calendrier éditorial jour par jour de décembre à la course (partenaires, équipes engagées, parcours, offres VIP, montées mythiques, comptes à rebours). J'ai ensuite réalisé des <span class='text-highlight'>supports de course</span> (backdrop de podium, casquettes, marches) et filmé en caméra embarquée.",
-        tools: ["Calendrier éditorial", "Illustrator", "InDesign", "PowerPoint", "Caméra embarquée"],
-        cover: IMG + "boucles-drome-ardeche/backdrop.webp",
-        coverAlt: "Backdrop de podium des Boucles Drôme Ardèche 2026",
-        showCover: false,
-        role: [
-            "J'ai rédigé et présenté une <strong>proposition de community management</strong> aux organisateurs.",
-            "J'ai construit un <strong>calendrier éditorial</strong> jour par jour jusqu'à la course.",
-            "J'ai créé les <strong>supports de podium</strong> : backdrop, marches, casquettes.",
-            "J'ai tourné des images en <strong>caméra embarquée</strong> le jour de course."
-        ],
-        chapters: [
-            {
-                title: "J'ai présenté une stratégie",
-                html: "J'ai structuré ma proposition autour d'objectifs clairs, puis d'un <span class='text-highlight'>calendrier mois par mois</span> : un thème par jour, des rendez-vous partenaires réguliers et une montée en puissance jusqu'à la course (28 février – 1ᵉʳ mars 2026).",
-                images: [
-                    { src: IMG + "boucles-drome-ardeche/proposition.webp", alt: "Couverture de la proposition de contenu" },
-                    { src: IMG + "boucles-drome-ardeche/calendrier.webp", alt: "Calendrier éditorial de décembre 2025" }
-                ]
-            },
-            {
-                title: "J'ai habillé le podium",
-                html: "Backdrop aux couleurs des partenaires, habillage latéral, marches du podium, casquettes : j'ai produit les fichiers d'impression grand format.",
-                images: [
-                    { src: IMG + "boucles-drome-ardeche/backdrop.webp", alt: "Backdrop de podium" },
-                    { src: IMG + "boucles-drome-ardeche/cote.webp", alt: "Habillage latéral du podium" },
-                    { src: IMG + "boucles-drome-ardeche/marche.webp", alt: "Habillage des marches" },
-                    { src: IMG + "boucles-drome-ardeche/casquette.webp", alt: "Visuel de casquette" }
-                ]
-            },
-            {
-                title: "J'ai filmé en caméra embarquée",
-                html: "Le jour de course, j'ai tourné des images au plus près des coureurs pour les réseaux.",
-                video: VID + "bda-embarque.mp4",
-                poster: VID + "bda-embarque.webp",
-                vertical: true,
-                alt: "Images en caméra embarquée le jour de course"
-            },
-            {
-                title: "Le résultat sur le terrain",
-                html: "Podiums, soirée de présentation et remerciements aux partenaires : les supports ont accompagné toute l'édition.",
-                images: [
-                    { src: IMG + "boucles-drome-ardeche/podium.webp", alt: "Podium devant le backdrop" },
-                    { src: IMG + "boucles-drome-ardeche/course-1.webp", alt: "Vainqueur levant les bras" },
-                    { src: IMG + "boucles-drome-ardeche/course-2.webp", alt: "Coureurs dans une montée" },
-                    { src: IMG + "boucles-drome-ardeche/presentation.webp", alt: "Soirée de présentation de l'édition" },
-                    { src: IMG + "boucles-drome-ardeche/merci.webp", alt: "Slide de remerciements aux partenaires" }
-                ]
-            }
-        ],
-        outcome: "Présenter une stratégie à un organisateur m'a appris à défendre mes idées avec un document clair et un calendrier concret, plutôt qu'avec des intentions."
-    },
-    {
-        id: "faun-tour-femmes",
-        title: "J'ai créé les supports du Faun Tour Femmes 2026",
-        cardTitle: "Faun Tour Femmes 2026",
-        category: "design",
-        event: true,
-        categoryLabel: "Identité visuelle & print",
-        year: "2026",
-        summary: "Affiche, maillots distinctifs, catalogue d'hospitalités, mémento des signaleurs et visuels presse pour une course féminine internationale.",
-        tagline: "Pour le Faun Tour Femmes (10 au 13 septembre 2026), j'ai conçu la majorité des supports de communication de l'épreuve.",
-        intro: "Le Faun Tour Femmes est une course féminine internationale de quatre jours en Drôme-Ardèche. J'ai créé son <span class='text-highlight'>affiche</span>, ses <span class='text-highlight'>maillots distinctifs</span> et leurs cadres, le <span class='text-highlight'>catalogue d'hospitalités</span> pour les partenaires, le mémento des signaleurs, le guide technique et les visuels presse.",
-        tools: ["Illustrator", "Photoshop", "InDesign", "Rendus 3D"],
-        cover: IMG + "faun-tour-femmes/affiche.webp",
-        coverAlt: "Affiche du Faun Tour Femmes 2026",
-        coverPos: "50% 40%",
-        showCover: false,
-        role: [
-            "J'ai illustré et mis en page l'<strong>affiche</strong>, en A3 et en grand format MUPI.",
-            "J'ai dessiné les <strong>trois maillots distinctifs</strong> et leurs cadres de podium.",
-            "J'ai conçu le <strong>catalogue d'hospitalités</strong> et la présentation des équipes engagées.",
-            "J'ai mis en page le <strong>mémento des signaleurs</strong> et le <strong>guide technique</strong>.",
-            "J'ai créé les <strong>visuels presse</strong> et les bandeaux partenaires."
-        ],
-        stats: [
-            { value: "4", label: "jours de course" },
-            { value: "476,5 km", label: "de parcours, 7 745 m D+" },
-            { value: "~100", label: "coureuses de 15 nationalités" },
-            { value: "420 min", label: "de direct télé" }
-        ],
-        chapters: [
-            {
-                title: "J'ai créé l'affiche",
-                html: "J'ai voulu une illustration <span class='text-highlight'>lumineuse</span> des paysages de la Drôme et de l'Ardèche, avec le parcours des étapes intégré. Je l'ai déclinée en A3 et en grand format pour l'affichage urbain.",
-                images: [
-                    { src: IMG + "faun-tour-femmes/affiche.webp", alt: "Affiche A3 du Faun Tour Femmes" },
-                    { src: IMG + "faun-tour-femmes/affiche-mupi.webp", alt: "Affiche grand format MUPI" }
-                ],
-                poster: true
-            },
-            {
-                title: "J'ai dessiné les maillots distinctifs",
-                html: "Trois maillots aux couleurs de leurs partenaires (leader, grimpeuse, jeune), puis des <span class='text-highlight'>cadres de présentation</span> pour les podiums et les réseaux.",
-                images: [
-                    { src: IMG + "faun-tour-femmes/maillot-leader.webp", alt: "Maillot jaune de leader" },
-                    { src: IMG + "faun-tour-femmes/maillot-grimpeur.webp", alt: "Maillot à pois de la meilleure grimpeuse" },
-                    { src: IMG + "faun-tour-femmes/maillot-jeune.webp", alt: "Maillot blanc de la meilleure jeune" },
-                    { src: IMG + "faun-tour-femmes/maillots-cadres.webp", alt: "Cadres de présentation des maillots" }
-                ]
-            },
-            {
-                title: "J'ai conçu les documents de l'organisation",
-                html: "Catalogue d'hospitalités pour les partenaires, présentation des équipes engagées et guide technique : des documents lisibles, dans la charte de l'épreuve.",
-                images: [
-                    { src: IMG + "faun-tour-femmes/hospitalites.webp", alt: "Catalogue des hospitalités" },
-                    { src: IMG + "faun-tour-femmes/equipes.webp", alt: "Équipes engagées" },
-                    { src: IMG + "faun-tour-femmes/guide.webp", alt: "Guide technique" }
-                ],
-                poster: true
-            },
-            {
-                title: "J'ai mis en page le mémento des signaleurs",
-                html: "Les signaleurs bénévoles assurent la sécurité de la course : j'ai résumé leurs consignes en un <span class='text-highlight'>dépliant clair</span>, avec les bons réflexes illustrés.",
-                image: IMG + "faun-tour-femmes/memento.webp",
-                alt: "Mémento du signaleur"
-            },
-            {
-                title: "J'ai produit les visuels presse et partenaires",
-                html: "Visuel de chiffres clés pour la presse régionale, frise du calendrier des courses et bandeaux partenaires.",
-                images: [
-                    { src: IMG + "faun-tour-femmes/chiffres.webp", alt: "Visuel presse des chiffres clés" },
-                    { src: IMG + "faun-tour-femmes/frise.webp", alt: "Frise des courses 2026" },
-                    { src: IMG + "faun-tour-femmes/partenaires.webp", alt: "Bandeau des partenaires" },
-                    { src: IMG + "faun-tour-femmes/arche.webp", alt: "Arche d'arrivée habillée" }
-                ]
-            }
-        ],
-        outcome: "Ce projet m'a appris à concevoir pour des publics très différents dans une même charte : le grand public avec l'affiche, les partenaires avec le catalogue, les bénévoles avec le mémento."
     },
     {
         id: "france-vtt",
@@ -977,5 +905,80 @@ const PROJECTS = [
             "J'ai <strong>optimisé</strong> toutes les images (WebP) et le référencement (sitemap, données structurées)."
         ],
         outcome: "Faire son propre portfolio, c'est être son propre client : le plus dur a été de trier et de choisir ce qui mérite d'être montré."
+    },
+    {
+        id: "france-cross",
+        title: "J'ai piloté la communication des Championnats de France de cross 2026",
+        cardTitle: "Championnats de France de cross 2026",
+        category: "social",
+        event: true,
+        categoryLabel: "Social media & création",
+        year: "2026",
+        summary: "Posts vainqueurs codés sur mesure, programmes, présentation de l'équipe, photo et drone pour les Championnats de France de cross-country à Carhaix.",
+        tagline: "Pour l'ALCP Carhaix, organisateur des Championnats de France de cross-country 2026, j'ai piloté la communication digitale avant, pendant et après l'événement.",
+        intro: "Sur un championnat de France, onze courses s'enchaînent sur deux jours. Pour publier un <span class='text-highlight'>post vainqueur</span> quelques minutes après chaque arrivée, j'ai conçu mes visuels comme des <span class='text-highlight'>gabarits HTML</span> : je changeais la photo, le nom, le chrono et la catégorie, et le visuel était prêt. J'ai aussi réalisé les programmes, la présentation de l'équipe, et photographié la course au sol et au drone.",
+        tools: ["HTML", "CSS", "Photoshop", "Photographie", "Drone"],
+        cover: IMG + "france-cross/vainqueur-9.webp",
+        coverAlt: "Post vainqueur des Championnats de France de cross 2026",
+        coverPos: "50% 78%",
+        showCover: false,
+        role: [
+            "J'ai codé un <strong>gabarit HTML de post vainqueur</strong> pour publier chaque résultat en quelques minutes.",
+            "J'ai créé les <strong>programmes</strong> du samedi et du dimanche, les visuels jour J et les remerciements.",
+            "J'ai présenté l'<strong>équipe communication</strong> avec des formats décalés (« Wanted »).",
+            "J'ai <strong>photographié</strong> les courses et réalisé des <strong>prises de vue au drone</strong> du site."
+        ],
+        stats: [
+            { value: "11", label: "posts vainqueurs publiés" },
+            { value: "2", label: "jours de compétition" },
+            { value: "4 000+", label: "photos prises sur le week-end" }
+        ],
+        chapters: [
+            {
+                title: "J'ai publié chaque vainqueur en quelques minutes",
+                html: "Onze courses, onze vainqueurs : chaque post reprend la même identité (bleu-blanc-rouge, étoiles, chrono) avec la photo prise sur la ligne d'arrivée. Le gabarit codé m'a fait gagner un temps précieux et garanti une <span class='text-highlight'>cohérence parfaite</span>.",
+                images: [
+                    { src: IMG + "france-cross/vainqueur-1.webp", alt: "Post vainqueur : Clément Lhotellerie" },
+                    { src: IMG + "france-cross/vainqueur-2.webp", alt: "Post vainqueur : Chloé El Gohri Guigon" },
+                    { src: IMG + "france-cross/vainqueur-4.webp", alt: "Post vainqueur : Gaspard Petit" },
+                    { src: IMG + "france-cross/vainqueur-6.webp", alt: "Post vainqueur : Laly Forentru" },
+                    { src: IMG + "france-cross/vainqueur-9.webp", alt: "Post vainqueur : Margot Dajoux" },
+                    { src: IMG + "france-cross/vainqueur-11.webp", alt: "Post vainqueur : Félix Bour" }
+                ]
+            },
+            {
+                title: "J'ai préparé le week-end",
+                html: "Programmes horaires par journée, visuel jour J, présentation de l'équipe et du protocole : j'ai donné aux spectateurs et aux athlètes toutes les informations utiles, dans la même charte.",
+                images: [
+                    { src: IMG + "france-cross/programme-samedi.webp", alt: "Programme du samedi 7 mars" },
+                    { src: IMG + "france-cross/programme-dimanche.webp", alt: "Programme du dimanche 8 mars" },
+                    { src: IMG + "france-cross/jour-j.webp", alt: "Visuel Jour J" },
+                    { src: IMG + "france-cross/protocole.webp", alt: "Présentation d'un membre du protocole" },
+                    { src: IMG + "france-cross/wanted.webp", alt: "Visuel Wanted de l'équipe communication" },
+                    { src: IMG + "france-cross/merci.webp", alt: "Post de remerciements" }
+                ]
+            },
+            {
+                title: "J'ai filmé au drone",
+                html: "Le drone m'a permis de montrer l'<span class='text-highlight'>ampleur du site</span> de Carhaix et le serpent de coureurs sur le parcours.",
+                video: VID + "cross-drone.mp4",
+                poster: VID + "cross-drone.webp",
+                vertical: true,
+                alt: "Vue drone du parcours de cross"
+            },
+            {
+                title: "J'ai photographié la course",
+                html: "Départs, arrivées, podiums et coulisses : j'ai couvert les deux journées pour alimenter les réseaux en direct.",
+                images: [
+                    { src: IMG + "france-cross/vue-site.webp", alt: "Vue aérienne du parcours" },
+                    { src: IMG + "france-cross/drone.webp", alt: "Peloton vu du ciel" },
+                    { src: IMG + "france-cross/depart.webp", alt: "Coureurs en pleine course" },
+                    { src: IMG + "france-cross/arrivee.webp", alt: "Arrivée d'une course de cross court" },
+                    { src: IMG + "france-cross/podium.webp", alt: "Athlètes sur le podium" },
+                    { src: IMG + "france-cross/securite.webp", alt: "Équipe de la protection civile" }
+                ]
+            }
+        ],
+        outcome: "Coder mes visuels plutôt que les refaire à la main a changé ma façon de travailler : sur un événement en direct, l'outil compte autant que le design. Je réutilise depuis cette méthode sur d'autres projets."
     }
 ];

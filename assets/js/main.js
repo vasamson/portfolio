@@ -206,7 +206,7 @@
 
     const cardMarkup = (p) => `
         <a class="card reveal" href="projet.html?id=${encodeURIComponent(p.id)}" data-filters="${esc(filterKeys(p))}">
-            <div class="card__media">${coverMarkup(p)}<span class="card__go">Voir le projet ${ICONS.arrowRight}</span></div>
+            <div class="card__media">${coverMarkup(p.cardCover ? { ...p, cover: p.cardCover, coverAlt: p.cardCoverAlt, coverPos: null } : p)}<span class="card__go">Voir le projet ${ICONS.arrowRight}</span></div>
             <div class="card__body">
                 <h3 class="card__title">${esc(p.cardTitle)}</h3>
                 <p class="card__desc">${esc(p.summary)}</p>
