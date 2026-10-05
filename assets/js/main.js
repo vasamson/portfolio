@@ -197,8 +197,15 @@
                 </div>`;
     };
 
+    /* Filtres d'un projet : sa catégorie (web et e-commerce regroupés) + « event » */
+    const filterKeys = (p) => {
+        const keys = [p.category === "ecommerce" ? "web" : p.category];
+        if (p.event) keys.push("event");
+        return keys.join(" ");
+    };
+
     const cardMarkup = (p) => `
-        <a class="card reveal" href="projet.html?id=${encodeURIComponent(p.id)}" data-category="${esc(p.category)}">
+        <a class="card reveal" href="projet.html?id=${encodeURIComponent(p.id)}" data-filters="${esc(filterKeys(p))}">
             <div class="card__media">${coverMarkup(p)}<span class="card__go">Voir le projet ${ICONS.arrowRight}</span></div>
             <div class="card__body">
                 <h3 class="card__title">${esc(p.cardTitle)}</h3>
@@ -225,7 +232,7 @@
             const applyFilter = (filter) => {
                 filters.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.filter === filter)));
                 grid.querySelectorAll(".card").forEach((card) => {
-                    const show = filter === "all" || card.dataset.category === filter;
+                    const show = filter === "all" || card.dataset.filters.split(" ").includes(filter);
                     card.hidden = !show;
                     if (show) card.classList.add("is-visible");
                 });
