@@ -294,7 +294,10 @@ a.status:hover { opacity: .8; }
     background-position: right -12px bottom -20px;
 }
 .hero__credit-title { font-family: var(--font-title); font-size: 1.5rem; line-height: 1.15; font-weight: 900; color: var(--blue-900); }
-.hero__credit-title .hand { font-size: 1.15em; }
+.hero__credit { max-width: min(420px, 100%); }
+.hero__credit-title { font-size: 1.25rem; }
+.hero__credit-place { font-family: var(--font-title); font-size: 1rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--blue-600); }
+.hero__credit-place .hand { font-size: 1.35em; text-transform: none; letter-spacing: 0; }
 .hero__credit-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-title); font-weight: 600; color: var(--blue-600); }
 .hero__credit-link svg { width: 16px; height: 16px; transition: transform .3s var(--ease); }
 .hero__credit-link:hover svg { transform: translateX(3px); }
@@ -326,8 +329,8 @@ a.status:hover { opacity: .8; }
 @media (hover: hover) and (pointer: fine) { .hero__media.has-cursor { cursor: none; } }
 
 @media (max-width: 639px) {
-    .hero__credit { left: 0; min-width: 0; padding: 12px 24px 14px; border-radius: var(--radius) var(--radius) 0 0; flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 12px; }
-    .hero__credit-title { font-size: 1.125rem; }
+    .hero__credit { left: 0; min-width: 0; max-width: none; padding: 12px 24px 14px; border-radius: var(--radius) var(--radius) 0 0; flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 12px; }
+    .hero__credit-title { font-size: 1rem; flex-basis: 100%; }
     .hero__controls { bottom: 104px; }
     .hero__card { right: 0; padding: 8px 24px 16px; border-radius: 0 0 var(--radius) var(--radius); }
     .hero h1 { flex-direction: column; align-items: flex-start; }
