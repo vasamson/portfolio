@@ -163,10 +163,10 @@ main { flex: 1; }
     content: attr(data-text);
     position: absolute; left: 0; top: 0;
     white-space: nowrap;
-    transform: translateY(125%) skewY(8deg);
+    transform: translateY(150%) skewY(8deg);
     transition: transform .5s var(--ease);
 }
-.has-roll:hover .roll > span, .has-roll:focus-visible .roll > span { transform: translateY(-125%) skewY(8deg); }
+.has-roll:hover .roll > span, .has-roll:focus-visible .roll > span { transform: translateY(-150%) skewY(8deg); }
 .has-roll:hover .roll::after, .has-roll:focus-visible .roll::after { transform: none; }
 
 .ico-roll { position: relative; display: inline-flex; width: 20px; height: 20px; overflow: hidden; flex: none; }
@@ -569,9 +569,14 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 65%);
     mask-image: linear-gradient(to bottom, transparent 0%, #000 65%);
 }
-.footer__inner { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 40px; padding-block: 72px 48px; flex-wrap: wrap; }
-.footer__left { display: flex; flex-direction: column; gap: 24px; }
-.footer__right { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; max-width: 520px; }
+.footer__inner { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: flex-start; gap: 32px 48px; padding-block: 72px 48px; }
+.footer__left { display: flex; flex-direction: column; gap: 24px; flex: 1 1 auto; min-width: 0; }
+.footer__right { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; flex: 0 1 460px; min-width: 300px; }
+/* Côte à côte jusqu'aux tablettes ; empilés seulement sur petit écran */
+@media (max-width: 899px) {
+    .footer__inner { flex-direction: column; }
+    .footer__right { flex-basis: auto; min-width: 0; }
+}
 .footer__nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 .footer__nav a { font-family: var(--font-title); font-weight: 500; color: var(--blue-900); }
 .footer__nav a[aria-current="page"] { color: var(--blue-700); }
