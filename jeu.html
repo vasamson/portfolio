@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mini-jeu : bubble sort — Valentin Samson</title>
-    <meta name="description" content="Un mini-jeu pour comprendre le tri à bulles avec des petits coureurs cyclistes : regarde l'algorithme, puis trie le peloton toi-même.">
+    <meta name="description" content="Un mini-jeu de tri à bulles avec des petits coureurs cyclistes : range le peloton en un minimum d'échanges.">
     <meta name="author" content="Valentin Samson">
     <link rel="canonical" href="https://valentinsamson.fr/jeu.html">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -19,7 +19,7 @@
     <meta property="og:site_name" content="Valentin Samson">
     <meta property="og:url" content="https://valentinsamson.fr/jeu.html">
     <meta property="og:title" content="Mini-jeu : bubble sort — Valentin Samson">
-    <meta property="og:description" content="Un mini-jeu pour comprendre le tri à bulles avec des petits coureurs cyclistes : regarde l'algorithme, puis trie le peloton toi-même.">
+    <meta property="og:description" content="Un mini-jeu de tri à bulles avec des petits coureurs cyclistes : range le peloton en un minimum d'échanges.">
     <meta property="og:image" content="https://valentinsamson.fr/assets/img/og-portrait.jpg">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Permanent+Marker&display=swap">
-    <link rel="stylesheet" href="assets/css/style.css?v=e97db870">
+    <link rel="stylesheet" href="assets/css/style.css?v=d51f9223">
 </head>
 
 <body>
@@ -87,24 +87,19 @@
             <div class="wrap">
                 <span class="pill pill--fill">Pause café</span>
                 <h1>Mini-<span class="hand">jeu</span></h1>
-                <p class="sec-lead">Le tri à bulles expliqué par un peloton : regarde l'algorithme ranger les coureurs du plus petit au plus grand, puis essaie de faire mieux toi-même.</p>
+                <p class="sec-lead">Range le peloton du plus petit au plus grand en échangeant deux coureurs voisins. Le défi : y arriver en un minimum d'échanges.</p>
                 
             </div>
         </section>
 
-        <section class="wrap game" id="jeu" aria-labelledby="game-title">
+        <section class="wrap game is-play" id="jeu" aria-labelledby="game-title">
             <div class="game__stage">
                 <div class="game__head">
                     <h2 class="game__title" id="game-title">Bubble sort</h2>
                     <p class="game__sub">…mais avec des coureurs</p>
                 </div>
 
-                <div class="game__tabs" role="tablist" aria-label="Mode">
-                    <button class="game__tab" role="tab" aria-selected="true" data-mode="watch" type="button">Regarder l'algo</button>
-                    <button class="game__tab" role="tab" aria-selected="false" data-mode="play" type="button">À toi de jouer</button>
-                </div>
-
-                <div class="game__track" aria-hidden="false">
+                <div class="game__track">
                     <div class="game__riders"></div>
                     <div class="game__ground"></div>
                     <div class="game__swaps"></div>
@@ -112,21 +107,15 @@
 
                 <div class="game__bar">
                     <div class="game__controls">
-                        <button class="game__btn game__btn--main" type="button" data-act="run"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 14 9-14 9z"/></svg><span>Lancer</span></button>
-                        <button class="game__btn" type="button" data-act="step">Pas à pas</button>
-                        <button class="game__btn" type="button" data-act="shuffle">Mélanger</button>
-                        <label class="game__speed">Vitesse <input type="range" min="0.5" max="3" step="0.5" value="1" data-act="speed" aria-label="Vitesse de l'animation"></label>
+                        <button class="game__btn game__btn--main" type="button" data-act="shuffle">Nouveau peloton</button>
                     </div>
                     <dl class="game__stats">
-                        <div><dt>Comparaisons</dt><dd data-stat="cmp">0</dd></div>
                         <div><dt>Échanges</dt><dd data-stat="swap">0</dd></div>
-                        <div class="game__best" hidden><dt>Minimum</dt><dd data-stat="best">0</dd></div>
+                        <div class="game__best"><dt>Minimum</dt><dd data-stat="best">0</dd></div>
                     </dl>
                 </div>
-                <p class="game__status" role="status" aria-live="polite">Appuie sur Lancer : chaque coureur compare sa taille à son voisin, et le plus grand passe derrière.</p>
+                <p class="game__status" role="status" aria-live="polite"></p>
             </div>
-
-            <pre class="code" aria-label="Code Python du tri à bulles"><code><span class="code__line" data-line="1"><span class="code__ln">1</span><span class="tk-kw">def</span> bubble_sort(a):</span><span class="code__line" data-line="2"><span class="code__ln">2</span>    n = <span class="tk-fn">len</span>(a)</span><span class="code__line" data-line="3"><span class="code__ln">3</span>    <span class="tk-kw">for</span> p <span class="tk-kw">in</span> <span class="tk-fn">range</span>(n - <span class="tk-num">1</span>):</span><span class="code__line" data-line="4"><span class="code__ln">4</span>        swapped = <span class="tk-bool">False</span></span><span class="code__line" data-line="5"><span class="code__ln">5</span>        <span class="tk-kw">for</span> i <span class="tk-kw">in</span> <span class="tk-fn">range</span>(n - <span class="tk-num">1</span> - p):</span><span class="code__line" data-line="6"><span class="code__ln">6</span>            <span class="tk-kw">if</span> a[i] &gt; a[i + <span class="tk-num">1</span>]:</span><span class="code__line" data-line="7"><span class="code__ln">7</span>                a[i], a[i + <span class="tk-num">1</span>] = a[i + <span class="tk-num">1</span>], a[i]</span><span class="code__line" data-line="8"><span class="code__ln">8</span>                swapped = <span class="tk-bool">True</span></span><span class="code__line" data-line="9"><span class="code__ln">9</span>        <span class="tk-kw">if</span> <span class="tk-kw">not</span> swapped:</span><span class="code__line" data-line="10"><span class="code__ln">10</span>            <span class="tk-kw">break</span></span></code></pre>
         </section>
 
     </main>
@@ -168,7 +157,7 @@
     </footer>
 
     <script src="assets/js/main.js?v=911079a2"></script>
-    <script src="assets/js/bubble.js?v=d2bb254e"></script>
+    <script src="assets/js/bubble.js?v=1ccb5bc2"></script>
 </body>
 
 </html>

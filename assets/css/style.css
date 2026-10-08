@@ -697,9 +697,6 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .game__head { text-align: center; }
 .game__title { font-family: var(--font-title); font-style: italic; text-transform: uppercase; font-weight: 900; font-size: clamp(2.5rem, 6vw, 4rem); line-height: .95; color: #fff; letter-spacing: .01em; }
 .game__sub { font-family: var(--font-title); font-style: italic; font-weight: 700; font-size: clamp(1.125rem, 2.2vw, 1.5rem); color: #ffd84d; }
-.game__tabs { display: flex; justify-content: center; gap: 4px; padding: 4px; margin: 0 auto; border-radius: 999px; background: rgba(255, 255, 255, .08); }
-.game__tab { padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: .9375rem; color: #c5d3ff; transition: background-color .3s, color .3s; }
-.game__tab[aria-selected="true"] { background: #fff; color: var(--ink); }
 
 .game__track { position: relative; height: clamp(250px, 32vw, 300px); margin-top: 8px; }
 .game__riders { position: absolute; inset: 0 0 34px; }
@@ -711,8 +708,6 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 }
 .rider svg { width: min(56px, calc(var(--slot) - 10px)); height: auto; overflow: visible; transition: transform .3s var(--ease), filter .3s; transform-origin: bottom center; }
 .rider__num { font-family: var(--font-title); font-style: italic; font-weight: 800; font-size: 1.375rem; color: #a2b5ff; transition: color .3s, transform .3s var(--ease); }
-.rider.is-cmp svg { transform: translateY(-8px); filter: drop-shadow(0 0 10px rgba(255, 216, 77, .65)); }
-.rider.is-cmp .rider__num { color: #ffd84d; transform: translateY(-8px) scale(1.2); }
 .rider.is-hop svg { animation: rider-hop .6s cubic-bezier(.3, 0, .3, 1); }
 .rider.is-done .rider__num { color: #4ade80; }
 .rider.is-win svg { animation: rider-win .6s var(--d, 0ms) cubic-bezier(.3, 0, .3, 1) 2; }
@@ -723,7 +718,7 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .game__spot { position: absolute; left: 0; bottom: 0; width: var(--slot); display: flex; justify-content: center; transform: translateX(calc(var(--i, 0) * var(--slot))); }
 .game__spot::before { content: ""; width: min(64px, calc(var(--slot) - 6px)); height: 14px; border-radius: 50%; border: 2px solid rgba(162, 181, 255, .35); background: rgba(0, 0, 0, .35); }
 .game__swaps { position: absolute; left: 0; right: 0; bottom: -18px; height: 32px; display: none; }
-.game.is-play .game__swaps { display: block; }
+.game .game__swaps { display: block; }
 .game__swap {
     position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%;
     transform: translateX(calc((var(--i, 0) + 1) * var(--slot) - 16px));
@@ -740,9 +735,6 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .game__btn--main { background: #ffd84d; color: var(--ink); }
 .game__btn--main:hover { background: #fff; }
 .game__btn svg { width: 16px; height: 16px; fill: currentColor; }
-.game.is-play [data-act="run"], .game.is-play [data-act="step"], .game.is-play .game__speed { display: none; }
-.game__speed { display: inline-flex; align-items: center; gap: 8px; font-size: .875rem; color: #a2b5ff; margin-left: 8px; }
-.game__speed input { accent-color: #ffd84d; width: 100px; }
 .game__stats { display: flex; gap: 8px; }
 .game__stats div { padding: 6px 14px; border-radius: var(--radius); background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .1); text-align: center; }
 .game__stats dt { font-size: .75rem; color: #a2b5ff; }
@@ -750,12 +742,6 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .game__best dd { color: #ffd84d; }
 .game__status { min-height: 1.5em; text-align: center; color: #dfe7ff; }
 
-.code { margin: 0; padding: 18px 0; border-radius: 16px; background: #0b1122; color: #cbd5e1; overflow-x: auto; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: clamp(.8125rem, 1.4vw, .9375rem); line-height: 1.75; }
-.code code { display: block; min-width: max-content; }
-.code__line { display: block; padding: 0 20px; border-left: 3px solid transparent; transition: background-color .25s, border-color .25s; white-space: pre; }
-.code__line.is-on { background: rgba(255, 216, 77, .2); border-left-color: #ffd84d; color: #fff; }
-.code__ln { display: inline-block; width: 2.2em; color: #475569; user-select: none; }
-.tk-kw { color: #7d8cfc; } .tk-fn { color: #22d3ee; } .tk-bool { color: #f472b6; } .tk-num { color: #fbbf24; }
 .game.is-play .code { display: none; }
 
 /* ---------- Mentions légales ---------- */
