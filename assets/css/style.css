@@ -556,7 +556,11 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 @media (max-width: 520px) { .form__row { grid-template-columns: 1fr; } .form, .callout { padding: 20px; } }
 
 /* ---------- Footer ---------- */
-.footer { position: relative; overflow: hidden; background: var(--blue-50); margin-top: auto; }
+.footer {
+    position: relative; overflow: hidden; margin-top: auto;
+    /* Dégradé blanc → bleu, en miroir du fondu bleu du haut de page */
+    background: linear-gradient(to bottom, var(--white) 0%, var(--blue-50) 45%, color-mix(in srgb, var(--blue-100) 85%, var(--white)) 100%);
+}
 /* Même quadrillage qu'en haut des pages, qui apparaît en fondu depuis le haut du footer */
 .footer::before {
     content: ""; position: absolute; inset: 0; pointer-events: none;
