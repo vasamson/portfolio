@@ -360,7 +360,8 @@
             if (!form.reportValidity()) return;
             const data = new FormData(form);
             const name = `${data.get("firstname")} ${data.get("lastname")}`.trim();
-            const subject = `Contact portfolio — ${name}`;
+            const projet = data.get("projet");
+            const subject = `Contact portfolio — ${projet ? `${projet} — ` : ""}${name}`;
             const body = `${data.get("message")}\n\n${name}\n${data.get("email")}`;
             window.location.href = `mailto:${form.dataset.to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             const note = form.querySelector(".form__note");
