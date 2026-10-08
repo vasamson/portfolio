@@ -249,8 +249,8 @@ const PROJECTS = [
         intro: "L'Ardéchoise rassemble chaque année des milliers de cyclistes sur les routes de l'Ardèche et de la Drôme. On m'a confié ses réseaux sociaux pour toute la saison 2026. J'ai construit une <span class='text-highlight'>stratégie en trois temps</span> : avant l'événement pour générer des inscriptions, pendant pour le faire vivre en direct, après pour fidéliser la communauté. J'ai créé moi-même l'ensemble des visuels, rédigé les publications, tourné et monté les vidéos, puis livré un <span class='text-highlight'>bilan chiffré</span> à l'organisation.",
         tools: ["Stratégie social media", "Photoshop", "Illustrator", "Premiere Pro", "Meta Business Suite"],
         cover: IMG + "ardechoise/banniere.webp",
-        cardCover: IMG + "ardechoise/depart.webp",
-        cardCoverAlt: "Départ de cyclistes",
+        cardCover: IMG + "ardechoise/village.jpg",
+        cardCoverAlt: "Une cycliste de L'Ardéchoise salue les bénévoles déguisés en reine d'Angleterre et en gardes royaux dans un village animé",
         coverAlt: "Bannière de L'Ardéchoise 2026, 9 au 13 juin",
         showCover: true,
         role: [
