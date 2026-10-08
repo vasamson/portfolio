@@ -184,8 +184,8 @@ const PROJECTS = [
         intro: "En novembre 2025, j'ai présenté aux organisateurs une <span class='text-highlight'>proposition de contenu</span> complète : un calendrier éditorial jour par jour de décembre à la course (partenaires, équipes engagées, parcours, offres VIP, montées mythiques, comptes à rebours). J'ai ensuite réalisé des <span class='text-highlight'>supports de course</span> (backdrop de podium, casquettes, marches) et filmé en caméra embarquée.",
         tools: ["Calendrier éditorial", "Illustrator", "InDesign", "PowerPoint", "Caméra embarquée"],
         cover: IMG + "boucles-drome-ardeche/backdrop.webp",
-        cardCover: IMG + "boucles-drome-ardeche/course-1.webp",
-        cardCoverAlt: "Vainqueur levant les bras",
+        cardCover: IMG + "boucles-drome-ardeche/montee.jpg",
+        cardCoverAlt: "Coureurs dans la dernière montée des Boucles Drôme Ardèche, entre amandiers en fleurs et public massé derrière les barrières",
         coverAlt: "Backdrop de podium des Boucles Drôme Ardèche 2026",
         showCover: false,
         role: [
