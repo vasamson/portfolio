@@ -19,16 +19,16 @@ const VID = "assets/video/";
 const PROJECTS = [
     {
         id: "faun-tour-femmes",
-        title: "J'ai créé les supports du Faun Tour Femmes 2026",
+        title: "J'ai porté toute la communication du Faun Tour Femmes 2026",
         cardTitle: "Faun Tour Femmes 2026",
-        category: "design",
+        category: "social",
         event: true,
-        categoryLabel: "Identité visuelle & print",
+        categoryLabel: "Communication & événementiel",
         year: "2026",
-        summary: "Affiche, maillots distinctifs, catalogue d'hospitalités, mémento des signaleurs et visuels presse pour une course féminine internationale.",
-        tagline: "Pour le Faun Tour Femmes (10 au 13 septembre 2026), j'ai conçu la majorité des supports de communication de l'épreuve.",
-        intro: "Le Faun Tour Femmes est une course féminine internationale de quatre jours en Drôme-Ardèche. J'ai créé son <span class='text-highlight'>affiche</span>, ses <span class='text-highlight'>maillots distinctifs</span> et leurs cadres, le <span class='text-highlight'>catalogue d'hospitalités</span> pour les partenaires, le mémento des signaleurs, le guide technique et les visuels presse.",
-        tools: ["Illustrator", "Photoshop", "InDesign", "Rendus 3D"],
+        summary: "Communication avant, pendant et après la course, maillots de leader, fonds de podium et organisation événementielle d'une course féminine internationale : 1,6 million de vues sur les réseaux.",
+        tagline: "Pour le Faun Tour Femmes (10 au 13 septembre 2026), j'ai géré la communication de bout en bout, dessiné les maillots de leader et préparé l'événementiel aux côtés de l'organisateur.",
+        intro: "Le Faun Tour Femmes est une course féminine internationale de quatre jours en Drôme et en Ardèche, diffusée en direct à la télévision. Avec l'organisateur, BDA Organisation, j'ai pris en main <span class='text-highlight'>toute la communication</span> de l'épreuve : le calendrier éditorial et les réseaux sociaux avant, la <span class='text-highlight'>couverture en direct</span> pendant, les résultats et les remerciements après. J'ai aussi dessiné les <span class='text-highlight'>maillots de leader</span>, conçu les <span class='text-highlight'>fonds de podium</span> et préparé toute la partie événementielle de la course.",
+        tools: ["Stratégie social media", "Événementiel", "Illustrator", "Photoshop", "InDesign", "Meta Business Suite"],
         cover: IMG + "faun-tour-femmes/affiche.webp",
         cardCover: IMG + "faun-tour-femmes/course.jpg",
         cardCoverAlt: "Une coureuse dans un virage du Faun Tour Femmes, à 25 km de l'arrivée, suivie par la moto caméra",
@@ -36,31 +36,34 @@ const PROJECTS = [
         coverPos: "50% 40%",
         showCover: false,
         role: [
-            "J'ai illustré et mis en page l'<strong>affiche</strong>, en A3 et en grand format MUPI.",
-            "J'ai dessiné les <strong>trois maillots distinctifs</strong> et leurs cadres de podium.",
-            "J'ai conçu le <strong>catalogue d'hospitalités</strong> et la présentation des équipes engagées.",
-            "J'ai mis en page le <strong>mémento des signaleurs</strong> et le <strong>guide technique</strong>.",
-            "J'ai créé les <strong>visuels presse</strong> et les bandeaux partenaires."
+            "J'ai construit et animé la <strong>communication avant, pendant et après</strong> la course, sur Instagram et Facebook (<strong>@boucles2607</strong>).",
+            "J'ai couvert les <strong>quatre étapes en direct</strong> : programme du jour, infos circulation, rendez-vous du direct TV, classements et leaders.",
+            "J'ai dessiné les <strong>trois maillots de leader</strong> (générale, grimpeuse, jeune) et leurs cadres de présentation.",
+            "J'ai conçu les <strong>fonds de podium</strong> et d'interview, aux couleurs de l'épreuve et de ses partenaires.",
+            "J'ai préparé <strong>l'événementiel</strong> de la course et assuré la <strong>relation avec l'organisateur</strong> au quotidien.",
+            "J'ai créé l'<strong>affiche</strong>, le catalogue d'hospitalités, le mémento des signaleurs et les visuels presse."
         ],
         stats: [
-            { value: "4", label: "jours de course" },
-            { value: "476,5 km", label: "de parcours, 7 745 m D+" },
-            { value: "~100", label: "coureuses de 15 nationalités" },
-            { value: "420 min", label: "de direct télé" }
+            { value: "1,6 M", label: "de vues cumulées sur Instagram et Facebook" },
+            { value: "10 %", label: "de taux d'engagement sur les réseaux" },
+            { value: "340 000", label: "téléspectateurs en pic à l'arrivée de la dernière étape" },
+            { value: "15 000", label: "supporters au bord des routes" }
         ],
         chapters: [
             {
-                title: "J'ai créé l'affiche",
-                html: "J'ai voulu une illustration <span class='text-highlight'>lumineuse</span> des paysages de la Drôme et de l'Ardèche, avec le parcours des étapes intégré. Je l'ai déclinée en A3 et en grand format pour l'affichage urbain.",
-                images: [
-                    { src: IMG + "faun-tour-femmes/affiche.webp", alt: "Affiche A3 du Faun Tour Femmes" },
-                    { src: IMG + "faun-tour-femmes/affiche-mupi.webp", alt: "Affiche grand format MUPI" }
-                ],
-                poster: true
+                title: "J'ai fait vivre la course sur les réseaux",
+                html: "Comptes à rebours, présentation des étapes, têtes d'affiche, coureuses locales, partenaires, bénévoles, sécurité : un <span class='text-highlight'>calendrier éditorial</span> de plusieurs mois, puis une couverture en direct pendant les quatre jours. Voici un aperçu du feed.",
+                feed: {
+                    handle: "boucles2607",
+                    name: "Faun Tour Femmes",
+                    url: "https://www.instagram.com/boucles2607/",
+                    stats: [["3 200", "abonnés Instagram"], ["5 411", "abonnés Facebook"], ["1,6 M", "vues cumulées"]],
+                    images: ["j50", "etape1", "tetes", "fm", "j30", "locales", "site", "j7", "secu", "etape2", "j1", "vip"].map((k) => ({ src: `${IMG}faun-tour-femmes/feed-${k}.jpg`, alt: "" }))
+                }
             },
             {
-                title: "J'ai dessiné les maillots distinctifs",
-                html: "Trois maillots aux couleurs de leurs partenaires (leader, grimpeuse, jeune), puis des <span class='text-highlight'>cadres de présentation</span> pour les podiums et les réseaux.",
+                title: "J'ai dessiné les maillots de leader",
+                html: "Trois maillots aux couleurs de leurs partenaires : le <span class='text-highlight'>jaune de la leader</span> (Faun), les pois de la meilleure grimpeuse (CIC) et le blanc de la meilleure jeune (FM Logistic), puis des cadres de présentation pour les podiums et les réseaux.",
                 images: [
                     { src: IMG + "faun-tour-femmes/maillot-leader.webp", alt: "Maillot jaune de leader" },
                     { src: IMG + "faun-tour-femmes/maillot-grimpeur.webp", alt: "Maillot à pois de la meilleure grimpeuse" },
@@ -69,33 +72,40 @@ const PROJECTS = [
                 ]
             },
             {
-                title: "J'ai conçu les documents de l'organisation",
-                html: "Catalogue d'hospitalités pour les partenaires, présentation des équipes engagées et guide technique : des documents lisibles, dans la charte de l'épreuve.",
+                title: "J'ai conçu les fonds de podium",
+                html: "Le <span class='text-highlight'>backdrop du podium</span> et celui des interviews, pensés pour ressortir à l'image en direct TV et sur les photos, avec tous les partenaires de l'épreuve.",
+                wide: true,
                 images: [
+                    { src: IMG + "faun-tour-femmes/backdrop.jpg", alt: "Fond de podium du Faun Tour Femmes 2026" },
+                    { src: IMG + "faun-tour-femmes/backdropitw.jpg", alt: "Fond d'interview du Faun Tour Femmes 2026" },
+                    { src: IMG + "faun-tour-femmes/podium-itw.jpg", alt: "Interview d'une coureuse devant le fond de podium" }
+                ]
+            },
+            {
+                title: "J'ai préparé l'événementiel avec l'organisateur",
+                html: "Relation quotidienne avec BDA Organisation, préparation des cérémonies protocolaires, de la signalétique et des supports terrain : arche, cadres de maillots, <span class='text-highlight'>mémento des signaleurs</span> pour les bénévoles et guide technique pour les équipes.",
+                images: [
+                    { src: IMG + "faun-tour-femmes/memento.webp", alt: "Mémento du signaleur" },
+                    { src: IMG + "faun-tour-femmes/guide.webp", alt: "Guide technique" },
+                    { src: IMG + "faun-tour-femmes/arche.webp", alt: "Arche habillée" }
+                ]
+            },
+            {
+                title: "J'ai créé l'affiche et les documents partenaires",
+                html: "Une illustration <span class='text-highlight'>lumineuse</span> des paysages de la Drôme et de l'Ardèche, déclinée en A3 et en grand format, puis le catalogue d'hospitalités et la présentation des équipes pour les partenaires.",
+                images: [
+                    { src: IMG + "faun-tour-femmes/affiche.webp", alt: "Affiche A3 du Faun Tour Femmes" },
                     { src: IMG + "faun-tour-femmes/hospitalites.webp", alt: "Catalogue des hospitalités" },
-                    { src: IMG + "faun-tour-femmes/equipes.webp", alt: "Équipes engagées" },
-                    { src: IMG + "faun-tour-femmes/guide.webp", alt: "Guide technique" }
+                    { src: IMG + "faun-tour-femmes/equipes.webp", alt: "Équipes engagées" }
                 ],
                 poster: true
-            },
-            {
-                title: "J'ai mis en page le mémento des signaleurs",
-                html: "Les signaleurs bénévoles assurent la sécurité de la course : j'ai résumé leurs consignes en un <span class='text-highlight'>dépliant clair</span>, avec les bons réflexes illustrés.",
-                image: IMG + "faun-tour-femmes/memento.webp",
-                alt: "Mémento du signaleur"
-            },
-            {
-                title: "J'ai produit les visuels presse et partenaires",
-                html: "Visuel de chiffres clés pour la presse régionale, frise du calendrier des courses et bandeaux partenaires.",
-                images: [
-                    { src: IMG + "faun-tour-femmes/chiffres.webp", alt: "Visuel presse des chiffres clés" },
-                    { src: IMG + "faun-tour-femmes/frise.webp", alt: "Frise des courses 2026" },
-                    { src: IMG + "faun-tour-femmes/partenaires.webp", alt: "Bandeau des partenaires" },
-                    { src: IMG + "faun-tour-femmes/arche.webp", alt: "Arche d'arrivée habillée" }
-                ]
             }
         ],
-        outcome: "Ce projet m'a appris à concevoir pour des publics très différents dans une même charte : le grand public avec l'affiche, les partenaires avec le catalogue, les bénévoles avec le mémento."
+        outcome: "Gérer une course de A à Z m'a appris à tenir plusieurs rôles à la fois : <span class='text-highlight'>communicant</span> sur les réseaux, <span class='text-highlight'>designer</span> pour les maillots et les podiums, et <span class='text-highlight'>relais de l'organisateur</span> sur le terrain.",
+        links: [
+            { label: "Voir le compte Instagram", url: "https://www.instagram.com/boucles2607/" }
+        ],
+        credits: "Chiffres : BDA Organisation & In Yellow Consulting, 2026 ; audiences TV : la chaîne L'Équipe."
     },
     {
         id: "championnat-cyclisme",

@@ -812,6 +812,25 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .video { border-radius: var(--radius); overflow: hidden; background: #000; }
 .video video { width: 100%; }
 .video--vertical { max-width: 420px; }
+.feed { max-width: 760px; width: 100%; margin-inline: auto; border: 1px solid var(--blue-200); border-radius: 20px; background: var(--white); padding: 20px; box-shadow: 0 24px 48px -30px rgba(26, 25, 77, .4); }
+.feed__head { display: flex; align-items: center; gap: 14px 18px; flex-wrap: wrap; justify-content: space-between; padding-bottom: 18px; margin-bottom: 14px; border-bottom: 1px solid var(--blue-100); }
+.feed__avatar { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; color: #fff; flex: none; background: linear-gradient(45deg, #f9ce34, #ee2a7b 55%, #6228d7); }
+.feed__avatar svg { width: 26px; height: 26px; }
+.feed__id { display: flex; flex-direction: column; line-height: 1.25; }
+.feed__id strong { font-family: var(--font-title); font-size: 1.125rem; color: var(--blue-900); }
+.feed__id span { font-size: .875rem; color: var(--blue-600); }
+.feed__stats { display: flex; gap: 18px; }
+.feed__stats div { display: flex; flex-direction: column-reverse; text-align: center; }
+.feed__stats dd { font-family: var(--font-title); font-weight: 800; font-size: 1.125rem; color: var(--blue-900); }
+.feed__stats dt { font-size: .75rem; color: var(--blue-600); }
+.feed__follow { padding: 8px 16px; }
+.feed__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.feed__item { aspect-ratio: 4 / 5; border-radius: 4px; }
+.gallery--wide { grid-template-columns: 1fr 1fr; }
+.gallery--wide .gallery__item { aspect-ratio: auto; }
+.gallery--wide .gallery__item:first-child { grid-column: 1 / -1; }
+.gallery--wide .gallery__item img { height: auto; object-fit: contain; }
+@media (max-width: 599px) { .feed { padding: 14px; } .feed__stats { margin-left: 0; width: 100%; justify-content: space-around; } .feed__follow { width: 100%; } }
 .outcome { padding: clamp(28px, 4vw, 48px); border-radius: var(--radius); background: var(--blue-700); color: var(--on-primary); }
 .outcome .sec-kicker { color: var(--on-primary); opacity: .85; }
 .outcome p { margin-top: 12px; font-family: var(--font-title); font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.45; font-weight: 500; }

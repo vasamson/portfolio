@@ -397,7 +397,27 @@
             <h2>${esc(c.title)}</h2>
             <p class="chapter__text">${c.html}</p>`;
 
+        const insta = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>';
+
         const chapterMarkup = (c, i) => {
+            if (c.feed) {
+                const f = c.feed;
+                return `
+                    <article class="chapter chapter--gallery">
+                        <div class="chapter__head reveal">${chapterText(c, i)}</div>
+                        <div class="feed reveal">
+                            <div class="feed__head">
+                                <span class="feed__avatar">${insta}</span>
+                                <div class="feed__id"><strong>@${esc(f.handle)}</strong><span>${esc(f.name)}</span></div>
+                                <dl class="feed__stats">${(f.stats || []).map(([v, l]) => `<div><dt>${esc(l)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+                                <a class="btn btn--primary feed__follow" href="${esc(f.url)}" target="_blank" rel="noopener noreferrer">Voir le compte</a>
+                            </div>
+                            <div class="feed__grid">
+                                ${f.images.map((img) => `<figure class="gallery__item feed__item"><img src="${esc(img.src)}" alt="${esc(img.alt)}" loading="lazy" decoding="async"></figure>`).join("")}
+                            </div>
+                        </div>
+                    </article>`;
+            }
             if (c.video) {
                 return `
                     <article class="chapter chapter--gallery">
@@ -412,7 +432,7 @@
                 return `
                     <article class="chapter chapter--gallery">
                         <div class="chapter__head reveal">${chapterText(c, i)}</div>
-                        <div class="gallery${c.poster ? " gallery--poster" : ""} reveal" style="--cols:${cols}">
+                        <div class="gallery${c.poster ? " gallery--poster" : ""}${c.wide ? " gallery--wide" : ""} reveal" style="--cols:${cols}">
                             ${c.images.map((img) => `
                                 <figure class="gallery__item"><img src="${esc(img.src)}" alt="${esc(img.alt)}" loading="lazy" decoding="async"></figure>`).join("")}
                         </div>
