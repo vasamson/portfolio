@@ -164,171 +164,108 @@
         syncSound();
     }
 
-    /* ---------- Mon Tour de France : carte animée ---------- */
+    /* ---------- Mon Tour de France : tracé piloté par le scroll ---------- */
     const tour = document.getElementById("tour");
 
     if (tour) {
-        const map = tour.querySelector(".tour__map");
         const segs = [...tour.querySelectorAll(".tour__seg")];
         const pins = [...tour.querySelectorAll(".tour__pin")];
+        const stages = [...tour.querySelectorAll(".stage")];
         const bike = tour.querySelector(".tour__bike");
-        const tip = tour.querySelector(".tour__tip");
         const kmEl = tour.querySelector(".tour__km");
-        const lengths = segs.map((sg) => sg.getTotalLength());
-        const cum = lengths.reduce((acc, l) => [...acc, acc[acc.length - 1] + l], [0]);
-        const total = cum[cum.length - 1];
-        const stageKm = pins.map((p) => Number(p.dataset.km));
-        const nf = new Intl.NumberFormat("fr-FR");
-        const fmt = { format: (n) => nf.format(n).replace(/\s/g, "\u00a0") };
-        const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
-        let head = 0;          // longueur de tracé dessinée
-        let bikeAt = 0;        // position du vélo le long du tracé
-        let active = -1;
-        let timer = null;
-        let paused = false;
-        let visible = false;
-        let anim = null;
+        const lengths = segs.map((s) => s.getTotalLength());
+        const total = lengths.reduce((a, b) => a + b, 0);
+        const stageKm = stages.map((s) => Number(s.dataset.km));
+        const fmt = new Intl.NumberFormat("fr-FR");
+        let hovered = -1;
 
-        segs.forEach((sg, i) => { sg.style.strokeDasharray = `${lengths[i]} ${lengths[i]}`; });
-
-        const pointAt = (len) => {
-            const L = Math.max(0, Math.min(total, len));
-            let i = cum.findIndex((c, k) => k > 0 && L <= c) - 1;
-            if (i < 0) i = segs.length - 1;
-            return segs[i].getPointAtLength(L - cum[i]);
-        };
-        const drawTo = (len) => {
-            head = len;
-            segs.forEach((sg, i) => {
-                sg.style.strokeDashoffset = lengths[i] - Math.max(0, Math.min(lengths[i], len - cum[i]));
-            });
-            pins.forEach((pin, i) => pin.classList.toggle("is-reached", cum[i] <= len + 0.5));
-        };
-        const placeBike = (len) => {
-            bikeAt = len;
-            const pt = pointAt(len);
-            bike.setAttribute("transform", `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})`);
-        };
-        const kmAt = (len) => {
-            let i = cum.findIndex((c, k) => k > 0 && len <= c) - 1;
-            if (i < 0) return stageKm[stageKm.length - 1];
-            const f = lengths[i] ? (len - cum[i]) / lengths[i] : 0;
-            return stageKm[i] + (stageKm[i + 1] - stageKm[i]) * f;
-        };
-
-        const tween = (from, to, ms, onFrame, done) => {
-            if (anim) cancelAnimationFrame(anim);
-            const start = performance.now();
-            const frame = (now) => {
-                const t = Math.min(1, (now - start) / ms);
-                onFrame(from + (to - from) * ease(t));
-                if (t < 1) anim = requestAnimationFrame(frame);
-                else { anim = null; if (done) done(); }
-            };
-            anim = requestAnimationFrame(frame);
-        };
-
-        let swap = null;
-        const showTip = (i) => {
-            /* Petit fondu entre deux fiches */
-            if (tip.classList.contains("is-on") && !reducedMotion) {
-                tip.classList.add("is-swap");
-                clearTimeout(swap);
-                swap = setTimeout(() => { fillTip(i); tip.classList.remove("is-swap"); }, 200);
-            } else fillTip(i);
-        };
-        const fillTip = (i) => {
-            const d = pins[i].dataset;
-            const step = Number(d.step);
-            tip.innerHTML = `
-                <div class="tour__tip-top">
-                    <span class="tour__tip-step">Étape ${i + 1}/${pins.length}</span>
-                    <span class="tour__tip-km">${i === 0 ? "Départ" : `+${fmt.format(step)} km`}</span>
-                </div>
-                <p class="tour__tip-city">${esc(d.city)}</p>
-                <p class="tour__tip-title">${esc(d.title)}</p>
-                <p class="tour__tip-meta">${esc(d.meta)}</p>
-                <p class="tour__tip-text">${esc(d.text)}</p>`;
-            tip.classList.add("is-on");
-        };
-
-        const setActive = (i, { travel = true } = {}) => {
-            if (i === active) return;
-            const prev = active;
-            active = i;
-            pins.forEach((pin, k) => pin.classList.toggle("is-active", k === i));
-            showTip(i);
-            const target = cum[i];
-            if (head < target) drawTo(target);
-            if (!travel || reducedMotion) { placeBike(target); return; }
-            if (prev >= 0 && target < bikeAt) {
-                /* Retour au départ : le vélo se téléporte en fondu */
-                bike.classList.add("is-hidden");
-                setTimeout(() => { placeBike(target); bike.classList.remove("is-hidden"); }, 300);
-                return;
-            }
-            tween(bikeAt, target, Math.min(1600, 500 + (target - bikeAt) * 1.4), placeBike);
-        };
-
-        const schedule = () => {
-            clearTimeout(timer);
-            if (paused || !visible || reducedMotion) return;
-            timer = setTimeout(() => {
-                setActive((active + 1) % pins.length);
-                schedule();
-            }, 3600);
-        };
-
-        /* Interaction : survol, clic, clavier */
-        pins.forEach((pin, i) => {
-            const pick = () => { setActive(i); paused = true; clearTimeout(timer); };
-            pin.addEventListener("mouseenter", pick);
-            pin.addEventListener("click", pick);
-            pin.addEventListener("focus", pick);
-            pin.addEventListener("keydown", (e) => {
-                if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); pins[(i + 1) % pins.length].focus(); }
-                if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); pins[(i - 1 + pins.length) % pins.length].focus(); }
-            });
+        segs.forEach((s, i) => {
+            s.style.strokeDasharray = `${lengths[i]} ${lengths[i]}`;
+            s.style.strokeDashoffset = lengths[i];
         });
-        map.addEventListener("mouseleave", () => { paused = false; schedule(); });
-        map.addEventListener("focusout", (e) => { if (!map.contains(e.relatedTarget)) { paused = false; schedule(); } });
 
-        /* Intro : le tracé se dessine et le compteur défile, puis la visite commence */
-        let introDone = false;
-        const intro = () => {
-            introDone = true;
-            if (reducedMotion) {
-                drawTo(total);
-                kmEl.textContent = fmt.format(stageKm[stageKm.length - 1]);
-                setActive(0, { travel: false });
-                return;
-            }
-            drawTo(0);
-            placeBike(0);
-            tween(0, total, 2800, (len) => {
-                drawTo(len);
-                placeBike(len);
-                kmEl.textContent = fmt.format(Math.round(kmAt(len)));
-            }, () => {
-                kmEl.textContent = fmt.format(stageKm[stageKm.length - 1]);
-                setTimeout(() => { bikeAt = total; setActive(0); schedule(); }, 500);
+        /* p : avancement de 0 à 1 le long du parcours complet */
+        const setProgress = (p) => {
+            let left = Math.max(0, Math.min(1, p)) * total;
+            let seg = 0;
+            let local = 0;
+            segs.forEach((s, i) => {
+                const drawn = Math.max(0, Math.min(lengths[i], left));
+                s.style.strokeDashoffset = lengths[i] - drawn;
+                if (left > 0 && drawn > 0) { seg = i; local = drawn; }
+                left -= lengths[i];
+            });
+
+            /* Étape atteinte = fin du dernier segment entièrement tracé */
+            const pos = segs.length ? segs[seg].getPointAtLength(local) : null;
+            if (pos) bike.setAttribute("transform", `translate(${pos.x} ${pos.y})`);
+            const frac = lengths[seg] ? local / lengths[seg] : 0;
+            const reached = p <= 0 ? 0 : (frac >= 0.999 ? seg + 1 : seg);
+            const kmNow = stageKm[seg] + (stageKm[seg + 1] - stageKm[seg]) * frac;
+            kmEl.textContent = fmt.format(Math.round(p <= 0 ? 0 : kmNow / 10) * 10);
+
+            const active = hovered >= 0 ? hovered : reached;
+            pins.forEach((pin, i) => {
+                pin.classList.toggle("is-reached", i <= reached);
+                pin.classList.toggle("is-active", i === active);
+            });
+            stages.forEach((st, i) => {
+                st.classList.toggle("is-reached", i <= reached);
+                st.classList.toggle("is-active", i === active);
             });
         };
 
-        drawTo(reducedMotion ? total : 0);
-        if (!reducedMotion) kmEl.textContent = "0";
+        let current = 0;
+        const render = () => setProgress(current);
 
-        if ("IntersectionObserver" in window) {
-            new IntersectionObserver(([entry]) => {
-                visible = entry.isIntersecting;
-                if (visible && !introDone) intro();
-                else if (visible) schedule();
-                else clearTimeout(timer);
-            }, { threshold: 0.35 }).observe(tour);
+        /* Survol d'une étape (liste ou carte) : on la met en évidence */
+        const hover = (i) => { hovered = i; pins.forEach((pin, j) => pin.classList.toggle("is-hover", j === i)); render(); };
+        [...pins, ...stages].forEach((el) => {
+            el.addEventListener("mouseenter", () => hover(Number(el.dataset.stage)));
+            el.addEventListener("mouseleave", () => hover(-1));
+        });
+
+        const sticky = window.matchMedia("(min-width: 900px)");
+
+        if (reducedMotion) {
+            current = 1;
+            render();
         } else {
-            visible = true;
-            intro();
+            /* Desktop : le scroll fait avancer le vélo. Mobile : animation à l'apparition. */
+            const onScroll = () => {
+                if (!sticky.matches) return;
+                const r = tour.getBoundingClientRect();
+                const run = tour.offsetHeight - window.innerHeight;
+                current = run > 0 ? Math.max(0, Math.min(1, -r.top / run)) : 1;
+                render();
+            };
+            window.addEventListener("scroll", onScroll, { passive: true });
+            window.addEventListener("resize", onScroll);
+            onScroll();
+
+            let played = false;
+            const play = () => {
+                if (played || sticky.matches) return;
+                played = true;
+                const start = performance.now();
+                const step = (now) => {
+                    const t = Math.min(1, (now - start) / 4500);
+                    current = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+                    render();
+                    if (t < 1) requestAnimationFrame(step);
+                };
+                requestAnimationFrame(step);
+            };
+            if ("IntersectionObserver" in window) {
+                new IntersectionObserver(([entry]) => { if (entry.isIntersecting) play(); }, { threshold: 0.3 })
+                    .observe(tour.querySelector(".tour__map"));
+            } else {
+                current = 1;
+                render();
+            }
+            sticky.addEventListener("change", () => { if (!sticky.matches && !played) { current = 1; render(); } else onScroll(); });
         }
+        render();
     }
 
     /* ---------- Carrousel ---------- */
