@@ -556,8 +556,16 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 @media (max-width: 520px) { .form__row { grid-template-columns: 1fr; } .form, .callout { padding: 20px; } }
 
 /* ---------- Footer ---------- */
-.footer { background: var(--blue-50); margin-top: auto; }
-.footer__inner { display: flex; justify-content: space-between; gap: 40px; padding-block: 48px; flex-wrap: wrap; }
+.footer { position: relative; overflow: hidden; background: var(--blue-50); margin-top: auto; }
+/* Même quadrillage qu'en haut des pages, qui apparaît en fondu depuis le haut du footer */
+.footer::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 50px 50px; background-position: -12px -20px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 65%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 65%);
+}
+.footer__inner { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 40px; padding-block: 72px 48px; flex-wrap: wrap; }
 .footer__left { display: flex; flex-direction: column; gap: 24px; }
 .footer__right { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; max-width: 520px; }
 .footer__nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
