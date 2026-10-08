@@ -35,32 +35,34 @@
     const wait = (ms) => new Promise((r) => setTimeout(r, reducedMotion ? 0 : ms));
     const isSorted = () => values.every((v, k) => k === 0 || values[k - 1] < v);
 
-    /* ---------- Dessin d'un coureur ---------- */
+    /* ---------- Dessin d'un cycliste (vu de profil, roulant vers la droite) ---------- */
     const riderSVG = (v) => {
-        const [jersey, band] = JERSEYS[v];
-        const h = 58 + v * 13;
-        const H = h + 30;
-        const top = 4;
-        const bodyBottom = top + h;
-        const visor = top + 24;
-        const bib = Math.min(22, h * 0.2);
+        const [jersey, accent] = JERSEYS[v];
+        const frame = v === 9 ? "#1a194d" : accent === "#fff" ? "#1a194d" : accent;
+        const skin = "#f1c7a3";
         return `
-            <svg viewBox="0 0 56 ${H}" width="56" height="${H}" aria-hidden="true">
-                <rect x="15" y="${bodyBottom - 6}" width="10" height="22" rx="4" fill="#1a194d"/>
-                <rect x="31" y="${bodyBottom - 6}" width="10" height="22" rx="4" fill="#1a194d"/>
-                <ellipse cx="18" cy="${bodyBottom + 17}" rx="9" ry="5" fill="#0b1122"/>
-                <ellipse cx="38" cy="${bodyBottom + 17}" rx="9" ry="5" fill="#0b1122"/>
-                <rect x="0" y="${top + h * 0.48}" width="10" height="${Math.max(22, h * 0.28)}" rx="5" fill="${jersey}"/>
-                <rect x="46" y="${top + h * 0.48}" width="10" height="${Math.max(22, h * 0.28)}" rx="5" fill="${jersey}"/>
-                <rect x="5" y="${top}" width="46" height="${h}" rx="23" fill="${jersey}"/>
-                <rect x="5" y="${top + h * 0.62}" width="46" height="8" fill="${band}" opacity=".9"/>
-                <rect x="15" y="${top + h * 0.72}" width="26" height="${bib}" rx="3" fill="#fff"/>
-                <text x="28" y="${top + h * 0.72 + bib * 0.72}" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="800" font-size="${Math.min(15, h * 0.14)}" fill="#1a194d">${v}</text>
-                <path d="M5 ${top + 23} A23 23 0 0 1 51 ${top + 23} Z" fill="#fff"/>
-                <path d="M14 ${top + 8} 20 ${top + 18} M28 ${top + 3} 28 ${top + 16} M42 ${top + 8} 36 ${top + 18}" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round"/>
-                <rect x="2" y="${visor}" width="52" height="12" rx="6" fill="#0b1122"/>
-                <rect x="8" y="${visor + 2.5}" width="40" height="7" rx="3.5" fill="url(#lens)"/>
-                <path d="M22 ${visor + 22} Q28 ${visor + 27} 34 ${visor + 22}" stroke="#1a194d" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <svg viewBox="0 0 124 104" aria-hidden="true">
+                <ellipse cx="62" cy="99" rx="50" ry="4" fill="currentColor" opacity=".12"/>
+                <g class="c-wheel"><circle cx="28" cy="78" r="19" fill="none" stroke="#1a194d" stroke-width="4"/><circle cx="28" cy="78" r="3" fill="#1a194d"/>
+                    <path d="M28 61v34M11 78h34" stroke="#94a3b8" stroke-width="1.2"/></g>
+                <g class="c-wheel"><circle cx="96" cy="78" r="19" fill="none" stroke="#1a194d" stroke-width="4"/><circle cx="96" cy="78" r="3" fill="#1a194d"/>
+                    <path d="M96 61v34M79 78h34" stroke="#94a3b8" stroke-width="1.2"/></g>
+                <path d="M28 78 55 79 47 47 28 78M47 47 85 46 55 79M85 46 96 78" fill="none" stroke="${frame}" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+                <path d="M41 44h13" stroke="#1a194d" stroke-width="4" stroke-linecap="round"/>
+                <path d="M85 46 88 41q6-1 6 5t-5 6" fill="none" stroke="#1a194d" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M49 40 58 60 52 82" fill="none" stroke="#0f172a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+                <path d="M49 40 66 58 60 84" fill="none" stroke="#1a194d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M57 86h9" stroke="#0b1122" stroke-width="4" stroke-linecap="round"/>
+                <path d="M48 40 76 27" stroke="${jersey}" stroke-width="15" stroke-linecap="round"/>
+                <path d="M51 35 73 25" stroke="${accent}" stroke-width="3.5" stroke-linecap="round" opacity=".9"/>
+                <rect x="53" y="33" width="13" height="10" rx="2" fill="#fff" transform="rotate(-24 59 38)"/>
+                <text x="59.5" y="41" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="800" font-size="9" fill="#1a194d" transform="rotate(-24 59 38)">${v}</text>
+                <path d="M75 28 89 41" stroke="${jersey}" stroke-width="6" stroke-linecap="round"/>
+                <path d="M84 37 90 43" stroke="${skin}" stroke-width="4.5" stroke-linecap="round"/>
+                <circle cx="85" cy="19" r="8" fill="${skin}"/>
+                <path d="M75 18q1-11 12-10 8 1 9 9l-3 1q-9-3-18 0z" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+                <path d="M78 12l3 4M84 10l1 5M90 11l-1 5" stroke="${jersey}" stroke-width="1.6" stroke-linecap="round"/>
+                <rect x="86" y="18" width="9" height="4" rx="2" fill="url(#lens)"/>
             </svg>`;
     };
 
@@ -105,7 +107,7 @@
         won = false;
 
         ridersEl.innerHTML = values.map((v) => `
-            <div class="rider" data-v="${v}">
+            <div class="rider" data-v="${v}" style="--s:${(0.58 + v * 0.055).toFixed(3)}">
                 <span class="rider__num">${v}</span>
                 ${riderSVG(v)}
             </div>`).join("");
