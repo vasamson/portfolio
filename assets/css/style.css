@@ -487,10 +487,11 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .filter[aria-pressed="true"] { background: var(--blue-700); border-color: var(--blue-700); color: var(--on-primary); }
 
 /* ---------- Mon Tour de France ---------- */
-.tour { position: relative; height: 320vh; }
-.tour__sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; padding-top: var(--header-h); }
+.tour { position: relative; }
+/* Section normale : plus de défilement bloqué, l'animation se joue à l'apparition */
+.tour__sticky { display: block; }
 .tour__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: center; }
-.tour__map svg { width: 100%; height: auto; max-height: calc(100vh - var(--header-h) - 48px); overflow: visible; }
+.tour__map svg { width: 100%; height: auto; max-height: min(560px, 70vh); overflow: visible; }
 .tour__land { fill: var(--blue-50); stroke: var(--blue-300); stroke-width: 2; stroke-linejoin: round; }
 .tour__gridline { stroke: var(--grid-line); stroke-width: 1.5; }
 .tour__route-bg path { fill: none; stroke: var(--blue-300); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1 11; }
@@ -538,9 +539,10 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
     .tour__side { order: -1; }
     .tour__map svg { max-height: none; }
 }
-@media (max-height: 980px) and (min-width: 900px) {
-    .stage__title { display: none; }
-    .stage.is-active .stage__title { display: block; }
+/* Liste compacte : seule l'étape active affiche son sous-titre et son détail */
+.stage__title { display: none; }
+.stage.is-active .stage__title { display: block; }
+.stage { padding-block: 3px; }
 }
 
 /* ---------- FAQ ---------- */

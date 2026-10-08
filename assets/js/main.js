@@ -225,7 +225,8 @@
             el.addEventListener("mouseleave", () => hover(-1));
         });
 
-        const sticky = window.matchMedia("(min-width: 900px)");
+        /* Plus de section collante : partout, l'animation se joue à l'apparition */
+        const sticky = { matches: false, addEventListener() { } };
 
         if (reducedMotion) {
             current = 1;
