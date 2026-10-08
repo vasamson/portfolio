@@ -32,9 +32,9 @@
     --linked-ink: #4a82ec; --linked-bg: #edf8ff; --linked-line: #bddcff;
     --slate-ink: #0f172a; --slate-bg: #f8fafc; --slate-line: #cbd5e1;
 
-    --font-body: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
-    --font-title: "Rethink Sans", "Outfit", system-ui, sans-serif;
-    --font-hand: "Covered By Your Grace", "Comic Sans MS", cursive;
+    --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-title: "Barlow Condensed", "Barlow", "Arial Narrow", system-ui, sans-serif;
+    --font-hand: "Permanent Marker", "Marker Felt", cursive;
 
     --radius: 8px;
     --wrap: min(90%, 1440px);
@@ -686,6 +686,45 @@ a.status:hover { opacity: .8; }
 .not-found { min-height: 100vh; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 16px; padding-top: var(--header-h); }
 .not-found__code { font-family: var(--font-hand); font-size: clamp(6rem, 18vw, 11rem); line-height: .9; color: var(--blue-600); }
 .not-found h1 { font-family: var(--font-title); font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 900; color: var(--blue-900); }
+
+/* ---------- Typographie « affiche de course » ----------
+   Barlow Condensed est étroite : on agrandit les titres, et les grands
+   titres passent en capitales italiques comme un habillage de course. */
+.hero h1, .sec-title, .page-head h1, .intro__name, .tour__title, .cta-box h2, .form__title, .not-found h1, .outcome p:not(.sec-kicker) {
+    font-style: italic; text-transform: uppercase; letter-spacing: .005em;
+}
+.hero h1 { font-size: 2.75rem; font-weight: 900; }
+.sec-title { font-size: 2.375rem; font-weight: 800; line-height: 1.05; }
+.page-head h1 { font-size: clamp(2.75rem, 6.2vw, 4.5rem); line-height: .98; }
+.intro__name { font-size: clamp(2.75rem, 5vw, 3.75rem); }
+.tour__title { font-size: clamp(2.5rem, 4.2vw, 3.25rem); }
+.cta-box h2 { font-size: clamp(1.875rem, 3.6vw, 2.5rem); line-height: 1.05; }
+.form__title { font-size: 1.875rem; }
+.card__title { font-size: 1.5rem; line-height: 1.15; }
+.hero__credit-title { font-size: 1.5rem; line-height: 1.1; }
+.faq__item summary { font-size: 1.25rem; font-weight: 700; }
+.slide h3, .tile h3 { font-size: 1.5rem; }
+.chapter h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); line-height: 1.1; }
+.stat__value, .figure__value, .tour__km, .tour__stats dd { font-style: italic; letter-spacing: -.01em; }
+.figure__value { font-size: clamp(2.5rem, 4.2vw, 3.5rem); }
+.stat__value { font-size: clamp(2.25rem, 3.6vw, 2.75rem); }
+/* La condensée reste pour les titres et les chiffres : les petits textes
+   d'interface repassent en Barlow, plus lisible en petit corps. */
+.pill, .status, .filter, .sec-kicker, .tour__kicker, .social__btn, .footer__nav a, .footer__legal,
+.stage__top, .stage__meta, .tour__sub, .tour__stats dt, .breadcrumb, .link-arrow, .project-nav small,
+.field label, .card__go, .cursor, .sound, .hero__credit-link, .timeline__date, .tags__label, .refs__label,
+.tour__tip-step, .tour__tip-km, .tour__tip-meta, .photo-caption span, .club__year {
+    font-family: var(--font-body);
+}
+.pill, .status { font-weight: 600; font-size: .8125rem; }
+.sec-kicker, .tour__kicker { font-weight: 600; letter-spacing: .06em; text-transform: uppercase; font-size: .8125rem; }
+.stage__top strong { font-family: var(--font-title); font-size: 1.125rem; font-weight: 800; }
+/* Le feutre est plus large et plus haut que l'ancienne manuscrite */
+.hand { font-size: .92em; letter-spacing: .01em; text-transform: none; font-style: normal; }
+.hero h1 .hand { font-size: 2.25rem; }
+.tour__tag { font-size: 26px; }
+.slide__num, .tile__num, .chapter__num { font-size: 1.75rem; }
+.result__rank { font-size: 2.75rem; }
 
 /* ---------- Apparitions ---------- */
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
