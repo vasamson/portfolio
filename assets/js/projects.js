@@ -360,8 +360,8 @@ const PROJECTS = [
         intro: "Le Circuit de Saône-et-Loire est une course par étapes de l'élite nationale née en 1927. Au sein de l'organisation (JAUNE Événements), j'ai pris en charge tout le volet numérique et graphique : j'ai <span class='text-highlight'>conçu et développé le site circuit-71.com</span>, j'ai animé les réseaux sociaux et j'ai créé <span class='text-highlight'>l'affiche, les six maillots distinctifs, les dossards, les plaques de cadre et la signalétique</span>. Après la course, j'ai produit les bilans destinés aux partenaires.",
         tools: ["HTML", "CSS", "JavaScript", "Illustrator", "Photoshop", "Réseaux sociaux"],
         cover: IMG + "circuit-saone-et-loire/site.webp",
-        cardCover: IMG + "circuit-saone-et-loire/course.webp",
-        cardCoverAlt: "Coureurs en course",
+        cardCover: IMG + "circuit-saone-et-loire/peloton.jpg",
+        cardCoverAlt: "Le peloton du Circuit de Saône-et-Loire sous les platanes, encouragé par le public",
         coverAlt: "Page d'accueil du site circuit-71.com",
         showCover: true,
         role: [
