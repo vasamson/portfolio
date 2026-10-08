@@ -652,28 +652,36 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 @media (max-width: 899px) { .contact { grid-template-columns: 1fr; } .contact__aside { border-right: 0; border-bottom: 1px solid var(--blue-200); } }
 @media (max-width: 520px) { .form__row { grid-template-columns: 1fr; } }
 
-/* ---------- Ligne d'arrivée (avant le footer) ---------- */
-.finish { position: relative; overflow: hidden; padding: 0 0 8px; }
-.finish__flag {
-    height: 28px;
-    background: repeating-conic-gradient(var(--blue-900) 0 25%, var(--white) 0 50%) 0 0 / 28px 28px;
-    border-block: 2px solid var(--blue-900);
+/* ---------- Mur de photos (avant le footer) ---------- */
+.wall { --h: clamp(150px, 15vw, 230px); --gap: 10px; padding-bottom: 24px; overflow: hidden; }
+.wall__head { margin-bottom: 28px; }
+.wall__bricks {
+    display: flex; flex-direction: column; gap: var(--gap);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
-.finish__marquee { display: flex; overflow: hidden; padding-block: 18px 6px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.finish__marquee--alt { padding-block: 0 18px; }
-.finish__track { display: flex; align-items: center; flex: none; white-space: nowrap; animation: finish-scroll 60s linear infinite; }
-.finish__marquee--alt .finish__track { animation-direction: reverse; animation-duration: 75s; }
-.finish:hover .finish__track { animation-play-state: paused; }
-.finish__dup { display: contents; }
-.finish__item { font-family: var(--font-title); font-weight: 800; letter-spacing: -.03em; font-size: clamp(2rem, 4.6vw, 3.75rem); line-height: 1.1; color: var(--blue-900); padding-inline: 4px; }
-.finish__marquee--alt .finish__item { color: transparent; -webkit-text-stroke: 1.5px var(--blue-300); font-size: clamp(1.5rem, 3.2vw, 2.5rem); }
-.finish__sep { flex: none; width: 14px; height: 14px; margin-inline: clamp(18px, 2.5vw, 32px); border-radius: 50%; background: #ffd84d; box-shadow: 0 0 0 4px color-mix(in srgb, #ffd84d 30%, transparent); }
-.finish__marquee--alt .finish__sep { width: 8px; height: 8px; background: var(--blue-300); box-shadow: none; }
-@keyframes finish-scroll { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) {
-    .finish__track { animation: none; flex-wrap: wrap; white-space: normal; justify-content: center; }
-    .finish__dup, .finish__marquee--alt { display: none; }
-    .finish__marquee { -webkit-mask-image: none; mask-image: none; }
+/* Rangées plus larges que l'écran, décalées d'une demi-brique comme un mur */
+.wall__row { display: flex; gap: var(--gap); width: 118%; margin-left: -9%; }
+.wall__row:nth-child(2) { margin-left: -16%; }
+.wall__row:nth-child(3) { margin-left: -4%; }
+.brick { position: relative; margin: 0; height: var(--h); flex: 1 1 0; min-width: 0; overflow: hidden; border-radius: 10px; background: var(--blue-100); }
+.brick--s { flex-grow: 0.8; }
+.brick--m { flex-grow: 1.1; }
+.brick--l { flex-grow: 1.5; }
+.brick img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease), filter .5s; }
+.brick figcaption {
+    position: absolute; left: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px;
+    background: rgba(255, 255, 255, .92); color: #1a194d; font-size: .75rem; font-weight: 600;
+    opacity: 0; transform: translateY(6px); transition: opacity .3s, transform .3s var(--ease); pointer-events: none;
+}
+.brick:hover img { transform: scale(1.06); }
+.brick:hover figcaption { opacity: 1; transform: none; }
+.wall__bricks:hover .brick:not(:hover) img { filter: saturate(.6) brightness(.85); }
+@media (max-width: 639px) {
+    .wall { --h: 120px; --gap: 6px; }
+    .wall__row { width: 180%; margin-left: -40%; }
+    .wall__row:nth-child(2) { margin-left: -60%; }
+    .wall__row:nth-child(3) { margin-left: -25%; }
 }
 
 /* ---------- Footer ---------- */
