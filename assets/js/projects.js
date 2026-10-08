@@ -184,6 +184,8 @@ const PROJECTS = [
         intro: "En novembre 2025, j'ai présenté aux organisateurs une <span class='text-highlight'>proposition de contenu</span> complète : un calendrier éditorial jour par jour de décembre à la course (partenaires, équipes engagées, parcours, offres VIP, montées mythiques, comptes à rebours). J'ai ensuite réalisé des <span class='text-highlight'>supports de course</span> (backdrop de podium, casquettes, marches) et filmé en caméra embarquée.",
         tools: ["Calendrier éditorial", "Illustrator", "InDesign", "PowerPoint", "Caméra embarquée"],
         cover: IMG + "boucles-drome-ardeche/backdrop.webp",
+        cardCover: IMG + "boucles-drome-ardeche/course-1.webp",
+        cardCoverAlt: "Vainqueur levant les bras",
         coverAlt: "Backdrop de podium des Boucles Drôme Ardèche 2026",
         showCover: false,
         role: [
@@ -247,6 +249,8 @@ const PROJECTS = [
         intro: "L'Ardéchoise rassemble chaque année des milliers de cyclistes sur les routes de l'Ardèche et de la Drôme. On m'a confié ses réseaux sociaux pour toute la saison 2026. J'ai construit une <span class='text-highlight'>stratégie en trois temps</span> : avant l'événement pour générer des inscriptions, pendant pour le faire vivre en direct, après pour fidéliser la communauté. J'ai créé moi-même l'ensemble des visuels, rédigé les publications, tourné et monté les vidéos, puis livré un <span class='text-highlight'>bilan chiffré</span> à l'organisation.",
         tools: ["Stratégie social media", "Photoshop", "Illustrator", "Premiere Pro", "Meta Business Suite"],
         cover: IMG + "ardechoise/banniere.webp",
+        cardCover: IMG + "ardechoise/depart.webp",
+        cardCoverAlt: "Départ de cyclistes",
         coverAlt: "Bannière de L'Ardéchoise 2026, 9 au 13 juin",
         showCover: true,
         role: [
@@ -356,6 +360,8 @@ const PROJECTS = [
         intro: "Le Circuit de Saône-et-Loire est une course par étapes de l'élite nationale née en 1927. Au sein de l'organisation (JAUNE Événements), j'ai pris en charge tout le volet numérique et graphique : j'ai <span class='text-highlight'>conçu et développé le site circuit-71.com</span>, j'ai animé les réseaux sociaux et j'ai créé <span class='text-highlight'>l'affiche, les six maillots distinctifs, les dossards, les plaques de cadre et la signalétique</span>. Après la course, j'ai produit les bilans destinés aux partenaires.",
         tools: ["HTML", "CSS", "JavaScript", "Illustrator", "Photoshop", "Réseaux sociaux"],
         cover: IMG + "circuit-saone-et-loire/site.webp",
+        cardCover: IMG + "circuit-saone-et-loire/course.webp",
+        cardCoverAlt: "Coureurs en course",
         coverAlt: "Page d'accueil du site circuit-71.com",
         showCover: true,
         role: [
@@ -532,6 +538,8 @@ const PROJECTS = [
         intro: "Alé est une marque italienne de textile cycliste premium, partenaire de l'Équipe de France. J'ai créé le compte <span class='text-highlight'>Alé Custom France</span> pour développer sa visibilité auprès des clubs français. J'en définis la <span class='text-highlight'>direction artistique</span>, je planifie et je crée les publications, et j'anime des rendez-vous réguliers comme le « Mardi des clubs ».",
         tools: ["Direction artistique", "Meta Business Suite", "Instagram", "Photoshop"],
         cover: IMG + "ale-custom/pantonier.webp",
+        cardCover: IMG + "ale-custom/team-2025.webp",
+        cardCoverAlt: "Équipe en tenues Alé Custom 2025",
         coverAlt: "Maillot Alé Custom présenté avec un nuancier Pantone",
         showCover: false,
         role: [
@@ -607,6 +615,8 @@ const PROJECTS = [
         intro: "La photographie est aussi une pratique personnelle. Sur la <span class='text-highlight'>Côte de Granit Rose</span>, je travaille la lumière rasante du soir et les silhouettes, en alternant le reflex et le <span class='text-highlight'>drone</span>.",
         tools: ["Reflex Canon", "Drone DJI"],
         cover: IMG + "photographie/ploumanach-chateau.webp",
+        cardCover: IMG + "photographie/coucher-soleil.webp",
+        cardCoverAlt: "Coucher de soleil vu du drone",
         coverAlt: "Château de Costaérès au large de Ploumanac'h",
         showCover: true,
         role: [
@@ -740,6 +750,8 @@ const PROJECTS = [
         intro: "J'ai déployé la <span class='text-highlight'>boutique officielle de la FFC</span> sur Shopify et je gère son catalogue. Pour la collection 2026, j'ai produit les <span class='text-highlight'>rendus 3D</span> de chaque produit (maillots, cuissards, combinaisons, gamme enfant), les bannières de lancement et de précommande, et les supports associés comme les signatures email.",
         tools: ["Shopify", "Liquid", "Rendus 3D", "Photoshop", "Figma"],
         cover: IMG + "ffc/maillot-ml.webp",
+        cardCover: IMG + "ffc/cdf-femmes-3.webp",
+        cardCoverAlt: "Équipe féminine heureuse après la course",
         coverAlt: "Maillot manches longues Équipe de France 2026 en rendu 3D",
         showCover: false,
         role: [
@@ -919,6 +931,8 @@ const PROJECTS = [
         intro: "Sur un championnat de France, onze courses s'enchaînent sur deux jours. Pour publier un <span class='text-highlight'>post vainqueur</span> quelques minutes après chaque arrivée, j'ai conçu mes visuels comme des <span class='text-highlight'>gabarits HTML</span> : je changeais la photo, le nom, le chrono et la catégorie, et le visuel était prêt. J'ai aussi réalisé les programmes, la présentation de l'équipe, et photographié la course au sol et au drone.",
         tools: ["HTML", "CSS", "Photoshop", "Photographie", "Drone"],
         cover: IMG + "france-cross/vainqueur-9.webp",
+        cardCover: IMG + "france-cross/arrivee.webp",
+        cardCoverAlt: "Arrivée d'une course de cross court",
         coverAlt: "Post vainqueur des Championnats de France de cross 2026",
         coverPos: "50% 78%",
         showCover: false,
