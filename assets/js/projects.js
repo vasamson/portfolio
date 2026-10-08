@@ -486,6 +486,8 @@ const PROJECTS = [
         intro: "Poussière, descentes techniques et sprints serrés : j'ai photographié les <span class='text-highlight'>Championnats de France VTT</span> pendant quatre jours. Chaque soir, j'ai trié et retouché les meilleures images pour les livrer le lendemain matin.",
         tools: ["Photographie", "Photoshop"],
         cover: IMG + "france-vtt/poussiere.webp",
+        cardCover: IMG + "france-vtt/foret.jpg",
+        cardCoverAlt: "Une vététiste en pleine descente rocailleuse dans la forêt du Dévoluy, aux Championnats de France VTT",
         coverAlt: "Vététiste dans un nuage de poussière",
         showCover: false,
         role: [
