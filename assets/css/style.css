@@ -32,8 +32,8 @@
     --linked-ink: #4a82ec; --linked-bg: #edf8ff; --linked-line: #bddcff;
     --slate-ink: #0f172a; --slate-bg: #f8fafc; --slate-line: #cbd5e1;
 
-    --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
-    --font-title: "Barlow Condensed", "Barlow", "Arial Narrow", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-title: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
     --font-hand: "Permanent Marker", "Marker Felt", cursive;
 
     --radius: 8px;
@@ -695,8 +695,8 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
     box-shadow: 0 24px 48px -28px rgba(26, 25, 77, .35);
 }
 .game__head { text-align: center; }
-.game__title { font-family: var(--font-title); font-style: italic; text-transform: uppercase; font-weight: 900; font-size: clamp(2.5rem, 6vw, 4rem); line-height: .95; color: var(--blue-900); letter-spacing: .01em; }
-.game__sub { font-family: var(--font-title); font-style: italic; font-weight: 700; font-size: clamp(1.125rem, 2.2vw, 1.5rem); color: var(--blue-600); }
+.game__title { font-family: var(--font-title); text-transform: uppercase; font-weight: 900; font-size: clamp(2.5rem, 6vw, 4rem); line-height: .95; color: var(--blue-900); letter-spacing: .01em; }
+.game__sub { font-family: var(--font-title); font-weight: 700; font-size: clamp(1.125rem, 2.2vw, 1.5rem); color: var(--blue-600); }
 
 .game__track { position: relative; height: clamp(150px, 17vw, 210px); margin-top: 8px; }
 .game__riders { position: absolute; inset: 0 0 34px; }
@@ -707,7 +707,7 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
     transition: transform .6s cubic-bezier(.5, 0, .3, 1);
 }
 .rider svg { width: calc(var(--s, 1) * min(132px, var(--slot) - 6px)); height: auto; overflow: visible; color: var(--blue-900); transition: transform .3s var(--ease); transform-origin: bottom center; }
-.rider__num { font-family: var(--font-title); font-style: italic; font-weight: 800; font-size: 1.375rem; color: var(--blue-400); transition: color .3s, transform .3s var(--ease); }
+.rider__num { font-family: var(--font-title); font-weight: 800; font-size: 1.375rem; color: var(--blue-400); transition: color .3s, transform .3s var(--ease); }
 .rider.is-hop svg { animation: rider-hop .6s cubic-bezier(.3, 0, .3, 1); }
 .rider.is-done .rider__num { color: #16a34a; }
 .rider.is-win svg { animation: rider-win .6s var(--d, 0ms) cubic-bezier(.3, 0, .3, 1) 2; }
@@ -738,7 +738,7 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .game__stats { display: flex; gap: 8px; }
 .game__stats div { padding: 6px 14px; border-radius: var(--radius); background: var(--blue-50); border: 1px solid var(--blue-200); text-align: center; }
 .game__stats dt { font-size: .75rem; color: var(--blue-600); }
-.game__stats dd { font-family: var(--font-title); font-style: italic; font-weight: 800; font-size: 1.5rem; color: var(--blue-900); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.game__stats dd { font-family: var(--font-title); font-weight: 800; font-size: 1.5rem; color: var(--blue-900); line-height: 1.1; font-variant-numeric: tabular-nums; }
 .game__best dd { color: var(--blue-600); }
 .game__status { min-height: 1.5em; text-align: center; color: var(--blue-900); }
 
@@ -762,41 +762,44 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .not-found__code { font-family: var(--font-hand); font-size: clamp(6rem, 18vw, 11rem); line-height: .9; color: var(--blue-600); }
 .not-found h1 { font-family: var(--font-title); font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 900; color: var(--blue-900); }
 
-/* ---------- Typographie « affiche de course » ----------
-   Barlow Condensed est étroite : on agrandit les titres, et les grands
-   titres passent en capitales italiques comme un habillage de course. */
-.hero h1, .sec-title, .page-head h1, .intro__name, .tour__title, .cta-box h2, .form__title, .not-found h1, .outcome p:not(.sec-kicker) {
-    font-style: italic; text-transform: uppercase; letter-spacing: .005em;
+/* ---------- Typographie du CV ----------
+   Titres en Bricolage Grotesque ExtraBold à l'interlettrage serré,
+   texte en Inter, petits intertitres en capitales espacées. */
+.hero h1, .sec-title, .page-head h1, .intro__name, .tour__title, .cta-box h2, .form__title, .not-found h1,
+.game__title, .card__title, .chapter h2, .slide h3, .tile h3, .block-title, .faq__item summary, .stat__value,
+.figure__value, .tour__km, .tour__stats dd, .callout__title, .id__name, .hero__credit-title, .tour__tip-city, .stage__top strong {
+    font-family: var(--font-title); font-style: normal; text-transform: none; letter-spacing: -.02em;
 }
-.hero h1 { font-size: 2.75rem; font-weight: 900; }
-.sec-title { font-size: 2.375rem; font-weight: 800; line-height: 1.05; }
-.page-head h1 { font-size: clamp(2.75rem, 6.2vw, 4.5rem); line-height: .98; }
-.intro__name { font-size: clamp(2.75rem, 5vw, 3.75rem); }
-.tour__title { font-size: clamp(2.5rem, 4.2vw, 3.25rem); }
-.cta-box h2 { font-size: clamp(1.875rem, 3.6vw, 2.5rem); line-height: 1.05; }
-.form__title { font-size: 1.875rem; }
-.card__title { font-size: 1.5rem; line-height: 1.15; }
-.hero__credit-title { font-size: 1.5rem; line-height: 1.1; }
-.faq__item summary { font-size: 1.25rem; font-weight: 700; }
-.slide h3, .tile h3 { font-size: 1.5rem; }
-.chapter h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); line-height: 1.1; }
-.stat__value, .figure__value, .tour__km, .tour__stats dd { font-style: italic; letter-spacing: -.01em; }
-.figure__value { font-size: clamp(2.5rem, 4.2vw, 3.5rem); }
-.stat__value { font-size: clamp(2.25rem, 3.6vw, 2.75rem); }
-/* La condensée reste pour les titres et les chiffres : les petits textes
-   d'interface repassent en Barlow, plus lisible en petit corps. */
-.pill, .status, .filter, .sec-kicker, .tour__kicker, .social__btn, .footer__nav a, .footer__legal,
-.stage__top, .stage__meta, .tour__sub, .tour__stats dt, .breadcrumb, .link-arrow, .project-nav small,
-.field label, .card__go, .cursor, .sound, .hero__credit-link, .timeline__date, .tags__label, .refs__label,
-.tour__tip-step, .tour__tip-km, .tour__tip-meta, .photo-caption span, .club__year {
+.hero h1 { font-size: 2.375rem; font-weight: 800; }
+.page-head h1, .intro__name, .game__title { letter-spacing: -.04em; }
+.page-head h1 { font-size: clamp(2.5rem, 5.4vw, 4rem); line-height: 1.02; font-weight: 800; }
+.intro__name { font-size: clamp(2.5rem, 4.4vw, 3.25rem); }
+.sec-title { font-size: 2rem; font-weight: 800; line-height: 1.1; }
+.tour__title { font-size: clamp(2.125rem, 3.6vw, 2.75rem); }
+.cta-box h2 { font-size: clamp(1.625rem, 3vw, 2.125rem); line-height: 1.1; }
+.form__title { font-size: 1.625rem; }
+.card__title { font-size: 1.3125rem; line-height: 1.2; }
+.hero__credit-title { font-size: 1.25rem; line-height: 1.15; }
+.faq__item summary { font-size: 1.0625rem; font-weight: 700; letter-spacing: -.01em; }
+.slide h3, .tile h3 { font-size: 1.3125rem; }
+.chapter h2 { font-size: clamp(1.5rem, 2.6vw, 1.875rem); line-height: 1.15; }
+.figure__value { font-size: clamp(2.25rem, 3.8vw, 3rem); }
+.stat__value { font-size: clamp(1.875rem, 3vw, 2.375rem); }
+.game__title { text-transform: uppercase; font-size: clamp(2.25rem, 5vw, 3.5rem); }
+.game__sub { font-style: normal; font-family: var(--font-body); font-weight: 600; font-size: 1.0625rem; }
+.rider__num, .tour__tag, .game__stats dd { font-style: normal; }
+.rider__num { font-family: var(--font-title); }
+.pill, .status, .filter, .social__btn, .footer__nav a, .footer__legal, .stage__top, .stage__meta, .tour__sub,
+.tour__stats dt, .breadcrumb, .link-arrow, .project-nav small, .field label, .card__go, .cursor, .sound,
+.hero__credit-link, .timeline__date, .tags__label, .refs__label, .tour__tip-step, .tour__tip-km, .tour__tip-meta,
+.photo-caption span, .club__year, .nav a, .btn {
     font-family: var(--font-body);
 }
-.pill, .status { font-weight: 600; font-size: .8125rem; }
-.sec-kicker, .tour__kicker { font-weight: 600; letter-spacing: .06em; text-transform: uppercase; font-size: .8125rem; }
-.stage__top strong { font-family: var(--font-title); font-size: 1.125rem; font-weight: 800; }
-/* Le feutre est plus large et plus haut que l'ancienne manuscrite */
-.hand { font-size: .92em; letter-spacing: .01em; text-transform: none; font-style: normal; }
-.hero h1 .hand { font-size: 2.25rem; }
+.pill, .status { font-weight: 500; font-size: .8125rem; }
+/* Intertitres comme sur le CV : capitales espacées */
+.sec-kicker, .tour__kicker, .hero__credit-place { font-family: var(--font-body); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: .75rem; }
+.hand { font-size: .9em; letter-spacing: .01em; text-transform: none; font-style: normal; }
+.hero h1 .hand { font-size: 2rem; }
 .tour__tag { font-size: 26px; }
 .slide__num, .tile__num, .chapter__num { font-size: 1.75rem; }
 .result__rank { font-size: 2.75rem; }
