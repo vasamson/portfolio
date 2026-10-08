@@ -45,7 +45,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap">
-    <link rel="stylesheet" href="assets/css/style.css?v=d80bac20">
+    <link rel="stylesheet" href="assets/css/style.css?v=ea118b85">
 </head>
 
 <body>
@@ -127,25 +127,39 @@
 
         <div class="stack">
             <section class="wrap intro">
-                <div class="intro__photo reveal">
-                    <img src="assets/img/portrait.webp" alt="Portrait de Valentin Samson" width="666" height="1000" loading="lazy" decoding="async">
+                <div class="intro__visual reveal">
+                    <div class="intro__photo">
+                        <img src="assets/img/portrait.webp" alt="Portrait de Valentin Samson" width="666" height="1000" loading="lazy" decoding="async">
+                        <a class="status intro__status" href="#contact"><span class="status__dot" aria-hidden="true"></span>Disponible</a>
+                    </div>
+                    <p class="intro__note" aria-hidden="true">c'est moi !<svg viewBox="0 0 60 40"><path d="M4 6c18 2 34 10 44 26m0 0-2-11m2 11-11-3" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+                    <div class="intro__badge">
+                        <span class="intro__badge-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>
+                        <span><small>En alternance chez</small><strong>In Yellow Consulting</strong></span>
+                    </div>
                 </div>
                 <div class="intro__body reveal">
                     <div>
                         <p class="sec-kicker">Qui suis-je ?</p>
                         <h2 class="intro__name">Valentin <span class="hand">Samson</span></h2>
-                        <div class="intro__tags">
-                            <span class="pill">Community manager événementiel</span>
-                            <span class="pill">Couverture live</span>
-                            <span class="pill">Lannion · Lyon</span>
-                            <span class="pill">BUT MMI · IUT de Lannion</span>
-                        </div>
+                        <p class="intro__role">Community manager · événementiel cyclisme</p>
                     </div>
                     <div class="intro__text">
-                        <p>Je suis <span class="text-highlight">community manager spécialisé dans l'événementiel cyclisme</span>. Du Faun Tour Femmes aux Championnats d'Europe, des Boucles Drôme Ardèche à L'Ardéchoise, je pilote les réseaux sociaux avant, pendant et après l'événement : stratégie, contenus, <span class="text-highlight">couverture en direct</span> et bilan chiffré.</p>
-                        <p>Du départ au podium, je sais où me placer pour l'image qui compte et comment raconter une course à ceux qui ne sont pas au bord de la route.</p>
+                        <p>Je pilote les réseaux sociaux des <span class="text-highlight">grandes courses cyclistes</span>, avant, pendant et après l'événement : stratégie, contenus, <span class="text-highlight">couverture en direct</span> et bilan chiffré. Du départ au podium, je sais où me placer pour l'image qui compte et comment raconter une course à ceux qui ne sont pas au bord de la route.</p>
                     </div>
-                    <a class="btn btn--primary has-roll btn--wide" href="apropos.html"><span class="ico-roll"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span class="roll" data-text="En savoir plus"><span>En savoir plus</span></span></a>
+                    <ul class="intro__facts">
+                        <li><span class="intro__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h2"/></svg></span><span><small>Spécialité</small>Événementiel cyclisme</span></li>
+                        <li><span class="intro__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><span><small>Formation</small>BUT MMI · IUT de Lannion</span></li>
+                        <li><span class="intro__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><small>Basé à</small>Lannion · Lyon</span></li>
+                        <li><span class="intro__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span><span><small>Terrain</small>Couverture live des courses</span></li>
+                    </ul>
+                    <div class="intro__foot">
+                        <span class="intro__sign" role="img" aria-label="Signature de Valentin Samson"></span>
+                        <div class="intro__cta">
+                            <a class="btn btn--primary has-roll " href="apropos.html"><span class="ico-roll"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span class="roll" data-text="En savoir plus"><span>En savoir plus</span></span></a>
+                            <a class="btn btn--soft has-roll " href="CV.pdf" target="_blank" rel="noopener"><span class="ico-roll"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6m0 6-3-3m3 3 3-3"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6m0 6-3-3m3 3 3-3"/></svg></span><span class="roll" data-text="Mon CV"><span>Mon CV</span></span></a>
+                        </div>
+                    </div>
                 </div>
                 <span class="blob" aria-hidden="true"></span>
             </section>
