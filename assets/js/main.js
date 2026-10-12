@@ -269,6 +269,31 @@
         render();
     }
 
+    /* ---------- Motion design : lecture seulement quand la vidéo est à l'écran ---------- */
+    const reel = document.querySelector(".reel__video");
+
+    if (reel) {
+        const btn = document.querySelector(".reel__btn");
+        let userPaused = reducedMotion;
+        const sync = () => {
+            btn.classList.toggle("is-paused", reel.paused);
+            btn.setAttribute("aria-label", reel.paused ? "Lire la vidéo" : "Mettre en pause");
+        };
+        btn.addEventListener("click", () => {
+            if (reel.paused) { userPaused = false; reel.play().catch(() => { }); }
+            else { userPaused = true; reel.pause(); }
+        });
+        reel.addEventListener("play", sync);
+        reel.addEventListener("pause", sync);
+        sync();
+        if ("IntersectionObserver" in window) {
+            new IntersectionObserver(([entry]) => {
+                if (entry.isIntersecting && !userPaused) reel.play().catch(() => { });
+                else if (!entry.isIntersecting) reel.pause();
+            }, { threshold: 0.4 }).observe(reel);
+        }
+    }
+
     /* ---------- Carrousel ---------- */
     document.querySelectorAll(".slider").forEach((slider) => {
         const track = slider.querySelector(".slider__track");
