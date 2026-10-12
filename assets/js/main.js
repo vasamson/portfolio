@@ -290,65 +290,25 @@
         if (item.open) faqItems.forEach((other) => { if (other !== item) other.open = false; });
     }));
 
-    /* ---------- Couverture d'un projet (image ou couverture générée) ---------- */
-    const coverMarkup = (p, eager = false) => {
-        if (p.cover) {
-            const pos = p.coverPos ? ` style="object-position:${esc(p.coverPos)}"` : "";
-            return `<img src="${esc(p.cover)}" alt="${esc(p.coverAlt || p.cardTitle)}"${pos} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
-        }
-        return `<div class="cover-placeholder" aria-hidden="true">
-                    <span class="cover-placeholder__tag">${esc(p.categoryLabel)} · ${esc(p.year)}</span>
-                    <span class="cover-placeholder__title">${esc(p.cardTitle)}</span>
-                </div>`;
-    };
+    /* ---------- Page projets : filtres (les cartes sont écrites dans le HTML) ---------- */
+    const grid = document.getElementById("projects-grid");
 
-    /* Filtres d'un projet : sa catégorie (web et e-commerce regroupés) + « event » */
-    const filterKeys = (p) => {
-        const keys = [p.category === "ecommerce" ? "web" : p.category];
-        if (p.event) keys.push("event");
-        return keys.join(" ");
-    };
-
-    const cardMarkup = (p) => `
-        <a class="card reveal" href="projet.html?id=${encodeURIComponent(p.id)}" data-filters="${esc(filterKeys(p))}">
-            <div class="card__media">${coverMarkup(p.cardCover ? { ...p, cover: p.cardCover, coverAlt: p.cardCoverAlt, coverPos: null } : p)}<span class="card__go">Voir le projet ${ICONS.arrowRight}</span></div>
-            <div class="card__body">
-                <h3 class="card__title">${esc(p.cardTitle)}</h3>
-                <p class="card__desc">${esc(p.summary)}</p>
-                <div class="card__tags"><span class="pill">${esc(p.categoryLabel)}</span><span class="pill">${esc(p.year)}</span></div>
-            </div>
-        </a>`;
-
-    if (typeof PROJECTS !== "undefined") {
-        /* Accueil : derniers projets */
-        const latest = document.getElementById("latest-grid");
-        if (latest) {
-            latest.innerHTML = PROJECTS.slice(0, Number(latest.dataset.limit) || 4).map(cardMarkup).join("");
-            observeReveals(latest);
-        }
-
-        /* Page projets : grille complète + filtres */
-        const grid = document.getElementById("projects-grid");
-        if (grid) {
-            grid.innerHTML = PROJECTS.map(cardMarkup).join("");
-            observeReveals(grid);
-
-            const filters = document.querySelectorAll(".filter");
-            const applyFilter = (filter) => {
-                filters.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.filter === filter)));
-                grid.querySelectorAll(".card").forEach((card) => {
-                    const show = filter === "all" || card.dataset.filters.split(" ").includes(filter);
-                    card.hidden = !show;
-                    if (show) card.classList.add("is-visible");
-                });
-            };
-            filters.forEach((btn) => btn.addEventListener("click", () => {
-                applyFilter(btn.dataset.filter);
-                history.replaceState(null, "", btn.dataset.filter === "all" ? location.pathname : `#${btn.dataset.filter}`);
-            }));
-            const initial = location.hash.slice(1);
-            if (initial && [...filters].some((b) => b.dataset.filter === initial)) applyFilter(initial);
-        }
+    if (grid) {
+        const filters = document.querySelectorAll(".filter");
+        const applyFilter = (filter) => {
+            filters.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.filter === filter)));
+            grid.querySelectorAll(".card").forEach((card) => {
+                const show = filter === "all" || card.dataset.filters.split(" ").includes(filter);
+                card.hidden = !show;
+                if (show) card.classList.add("is-visible");
+            });
+        };
+        filters.forEach((btn) => btn.addEventListener("click", () => {
+            applyFilter(btn.dataset.filter);
+            history.replaceState(null, "", btn.dataset.filter === "all" ? location.pathname : `#${btn.dataset.filter}`);
+        }));
+        const initial = location.hash.slice(1);
+        if (initial && [...filters].some((b) => b.dataset.filter === initial)) applyFilter(initial);
     }
 
     /* ---------- Formulaire de contact (ouvre la messagerie) ---------- */
@@ -369,165 +329,17 @@
         });
     }
 
-    /* ---------- Page projet ---------- */
-    const projectRoot = document.getElementById("project-root");
+    /* ---------- Page projet : visionneuse, clic sur une image pour l'afficher en grand ---------- */
+    const projectPage = document.querySelector(".project-page");
 
-    if (projectRoot && typeof PROJECTS !== "undefined") {
-        const id = new URLSearchParams(window.location.search).get("id");
-        const index = PROJECTS.findIndex((p) => p.id === id);
-
-        if (index === -1) {
-            window.location.replace("projets.html");
-            return;
-        }
-
-        const p = PROJECTS[index];
-        const prev = PROJECTS[(index - 1 + PROJECTS.length) % PROJECTS.length];
-        const next = PROJECTS[(index + 1) % PROJECTS.length];
-
-        document.title = `${p.cardTitle} — Valentin Samson`;
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.setAttribute("content", p.tagline);
-
-        const hasChapters = Array.isArray(p.chapters) && p.chapters.length > 0;
-        const showCover = p.showCover || !hasChapters;
-
-        const chapterText = (c, i) => `
-            <span class="chapter__num">${String(i + 1).padStart(2, "0")}</span>
-            <h2>${esc(c.title)}</h2>
-            <p class="chapter__text">${c.html}</p>`;
-
-        const insta = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>';
-
-        const chapterMarkup = (c, i) => {
-            if (c.feed) {
-                const f = c.feed;
-                return `
-                    <article class="chapter chapter--gallery">
-                        <div class="chapter__head reveal">${chapterText(c, i)}</div>
-                        <div class="feed reveal">
-                            <div class="feed__head">
-                                <span class="feed__avatar">${insta}</span>
-                                <div class="feed__id"><strong>@${esc(f.handle)}</strong><span>${esc(f.name)}</span></div>
-                                <dl class="feed__stats">${(f.stats || []).map(([v, l]) => `<div><dt>${esc(l)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
-                                <a class="btn btn--primary feed__follow" href="${esc(f.url)}" target="_blank" rel="noopener noreferrer">Voir le compte</a>
-                            </div>
-                            <div class="feed__grid">
-                                ${f.images.map((img) => `<figure class="gallery__item feed__item"><img src="${esc(img.src)}" alt="${esc(img.alt)}" loading="lazy" decoding="async"></figure>`).join("")}
-                            </div>
-                        </div>
-                    </article>`;
-            }
-            if (c.video) {
-                return `
-                    <article class="chapter chapter--gallery">
-                        <div class="chapter__head reveal">${chapterText(c, i)}</div>
-                        <figure class="video reveal${c.vertical ? " video--vertical" : ""}">
-                            <video src="${esc(c.video)}" poster="${esc(c.poster || "")}" controls muted loop playsinline preload="none" aria-label="${esc(c.alt || c.title)}"></video>
-                        </figure>
-                    </article>`;
-            }
-            if (Array.isArray(c.images)) {
-                const cols = Math.min(c.images.length === 4 && !c.poster ? 4 : 3, c.images.length);
-                return `
-                    <article class="chapter chapter--gallery">
-                        <div class="chapter__head reveal">${chapterText(c, i)}</div>
-                        <div class="gallery${c.poster ? " gallery--poster" : ""}${c.wide ? " gallery--wide" : ""} reveal" style="--cols:${cols}">
-                            ${c.images.map((img) => `
-                                <figure class="gallery__item"><img src="${esc(img.src)}" alt="${esc(img.alt)}" loading="lazy" decoding="async"></figure>`).join("")}
-                        </div>
-                    </article>`;
-            }
-            return `
-                <article class="chapter${i % 2 ? " chapter--reverse" : ""}">
-                    <figure class="chapter__media reveal${c.poster ? " is-poster" : ""}">
-                        <img src="${esc(c.image)}" alt="${esc(c.alt || c.title)}" loading="lazy" decoding="async">
-                    </figure>
-                    <div class="reveal">${chapterText(c, i)}</div>
-                </article>`;
-        };
-
-        const chapters = hasChapters ? `
-            <section class="wrap chapters" aria-label="Détails du projet">
-                ${p.chapters.map(chapterMarkup).join("")}
-            </section>` : "";
-
-        const stats = Array.isArray(p.stats) && p.stats.length ? `
-            <div class="stats reveal">
-                ${p.stats.map((s, i) => `
-                    <div class="stat${i === 0 ? " stat--accent" : ""}"><span class="stat__value">${esc(s.value)}</span><span class="stat__label">${esc(s.label)}</span></div>`).join("")}
-            </div>` : "";
-
-        const role = Array.isArray(p.role) && p.role.length ? `
-            <div class="role reveal">
-                <h2 class="block-title">Ce que j'ai fait</h2>
-                <ul>${p.role.map((r) => `<li>${r}</li>`).join("")}</ul>
-            </div>` : "";
-
-        const outcome = p.outcome ? `
-            <section class="wrap">
-                <div class="outcome reveal">
-                    <p class="sec-kicker">Ce que j'en retiens</p>
-                    <p>${p.outcome}</p>
-                </div>
-            </section>` : "";
-
-        const credits = p.credits ? `<p class="source-note">${esc(p.credits)}</p>` : "";
-
-        const links = (p.links || []).map((l) => `
-            <a class="btn btn--soft has-roll" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${roll(l.label)} ${ICONS.external}</a>`).join("");
-
-        projectRoot.innerHTML = `
-            <section class="page-head grid-bg">
-                <span class="blob" aria-hidden="true"></span>
-                <div class="wrap">
-                    <a class="breadcrumb" href="projets.html">${ICONS.arrowLeft} Tous les projets</a>
-                    <h1 style="max-width:28ch">${esc(p.title)}</h1>
-                    <p class="sec-lead">${esc(p.tagline)}</p>
-                    <div class="facts">
-                        <span class="pill pill--fill">${esc(p.categoryLabel)}</span>
-                        <span class="pill pill--fill">${esc(p.year)}</span>
-                        ${p.tools.map((t) => `<span class="pill">${esc(t)}</span>`).join("")}
-                    </div>
-                </div>
-            </section>
-
-            <div class="stack" style="padding-top:8px;padding-bottom:72px">
-                ${showCover ? `<div class="wrap"><div class="project-cover">${coverMarkup(p, true)}</div></div>` : ""}
-
-                <section class="wrap" style="display:flex;flex-direction:column;gap:40px">
-                    <div>
-                        <h2 class="sec-title">Le projet</h2>
-                        <p class="project-intro" style="margin-top:12px">${p.intro}</p>
-                    </div>
-                    ${stats}
-                    ${role}
-                    ${links ? `<div class="project-links">${links}</div>` : ""}
-                </section>
-
-                ${chapters}
-
-                ${outcome}
-
-                <section class="wrap" style="display:flex;flex-direction:column;gap:20px">
-                    ${credits}
-                    <nav class="project-nav" aria-label="Autres projets">
-                        <a href="projet.html?id=${encodeURIComponent(prev.id)}"><small>← Projet précédent</small><strong>${esc(prev.cardTitle)}</strong></a>
-                        <a href="projet.html?id=${encodeURIComponent(next.id)}"><small>Projet suivant →</small><strong>${esc(next.cardTitle)}</strong></a>
-                    </nav>
-                </section>
-            </div>`;
-
-        observeReveals(projectRoot);
-
-        /* Visionneuse : clic sur une image du projet pour l'afficher en grand */
+    if (projectPage) {
         const viewer = document.createElement("dialog");
         viewer.className = "viewer";
         viewer.setAttribute("aria-label", "Image en grand");
         viewer.innerHTML = `<img alt=""><button class="viewer__close" type="button" aria-label="Fermer">${ICONS.close}</button>`;
         document.body.appendChild(viewer);
         const viewerImg = viewer.querySelector("img");
-        projectRoot.addEventListener("click", (e) => {
+        projectPage.addEventListener("click", (e) => {
             const img = e.target.closest(".gallery__item img, .chapter__media img, .project-cover img");
             if (!img || typeof viewer.showModal !== "function") return;
             viewerImg.src = img.currentSrc || img.src;

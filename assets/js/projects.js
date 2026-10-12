@@ -58,7 +58,20 @@ const PROJECTS = [
                     name: "Faun Tour Femmes",
                     url: "https://www.instagram.com/boucles2607/",
                     stats: [["3 200", "abonnés Instagram"], ["5 411", "abonnés Facebook"], ["1,6 M", "vues cumulées"]],
-                    images: ["j50", "etape1", "tetes", "fm", "j30", "locales", "site", "j7", "secu", "etape2", "j1", "vip"].map((k) => ({ src: `${IMG}faun-tour-femmes/feed-${k}.jpg`, alt: "" }))
+                    images: [
+                        ["j50", "Post Instagram du compte à rebours J-50 du Faun Tour Femmes"],
+                        ["etape1", "Post de présentation de l'étape 1, Guilherand-Granges – Boffres"],
+                        ["tetes", "Post des têtes d'affiche de la première édition"],
+                        ["fm", "Post partenaire officiel FM Logistic"],
+                        ["j30", "Post du compte à rebours J-30, peloton sur un viaduc"],
+                        ["locales", "Post « Elles courent à domicile » sur les coureuses locales"],
+                        ["site", "Post d'annonce du nouveau site internet de la course"],
+                        ["j7", "Post du compte à rebours J-7"],
+                        ["secu", "Post de sensibilisation « Roulez en toute sécurité »"],
+                        ["etape2", "Post de présentation de l'étape 2, Dieulefit – Dieulefit"],
+                        ["j1", "Post du compte à rebours J-1"],
+                        ["vip", "Post de présentation des offres VIP"]
+                    ].map(([k, alt]) => ({ src: `${IMG}faun-tour-femmes/feed-${k}.jpg`, alt }))
                 }
             },
             {

@@ -722,6 +722,17 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .breadcrumb svg { width: 16px; height: 16px; transition: transform .3s var(--ease); }
 .breadcrumb:hover svg { transform: translateX(-3px); }
 
+/* Fil d'Ariane */
+.crumbs ol { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; list-style: none; margin: 0; padding: 0; font-size: .875rem; color: var(--blue-700); }
+.crumbs li + li::before { content: "›"; margin-right: 8px; color: var(--blue-400); }
+.crumbs a { color: var(--blue-600); font-weight: 500; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; transition: text-decoration-color .2s; }
+.crumbs a:hover { text-decoration-color: currentColor; }
+.crumbs [aria-current] { color: var(--blue-900); font-weight: 600; }
+/* Liens dans le texte : visibles, ancres descriptives */
+.intro__text a, .faq__answer a, .moved a { color: var(--blue-600); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+.intro__text a:hover, .faq__answer a:hover, .moved a:hover { color: var(--blue-800); }
+.moved { display: flex; flex-direction: column; gap: 10px; font-size: 1.0625rem; }
+
 /* ---------- À propos / Athlète ---------- */
 .split { display: grid; grid-template-columns: minmax(0, 350px) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
 .split--even { grid-template-columns: 1fr 1fr; align-items: center; }
