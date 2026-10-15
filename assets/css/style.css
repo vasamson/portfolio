@@ -1006,3 +1006,146 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     .js .reveal { opacity: 1; transform: none; }
 }
+
+/* ==========================================================================
+   Liquid glass
+   Verre translucide : flou + saturation de l'arrière-plan, reflet en haut,
+   liseré lumineux, ombre douce. Réfraction des bords en plus sur Chromium
+   (classe .has-refract posée par main.js).
+   ========================================================================== */
+:root {
+    --glass-tint: rgba(255, 255, 255, .28);
+    --glass-tint-strong: rgba(255, 255, 255, .72);
+    --glass-tint-bar: rgba(255, 255, 255, .55);
+    --glass-sheen: linear-gradient(135deg, rgba(255, 255, 255, .45), rgba(255, 255, 255, .08) 45%, rgba(255, 255, 255, 0) 70%);
+    --glass-rim-color: rgba(255, 255, 255, .95);
+    --glass-hi: rgba(255, 255, 255, .8);
+    --glass-lo: rgba(255, 255, 255, .25);
+    --glass-shadow: 0 16px 40px -16px rgba(26, 25, 77, .35), 0 2px 8px -2px rgba(26, 25, 77, .12);
+    --glass-filter: blur(16px) saturate(1.9) brightness(1.06);
+    --glass-chip: rgba(255, 255, 255, .4);
+    --glass-chip-on: rgba(255, 255, 255, .85);
+}
+:root[data-theme="dark"] {
+    --glass-tint: rgba(17, 20, 48, .38);
+    --glass-tint-strong: rgba(17, 20, 48, .78);
+    --glass-tint-bar: rgba(17, 20, 48, .58);
+    --glass-sheen: linear-gradient(135deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .03) 45%, rgba(255, 255, 255, 0) 70%);
+    --glass-rim-color: rgba(255, 255, 255, .45);
+    --glass-hi: rgba(255, 255, 255, .22);
+    --glass-lo: rgba(255, 255, 255, .07);
+    --glass-shadow: 0 16px 40px -16px rgba(0, 0, 0, .7), 0 2px 8px -2px rgba(0, 0, 0, .4);
+    --glass-filter: blur(16px) saturate(1.6) brightness(.92);
+    --glass-chip: rgba(255, 255, 255, .07);
+    --glass-chip-on: rgba(255, 255, 255, .2);
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --glass-tint: rgba(17, 20, 48, .38);
+        --glass-tint-strong: rgba(17, 20, 48, .78);
+        --glass-tint-bar: rgba(17, 20, 48, .58);
+        --glass-sheen: linear-gradient(135deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .03) 45%, rgba(255, 255, 255, 0) 70%);
+        --glass-rim-color: rgba(255, 255, 255, .45);
+        --glass-hi: rgba(255, 255, 255, .22);
+        --glass-lo: rgba(255, 255, 255, .07);
+        --glass-shadow: 0 16px 40px -16px rgba(0, 0, 0, .7), 0 2px 8px -2px rgba(0, 0, 0, .4);
+        --glass-filter: blur(16px) saturate(1.6) brightness(.92);
+        --glass-chip: rgba(255, 255, 255, .07);
+        --glass-chip-on: rgba(255, 255, 255, .2);
+    }
+}
+
+/* Liseré lumineux en dégradé (bord fin, plus clair en haut à gauche) */
+.header__bar::before, .header::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    border-radius: inherit; border: 1px solid var(--glass-rim-color);
+    -webkit-mask-image: linear-gradient(160deg, #000, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .1) 55%, rgba(0, 0, 0, .6));
+    mask-image: linear-gradient(160deg, #000, rgba(0, 0, 0, .3) 30%, rgba(0, 0, 0, .1) 55%, rgba(0, 0, 0, .6));
+    opacity: 0; transition: opacity .4s;
+}
+/* Ordinateur : la pilule flottante devient du verre.
+   Le verre est dessiné par ::after (découpé par clip-path, sinon Chrome ne
+   respecte pas l'arrondi avec la réfraction), le liseré par ::before et le
+   reflet qui suit le pointeur (--mx / --my posés par main.js) par --hl. */
+@property --hl { syntax: "<number>"; inherits: true; initial-value: 0; }
+.header__bar > * { position: relative; z-index: 2; }
+@media (min-width: 1200px) {
+    .header__bar { position: relative; transition: width .5s var(--ease), margin-top .5s var(--ease), padding .5s var(--ease), border-radius .5s var(--ease), box-shadow .4s, --hl .4s; }
+    .header__bar::before { z-index: 1; }
+    .header__bar::after {
+        content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+        border-radius: inherit; clip-path: inset(0 round 22px);
+        background:
+            radial-gradient(180px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, calc(var(--hl) * .45)), transparent 70%),
+            var(--glass-sheen), var(--glass-tint-bar);
+        backdrop-filter: var(--glass-filter); -webkit-backdrop-filter: var(--glass-filter);
+        box-shadow: inset 0 1px 0 var(--glass-hi), inset 0 -1px 0 var(--glass-lo);
+        opacity: 0; transition: opacity .4s;
+    }
+    .header.is-scrolled .header__bar {
+        border-color: transparent; background: none; backdrop-filter: none; -webkit-backdrop-filter: none;
+        border-radius: 22px; box-shadow: var(--glass-shadow);
+    }
+    .header.is-scrolled .header__bar::before, .header.is-scrolled .header__bar::after { opacity: 1; }
+    .header.is-scrolled .header__bar::before { border-radius: 21px; } /* rayon explicite : « inherit » est mal rendu avec le masque */
+    .header.is-scrolled .header__bar:hover { --hl: 1; }
+    .has-refract .header__bar::after {
+        backdrop-filter: url(#lg-refract) blur(10px) saturate(1.9) brightness(1.05);
+    }
+}
+
+/* Mobile / tablette : le header se détache en carte de verre flottante */
+@media (max-width: 1199px) {
+    .header {
+        border-radius: 0;
+        transition: inset .5s var(--ease), border-radius .5s var(--ease), background-color .3s, box-shadow .3s;
+    }
+    .header.is-scrolled, .header.is-open {
+        inset: 8px 8px auto; border-radius: 22px;
+        background: var(--glass-sheen), var(--glass-tint);
+        backdrop-filter: var(--glass-filter); -webkit-backdrop-filter: var(--glass-filter);
+        box-shadow: inset 0 1px 0 var(--glass-hi), inset 0 -1px 0 var(--glass-lo), var(--glass-shadow);
+    }
+    .header.is-scrolled .header__bar, .header.is-open .header__bar { height: 56px; padding-inline: 14px 8px; }
+    .header.is-scrolled::before, .header.is-open::before { opacity: 1; border-radius: 22px; }
+    /* Menu ouvert : verre plus opaque pour garder le texte lisible */
+    .header.is-open { background: var(--glass-sheen), var(--glass-tint-strong); }
+    .header.is-open .mobile-menu { padding-inline: 18px; max-height: calc(100vh - 80px); }
+}
+
+/* Petits boutons du header : pastilles de verre */
+.theme-switch, .menu-btn {
+    background: var(--glass-chip);
+    box-shadow: inset 0 1px 0 var(--glass-hi), inset 0 0 0 1px var(--glass-lo);
+    backdrop-filter: blur(8px) saturate(1.6); -webkit-backdrop-filter: blur(8px) saturate(1.6);
+}
+.theme-switch { border-radius: 12px; }
+.theme-switch button { border-radius: 9px; transition: background-color .3s, box-shadow .3s; }
+.theme-switch button[aria-pressed="true"] {
+    background: var(--glass-chip-on);
+    box-shadow: inset 0 1px 0 var(--glass-hi), 0 2px 6px -2px rgba(26, 25, 77, .3);
+}
+.menu-btn { border-radius: 14px; }
+
+/* Verre sombre posé sur les vidéos et les photos */
+.hero__ctrl, .reel__btn, .viewer__close, .card__go, .cursor {
+    color: #fff;
+    background: linear-gradient(135deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, .04) 50%), rgba(14, 16, 42, .28);
+    backdrop-filter: blur(12px) saturate(1.8); -webkit-backdrop-filter: blur(12px) saturate(1.8);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .55), inset 0 0 0 1px rgba(255, 255, 255, .16), 0 8px 22px -8px rgba(0, 0, 0, .45);
+}
+.hero__ctrl:hover, .reel__btn:hover, .viewer__close:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, .38), rgba(255, 255, 255, .08) 50%), rgba(14, 16, 42, .4);
+}
+.card__go { text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
+.cursor { color: #fff; text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
+
+/* Accessibilité : transparence réduite → surfaces pleines */
+@media (prefers-reduced-transparency: reduce) {
+    .header__bar::after, .header.is-scrolled, .header.is-open,
+    .theme-switch, .menu-btn, .hero__ctrl, .reel__btn, .viewer__close, .card__go, .cursor {
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+    }
+    .header__bar::after, .header.is-scrolled, .header.is-open { background: var(--header-bg); }
+    .hero__ctrl, .reel__btn, .viewer__close, .card__go, .cursor { background: rgba(14, 16, 42, .85); }
+}

@@ -71,6 +71,50 @@
         window.matchMedia("(min-width: 1200px)").addEventListener("change", () => setMenu(false));
     }
 
+    /* ---------- Liquid glass : réfraction des bords + reflet au pointeur ---------- */
+    const glassBar = header && header.querySelector(".header__bar");
+    const isChromium = !!(navigator.userAgentData && navigator.userAgentData.brands.some((b) => b.brand === "Chromium"));
+
+    if (glassBar && isChromium && window.matchMedia("(min-width: 1200px)").matches) {
+        /* Carte de déplacement : neutre (gris) au centre, dégradés rouge/vert sur
+           les bords → l'arrière-plan est courbé comme à travers une lentille */
+        const map = (w, h) => `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">`
+            + `<defs><linearGradient id="x"><stop offset="0" stop-color="#f00"/><stop offset="1" stop-color="#000"/></linearGradient>`
+            + `<linearGradient id="y" x2="0" y2="1"><stop offset="0" stop-color="#0f0"/><stop offset="1" stop-color="#000"/></linearGradient>`
+            + `<filter id="b"><feGaussianBlur stdDeviation="6"/></filter></defs>`
+            + `<rect width="${w}" height="${h}" fill="#000"/><rect width="${w}" height="${h}" fill="url(#x)"/>`
+            + `<rect width="${w}" height="${h}" fill="url(#y)" style="mix-blend-mode:screen"/>`
+            + `<rect x="10" y="10" width="${w - 20}" height="${h - 20}" rx="12" fill="#808080" filter="url(#b)"/></svg>`;
+        const NS = "http://www.w3.org/2000/svg";
+        const svg = document.createElementNS(NS, "svg");
+        svg.setAttribute("aria-hidden", "true");
+        svg.style.cssText = "position:absolute;width:0;height:0;overflow:hidden";
+        svg.innerHTML = `<filter id="lg-refract" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">`
+            + `<feImage result="map" x="0" y="0" preserveAspectRatio="none"/>`
+            + `<feDisplacementMap in="SourceGraphic" in2="map" scale="28" xChannelSelector="R" yChannelSelector="G"/></filter>`;
+        document.body.appendChild(svg);
+        const feImage = svg.querySelector("feImage");
+        const sizeMap = () => {
+            const { width, height } = glassBar.getBoundingClientRect();
+            const w = Math.round(width), h = Math.round(height);
+            feImage.setAttribute("width", w);
+            feImage.setAttribute("height", h);
+            feImage.setAttribute("href", "data:image/svg+xml," + encodeURIComponent(map(w, h)));
+        };
+        glassBar.addEventListener("transitionend", (e) => { if (e.target === glassBar && e.propertyName === "width") sizeMap(); });
+        window.addEventListener("resize", sizeMap, { passive: true });
+        requestAnimationFrame(sizeMap);
+        root.classList.add("has-refract");
+    }
+
+    if (glassBar && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        glassBar.addEventListener("pointermove", (e) => {
+            const r = glassBar.getBoundingClientRect();
+            glassBar.style.setProperty("--mx", `${e.clientX - r.left}px`);
+            glassBar.style.setProperty("--my", `${e.clientY - r.top}px`);
+        });
+    }
+
     /* ---------- Année du footer ---------- */
     document.querySelectorAll("[data-year]").forEach((el) => {
         el.textContent = new Date().getFullYear();
