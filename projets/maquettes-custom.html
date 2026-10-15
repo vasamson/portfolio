@@ -29,10 +29,9 @@
         document.documentElement.classList.add("js");
         try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) { }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap">
-    <link rel="stylesheet" href="../assets/css/style.css?v=69b05bc4">
+    <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/css/style.css?v=99d8a8c8">
 </head>
 
 <body>
@@ -119,13 +118,13 @@
                         <div class="chapter__head reveal"><span class="chapter__num">01</span>
                             <h2>Je livre des maquettes prêtes à produire</h2>
                             <p class="chapter__text">Chaque maquette présente maillot et cuissard sous plusieurs angles, avec les informations de production et un <span class='text-highlight'>espace de validation</span> client.</p></div>
-                        <div class="gallery reveal" style="--cols:3"><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/aubenas.webp" alt="Maquette UC Aubenas" width="1600" height="1131" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/piolenc.webp" alt="Maquette VTT Piolenc" width="1600" height="1131" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/agrodijon.webp" alt="Maquette AgroDijon" width="1600" height="1131" loading="lazy" decoding="async"></figure></div>
+                        <div class="gallery reveal" style="--cols:3"><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/aubenas.webp" srcset="../assets/img/projets/maquettes-custom/aubenas-320.webp 320w, ../assets/img/projets/maquettes-custom/aubenas-640.webp 640w, ../assets/img/projets/maquettes-custom/aubenas-960.webp 960w, ../assets/img/projets/maquettes-custom/aubenas.webp 1600w" sizes="(min-width: 800px) 30vw, 44vw" alt="Maquette UC Aubenas" width="1600" height="1131" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/piolenc.webp" srcset="../assets/img/projets/maquettes-custom/piolenc-320.webp 320w, ../assets/img/projets/maquettes-custom/piolenc-640.webp 640w, ../assets/img/projets/maquettes-custom/piolenc-960.webp 960w, ../assets/img/projets/maquettes-custom/piolenc.webp 1600w" sizes="(min-width: 800px) 30vw, 44vw" alt="Maquette VTT Piolenc" width="1600" height="1131" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/agrodijon.webp" srcset="../assets/img/projets/maquettes-custom/agrodijon-320.webp 320w, ../assets/img/projets/maquettes-custom/agrodijon-640.webp 640w, ../assets/img/projets/maquettes-custom/agrodijon-960.webp 960w, ../assets/img/projets/maquettes-custom/agrodijon.webp 1600w" sizes="(min-width: 800px) 30vw, 44vw" alt="Maquette AgroDijon" width="1600" height="1131" loading="lazy" decoding="async"></figure></div>
                     </article>
                     <article class="chapter chapter--gallery">
                         <div class="chapter__head reveal"><span class="chapter__num">02</span>
                             <h2>Du croquis au maillot : le club SMAL</h2>
                             <p class="chapter__text">Pour le club SMAL, tout est parti d'un croquis à la main. J'ai créé un <span class='text-highlight'>logo panthère</span>, cherché un motif « griffures », puis réalisé le maillot final en rendu 3D.</p></div>
-                        <div class="gallery reveal" style="--cols:3"><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/smal-croquis.webp" alt="Croquis du maillot SMAL" width="748" height="1000" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/smal-logo.webp" alt="Logo SMAL avec panthère" width="680" height="900" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/smal-maillot.webp" alt="Maillot SMAL en rendu 3D" width="671" height="1000" loading="lazy" decoding="async"></figure></div>
+                        <div class="gallery reveal" style="--cols:3"><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/smal-croquis.webp" srcset="../assets/img/projets/maquettes-custom/smal-croquis-320.webp 320w, ../assets/img/projets/maquettes-custom/smal-croquis-640.webp 640w, ../assets/img/projets/maquettes-custom/smal-croquis.webp 748w" sizes="(min-width: 800px) 30vw, 44vw" alt="Croquis du maillot SMAL" width="748" height="1000" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/smal-logo.webp" srcset="../assets/img/projets/maquettes-custom/smal-logo-320.webp 320w, ../assets/img/projets/maquettes-custom/smal-logo.webp 680w" sizes="(min-width: 800px) 30vw, 44vw" alt="Logo SMAL avec panthère" width="680" height="900" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/maquettes-custom/smal-maillot.webp" srcset="../assets/img/projets/maquettes-custom/smal-maillot-320.webp 320w, ../assets/img/projets/maquettes-custom/smal-maillot.webp 671w" sizes="(min-width: 800px) 30vw, 44vw" alt="Maillot SMAL en rendu 3D" width="671" height="1000" loading="lazy" decoding="async"></figure></div>
                     </article></section>
             <section class="wrap"><div class="outcome reveal"><p class="sec-kicker">Ce que j'en retiens</p><p>Le design textile m'a appris à écouter : un club arrive avec une histoire, des couleurs et des sponsors, et mon travail est de tout faire tenir sur un maillot qu'ils seront fiers de porter.</p></div></section>
             <section class="wrap" style="display:flex;flex-direction:column;gap:20px">
@@ -139,7 +138,7 @@
                 <h2 class="sec-title" id="related-title" style="margin-bottom:24px">D'autres projets</h2>
                 <div class="cards cards--3">
                         <a class="card reveal" href="../projets/faun-tour-femmes.html" data-filters="social event">
-                            <div class="card__media"><img src="../assets/img/projets/faun-tour-femmes/course.jpg" alt="Une coureuse dans un virage du Faun Tour Femmes, à 25 km de l&#x27;arrivée, suivie par la moto caméra" width="1400" height="932" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="../assets/img/projets/faun-tour-femmes/course.webp" srcset="../assets/img/projets/faun-tour-femmes/course-320.webp 320w, ../assets/img/projets/faun-tour-femmes/course-640.webp 640w, ../assets/img/projets/faun-tour-femmes/course-800.webp 800w, ../assets/img/projets/faun-tour-femmes/course-960.webp 960w, ../assets/img/projets/faun-tour-femmes/course.webp 1400w" sizes="(min-width: 1200px) 29vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Une coureuse dans un virage du Faun Tour Femmes, à 25 km de l&#x27;arrivée, suivie par la moto caméra" width="1400" height="932" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Faun Tour Femmes 2026</h3>
                                 <p class="card__desc">Communication avant, pendant et après la course, maillots de leader, fonds de podium et organisation événementielle d&#x27;une course féminine internationale : 1,6 million de vues sur les réseaux.</p>
@@ -147,7 +146,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="../projets/championnat-cyclisme.html" data-filters="social event">
-                            <div class="card__media"><img src="../assets/img/projets/championnat-europe/podium-elite.webp" alt="Podium des Championnats d&#x27;Europe UEC 2025" width="1800" height="1200" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="../assets/img/projets/championnat-europe/podium-elite.webp" srcset="../assets/img/projets/championnat-europe/podium-elite-320.webp 320w, ../assets/img/projets/championnat-europe/podium-elite-640.webp 640w, ../assets/img/projets/championnat-europe/podium-elite-800.webp 800w, ../assets/img/projets/championnat-europe/podium-elite-960.webp 960w, ../assets/img/projets/championnat-europe/podium-elite-1280.webp 1280w, ../assets/img/projets/championnat-europe/podium-elite.webp 1800w" sizes="(min-width: 1200px) 29vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Podium des Championnats d&#x27;Europe UEC 2025" width="1800" height="1200" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Championnats d&#x27;Europe de cyclisme 2025</h3>
                                 <p class="card__desc">Quatre jours de couverture live et de production photo au cœur de l&#x27;élite européenne, en Drôme-Ardèche.</p>
@@ -155,7 +154,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="../projets/boucles-drome-ardeche.html" data-filters="social event">
-                            <div class="card__media"><img src="../assets/img/projets/boucles-drome-ardeche/montee.jpg" alt="Coureurs dans la dernière montée des Boucles Drôme Ardèche, entre amandiers en fleurs et public massé derrière les barrières" width="1400" height="933" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="../assets/img/projets/boucles-drome-ardeche/montee.webp" srcset="../assets/img/projets/boucles-drome-ardeche/montee-320.webp 320w, ../assets/img/projets/boucles-drome-ardeche/montee-640.webp 640w, ../assets/img/projets/boucles-drome-ardeche/montee-800.webp 800w, ../assets/img/projets/boucles-drome-ardeche/montee-960.webp 960w, ../assets/img/projets/boucles-drome-ardeche/montee.webp 1400w" sizes="(min-width: 1200px) 29vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Coureurs dans la dernière montée des Boucles Drôme Ardèche, entre amandiers en fleurs et public massé derrière les barrières" width="1400" height="933" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Boucles Drôme Ardèche 2026</h3>
                                 <p class="card__desc">Calendrier éditorial pour une course UCI ProSeries, supports de podium et images en caméra embarquée.</p>
@@ -210,7 +209,7 @@
         </div>
     </footer>
 
-    <script src="../assets/js/main.js?v=4f3acf97"></script>
+    <script src="../assets/js/main.js?v=ac0ff609"></script>
 </body>
 
 </html>

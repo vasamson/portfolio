@@ -28,10 +28,9 @@
         document.documentElement.classList.add("js");
         try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) { }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap">
-    <link rel="stylesheet" href="/assets/css/style.css?v=69b05bc4">
+    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/style.css?v=99d8a8c8">
 </head>
 
 <body>
@@ -126,7 +125,7 @@
         </div>
     </footer>
 
-    <script src="/assets/js/main.js?v=4f3acf97"></script>
+    <script src="/assets/js/main.js?v=ac0ff609"></script>
 </body>
 
 </html>

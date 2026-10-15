@@ -29,10 +29,9 @@
         document.documentElement.classList.add("js");
         try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) { }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap">
-    <link rel="stylesheet" href="../assets/css/style.css?v=69b05bc4">
+    <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/css/style.css?v=99d8a8c8">
 </head>
 
 <body>
@@ -104,7 +103,7 @@
         </section>
 
         <div class="stack" style="padding-top:8px;padding-bottom:72px">
-            <div class="wrap"><div class="project-cover"><img src="../assets/img/projets/italvet.webp" alt="Site Italvet affiché sur ordinateur et mobile" width="994" height="682" fetchpriority="high" decoding="async"></div></div>
+            <div class="wrap"><div class="project-cover"><img src="../assets/img/projets/italvet.webp" srcset="../assets/img/projets/italvet-320.webp 320w, ../assets/img/projets/italvet-640.webp 640w, ../assets/img/projets/italvet.webp 994w" sizes="(min-width: 600px) 90vw, 91vw" alt="Site Italvet affiché sur ordinateur et mobile" width="994" height="682" fetchpriority="high" decoding="async"></div></div>
             <section class="wrap" style="display:flex;flex-direction:column;gap:40px">
                 <div>
                     <h2 class="sec-title">Le projet</h2>
@@ -119,19 +118,19 @@
                         <div class="chapter__head reveal"><span class="chapter__num">01</span>
                             <h2>J&#x27;ai organisé le site par usage</h2>
                             <p class="chapter__text">Plutôt qu'un classement par marque, j'ai organisé la navigation par <span class='text-highlight'>univers</span> (femmes, route, piste et CLM, enfant), chacun avec son visuel d'entrée.</p></div>
-                        <div class="gallery reveal" style="--cols:4"><figure class="gallery__item"><img src="../assets/img/projets/italvet/collection-femmes.webp" alt="Visuel de la collection Femmes" width="1200" height="925" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/collection-route.webp" alt="Visuel de la collection Route" width="1200" height="959" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/collection-piste.webp" alt="Visuel de la collection Piste / CLM" width="1200" height="950" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/collection-enfant.webp" alt="Visuel de la collection Enfant" width="1200" height="925" loading="lazy" decoding="async"></figure></div>
+                        <div class="gallery reveal" style="--cols:4"><figure class="gallery__item"><img src="../assets/img/projets/italvet/collection-femmes.webp" srcset="../assets/img/projets/italvet/collection-femmes-320.webp 320w, ../assets/img/projets/italvet/collection-femmes-640.webp 640w, ../assets/img/projets/italvet/collection-femmes.webp 1200w" sizes="(min-width: 800px) 22vw, 44vw" alt="Visuel de la collection Femmes" width="1200" height="925" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/collection-route.webp" srcset="../assets/img/projets/italvet/collection-route-320.webp 320w, ../assets/img/projets/italvet/collection-route-640.webp 640w, ../assets/img/projets/italvet/collection-route.webp 1200w" sizes="(min-width: 800px) 22vw, 44vw" alt="Visuel de la collection Route" width="1200" height="959" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/collection-piste.webp" srcset="../assets/img/projets/italvet/collection-piste-320.webp 320w, ../assets/img/projets/italvet/collection-piste-640.webp 640w, ../assets/img/projets/italvet/collection-piste.webp 1200w" sizes="(min-width: 800px) 22vw, 44vw" alt="Visuel de la collection Piste / CLM" width="1200" height="950" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/collection-enfant.webp" srcset="../assets/img/projets/italvet/collection-enfant-320.webp 320w, ../assets/img/projets/italvet/collection-enfant-640.webp 640w, ../assets/img/projets/italvet/collection-enfant.webp 1200w" sizes="(min-width: 800px) 22vw, 44vw" alt="Visuel de la collection Enfant" width="1200" height="925" loading="lazy" decoding="async"></figure></div>
                     </article>
                     <article class="chapter chapter--gallery">
                         <div class="chapter__head reveal"><span class="chapter__num">02</span>
                             <h2>J&#x27;ai valorisé les marques</h2>
                             <p class="chapter__text">Pour Ursus (roues et composants), j'ai sélectionné et retouché des images d'ambiance qui mettent le produit en situation.</p></div>
-                        <div class="gallery reveal" style="--cols:2"><figure class="gallery__item"><img src="../assets/img/projets/italvet/ursus-route.webp" alt="Cycliste sur route avec roues Ursus" width="1600" height="1066" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/ursus-vtt.webp" alt="Vététiste avec roues Ursus" width="1120" height="1400" loading="lazy" decoding="async"></figure></div>
+                        <div class="gallery reveal" style="--cols:2"><figure class="gallery__item"><img src="../assets/img/projets/italvet/ursus-route.webp" srcset="../assets/img/projets/italvet/ursus-route-320.webp 320w, ../assets/img/projets/italvet/ursus-route-640.webp 640w, ../assets/img/projets/italvet/ursus-route-960.webp 960w, ../assets/img/projets/italvet/ursus-route-1280.webp 1280w, ../assets/img/projets/italvet/ursus-route.webp 1600w" sizes="(min-width: 600px) 45vw, 44vw" alt="Cycliste sur route avec roues Ursus" width="1600" height="1066" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/ursus-vtt.webp" srcset="../assets/img/projets/italvet/ursus-vtt-320.webp 320w, ../assets/img/projets/italvet/ursus-vtt-640.webp 640w, ../assets/img/projets/italvet/ursus-vtt-960.webp 960w, ../assets/img/projets/italvet/ursus-vtt.webp 1120w" sizes="(min-width: 600px) 45vw, 44vw" alt="Vététiste avec roues Ursus" width="1120" height="1400" loading="lazy" decoding="async"></figure></div>
                     </article>
                     <article class="chapter chapter--gallery">
                         <div class="chapter__head reveal"><span class="chapter__num">03</span>
                             <h2>J&#x27;ai harmonisé l&#x27;identité</h2>
                             <p class="chapter__text">Logo, signatures email de l'équipe (y compris pour les vœux de fin d'année) et stands sur les salons : la même identité partout.</p></div>
-                        <div class="gallery reveal" style="--cols:4"><figure class="gallery__item"><img src="../assets/img/projets/italvet/logo.webp" alt="Logo Italvet 2025" width="1000" height="188" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/signature-italvet.webp" alt="Signature email Italvet" width="901" height="132" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/signature-voeux.webp" alt="Signature email des vœux" width="485" height="129" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/stand.webp" alt="Stand Alé et Cipollini sur un salon" width="1600" height="900" loading="lazy" decoding="async"></figure></div>
+                        <div class="gallery reveal" style="--cols:4"><figure class="gallery__item"><img src="../assets/img/projets/italvet/logo.webp" srcset="../assets/img/projets/italvet/logo-320.webp 320w, ../assets/img/projets/italvet/logo-640.webp 640w, ../assets/img/projets/italvet/logo.webp 1000w" sizes="(min-width: 800px) 22vw, 44vw" alt="Logo Italvet 2025" width="1000" height="188" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/signature-italvet.webp" srcset="../assets/img/projets/italvet/signature-italvet-320.webp 320w, ../assets/img/projets/italvet/signature-italvet-640.webp 640w, ../assets/img/projets/italvet/signature-italvet.webp 901w" sizes="(min-width: 800px) 22vw, 44vw" alt="Signature email Italvet" width="901" height="132" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/signature-voeux.webp" srcset="../assets/img/projets/italvet/signature-voeux-320.webp 320w, ../assets/img/projets/italvet/signature-voeux.webp 485w" sizes="(min-width: 800px) 22vw, 44vw" alt="Signature email des vœux" width="485" height="129" loading="lazy" decoding="async"></figure><figure class="gallery__item"><img src="../assets/img/projets/italvet/stand.webp" srcset="../assets/img/projets/italvet/stand-320.webp 320w, ../assets/img/projets/italvet/stand-640.webp 640w, ../assets/img/projets/italvet/stand.webp 1600w" sizes="(min-width: 800px) 22vw, 44vw" alt="Stand Alé et Cipollini sur un salon" width="1600" height="900" loading="lazy" decoding="async"></figure></div>
                     </article></section>
             <section class="wrap"><div class="outcome reveal"><p class="sec-kicker">Ce que j'en retiens</p><p>C'est mon premier projet e-commerce de bout en bout : j'y ai appris à concilier les attentes de plusieurs marques, les contraintes de Shopify et la simplicité d'achat pour le client.</p></div></section>
             <section class="wrap" style="display:flex;flex-direction:column;gap:20px">
@@ -145,15 +144,15 @@
                 <h2 class="sec-title" id="related-title" style="margin-bottom:24px">D'autres projets</h2>
                 <div class="cards cards--3">
                         <a class="card reveal" href="../projets/circuit-saone-et-loire.html" data-filters="web event">
-                            <div class="card__media"><img src="../assets/img/projets/circuit-saone-et-loire/peloton.jpg" alt="Le peloton du Circuit de Saône-et-Loire sous les platanes, encouragé par le public" width="1400" height="787" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="../assets/img/projets/circuit-saone-et-loire/peloton.webp" srcset="../assets/img/projets/circuit-saone-et-loire/peloton-320.webp 320w, ../assets/img/projets/circuit-saone-et-loire/peloton-640.webp 640w, ../assets/img/projets/circuit-saone-et-loire/peloton-800.webp 800w, ../assets/img/projets/circuit-saone-et-loire/peloton-960.webp 960w, ../assets/img/projets/circuit-saone-et-loire/peloton.webp 1400w" sizes="(min-width: 1200px) 29vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Le peloton du Circuit de Saône-et-Loire sous les platanes, encouragé par le public" width="1400" height="787" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Circuit de Saône-et-Loire 2026</h3>
-                                <p class="card__desc">Site officiel, affiche, maillots distinctifs, dossards, signalétique et bilans partenaires pour la 54ᵉ édition de cette course élite nationale.</p>
+                                <p class="card__desc">Site officiel, affiche, maillots distinctifs, dossards, signalétique et bilans partenaires pour la 54<sup>e</sup> édition de cette course élite nationale.</p>
                                 <div class="card__tags"><span class="pill">Communication événementielle &amp; identité</span><span class="pill">2026</span></div>
                             </div>
                         </a>
                         <a class="card reveal" href="../projets/ffc.html" data-filters="web">
-                            <div class="card__media"><img src="../assets/img/projets/ffc/cdf-femmes-3.webp" alt="Équipe féminine heureuse après la course" width="1080" height="720" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="../assets/img/projets/ffc/cdf-femmes-3.webp" srcset="../assets/img/projets/ffc/cdf-femmes-3-320.webp 320w, ../assets/img/projets/ffc/cdf-femmes-3-640.webp 640w, ../assets/img/projets/ffc/cdf-femmes-3-800.webp 800w, ../assets/img/projets/ffc/cdf-femmes-3-960.webp 960w, ../assets/img/projets/ffc/cdf-femmes-3.webp 1080w" sizes="(min-width: 1200px) 29vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Équipe féminine heureuse après la course" width="1080" height="720" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Boutique officielle de la FFC</h3>
                                 <p class="card__desc">Boutique officielle de la Fédération Française de Cyclisme : catalogue, rendus 3D de la gamme Équipe de France 2026, bannières et précommandes.</p>
@@ -161,7 +160,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="../projets/in-yellow.html" data-filters="web">
-                            <div class="card__media"><img src="../assets/img/projets/in-yellow/site.webp" alt="Site In Yellow Consulting" width="1440" height="1000" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="../assets/img/projets/in-yellow/site.webp" srcset="../assets/img/projets/in-yellow/site-320.webp 320w, ../assets/img/projets/in-yellow/site-640.webp 640w, ../assets/img/projets/in-yellow/site-800.webp 800w, ../assets/img/projets/in-yellow/site-960.webp 960w, ../assets/img/projets/in-yellow/site-1280.webp 1280w, ../assets/img/projets/in-yellow/site.webp 1440w" sizes="(min-width: 1200px) 29vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Site In Yellow Consulting" width="1440" height="1000" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">In Yellow Consulting</h3>
                                 <p class="card__desc">Maquettes et développement du site de la première agence de marketing sportif en France.</p>
@@ -216,7 +215,7 @@
         </div>
     </footer>
 
-    <script src="../assets/js/main.js?v=4f3acf97"></script>
+    <script src="../assets/js/main.js?v=ac0ff609"></script>
 </body>
 
 </html>

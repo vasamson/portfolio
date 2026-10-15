@@ -50,7 +50,7 @@
 
     if (header) {
         const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
-        onScroll();
+        requestAnimationFrame(onScroll); /* évite un reflow forcé au chargement */
         window.addEventListener("scroll", onScroll, { passive: true });
     }
 
@@ -77,14 +77,23 @@
     });
 
     /* ---------- Apparition au scroll ---------- */
+    /* Ce qui est déjà à l'écran au chargement s'affiche sans fondu :
+       le plus grand élément visible (LCP) n'attend pas la transition */
+    let initialPass = true;
     const revealObserver = !reducedMotion && "IntersectionObserver" in window
         ? new IntersectionObserver((entries, obs) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("is-visible");
-                    obs.unobserve(entry.target);
+                    const el = entry.target;
+                    if (initialPass) {
+                        el.style.transition = "none";
+                        requestAnimationFrame(() => requestAnimationFrame(() => { el.style.transition = ""; }));
+                    }
+                    el.classList.add("is-visible");
+                    obs.unobserve(el);
                 }
             });
+            initialPass = false;
         }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" })
         : null;
 
@@ -106,7 +115,13 @@
         const cursor = document.querySelector(".cursor");
         const cursorLabel = cursor && cursor.querySelector("span");
 
-        if (reducedMotion) video.removeAttribute("autoplay");
+        /* Lecture lancée après le chargement de la page : l'aperçu s'affiche
+           tout de suite et la vidéo ne retarde pas le premier rendu */
+        if (!reducedMotion && video.hasAttribute("data-autoplay")) {
+            const start = () => video.play().catch(() => { });
+            if (document.readyState === "complete") start();
+            else window.addEventListener("load", start, { once: true });
+        }
 
         const syncPlay = () => {
             toggleBtn.classList.toggle("is-paused", video.paused);
@@ -367,7 +382,7 @@
         projectPage.addEventListener("click", (e) => {
             const img = e.target.closest(".gallery__item img, .chapter__media img, .project-cover img");
             if (!img || typeof viewer.showModal !== "function") return;
-            viewerImg.src = img.currentSrc || img.src;
+            viewerImg.src = img.src; /* src = version pleine taille, srcset = vignettes */
             viewerImg.alt = img.alt;
             viewer.showModal();
         });

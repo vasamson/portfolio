@@ -27,10 +27,9 @@
         document.documentElement.classList.add("js");
         try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) { }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap">
-    <link rel="stylesheet" href="assets/css/style.css?v=69b05bc4">
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css?v=99d8a8c8">
 </head>
 
 <body>
@@ -105,7 +104,7 @@
             <h2 class="sr-only">Liste des projets</h2>
             <div class="cards" id="projects-grid">
                         <a class="card reveal" href="projets/faun-tour-femmes.html" data-filters="social event">
-                            <div class="card__media"><img src="assets/img/projets/faun-tour-femmes/course.jpg" alt="Une coureuse dans un virage du Faun Tour Femmes, à 25 km de l&#x27;arrivée, suivie par la moto caméra" width="1400" height="932" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/faun-tour-femmes/course.webp" srcset="assets/img/projets/faun-tour-femmes/course-320.webp 320w, assets/img/projets/faun-tour-femmes/course-640.webp 640w, assets/img/projets/faun-tour-femmes/course-800.webp 800w, assets/img/projets/faun-tour-femmes/course-960.webp 960w, assets/img/projets/faun-tour-femmes/course.webp 1400w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Une coureuse dans un virage du Faun Tour Femmes, à 25 km de l&#x27;arrivée, suivie par la moto caméra" width="1400" height="932" fetchpriority="high"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Faun Tour Femmes 2026</h3>
                                 <p class="card__desc">Communication avant, pendant et après la course, maillots de leader, fonds de podium et organisation événementielle d&#x27;une course féminine internationale : 1,6 million de vues sur les réseaux.</p>
@@ -113,7 +112,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/championnat-cyclisme.html" data-filters="social event">
-                            <div class="card__media"><img src="assets/img/projets/championnat-europe/podium-elite.webp" alt="Podium des Championnats d&#x27;Europe UEC 2025" width="1800" height="1200" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/championnat-europe/podium-elite.webp" srcset="assets/img/projets/championnat-europe/podium-elite-320.webp 320w, assets/img/projets/championnat-europe/podium-elite-640.webp 640w, assets/img/projets/championnat-europe/podium-elite-800.webp 800w, assets/img/projets/championnat-europe/podium-elite-960.webp 960w, assets/img/projets/championnat-europe/podium-elite-1280.webp 1280w, assets/img/projets/championnat-europe/podium-elite.webp 1800w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Podium des Championnats d&#x27;Europe UEC 2025" width="1800" height="1200" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Championnats d&#x27;Europe de cyclisme 2025</h3>
                                 <p class="card__desc">Quatre jours de couverture live et de production photo au cœur de l&#x27;élite européenne, en Drôme-Ardèche.</p>
@@ -121,7 +120,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/boucles-drome-ardeche.html" data-filters="social event">
-                            <div class="card__media"><img src="assets/img/projets/boucles-drome-ardeche/montee.jpg" alt="Coureurs dans la dernière montée des Boucles Drôme Ardèche, entre amandiers en fleurs et public massé derrière les barrières" width="1400" height="933" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/boucles-drome-ardeche/montee.webp" srcset="assets/img/projets/boucles-drome-ardeche/montee-320.webp 320w, assets/img/projets/boucles-drome-ardeche/montee-640.webp 640w, assets/img/projets/boucles-drome-ardeche/montee-800.webp 800w, assets/img/projets/boucles-drome-ardeche/montee-960.webp 960w, assets/img/projets/boucles-drome-ardeche/montee.webp 1400w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Coureurs dans la dernière montée des Boucles Drôme Ardèche, entre amandiers en fleurs et public massé derrière les barrières" width="1400" height="933" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Boucles Drôme Ardèche 2026</h3>
                                 <p class="card__desc">Calendrier éditorial pour une course UCI ProSeries, supports de podium et images en caméra embarquée.</p>
@@ -129,7 +128,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/ardechoise.html" data-filters="social event">
-                            <div class="card__media"><img src="assets/img/projets/ardechoise/village.jpg" alt="Une cycliste de L&#x27;Ardéchoise salue les bénévoles déguisés en reine d&#x27;Angleterre et en gardes royaux dans un village animé" width="1400" height="932" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/ardechoise/village.webp" srcset="assets/img/projets/ardechoise/village-320.webp 320w, assets/img/projets/ardechoise/village-640.webp 640w, assets/img/projets/ardechoise/village-800.webp 800w, assets/img/projets/ardechoise/village-960.webp 960w, assets/img/projets/ardechoise/village.webp 1400w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Une cycliste de L&#x27;Ardéchoise salue les bénévoles déguisés en reine d&#x27;Angleterre et en gardes royaux dans un village animé" width="1400" height="932" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">L&#x27;Ardéchoise 2026</h3>
                                 <p class="card__desc">Huit mois de community management pour l&#x27;une des plus grandes cyclosportives d&#x27;Europe : +30 % d&#x27;abonnés Instagram et 2,2 millions de vues Facebook.</p>
@@ -137,15 +136,15 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/circuit-saone-et-loire.html" data-filters="web event">
-                            <div class="card__media"><img src="assets/img/projets/circuit-saone-et-loire/peloton.jpg" alt="Le peloton du Circuit de Saône-et-Loire sous les platanes, encouragé par le public" width="1400" height="787" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/circuit-saone-et-loire/peloton.webp" srcset="assets/img/projets/circuit-saone-et-loire/peloton-320.webp 320w, assets/img/projets/circuit-saone-et-loire/peloton-640.webp 640w, assets/img/projets/circuit-saone-et-loire/peloton-800.webp 800w, assets/img/projets/circuit-saone-et-loire/peloton-960.webp 960w, assets/img/projets/circuit-saone-et-loire/peloton.webp 1400w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Le peloton du Circuit de Saône-et-Loire sous les platanes, encouragé par le public" width="1400" height="787" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Circuit de Saône-et-Loire 2026</h3>
-                                <p class="card__desc">Site officiel, affiche, maillots distinctifs, dossards, signalétique et bilans partenaires pour la 54ᵉ édition de cette course élite nationale.</p>
+                                <p class="card__desc">Site officiel, affiche, maillots distinctifs, dossards, signalétique et bilans partenaires pour la 54<sup>e</sup> édition de cette course élite nationale.</p>
                                 <div class="card__tags"><span class="pill">Communication événementielle &amp; identité</span><span class="pill">2026</span></div>
                             </div>
                         </a>
                         <a class="card reveal" href="projets/france-vtt.html" data-filters="photo event">
-                            <div class="card__media"><img src="assets/img/projets/france-vtt/foret.jpg" alt="Une vététiste en pleine descente rocailleuse dans la forêt du Dévoluy, aux Championnats de France VTT" width="1400" height="932" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/france-vtt/foret.webp" srcset="assets/img/projets/france-vtt/foret-320.webp 320w, assets/img/projets/france-vtt/foret-640.webp 640w, assets/img/projets/france-vtt/foret-800.webp 800w, assets/img/projets/france-vtt/foret-960.webp 960w, assets/img/projets/france-vtt/foret.webp 1400w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Une vététiste en pleine descente rocailleuse dans la forêt du Dévoluy, aux Championnats de France VTT" width="1400" height="932" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Championnats de France VTT 2026</h3>
                                 <p class="card__desc">Quatre jours de reportage au Dévoluy : cross-country, short track, podiums et coulisses.</p>
@@ -153,7 +152,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/ale-custom.html" data-filters="social">
-                            <div class="card__media"><img src="assets/img/projets/ale-custom/team-2025.webp" alt="Équipe en tenues Alé Custom 2025" width="1200" height="1800" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/ale-custom/team-2025.webp" srcset="assets/img/projets/ale-custom/team-2025-320.webp 320w, assets/img/projets/ale-custom/team-2025-640.webp 640w, assets/img/projets/ale-custom/team-2025-800.webp 800w, assets/img/projets/ale-custom/team-2025-960.webp 960w, assets/img/projets/ale-custom/team-2025.webp 1200w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Équipe en tenues Alé Custom 2025" width="1200" height="1800" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Alé Custom France</h3>
                                 <p class="card__desc">J&#x27;ai lancé le compte Instagram français de la marque : direction artistique, rendez-vous éditoriaux, shootings et valorisation des clubs.</p>
@@ -161,7 +160,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/photographie.html" data-filters="photo">
-                            <div class="card__media"><img src="assets/img/projets/photographie/coucher-soleil.webp" alt="Coucher de soleil vu du drone" width="2000" height="1125" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/photographie/coucher-soleil.webp" srcset="assets/img/projets/photographie/coucher-soleil-320.webp 320w, assets/img/projets/photographie/coucher-soleil-640.webp 640w, assets/img/projets/photographie/coucher-soleil-800.webp 800w, assets/img/projets/photographie/coucher-soleil-960.webp 960w, assets/img/projets/photographie/coucher-soleil-1280.webp 1280w, assets/img/projets/photographie/coucher-soleil.webp 2000w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Coucher de soleil vu du drone" width="2000" height="1125" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Photographie &amp; drone</h3>
                                 <p class="card__desc">Une série personnelle sur la Côte de Granit Rose, entre prises de vue au reflex et au drone.</p>
@@ -169,7 +168,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/maquettes-custom.html" data-filters="design">
-                            <div class="card__media"><img src="assets/img/projets/maquettes-custom/aubenas.webp" alt="Maquette de tenue custom pour l&#x27;UC Aubenas" width="1600" height="1131" loading="lazy" decoding="async" style="object-position:50% 45%"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/maquettes-custom/aubenas.webp" srcset="assets/img/projets/maquettes-custom/aubenas-320.webp 320w, assets/img/projets/maquettes-custom/aubenas-640.webp 640w, assets/img/projets/maquettes-custom/aubenas-800.webp 800w, assets/img/projets/maquettes-custom/aubenas-960.webp 960w, assets/img/projets/maquettes-custom/aubenas-1280.webp 1280w, assets/img/projets/maquettes-custom/aubenas.webp 1600w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Maquette de tenue custom pour l&#x27;UC Aubenas" width="1600" height="1131" loading="lazy" decoding="async" style="object-position:50% 45%"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Tenues custom pour clubs</h3>
                                 <p class="card__desc">Je crée des maillots et cuissards sur mesure pour des clubs, du croquis à la maquette validée et signée.</p>
@@ -177,7 +176,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/marketing-newsletter.html" data-filters="marketing">
-                            <div class="card__media"><img src="assets/img/projets/marketing-newsletter/flash52.webp" alt="Email Flash 52, semaine 2 sur 52" width="692" height="1200" loading="lazy" decoding="async" style="object-position:50% 0%"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/marketing-newsletter/flash52.webp" srcset="assets/img/projets/marketing-newsletter/flash52-320.webp 320w, assets/img/projets/marketing-newsletter/flash52.webp 692w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Email Flash 52, semaine 2 sur 52" width="692" height="1200" loading="lazy" decoding="async" style="object-position:50% 0%"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Newsletters &amp; Flash 52</h3>
                                 <p class="card__desc">Newsletters pour Alé, Cipollini et Suplest, et un rendez-vous B2B hebdomadaire codé en HTML, avec bon de commande en ligne.</p>
@@ -185,7 +184,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/ffc.html" data-filters="web">
-                            <div class="card__media"><img src="assets/img/projets/ffc/cdf-femmes-3.webp" alt="Équipe féminine heureuse après la course" width="1080" height="720" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/ffc/cdf-femmes-3.webp" srcset="assets/img/projets/ffc/cdf-femmes-3-320.webp 320w, assets/img/projets/ffc/cdf-femmes-3-640.webp 640w, assets/img/projets/ffc/cdf-femmes-3-800.webp 800w, assets/img/projets/ffc/cdf-femmes-3-960.webp 960w, assets/img/projets/ffc/cdf-femmes-3.webp 1080w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Équipe féminine heureuse après la course" width="1080" height="720" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Boutique officielle de la FFC</h3>
                                 <p class="card__desc">Boutique officielle de la Fédération Française de Cyclisme : catalogue, rendus 3D de la gamme Équipe de France 2026, bannières et précommandes.</p>
@@ -193,7 +192,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/italvet.html" data-filters="web">
-                            <div class="card__media"><img src="assets/img/projets/italvet.webp" alt="Site Italvet affiché sur ordinateur et mobile" width="994" height="682" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/italvet.webp" srcset="assets/img/projets/italvet-320.webp 320w, assets/img/projets/italvet-640.webp 640w, assets/img/projets/italvet.webp 994w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Site Italvet affiché sur ordinateur et mobile" width="994" height="682" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Italvet — refonte du site e-commerce</h3>
                                 <p class="card__desc">J&#x27;ai modernisé l&#x27;identité numérique et l&#x27;expérience d&#x27;achat du distributeur d&#x27;Alé, Cipollini et Ursus, de la maquette Figma à l&#x27;intégration Shopify.</p>
@@ -201,7 +200,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/in-yellow.html" data-filters="web">
-                            <div class="card__media"><img src="assets/img/projets/in-yellow/site.webp" alt="Site In Yellow Consulting" width="1440" height="1000" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/in-yellow/site.webp" srcset="assets/img/projets/in-yellow/site-320.webp 320w, assets/img/projets/in-yellow/site-640.webp 640w, assets/img/projets/in-yellow/site-800.webp 800w, assets/img/projets/in-yellow/site-960.webp 960w, assets/img/projets/in-yellow/site-1280.webp 1280w, assets/img/projets/in-yellow/site.webp 1440w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Site In Yellow Consulting" width="1440" height="1000" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">In Yellow Consulting</h3>
                                 <p class="card__desc">Maquettes et développement du site de la première agence de marketing sportif en France.</p>
@@ -217,7 +216,7 @@
                             </div>
                         </a>
                         <a class="card reveal" href="projets/france-cross.html" data-filters="social event">
-                            <div class="card__media"><img src="assets/img/projets/france-cross/arrivee.webp" alt="Arrivée d&#x27;une course de cross court" width="897" height="1600" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+                            <div class="card__media"><img src="assets/img/projets/france-cross/arrivee.webp" srcset="assets/img/projets/france-cross/arrivee-320.webp 320w, assets/img/projets/france-cross/arrivee-640.webp 640w, assets/img/projets/france-cross/arrivee.webp 897w" sizes="(min-width: 1200px) 45vw, (min-width: 800px) 44vw, (min-width: 600px) 90vw, 91vw" alt="Arrivée d&#x27;une course de cross court" width="897" height="1600" loading="lazy" decoding="async"><span class="card__go" aria-hidden="true">Voir le projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
                             <div class="card__body">
                                 <h3 class="card__title">Championnats de France de cross 2026</h3>
                                 <p class="card__desc">Posts vainqueurs codés sur mesure, programmes, présentation de l&#x27;équipe, photo et drone pour les Championnats de France de cross-country à Carhaix.</p>
@@ -273,7 +272,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js?v=4f3acf97"></script>
+    <script src="assets/js/main.js?v=ac0ff609"></script>
 </body>
 
 </html>
