@@ -889,64 +889,6 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .viewer__close { position: fixed; top: 16px; right: 16px; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, .15); color: #fff; }
 .viewer__close svg { width: 20px; height: 20px; }
 
-/* ---------- Mini-jeu : bubble sort ---------- */
-.game { --slot: 80px; --ink: #1a194d; display: flex; flex-direction: column; gap: 16px; padding-bottom: 112px; }
-.game__stage {
-    position: relative; overflow: hidden; border-radius: 16px; padding: clamp(20px, 3vw, 32px);
-    color: var(--blue-900); display: flex; flex-direction: column; gap: 18px;
-    background: var(--white); border: 1px solid var(--blue-200);
-    box-shadow: 0 24px 48px -28px rgba(26, 25, 77, .35);
-}
-.game__head { text-align: center; }
-.game__title { font-family: var(--font-title); text-transform: uppercase; font-weight: 900; font-size: clamp(2.5rem, 6vw, 4rem); line-height: .95; color: var(--blue-900); letter-spacing: .01em; }
-.game__sub { font-family: var(--font-title); font-weight: 700; font-size: clamp(1.125rem, 2.2vw, 1.5rem); color: var(--blue-600); }
-
-.game__track { position: relative; height: clamp(150px, 17vw, 210px); margin-top: 8px; }
-.game__riders { position: absolute; inset: 0 0 34px; }
-.rider {
-    position: absolute; left: 0; bottom: 0; width: var(--slot);
-    display: flex; flex-direction: column; align-items: center; gap: 4px;
-    transform: translateX(calc(var(--i, 0) * var(--slot)));
-    transition: transform .6s cubic-bezier(.5, 0, .3, 1);
-}
-.rider svg { width: calc(var(--s, 1) * min(132px, var(--slot) - 6px)); height: auto; overflow: visible; color: var(--blue-900); transition: transform .3s var(--ease); transform-origin: bottom center; }
-.rider__num { font-family: var(--font-title); font-weight: 800; font-size: 1.375rem; color: var(--blue-500); transition: color .3s, transform .3s var(--ease); }
-.rider.is-hop svg { animation: rider-hop .6s cubic-bezier(.3, 0, .3, 1); }
-.rider.is-done .rider__num { color: #16a34a; }
-.rider.is-win svg { animation: rider-win .6s var(--d, 0ms) cubic-bezier(.3, 0, .3, 1) 2; }
-@keyframes rider-hop { 0% { transform: none; } 20% { transform: rotate(-10deg); } 50% { transform: translateY(-34px) rotate(-6deg); } 80% { transform: translateY(0) rotate(2deg); } 100% { transform: none; } }
-@keyframes rider-win { 0%, 100% { transform: none; } 45% { transform: translateY(-26px) scale(1.04); } }
-
-.game__ground { position: absolute; left: 0; right: 0; bottom: 18px; height: 16px; }
-.game__spot { position: absolute; left: 0; bottom: 0; width: var(--slot); display: flex; justify-content: center; transform: translateX(calc(var(--i, 0) * var(--slot))); }
-.game__spot::before { content: ""; width: calc(100% - 12px); height: 4px; margin-top: 6px; border-radius: 4px; background: repeating-linear-gradient(90deg, var(--blue-300) 0 14px, transparent 14px 24px); }
-.game__swaps { position: absolute; left: 0; right: 0; bottom: -18px; height: 32px; display: none; }
-.game .game__swaps { display: block; }
-.game__swap {
-    position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%;
-    transform: translateX(calc((var(--i, 0) + 1) * var(--slot) - 16px));
-    background: var(--blue-700); color: var(--on-primary); font-weight: 800; font-size: 1rem;
-    box-shadow: 0 6px 14px -4px rgba(57, 51, 207, .55); transition: transform .2s, background-color .2s;
-}
-.game__swap:hover, .game__swap:focus-visible { background: var(--blue-800); transform: translateX(calc((var(--i, 0) + 1) * var(--slot) - 16px)) scale(1.12); }
-.game.is-play .game__track { margin-bottom: 18px; }
-
-.game__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
-.game__controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.game__btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: var(--radius); background: var(--blue-50); color: var(--blue-700); font-weight: 600; transition: background-color .3s; }
-.game__btn:hover { background: var(--blue-100); }
-.game__btn--main { background: var(--blue-700); color: var(--on-primary); }
-.game__btn--main:hover { background: var(--blue-800); }
-.game__btn svg { width: 16px; height: 16px; fill: currentColor; }
-.game__stats { display: flex; gap: 8px; }
-.game__stats div { padding: 6px 14px; border-radius: var(--radius); background: var(--blue-50); border: 1px solid var(--blue-200); text-align: center; }
-.game__stats dt { font-size: .75rem; color: var(--blue-600); }
-.game__stats dd { font-family: var(--font-title); font-weight: 800; font-size: 1.5rem; color: var(--blue-900); line-height: 1.1; font-variant-numeric: tabular-nums; }
-.game__best dd { color: var(--blue-600); }
-.game__status { min-height: 1.5em; text-align: center; color: var(--blue-900); }
-
-.game.is-play .code { display: none; }
-
 /* ---------- Mentions légales ---------- */
 .legal { display: flex; flex-direction: column; gap: 40px; }
 .legal > * { max-width: 860px; }
@@ -969,12 +911,12 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
    Titres en Bricolage Grotesque ExtraBold à l'interlettrage serré,
    texte en Inter, petits intertitres en capitales espacées. */
 .hero h1, .sec-title, .page-head h1, .intro__name, .tour__title, .cta-box h2, .form__title, .not-found h1,
-.game__title, .card__title, .chapter h2, .slide h3, .tile h3, .block-title, .faq__item summary, .stat__value,
+.card__title, .chapter h2, .slide h3, .tile h3, .block-title, .faq__item summary, .stat__value,
 .figure__value, .tour__km, .tour__stats dd, .callout__title, .id__name, .hero__credit-title, .tour__tip-city, .stage__top strong {
     font-family: var(--font-title); font-style: normal; text-transform: none; letter-spacing: -.02em;
 }
 .hero h1 { font-size: 2.375rem; font-weight: 800; }
-.page-head h1, .intro__name, .game__title { letter-spacing: -.04em; }
+.page-head h1, .intro__name { letter-spacing: -.04em; }
 .page-head h1 { font-size: clamp(2.5rem, 5.4vw, 4rem); line-height: 1.02; font-weight: 800; }
 .intro__name { font-size: clamp(2.5rem, 4.4vw, 3.25rem); }
 .sec-title { font-size: 2rem; font-weight: 800; line-height: 1.1; }
@@ -988,10 +930,7 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .chapter h2 { font-size: clamp(1.5rem, 2.6vw, 1.875rem); line-height: 1.15; }
 .figure__value { font-size: clamp(2.25rem, 3.8vw, 3rem); }
 .stat__value { font-size: clamp(1.875rem, 3vw, 2.375rem); }
-.game__title { text-transform: uppercase; font-size: clamp(2.25rem, 5vw, 3.5rem); }
-.game__sub { font-style: normal; font-family: var(--font-body); font-weight: 600; font-size: 1.0625rem; }
-.rider__num, .tour__tag, .game__stats dd { font-style: normal; }
-.rider__num { font-family: var(--font-title); }
+.tour__tag { font-style: normal; }
 .pill, .status, .filter, .social__btn, .footer__nav a, .footer__legal, .stage__top, .stage__meta, .tour__sub,
 .tour__stats dt, .breadcrumb, .link-arrow, .project-nav small, .field label, .card__go, .cursor, .sound,
 .hero__credit-link, .timeline__date, .tags__label, .refs__label, .tour__tip-step, .tour__tip-km, .tour__tip-meta,
