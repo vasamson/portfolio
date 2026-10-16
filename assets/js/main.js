@@ -221,6 +221,14 @@
             }, { threshold: 0.15 }).observe(showreel);
         }
         syncSound();
+
+        /* Mobile : les contrôles restent au-dessus de la carte de crédit, quelle que soit sa hauteur */
+        const credit = document.querySelector(".hero__credit");
+        if (credit && "ResizeObserver" in window) {
+            new ResizeObserver(([entry]) => {
+                showreel.style.setProperty("--credit-h", `${Math.round(entry.borderBoxSize[0].blockSize)}px`);
+            }).observe(credit);
+        }
     }
 
     /* ---------- Mon Tour de France : tracé piloté par le scroll ---------- */
