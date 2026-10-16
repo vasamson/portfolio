@@ -563,6 +563,16 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .reel__btn svg { width: 20px; height: 20px; }
 .reel__btn .i-play, .reel__btn.is-paused .i-pause { display: none; }
 .reel__btn.is-paused .i-play { display: block; }
+.reel__sound {
+    position: absolute; left: 18px; bottom: 18px; display: inline-flex; align-items: center; gap: 8px;
+    height: 48px; padding: 0 18px 0 14px; border-radius: 999px; color: #fff;
+    font-family: var(--font-title); font-size: .9375rem; font-weight: 600; transition: transform .3s var(--ease);
+}
+.reel__sound:hover { transform: scale(1.04); }
+.reel__sound svg { width: 20px; height: 20px; flex: none; }
+.reel__sound .i-on, .reel__sound[aria-pressed="true"] .i-off { display: none; }
+.reel__sound[aria-pressed="true"] .i-on { display: block; }
+@media (max-width: 520px) { .reel__sound span { display: none; } .reel__sound { width: 48px; padding: 0; justify-content: center; } }
 
 /* ---------- FAQ ---------- */
 .faq { display: flex; gap: 32px; }
@@ -1128,13 +1138,13 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 .menu-btn { border-radius: 14px; }
 
 /* Verre sombre posé sur les vidéos et les photos */
-.hero__ctrl, .reel__btn, .viewer__close, .card__go, .cursor {
+.hero__ctrl, .reel__btn, .reel__sound, .viewer__close, .card__go, .cursor {
     color: #fff;
     background: linear-gradient(135deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, .04) 50%), rgba(14, 16, 42, .28);
     backdrop-filter: blur(12px) saturate(1.8); -webkit-backdrop-filter: blur(12px) saturate(1.8);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, .55), inset 0 0 0 1px rgba(255, 255, 255, .16), 0 8px 22px -8px rgba(0, 0, 0, .45);
 }
-.hero__ctrl:hover, .reel__btn:hover, .viewer__close:hover {
+.hero__ctrl:hover, .reel__btn:hover, .reel__sound:hover, .viewer__close:hover {
     background: linear-gradient(135deg, rgba(255, 255, 255, .38), rgba(255, 255, 255, .08) 50%), rgba(14, 16, 42, .4);
 }
 .card__go { text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
@@ -1143,9 +1153,9 @@ a:hover > .logo { transform: rotate(-6deg) scale(1.06); }
 /* Accessibilité : transparence réduite → surfaces pleines */
 @media (prefers-reduced-transparency: reduce) {
     .header__bar::after, .header.is-scrolled, .header.is-open,
-    .theme-switch, .menu-btn, .hero__ctrl, .reel__btn, .viewer__close, .card__go, .cursor {
+    .theme-switch, .menu-btn, .hero__ctrl, .reel__btn, .reel__sound, .viewer__close, .card__go, .cursor {
         backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
     }
     .header__bar::after, .header.is-scrolled, .header.is-open { background: var(--header-bg); }
-    .hero__ctrl, .reel__btn, .viewer__close, .card__go, .cursor { background: rgba(14, 16, 42, .85); }
+    .hero__ctrl, .reel__btn, .reel__sound, .viewer__close, .card__go, .cursor { background: rgba(14, 16, 42, .85); }
 }

@@ -353,6 +353,18 @@
         reel.addEventListener("play", sync);
         reel.addEventListener("pause", sync);
         sync();
+
+        /* Son : coupé par défaut (lecture auto oblige), activable d'un clic */
+        const soundBtn = document.querySelector(".reel__sound");
+        if (soundBtn) {
+            const label = soundBtn.querySelector("span");
+            soundBtn.addEventListener("click", () => {
+                reel.muted = !reel.muted;
+                if (!reel.muted && reel.paused) { userPaused = false; reel.play().catch(() => { }); }
+                soundBtn.setAttribute("aria-pressed", String(!reel.muted));
+                label.textContent = reel.muted ? "Activer le son" : "Couper le son";
+            });
+        }
         if ("IntersectionObserver" in window) {
             new IntersectionObserver(([entry]) => {
                 if (entry.isIntersecting && !userPaused) reel.play().catch(() => { });
